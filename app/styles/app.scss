@@ -1,5 +1,16 @@
-@import './some-page';
+@import './signin';
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
-.my-class {
-  background: blue;
+body {
+    font-family: sans-serif;
+    background: #eee;
+    //    background-color: #79dee2;
+    background-image: url('../../public/assets/images/signin_heroimg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
