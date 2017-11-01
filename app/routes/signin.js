@@ -2,10 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({});
 
-$(window, document, undefined).ready(function () {
 
-    $('input').blur(function () {
-        var $this = $(this);
+Ember.$(window, document, undefined).ready(function () {
+
+    Ember.$('input').blur(function () {
+        var $this = Ember.$(this);
         if ($this.val())
             $this.addClass('typed');
         else

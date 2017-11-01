@@ -1,3 +1,5 @@
+/* NOTE Signin Page */
+
 h1,
 h3 {
     font-weight: 300;
@@ -210,4 +212,26 @@ input:focus~.highlight {
         margin: 50px auto;
         padding: 20px 20px 20px 20px;
     }
+}
+
+
+/* NOTE About Page */
+
+.topnav {
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    color: #d66229;
 }

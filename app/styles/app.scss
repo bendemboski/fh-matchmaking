@@ -9,7 +9,17 @@ body {
     font-family: sans-serif;
     background: #eee;
     //    background-color: #79dee2;
-    background-image: url('../../public/assets/images/signin_heroimg.jpg');
+    background-image: url('../../assets/images/signin_heroimg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+about_body {
+    font-family: sans-serif;
+    background: #eee;
+    //    background-color: #79dee2;
+    background-image: url('../../assets/images/signin_heroimg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
