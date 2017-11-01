@@ -1,22 +1,24 @@
-<div class="container" id="signinpage">
-    <form>
-        <h1 class="formHeader"> Sign in </h1><br>
-        <div class="loginGroup">
-            <input type="email" name="useremail" required><span class="highlight"></span><span class="bar"></span>
-            <label>User Email</label>
-        </div>
-        <div class="loginGroup">
-            <input type="password" name="psw" required><span class="highlight"></span><span class="bar"></span>
-            <label>Password</label>
-            <div class="notification">
-                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>The initial password should be the sign-in code sent to your email by the Block Project team.
-                <a href="#">
-                    <span class="getCode"> Didn't get a code? </span>
-                </a>
+{{#signin-code}}
+    <div class="container" id="signinpage">
+        <form>
+            <h1 class="formHeader"> Sign in </h1><br>
+            <div class="loginGroup">
+                <input type="email" name="useremail" required><span class="highlight"></span><span class="bar"></span>
+                <label>User Email</label>
             </div>
-        </div>
-        <button type="button" class="button buttonOrange">Enter</button>
+            <div class="loginGroup">
+                <input type="password" name="psw" required><span class="highlight"></span><span class="bar"></span>
+                <label>Password</label>
+                <div class="notification">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>The initial password should be the sign-in code sent to your email by the Block Project team.
+                    <a href="#">
+                        <span class="getCode"> Didn't get a code? </span>
+                    </a>
+                </div>
+            </div>
+            <button type="button" class="button buttonOrange">Enter</button>
 
-        <div class="resetPassword"> <a href="#">Forget your password?</a></div>
-    </form>
-</div>
+            <div class="resetPassword"> <a href="#">Forget your password?</a></div>
+        </form>
+    </div>
+{{/signin-code}}
