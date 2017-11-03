@@ -10,7 +10,7 @@ h3 {
 //    font-weight: 50;
 //    color: #636363;
 //}
-div.container {
+body.signin-page {
     background-image: url('../../assets/images/signin_heroimg.jpg');
     height: 100%;
     background-position: center;
@@ -20,7 +20,7 @@ div.container {
     display: block;
 }
 
-form {
+form#signinPage {
     width: 420px;
     margin: 50px auto;
     padding: 30px 30px 30px 30px;
@@ -163,10 +163,20 @@ input:focus~.highlight {
     padding: 0 5px;
 }
 
-.learnMore {
-    color: #636363;
-    text-decoration: none;
+.notification a{
+      margin-top: 10px;
+      text-decoration-style: none;
 }
+
+span.getCode {
+    font-size: 12px;
+    color: #636363;
+}
+
+span.getCode:hover {
+      color: #535353;
+}
+
 
 
 /* Button */
@@ -205,12 +215,21 @@ input:focus~.highlight {
     color: #ffffff;
 }
 
-.resetPassword {
+
+div.resetPassword {
+    text-align: center;
+}
+
+div.resetPassword a {
     margin-top: 10px;
     text-decoration-style: none;
-    text-align: center;
     font-size: 14px;
     color: #636363;
+}
+
+div.resetPassword a:hover,
+div.resetPassword a:focus:hover {
+    color: #535353;
 }
 
 
@@ -658,7 +677,7 @@ footer p {
 
 
 /*!
- * Start Bootstrap - New Age v4.0.0-beta.2 
+ * Start Bootstrap - New Age v4.0.0-beta.2
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-new-age/blob/master/LICENSE)
  */
