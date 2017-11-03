@@ -21,5 +21,10 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  app.import('vendor/bootstrap/css/hp_host_bootstrap.css');
+  app.import('vendor/bootstrap/js/hp_host_bootstrap.bundle.js');
+
+  app.import('vendor/jquery-easing/hp_host_jquery.easing.js');
+
   return app.toTree();
 };
