@@ -24,5 +24,6 @@ module.exports = function(defaults) {
   app.import('vendor/bootstrap/js/hp_host_bootstrap.bundle.js');
 
   app.import('vendor/jquery-easing/hp_host_jquery.easing.js');
+
   return app.toTree();
 };
