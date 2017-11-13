@@ -2336,6 +2336,12 @@ ember-cli@~2.15.1:
     walk-sync "^0.3.0"
     yam "0.0.22"
 
+ember-controller-lifecycle@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/ember-controller-lifecycle/-/ember-controller-lifecycle-0.4.1.tgz#e807b67bc9cdd6b8524d3fc6aaeb63f948bd5fd8"
+  dependencies:
+    ember-cli-babel "^6.0.0"
+
 ember-data@~2.15.0:
   version "2.15.3"
   resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-2.15.3.tgz#05fb271bb6576c3e2d93e9363810e91b1953468c"
