@@ -1,4 +1,4 @@
-{{#hostprofile1-1-code}}
+{{#hostprofile1-1-code as |code|}}
   {{#nav-bar id="hostProfileNav"}}
     <li class="nav-item dropdown">
       <a href="#hostMainPage" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUR PROFILE</a>
@@ -31,9 +31,9 @@
             <h3>Upload Your Profile Photo</h3>{{!-- <img src="../../assets/images/icon_user.png" alt="user-icon"> --}}
 
             <div id="profile-container">
-              <img id="profileImage" src={{profileSrc}} role="button" onclick={{action 'chooseProfilePic'}} />
+              <img id="profileImage" src={{code.profileSrc}} role="button" onclick={{action 'chooseProfilePic' target=code}} />
             </div>
-            <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture onchange={{action 'onProfilePic'}}>
+            <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture onchange={{action 'onProfilePic' target=code}}>
 
             <h3>Greet Your New Neighbors</h3>
             <textarea name="greetings" form="hostform" placeholder="Write a sentence to welcome your future neighbors..."></textarea>
