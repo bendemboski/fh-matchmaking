@@ -11,6 +11,7 @@ Router.map(function () {
   this.route('homepage_host');
   this.route('hostprofile1-1');
   this.route('hostprofile1-2');
+  this.route('hostprofile1-3');
 });
 
 export default Router;
