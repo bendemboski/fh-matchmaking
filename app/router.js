@@ -10,6 +10,7 @@ Router.map(function () {
   this.route('signin');
   this.route('homepage_host');
   this.route('hostprofile1-1');
+  this.route('hostprofile1-2');
 });
 
 export default Router;
