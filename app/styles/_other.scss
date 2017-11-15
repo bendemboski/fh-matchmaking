@@ -269,7 +269,7 @@ section h2 {
 }
 
 #mainNav i.fa-bars {
-  font-size: 1em;
+  font-size: .8em;
   color: #fff;
 }
 
@@ -279,7 +279,7 @@ section h2 {
 }
 
 #mainNav .navbar-nav > li > a {
-  font-size: 1em;
+  font-size: .8em;
   font-family: 'Roboto', sans-serif;
   padding: 2px 10px;
   color: #fff;
@@ -313,7 +313,7 @@ section h2 {
   min-width: 200px;
   padding: 0;
   margin: 0;
-  font-size: 1em;
+  font-size: .8em;
   font-weight: 400;
   color: #fff;
   text-align: center;
@@ -356,7 +356,7 @@ ul.navbar-nav li.dropdown:hover > ul.dropdown-menu {
 }
 
 i.fa-user-circle-o {
-  font-size: 1.8em;
+  font-size: 0.8em;
   padding: 8px 0 0 10px;
 }
 /*desktop device*/
@@ -367,8 +367,8 @@ i.fa-user-circle-o {
   }
 
   #mainNav .navbar-brand img {
-    height: 75px;
-    width: 75px;
+    height: 65px;
+    width: 65px;
   }
 
   #mainNav .navbar-nav > li > a,
@@ -400,7 +400,7 @@ i.fa-user-circle-o {
   }
 
   #mainNav > ul .dropdown-menu > li > a {
-    font-size: 1em;
+    font-size: .8em;
     font-family: 'Lato', 'sans-serif';
     padding: 0;
     color: #fff;
@@ -654,7 +654,7 @@ footer p {
 }
 
 #hostProfileNav i.fa-bars {
-  font-size: 1em;
+  font-size: .8em;
   color: #000;
 }
 
@@ -664,7 +664,7 @@ footer p {
 }
 
 #hostProfileNav .navbar-nav > li > a {
-  font-size: 1em;
+  font-size: .8em;
   font-family: 'Roboto', sans-serif;
   padding: 2px 10px;
   color: #000;
@@ -698,7 +698,7 @@ footer p {
   min-width: 200px;
   padding: 0;
   margin: 0;
-  font-size: 1em;
+  font-size: .8em;
   font-weight: 400;
   color: #000;
   text-align: center;
@@ -727,7 +727,7 @@ footer p {
 #hostProfileNav .dropdown-menu > li > a,
 #hostProfileNav .dropdown-menu > li > a:focus {
   color: #5a5a5a;
-  text-align: center;
+    text-align: center;
 }
 
 #hostProfileNav .dropdown-menu > li > a:focus:hover,
@@ -741,7 +741,7 @@ ul.navbar-nav li.dropdown:hover > ul.dropdown-menu {
 }
 
 i.fa-user-circle-o {
-  font-size: 1.8em;
+  font-size: 1.5em;
   padding: 8px 0 0 10px;
 }
 /*desktop device*/
@@ -752,8 +752,8 @@ i.fa-user-circle-o {
   }
 
   #hostProfileNav .navbar-brand img {
-    height: 75px;
-    width: 75px;
+    height: 60px;
+    width: 60px;
   }
 
   #hostProfileNav .navbar-nav > li > a,
@@ -785,7 +785,7 @@ i.fa-user-circle-o {
   }
 
   #hostProfileNav > ul .dropdown-menu > li > a {
-    font-size: 1em;
+    font-size: .8em;
     font-family: 'Lato', 'sans-serif';
     padding: 0;
     color: #000;
@@ -802,7 +802,7 @@ i.fa-user-circle-o {
 }
 
 form#hostform {
-  padding: 0 10px 10px;
+  padding: 0 10px;
 }
 
 #hostform fieldset {
@@ -812,30 +812,30 @@ form#hostform {
 fieldset legend {
   color: #d66229;
   font-weight: 600;
-  font-size: 1.8em;
+  font-size: 1.4em;
+  letter-spacing: 1.5px;
 }
 
-#hostform fieldset h3 {
+#hostform fieldset h6 {
   font-weight: 600;
   color: #666;
 }
 
 div#left-column {
-  padding: 20px 0;
-  margin: 20px auto;
+  margin: 20px 0;
   width:1px;
   border-right: 1px solid #d66229;
 }
 
 div#right-column {
-  padding: 20px 0;
   margin: 20px 0;
 }
-// #profileSection div#left-column{
-//   background-color: yellow;
-//
-// }
+
 /* Profile Photo Uploader*/
+#profile-upload-preview {
+  margin: 5px auto;
+}
+
 #imageUpload {
   display: none;
 }
@@ -845,19 +845,20 @@ div#right-column {
 }
 
 #profile-container {
-  width: 150px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
+  margin: 20px auto;
 }
 
 #profile-container img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 }
 
 
@@ -865,9 +866,13 @@ form#hostform textarea {
   width: 628px;
   height: 150px;
   padding: 10px;
-  font-size: 1.2em;
+  font-size: .9em;
   margin: 10px 0 20px;
   color: #999;
+  border-radius: 5px;
+  border: 1px solid #999;
+  clear: both;
+  overflow: hidden;
 }
 
 i.fa-arrow-left {
@@ -911,6 +916,7 @@ button.nextpage {
 button.nextpage:hover {
   background-color: #bd5624;
 }
+
 /* Vertical Line*/
 #verticalLine {
   border-left: 1px solid #d66229;
@@ -923,33 +929,44 @@ i.fa-pencil {
 }
 
 div.notebox {
-  margin: 60px 30px 30px;
-  padding: 2px 15px;
+  margin: 60px 0 0 30px;
+  padding: 15px;
   border: 1px solid #bebebe;
-  width: 400px;
+  width: 375px;
   border-radius: 8px;
-  line-height: 1.8em;
+  line-height: 1em;
   color: #989898;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   font-size: 1em;
+    line-height: 1.2em;
+}
+
+h6.note {
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+#right-column ul {
+margin-bottom: 0px;
+}
+
+div.notebox ul li {
+  font-size: 0.85em;
 }
 
 div.notebox#greetings {
-  margin: 100px 30px 30px;
+  margin: 140px 30px 30px;
+  height: auto;
 }
 
-h5.note {
-  font-weight: 600;
-}
 
-h5.note-heading {
-  font-weight: 500;
-}
 /* Footer */
 footer.progress-wrap {
   background-color: transparent;
-  margin-top:10px;
-  padding:0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
 }
 
 div.progress {

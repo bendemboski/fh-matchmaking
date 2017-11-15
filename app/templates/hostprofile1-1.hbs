@@ -4,7 +4,6 @@
       <a href="#hostMainPage" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUR PROFILE</a>
       <ul class="dropdown-menu">
         <li><a href="#howItWorks" class="nav-link js-scroll-trigger"> HOW IT WORKS</a> </li>
-
         <li role="separator" class="divider"></li>
         <li><a href="#buildProfile" class="nav-link js-scroll-trigger"> BUILD PROFILE</a> </li>
       </ul>
@@ -24,20 +23,20 @@
 
   <div class="container" id="host-profile">
     <div class="row">
-      <div class="col-lg-7 " id="left-column">
+      <div class="col-lg-7 col-md-12 col-sm-12 col-12 " id="left-column">
         <form action="#" id="hostform">
           <fieldset>
             <legend>STEP 1: Say HI, and introduce yourself!</legend>
-            <h3>Upload Your Profile Photo</h3>{{!-- <img src="../../assets/images/icon_user.png" alt="user-icon"> --}}
-
+            <h6>Upload Your Profile Photo</h6>
             <div id="profile-container">
               <img id="profileImage" src={{code.profileSrc}} role="button" onclick={{action 'chooseProfilePic' target=code}} />
             </div>
             <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture onchange={{action 'onProfilePic' target=code}}>
 
-            <h3>Greet Your New Neighbors</h3>
+            <h6>Greet Your New Neighbors</h6>
             <textarea name="greetings" form="hostform" placeholder="Write a sentence to welcome your future neighbors..."></textarea>
 
+<!--Page Buttons-->
             <div>
               <button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>
               <button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>
@@ -47,11 +46,10 @@
         </form>
       </div>
 
-      <div class="col-lg-5" id="right-column">
+      <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
         <div class="notebox" id="profilephoto">
-          <h5 class="note">
-        <i class="fa fa-pencil" aria-hidden="true"></i>Note</h5>
-          <h5 class="note-heading">How to make a good quality photo:</h5>
+          <h6 class="note">
+        <i class="fa fa-pencil" aria-hidden="true"></i>How to make a good quality photo:</h6>
           <ul>
             <li>Do bring your smile</li>
             <li>Do take it under natural light</li>
@@ -60,9 +58,8 @@
 
         </div>
         <div class="notebox" id="greetings">
-          <h5 class="note">
-        <i class="fa fa-pencil" aria-hidden="true"></i>Note</h5>
-          <h5 class="note-heading">Ideas to write a greeting:</h5>
+          <h6 class="note">
+        <i class="fa fa-pencil" aria-hidden="true"></i>Ideas to write a greeting:</h6>
           <ul>
             <li>General introduction of yourself and your neighborhood with some fun facts</li>
             <li>Reasons of joining the program</li>

@@ -3,7 +3,7 @@ import Ember from 'ember';
 const { Component } = Ember;
 
 export default Component.extend({
-  profileSrc: '/assets/images/icon_user.png',
+  profileSrc: '/assets/images/icon_photoPreview.png',
 
 
   didInsertElement() {
