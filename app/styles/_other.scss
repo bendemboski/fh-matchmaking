@@ -42,7 +42,7 @@ form h1.formHeader {
   margin-bottom: 45px;
 }
 
-input {
+.loginGroup input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   margin: 0 auto;
@@ -56,12 +56,12 @@ input {
   border-bottom: 1px solid #757575;
 }
 
-input:focus {
+.loginGroup input:focus {
   outline: none;
   border-bottom: 1px solid #ffffff;
 }
 /* Label */
-label {
+.loginGroup label {
   color: #999;
   font-size: 18px;
   font-weight: normal;
@@ -73,8 +73,8 @@ label {
   transition: all 0.2s ease;
 }
 /* active */
-input.typed~label,
-input:focus~label {
+.loginGroup input.typed~label,
+.loginGroup input:focus~label {
   top: -20px;
   -webkit-transform: scale(.75);
   transform: scale(.75);
@@ -130,7 +130,7 @@ input:focus~.highlight {
 }
 /* Notification */
 .notification {
-  font-size: 12px;
+  font-size: 0.8em;
   margin: 8px 3px 2px;
   color: #636363;
   letter-spacing: 0.3px;
@@ -147,7 +147,6 @@ input:focus~.highlight {
 }
 
 span.getCode {
-  font-size: 12px;
   color: #636363;
 }
 
@@ -169,7 +168,7 @@ span.getCode:hover {
   letter-spacing: 1px;
   background: transparent;
   border: 2px solid #d66229;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .button:focus {
@@ -261,7 +260,7 @@ section h2 {
 }
 
 #mainNav .navbar-toggler {
-  font-size: .8em;
+  font-size: 0.8em;
   padding: 12px;
   color: #fff;
   background-color: #000;
@@ -269,7 +268,7 @@ section h2 {
 }
 
 #mainNav i.fa-bars {
-  font-size: .8em;
+  font-size: 0.8em;
   color: #fff;
 }
 
@@ -279,7 +278,7 @@ section h2 {
 }
 
 #mainNav .navbar-nav > li > a {
-  font-size: .8em;
+  font-size: 0.8em;
   font-family: 'Roboto', sans-serif;
   padding: 2px 10px;
   color: #fff;
@@ -313,7 +312,7 @@ section h2 {
   min-width: 200px;
   padding: 0;
   margin: 0;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: 400;
   color: #fff;
   text-align: center;
@@ -400,7 +399,7 @@ i.fa-user-circle-o {
   }
 
   #mainNav > ul .dropdown-menu > li > a {
-    font-size: .8em;
+    font-size: 0.8em;
     font-family: 'Lato', 'sans-serif';
     padding: 0;
     color: #fff;
@@ -654,7 +653,7 @@ footer p {
 }
 
 #hostProfileNav i.fa-bars {
-  font-size: .8em;
+  font-size: 0.8em;
   color: #000;
 }
 
@@ -664,7 +663,7 @@ footer p {
 }
 
 #hostProfileNav .navbar-nav > li > a {
-  font-size: .8em;
+  font-size: 0.8em;
   font-family: 'Roboto', sans-serif;
   padding: 2px 10px;
   color: #000;
@@ -698,7 +697,7 @@ footer p {
   min-width: 200px;
   padding: 0;
   margin: 0;
-  font-size: .8em;
+  font-size: 0.8em;
   font-weight: 400;
   color: #000;
   text-align: center;
@@ -727,7 +726,7 @@ footer p {
 #hostProfileNav .dropdown-menu > li > a,
 #hostProfileNav .dropdown-menu > li > a:focus {
   color: #5a5a5a;
-    text-align: center;
+  text-align: center;
 }
 
 #hostProfileNav .dropdown-menu > li > a:focus:hover,
@@ -785,7 +784,7 @@ i.fa-user-circle-o {
   }
 
   #hostProfileNav > ul .dropdown-menu > li > a {
-    font-size: .8em;
+    font-size: 0.8em;
     font-family: 'Lato', 'sans-serif';
     padding: 0;
     color: #000;
@@ -823,14 +822,13 @@ fieldset legend {
 
 div#left-column {
   margin: 20px 0;
-  width:1px;
+  width: 1px;
   border-right: 1px solid #d66229;
 }
 
 div#right-column {
   margin: 20px 0;
 }
-
 /* Profile Photo Uploader*/
 #profile-upload-preview {
   margin: 5px auto;
@@ -861,12 +859,11 @@ div#right-column {
   height: 200px;
 }
 
-
 form#hostform textarea {
   width: 97%;
   height: 150px;
   padding: 10px;
-  font-size: .9em;
+  font-size: 0.9em;
   margin: 10px 0 20px;
   color: #999;
   border-radius: 5px;
@@ -916,12 +913,10 @@ button.nextpage {
 button.nextpage:hover {
   background-color: #bd5624;
 }
-
 /* Vertical Line*/
 #verticalLine {
   border-left: 1px solid #d66229;
   margin: 30px 0;
-
 }
 /* Note */
 i.fa-pencil {
@@ -938,7 +933,7 @@ div.notebox {
   color: #989898;
   letter-spacing: 0.06em;
   font-size: 1em;
-    line-height: 1.2em;
+  line-height: 1.2em;
 }
 
 h6.note {
@@ -946,8 +941,9 @@ h6.note {
   font-weight: 500;
   letter-spacing: 1px;
 }
+
 #right-column ul {
-margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 div.notebox ul li {
@@ -958,8 +954,6 @@ div.notebox#greetings {
   margin: 140px 30px 30px;
   height: auto;
 }
-
-
 /* Footer */
 footer.progress-wrap {
   background-color: transparent;
@@ -979,7 +973,6 @@ div.progress-bar {
   border-bottom-right-radius: 0.5em;
   background-color: #dc7a4b;
 }
-
 /* HostProfile1-2 */
 .form-group {
   display: block;
@@ -996,29 +989,30 @@ div.progress-bar {
 
 div.left-side,
 div.right-side {
-  width: 46.2%;
+  width: 46%;
   display: inline-block;
 }
 
-#firstname input,
-#langugage input,
-#lastname input {
+#firstname input[type="text"],
+#lastname input[type="text"],
+#langugage input[type="text"]{
   background-color: transparent;
   border: 1px solid #bebebe;
   border-radius: 5px;
   color: grey;
   letter-spacing: 1.2px;
-    padding-left: 10px;
+  padding-left: 10px;
+  height:48px;
+  width:100%
 }
 
 
 #firstname input input::placeholder,
 #langugage input::placeholder,
-#lastname input::placeholder  {
+#lastname input::placeholder {
   color: #999;
   padding-left: 5px;
 }
-
 /* Birthday */
 div.dob-dropdown select,
 div.gender-dropdown select {
@@ -1144,6 +1138,8 @@ p.hostName {
   color: grey;
   letter-spacing: 1.2px;
   padding-left: 10px;
+  height:48px;
+  width:100%;
 }
 
 #host-favorite-activity input::placeholder,
@@ -1162,6 +1158,7 @@ div.movie-dropdown select {
   color: grey;
   letter-spacing: 1.2px;
   margin-bottom: 200px;
+  width:100%;
 }
 
 #kim-sherman img {
@@ -1184,4 +1181,46 @@ div.movie-dropdown select {
 #kim-sherman p.quote {
   margin: 50px 0 0;
   font-style: italic;
+}
+/* Hostprofile1-4 */
+
+#hostform input[type=radio]{
+  display: none;
+}
+
+#hostform input[type=radio] + label{
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 20px;
+  margin-bottom: 0;
+  font-size: 1em;
+  line-height: 20px;
+  color: #999;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius:5px;
+}
+
+#hostform input[type=radio]:checked + label {
+  background-image: none;
+  outline: 0;
+  border:1px solid #666;
+  background-color:transparent;
+  color:#666;
+}
+
+#illness input[type=text]{
+  display:inline-block;
+  background-color: transparent;
+  border-bottom: 1px solid #bebebe;
+  border-radius: 5px;
+  color: grey;
+  letter-spacing: 1.2px;
+  padding-left: 10px;
+  height:48px;
+  width: 70%;
 }
