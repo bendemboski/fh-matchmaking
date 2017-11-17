@@ -1,4 +1,4 @@
-{{#hostprofile1-2-code}}
+{{#hostprofile1-2-code as |code|}}
   {{#nav-bar id="hostProfileNav"}}
     <li class="nav-item dropdown">
       <a href="#hostMainPage" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUR PROFILE</a>
@@ -318,10 +318,10 @@
               <p class="family" for="name">Adult</p>
               <div class="col-lg-4 number-incrementer">
                 <div class="input-group">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number value-control" data-action="minus" data-target="adult"><img src="../../assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "decrement" "adultCount" target=code}}><img src="../../assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
-                  <input type="text" value="1" class="form-control" id="adult">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number value-control" data-action="plus" data-target="adult"><img src="../../assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                  <input type="text" value={{code.adultCount}} class="form-control" id="adult">
+                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "increment" "adultCount" target=code}}><img src="../../assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
                 </div>
               </div>
@@ -330,10 +330,10 @@
               <p class="family" for="name">Kid</p>
               <div class="col-lg-4 number-incrementer">
                 <div class="input-group">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number value-control" data-action="minus" data-target="kid"><img src="../../assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "decrement" "kidCount" target=code}}><img src="/assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
-                  <input type="text" value="0" class="form-control" id="kid">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number value-control" data-action="plus" data-target="kid"><img src="../../assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                  <input type="text" value={{code.kidCount}} class="form-control" id="kid">
+                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "increment" "kidCount" target=code}}><img src="../../assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
                 </div>
               </div>
@@ -341,10 +341,10 @@
               <p class="family" for="name">Pet</p>
               <div class="col-lg-4 number-incrementer">
                 <div class="input-group">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number value-control" data-action="minus" data-target="pet"><img src="../../assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "decrement" "petCount" target=code}}><img src="../../assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
-                  <input type="text" value="0" class="form-control" id="pet">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number value-control" data-action="plus" data-target="pet"><img src="../../assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                  <input type="text" value={{code.petCount}} class="form-control" id="pet">
+                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "increment" "petCount" target=code}}><img src="../../assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
                 </div>
 
