@@ -1,0 +1,150 @@
+{{#hostprofile2-1-code}}
+  {{#nav-bar id="hostProfileNav" }}
+    <li class="nav-item dropdown">
+      <a href="#hostMainPage" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUR PROFILE</a>
+      <ul class="dropdown-menu">
+        <li><a href="#howItWorks" class="nav-link js-scroll-trigger"> HOW IT WORKS</a> </li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#buildProfile" class="nav-link js-scroll-trigger"> BUILD PROFILE</a> </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#community">COMMUNITY</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#help">HELP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+    </li>
+  {{/nav-bar}}
+
+  <!-- Profile Section -->
+
+  <div class="container" id="host-profile">
+    <div class="row">
+      <div class="col-lg-7 col-md-12 col-sm-12 col-12" id="left-column">
+        <form action="#" id="hostform">
+          <fieldset>
+            <legend>STEP 2: Share about your backyard</legend>
+            <div class="form-group">
+              <h6>Neighborhood</h6>
+              <select class="form-control dropdown" id="neighborhood" name="neighborhood">
+                <option value="" selected="selected" disabled="disabled">-- select one --</option>
+                <optgroup label="Central Seattle:">
+    <option value="1">Belltown</option>
+<option value="2">Broadmoor</option>
+<option value="3">Capitol Hill</option>
+<option value="4">Central District</option>
+<option value="5">Denny-Blaine</option>
+<option value="6">Downtown</option>
+<option value="7">Eastlake</option>
+<option value="8">First Hill</option>
+<option value="9">International District</option>
+<option value="10">Leschi</option>
+<option value="11">Madison Park</option>
+<option value="12">Madison Valley</option>
+<option value="13">Madrona</option>
+<option value="14">Montlake</option>
+<option value="15">Pioneer Square</option>
+<option value="16">South Lake Union</option>
+</optgroup>
+<optgroup label="Northeast Seattle:">
+  <option value="17">Bryant</option>
+  <option value="18">Hawthorne Hills</option>
+  <option value="19">Lake City</option>
+  <option value="20">Laurelhurst</option>
+  <option value="21">Maple Leaf</option>
+  <option value="22">Matthews Beach</option>
+  <option value="23">Northgate</option>
+  <option value="24">Ravenna</option>
+  <option value="25">Roosevelt</option>
+  <option value="26">U-District</option>
+  <option value="27">View Ridge</option>
+  <option value="28">Wedgwood</option>
+  <option value="29">Windermere</option>
+</optgroup>
+<optgroup label="Northwest Seattle:">
+  <option value="30">Ballard</option>
+  <option value="31">Blue Ridge/North Beach</option>
+  <option value="32">Broadview</option>
+  <option value="33">Crown Hill</option>
+  <option value="34">Fremont</option>
+  <option value="35">Green Lake</option>
+  <option value="36">Greenwood</option>
+  <option value="37">Haller Lake</option>
+  <option value="38">Loyal Heights</option>
+  <option value="39">Magnolia</option>
+  <option value="40">Phinney Ridge</option>
+  <option value="41">Queen Anne</option>
+  <option value="42">Wallingford</option>
+  <option value="43">Westlake</option>
+  <option value="44">Whittier Heights</option>
+</optgroup>
+<optgroup label="South Seattle:">
+  <option value="45">Beacon Hill</option>
+  <option value="46">Columbia City</option>
+  <option value="47">Georgetown</option>
+  <option value="48">Mount Baker</option>
+  <option value="49">Rainier Beach</option>
+  <option value="50">Seward Park</option>
+  <option value="51">South Park</option>
+</optgroup>
+<optgroup label="West Seattle:">
+  <option value="52">Admiral</option>
+  <option value="53">Alki</option>
+  <option value="54">Fauntleroy</option>
+  <option value="55">Junction</option>
+</optgroup>
+</select>
+            </div>
+            <div class="form-group">
+              <div class="address" id="host-address">
+                <h6>Street Address</h6>
+                <input type="text" name="address" placeholder="Please enter your address">
+              </div>
+            </div>
+
+            <div class="form-group" id="transportation">
+              <h6>Public Transportation</h6>
+              <input type="checkbox" id="link" name="transportation" value="link" checked>
+              <label for="link">Link</label>
+              <input type="checkbox" id="bus" name="transportation" value="bus">
+              <label for="bus">Bus</label>
+              <input type="text" id="bus-number" name="transportation" placeholder="List accesible Bus No. (e.g. 70 / 11)">
+            </div>
+            <div class="form-group" id="environment">
+              <h6>Neighborhood Enviroment</h6>
+              <input type="text" name="enviroment" placeholder="e.g. Supermarket, park, library, church">
+            </div>
+
+            <!--Page Buttons-->
+
+            <button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>
+            <button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>
+
+          </fieldset>
+        </form>
+      </div>
+
+      <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
+        <div class="notebox" id="profilephoto">
+          <h6 class="note">
+        <i class="fa fa-shield" aria-hidden="true"></i>Worried about the privacy? </h6> We do care about privacy! So your detailed address will only be appeared to the resident who shows interested to meet and you hit “Let’s meet” after viewing their profile.<br> Thus, the public transportation and neighborhood environment are two key decision points for a resident to make decision.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer Section -->
+  <footer class="progress-wrap">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+        <span class="sr-only">50%</span>
+      </div>
+    </div>
+
+  </footer>
+
+{{/hostprofile2-1-code}}

@@ -919,7 +919,7 @@ button.nextpage:hover {
   margin: 30px 0;
 }
 /* Note */
-i.fa-pencil {
+i.fa-pencil, i.fa-shield {
   padding-right: 10px;
 }
 
@@ -929,17 +929,16 @@ div.notebox {
   border: 1px solid #bebebe;
   width: 375px;
   border-radius: 8px;
-  line-height: 1em;
   color: #989898;
   letter-spacing: 0.06em;
-  font-size: 1em;
-  line-height: 1.2em;
+  font-size: .9em;
+  line-height: 1.5em;
 }
 
 h6.note {
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
 }
 
 #right-column ul {
@@ -1236,6 +1235,75 @@ div.movie-dropdown select {
 
 #family-medical-history input::placeholder,
 #illness input::placeholder {
+  padding-left: 0;
+  color: #bebebe;
+}
+
+/* Hostprofile2-1*/
+
+#host-address input[type="text"],#environment input[type="text"]
+ {
+  background-color: transparent;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
+  color: #666;
+  letter-spacing: 1.2px;
+  padding-left: 10px;
+  height: 48px;
+  width: 100%;
+}
+
+#host-address input::placeholder, #environment input::placeholder {
+  color: #999;
+  padding-left: 5px;
+}
+
+#transportation input[type=checkbox], {
+  display: none;
+}
+
+#transportation input[type=checkbox] + label{
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  margin: 5px;
+  margin-bottom: 0;
+  font-size: 1em;
+  color: #666;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height:38px;
+  width: 16%;
+  font-size:.9em;
+}
+
+#transportation label{padding:0}
+#transportation input[type=checkbox]:checked + label {
+  background-image: none;
+  outline: 0;
+  border: 1px solid #e59f7c;
+  background-color: transparent;
+  color: #e59f7c;
+}
+
+
+input#bus-number{
+  display: inline-block;
+  background-color: transparent;
+  letter-spacing: 1.2px;
+  padding-left: 10px;
+  height: 45px;
+  line-height: 48px;
+  width: 62%;
+  border-style: none;
+  border-bottom: 1px solid #999;
+  color: #666;
+}
+
+input#bus-number::placeholder{
   padding-left: 0;
   color: #bebebe;
 }
