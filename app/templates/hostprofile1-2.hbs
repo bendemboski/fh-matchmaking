@@ -318,22 +318,21 @@
               <p class="family" for="name">Adult</p>
               <div class="col-lg-4 number-incrementer">
                 <div class="input-group">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "decrement" "adultCount" target=code}}><img src="../../assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                  <span class="input-group-btn"><button type="button"  class="btn btn-default btn-number" onclick={{action "decrement" "adultCount" target=code}}><img src="/assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
-                  <input type="text" value={{code.adultCount}} class="form-control" id="adult">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "increment" "adultCount" target=code}}><img src="../../assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                  <span class="form-control" id="adult">{{code.adultCount}}</span>
+                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "increment" "adultCount" target=code}}><img src="/assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
                 </div>
               </div>
-
 
               <p class="family" for="name">Kid</p>
               <div class="col-lg-4 number-incrementer">
                 <div class="input-group">
                   <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "decrement" "kidCount" target=code}}><img src="/assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
-                  <input type="text" value={{code.kidCount}} class="form-control" id="kid">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "increment" "kidCount" target=code}}><img src="../../assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                  <span class="form-control" id="kid">{{code.kidCount}}</span>
+                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "increment" "kidCount" target=code}}><img src="/assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
                 </div>
               </div>
@@ -341,10 +340,10 @@
               <p class="family" for="name">Pet</p>
               <div class="col-lg-4 number-incrementer">
                 <div class="input-group">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "decrement" "petCount" target=code}}><img src="../../assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "decrement" "petCount" target=code}}><img src="/assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
-                  <input type="text" value={{code.petCount}} class="form-control" id="pet">
-                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "increment" "petCount" target=code}}><img src="../../assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
+                    <span class="form-control" id="pet">{{code.petCount}}</span>
+                  <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "increment" "petCount" target=code}}><img src="/assets/images/icon_plusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
                 </div>
 
