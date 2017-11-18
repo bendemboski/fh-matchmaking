@@ -1255,7 +1255,7 @@ div.movie-dropdown select {
 
 #host-address input::placeholder, #environment input::placeholder {
   color: #999;
-  padding-left: 5px;
+  padding-left: 0 5px;
 }
 
 #transportation input[type=checkbox], {
@@ -1267,15 +1267,14 @@ div.movie-dropdown select {
   display: inline-block;
   margin: 5px;
   margin-bottom: 0;
-  font-size: 1em;
   color: #666;
   text-align: center;
-  vertical-align: middle;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid #ccc;
   border-radius: 5px;
   height:38px;
+  line-height: 32px;
   width: 16%;
   font-size:.9em;
 }
