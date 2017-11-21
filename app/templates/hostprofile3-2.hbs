@@ -1,0 +1,68 @@
+{{#hostprofile3-2-code}}
+  {{#nav-bar id="hostProfileNav" }}
+    <li class="nav-item dropdown">
+      <a href="#hostMainPage" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUR PROFILE</a>
+      <ul class="dropdown-menu">
+        <li><a href="#howItWorks" class="nav-link js-scroll-trigger"> HOW IT WORKS</a> </li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#buildProfile" class="nav-link js-scroll-trigger"> BUILD PROFILE</a> </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#community">COMMUNITY</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#help">HELP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+    </li>
+  {{/nav-bar}}
+
+  <!-- Profile Section -->
+
+  <div class="container" id="host-profile">
+    <div class="row">
+      <div class="col-lg-7 col-md-12 col-sm-12 col-12 " id="left-column">
+        <form action="#" id="hostform">
+          <fieldset>
+            <legend>STEP 3: Almost done! </legend>
+            <div class="form-group">
+              <h6> Now, your turn to ask a question to your future neighbor!  </h6>
+              <textarea name="hostQuestion" form="hostform" placeholder="Type the question here..."></textarea>
+            </div>
+            <!--Page Buttons-->
+            <div id="pageButton">
+              {{#link-to 'hostprofile3-1'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
+              {{#link-to 'hostprofile1-2'}} <button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>{{/link-to}}
+            </div>
+
+          </fieldset>
+        </form>
+      </div>
+
+      <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
+        <div class="notebox" id="profilephoto">
+          <h6 class="note">
+        <i class="fa fa-pencil" aria-hidden="true"></i>Ideas to ask a killer question that find the perfect neighbor:</h6>
+          <ul>
+            <li>What’s your 1st thing to do when you wake up in the morning?</li>
+            <li>What’s your favorite football team?</li>
+            <li>What is your favorite animal?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer Section -->
+  <footer class="progress-wrap">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+        <span class="sr-only">90%</span>
+      </div>
+    </div>
+
+  </footer>
+{{/hostprofile3-2-code}}
