@@ -48,15 +48,7 @@
 
               {{!-- <span id="demo"></span> --}}
             </div>
-            <script>
-              var slider = document.getElementById("myRange");
-              var output = document.getElementById("demo");
-              output.innerHTML = slider.value;
-
-              slider.oninput = function() {
-                output.innerHTML = this.value;
-              }
-            </script>
+          
             <!--Page Buttons-->
             <div id="pageButton">
               {{#link-to 'hostprofile2-3'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
