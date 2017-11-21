@@ -1,5 +1,5 @@
 {{#hostprofile1-4-code}}
-  {{#nav-bar id="hostProfileNav"}}
+  {{#nav-bar id="hostProfileNav" }}
     <li class="nav-item dropdown">
       <a href="#hostMainPage" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUR PROFILE</a>
       <ul class="dropdown-menu">
@@ -71,11 +71,11 @@
             </div>
             <br>
 
-<!--Page Buttons-->
-
-            {{#link-to 'hostprofile1-3'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
-            {{#link-to 'hostprofile2-1'}}<button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>{{/link-to}}
-
+            <!--Page Buttons-->
+            <div id="pageButton">
+              {{#link-to 'hostprofile1-3'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
+              {{#link-to 'hostprofile2-1'}} <button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>{{/link-to}}
+            </div>
           </fieldset>
         </form>
       </div>
@@ -84,12 +84,11 @@
 
         <div class="notebox" id="profilephoto">
           <h6 class="note">
-        <i class="fa fa-pencil" aria-hidden="true"></i>NOTE</h6>
-        Being honest and sincere is to find a best match!
+        <i class="fa fa-pencil" aria-hidden="true"></i>NOTE</h6> Being honest and sincere is to find a best match!
         </div>
-</div>
       </div>
     </div>
+  </div>
 
 
   <!-- Footer Section -->

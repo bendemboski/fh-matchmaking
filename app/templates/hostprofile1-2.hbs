@@ -350,10 +350,11 @@
               </div>
             </div>
 
-<!--Page Buttons-->
-
-            {{#link-to 'hostprofile1-1'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
-            {{#link-to 'hostprofile1-3'}}<button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>{{/link-to}}
+            <!--Page Buttons-->
+            <div id="pageButton">
+              {{#link-to 'hostprofile1-1'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
+              {{#link-to 'hostprofile1-3'}} <button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>{{/link-to}}
+            </div>
 
           </fieldset>
         </form>
