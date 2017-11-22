@@ -20,32 +20,11 @@ export default Component.extend({
       this.$('#imageUpload_' + num).click();
     },
 
-    onProfilePic_1(e) {
+    onProfilePic(num,e) {
       let files = e.target.files || [];
       let file = files[0];
       if (file) {
-        this.set('profileSrc_1', window.URL.createObjectURL(file));
-      }
-    },
-    onProfilePic_2(e) {
-      let files = e.target.files || [];
-      let file = files[0];
-      if (file) {
-        this.set('profileSrc_2', window.URL.createObjectURL(file));
-      }
-    },
-    onProfilePic_3(e) {
-      let files = e.target.files || [];
-      let file = files[0];
-      if (file) {
-        this.set('profileSrc_3', window.URL.createObjectURL(file));
-      }
-    },
-    onProfilePic_4(e) {
-      let files = e.target.files || [];
-      let file = files[0];
-      if (file) {
-        this.set('profileSrc_4', window.URL.createObjectURL(file));
+        this.set('profileSrc_'+ num , window.URL.createObjectURL(file));
       }
     }
 
