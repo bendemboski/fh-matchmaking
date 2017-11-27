@@ -1426,14 +1426,13 @@ width:auto;
 float:left;
 margin-left:-320px;}
 
-/* Saving Page*/
+/* Saving Page 1*/
 div.heading{
     text-align: center;
     width:100%;
 }
-.heading h6{
+.heading h5{
   font-weight: 500;
-
   margin:5px auto;
   padding:50px;
   color:#666;
@@ -1446,21 +1445,193 @@ div#pageButton-expand {
   width:70%;
 }
 
-div#progress1,
-div#progress2,
-div#progress3{
+div.steps{
   display:inline-block;
   background-color:transparent;
   padding:0;
   border-radius: 0;
-  width:50%;
 }
 
-#progress1,
-#progress2{
-  border-right: 1px solid #dedede;
+#step1,
+#step2{
+  border-right: 1px solid #bebebe;
 }
 
-div.subHeading{
-  padding:5px;
+#hostsaving1 .steps div.subHeading{
+  font-size: 1em;
+  font-weight:500;
+  color: #666;
+  padding-left: 20px;
+  display:inline-block;
 }
+
+#hostsaving1 #step2 div.subHeading,
+#hostsaving1 #step3 div.subHeading{
+  color: #bebebe;
+}
+
+.steps img{
+  width:70%;
+  margin: 20px 58px;
+}
+
+.steps ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#step1 ul li {
+color:#666;
+}
+
+#step2 ul li,
+#step3 ul li  {
+color:#bebebe;
+}
+
+
+.steps ul li i {
+  padding:5px 15px 5px 25px;
+
+}
+i#greeting,
+i#basic-info,
+i#lifestyle,{
+  color:#d66229;
+}
+
+.steps .edit{
+  float:right;
+margin-right: 15px;
+display:inline-block;
+font-size:.8em;
+font-weight: 500;
+  padding:2px 12px;
+  border-radius:18px;
+text-decoration: none;}
+
+#step1 .edit,
+{
+  color:#d66229;
+  border:1px solid #d66229;
+
+}
+
+#hostsaving1 #step1 .edit:hover{
+color:#fff;
+text-decoration: none;
+background-color:#d66229;
+border:1px solid #d66229;
+}
+
+#hostsaving1 #step2 .edit,
+#hostsaving1 #step3 .edit,{
+color:#bebebe;}
+
+/* Saving Page 2*/
+
+#hostsaving2 .steps div.subHeading{
+  font-size: 1em;
+  font-weight:500;
+  color: #666;
+  padding-left: 20px;
+  display:inline-block;
+}
+
+#hostsaving2 #step3 div.subHeading{
+  color: #bebebe;
+}
+
+
+#hostsaving2 .steps ul li {
+color:#666;
+}
+
+#hostsaving2 #step3 ul li  {
+color:#bebebe;
+}
+
+i#greeting,
+i#basic-info,
+i#lifestyle,
+i#location,
+i#backyard-scene,
+i#photos{
+  color:#d66229;
+}
+
+.steps .edit{
+  float:right;
+margin-right: 15px;
+display:inline-block;
+font-size:.8em;
+font-weight: 500;
+  padding:2px 12px;
+  border-radius:18px;
+text-decoration: none;}
+
+#step1 .edit,
+#step2 .edit
+{
+  color:#d66229;
+  border:1px solid #d66229;
+}
+
+#hostsaving2 #step1 .edit:hover,
+#hostsaving2 #step2 .edit:hover{
+color:#fff;
+text-decoration: none;
+background-color:#d66229;
+border:1px solid #d66229;
+}
+
+#hostsaving2 #step3 .edit,{
+color:#bebebe;
+border:1px solid #bebebe;}
+
+/* Saving Page 3*/
+
+
+#hostsaving3 .steps div.subHeading{
+  font-size: 1em;
+  font-weight:500;
+  color: #666;
+  padding-left: 20px;
+  display:inline-block;
+}
+
+.steps ul li i {
+  padding:5px 15px 5px 25px;
+
+}
+
+i#greeting,
+i#basic-info,
+i#lifestyle,
+i#location,
+i#backyard-scene,
+i#photos,
+i#expectation,
+i#question{
+  color:#d66229;
+}
+#hostsaving3 .steps ul li {
+color:#666;
+}
+
+#hostsaving3 .steps .edit{
+  float:right;
+  margin-right: 15px;
+  display:inline-block;
+font-size:.8em;
+font-weight: 500;
+  padding:2px 12px;
+  border-radius:18px;
+  color:#d66229;
+  border:1px solid #d66229;}
+
+#hostsaving3 .steps .edit:hover{
+  color:#fff;
+  text-decoration: none;
+  background-color:#d66229;
+  border:1px solid #d66229;}

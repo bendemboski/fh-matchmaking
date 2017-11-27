@@ -1,0 +1,81 @@
+{{#hostsaving3-code}}
+  {{#nav-bar id="hostProfileNav" }}
+    <li class="nav-item dropdown">
+      <a href="#hostMainPage" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUR PROFILE</a>
+      <ul class="dropdown-menu">
+        <li><a href="#howItWorks" class="nav-link js-scroll-trigger"> HOW IT WORKS</a> </li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#buildProfile" class="nav-link js-scroll-trigger"> BUILD PROFILE</a> </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#community">COMMUNITY</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#help">HELP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+    </li>
+  {{/nav-bar}}
+
+  <!-- Profile Section -->
+
+  <div class="container" id="host-profile">
+    <div class="row" id="hostsaving3">
+
+
+      <div class="heading">
+        <h5>
+        Awesome!<br>
+        Thanks for your time completing your profile.<br>
+        You can preview the list before submitting it.
+      </h5>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-12 col-12 steps" id="step1">
+        <img src="/assets/images/icon_hello_2.png" alt="hello-icon">
+        <div class="subHeading">Start with a hello </div>
+            {{#link-to 'hostprofile1-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
+        <ul>
+          <li><i class="fa fa-check-circle" aria-hidden="true" id="greeting"></i>Greeting</li>
+          <li><i class="fa fa-check-circle" aria-hidden="true" id="basic-info"></i>Basics</li>
+          <li><i class="fa fa-check-circle" aria-hidden="true" id="lifestyle"></i>Lifestyle</li>
+          <li><i class="fa fa-check-circle" aria-hidden="true" id="health"></i>Health Condition</li>
+        </ul>
+      </div>
+
+
+      <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step2">
+        <img src="/assets/images/icon_backyard.png" alt="backyard-icon">
+        <div class="subHeading"> Share your backyard </div>
+          {{#link-to 'hostprofile2-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
+        <ul>
+          <li><i class="fa fa-check-circle" aria-hidden="true" id="location"></i>Location</li>
+          <li><i class="fa fa-check-circle" aria-hidden="true" id="backyard-scene"></i>Backyard Scene </li>
+          <li><i class="fa fa-check-circle" aria-hidden="true" id="photos"></i>Photos </li>
+        </ul>
+      </div>
+
+
+      <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step3">
+        <img src="/assets/images/icon_commitment.png" alt="commitment-icon">
+        <div class="subHeading"> Set Expectation &amp; Contribution</div>
+                {{#link-to 'hostprofile3-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
+        <ul>
+          <li><i class="fa fa-check-circle" aria-hidden="true" id="expectation"></i>Expectation</li>
+          <li><i class="fa fa-check-circle" aria-hidden="true"id="question"></i>Customized questions</li>
+        </ul>
+      </div>
+  </div>
+
+
+  <!--Page Buttons-->
+  <div id="pageButton-expand">
+    {{#link-to 'hostprofile3-1'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
+    {{#link-to 'hostprofile1-2'}} <button class="nextpage" name="next" type="submit" value="host-page1">SUBMIT</button>{{/link-to}}
+  </div>
+  </div>
+
+
+{{/hostsaving3-code}}

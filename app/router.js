@@ -19,6 +19,8 @@ Router.map(function () {
   this.route('hostprofile3-1');
   this.route('hostprofile3-2');
   this.route('hostsaving1');
+  this.route('hostsaving2');
+  this.route('hostsaving3');
 });
 
 export default Router;
