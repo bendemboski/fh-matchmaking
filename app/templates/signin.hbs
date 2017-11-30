@@ -1,7 +1,7 @@
  {{#signin-code}} {{set-body-class "signin-page"}}
 
 <form id="signinPage">
-    <h1 class="formHeader"> Sign in </h1><br>
+    <h2 class="formHeader"> Sign in </h2><br>
     <div class="loginGroup">
         <input type="email" name="useremail" required><span class="highlight"></span><span class="bar"></span>
         <label>User Email</label>
@@ -11,12 +11,12 @@
         <label>Password</label>
         <div class="notification">
             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>The initial password should be the sign-in code sent to your email by the Block Project team.
-            <a href="#">
+        <a href="#">
                 <span class="getCode"> Didn't get a code? </span>
             </a>
         </div>
     </div>
-    <button type="button" class="enter-button buttonOrange">Enter</button>
+  {{#link-to 'homepage_host'}}<button type="button" class="enter-button buttonOrange">Enter</button>  {{/link-to}}
 
     <div class="resetPassword"> <a href="#">Forget your password?</a></div>
 </form>

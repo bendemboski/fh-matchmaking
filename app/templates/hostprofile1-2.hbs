@@ -316,7 +316,7 @@
 
 
               <p class="family" for="name">Adult</p>
-              <div class="col-lg-4 number-incrementer">
+              <div class="number-incrementer">
                 <div class="input-group">
                   <span class="input-group-btn"><button type="button"  class="btn btn-default btn-number"  onclick={{action "decrement" "adultCount" target=code}} disabled={{eq code.adultCount 1}}><img src="/assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
@@ -327,7 +327,7 @@
               </div>
 
               <p class="family" for="name">Kid</p>
-              <div class="col-lg-4 number-incrementer">
+              <div class="number-incrementer">
                 <div class="input-group">
                   <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "decrement" "kidCount" target=code}} disabled={{eq code.kidCount 0}}><img src="/assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
@@ -338,7 +338,7 @@
               </div>
 
               <p class="family" for="name">Pet</p>
-              <div class="col-lg-4 number-incrementer">
+              <div class="number-incrementer">
                 <div class="input-group">
                   <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" onclick={{action "decrement" "petCount" target=code}} disabled={{eq code.petCount 0}}><img src="/assets/images/icon_minusbtn.png" alt="plusbtn" height="28px" width="28px"></button>
                   </span>
@@ -351,7 +351,7 @@
             </div>
 
             <!--Page Buttons-->
-            <div id="pageButton">
+            <div id="pageButton-expand">
               {{#link-to 'hostprofile1-1'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
               {{#link-to 'hostprofile1-3'}} <button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>{{/link-to}}
             </div>
