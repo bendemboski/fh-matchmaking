@@ -22,6 +22,7 @@ Router.map(function () {
   this.route('hostsaving2');
   this.route('hostsaving3');
   this.route('previewpage_host');
+  this.route('community');
 });
 
 export default Router;

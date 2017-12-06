@@ -4,10 +4,7 @@ h3 {
   font-weight: 300;
   color: #636363;
 }
-//p {
-//    font-weight: 50;
-//    color: #636363;
-//}
+
 
 body.signin-page {
   background-image: url("../../assets/images/signin_heroimg2.jpg");
@@ -19,7 +16,7 @@ body.signin-page {
   display: block;
 }
 
-form#signinPage {
+#signinPage {
   width: 400px;
   margin: 80px auto;
   padding: 30px;
@@ -839,8 +836,7 @@ div#right-column {
   display: none;
 }
 
-#profile
- {
+#profile{
   cursor: pointer;
 }
 
@@ -1875,3 +1871,48 @@ button.edit:hover {
 div#pageButton .nextpage {
   float:none;
 }
+
+/*Community Page*/
+
+header#community {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 300px 200px;
+  color: white;
+  background-size: cover;
+  background-image: url("../../assets/images/community_heroimg.jpg");
+  text-align: center;
+}
+
+
+#community h1,
+{ font-size:5.5em;
+  color:#fff;
+  font-weight: 600;
+  letter-spacing: .05em;
+
+}
+
+#community h4{
+  font-size:1.4em;
+   color:#fff;
+   font-weight: 300;
+   letter-spacing: .05em;}
+
+     #community button.backpage {
+     width: 20%;
+     height: 45px;
+     margin-top:20px;
+     display: inline-block;
+     color: #fff;
+     border: 1px solid;
+     border-color: transparent;
+     background-color: #d66229;
+     border-radius: 22.5px;
+     text-align: center;
+   }
+
+    #community button.backpage:hover {
+     background-color: #bd5624;
+   }
