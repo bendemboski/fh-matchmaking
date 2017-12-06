@@ -22,26 +22,8 @@
   <!-- Profile Section -->
   <div class="container" id="host-profile">
     <div class="row" id="host-preview">
-      <!--Carousel Slide Starts Here-->
-      {{#carousel-container transitionInterval=400 as |ui act|}}
-         <div class="carousel-body">
-           {{#ui.item}}
-             <img class="img-responsive" src="/assets/images/bky-sample1.jpg"/>
-           {{/ui.item}}
-           {{#ui.item}}
-             <img class="img-responsive" src="/assets/images/bky-sample3.jpg"/>
-           {{/ui.item}}
-           {{#ui.item}}
-             <img class="img-responsive" src="/assets/images/bky-sample4.jpg"/>
-           {{/ui.item}}
-         </div>
 
-         <div class="line-arrow left" onclick={{act.previous}}></div>
-         <div class="line-arrow right" onclick={{act.next}}></div>
-       {{/carousel-container}}
-
-
-      {{!-- <div class="carousel-section">
+      <div class="carousel-section">
         {{#carousel-container transitionInterval=400}}
           {{#carousel-body}}
             {{#carousel-item}}
@@ -58,7 +40,26 @@
           {{carousel-arrow direction="left" class="line-arrow left"}} {{carousel-arrow direction="right" class="line-arrow right"}}
         {{/carousel-container}}
 
-      </div> --}}
+
+        <!--Carousel Slide Starts Here-->
+        {{!-- {{#carousel-container transitionInterval=400 as |ui act|}}
+           <div class="carousel-body">
+             {{#ui.item}}
+               <img class="img-responsive" src="/assets/images/bky-sample1.jpg"/>
+             {{/ui.item}}
+             {{#ui.item}}
+               <img class="img-responsive" src="/assets/images/bky-sample3.jpg"/>
+             {{/ui.item}}
+             {{#ui.item}}
+               <img class="img-responsive" src="/assets/images/bky-sample4.jpg"/>
+             {{/ui.item}}
+           </div>
+
+           <div class="line-arrow left" onclick={{act.previous}}></div>
+           <div class="line-arrow right" onclick={{act.next}}></div>
+         {{/carousel-container}} --}}
+
+      </div>
       <!--Carousel Slide Ends Here-->
       <div class="main-info">
         <div class="image">
