@@ -23,6 +23,7 @@ Router.map(function () {
   this.route('hostsaving3');
   this.route('previewpage_host');
   this.route('community');
+  this.route('faq_page');
 });
 
 export default Router;

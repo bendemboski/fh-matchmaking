@@ -216,16 +216,16 @@ body.homepage-host {
   overflow: auto;
 }
 
-a {
+#mainNav a {
   color: #ffffff;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
 
-a:focus,
-a:hover {
-  color: #fcbd20;
+#mainNav a:focus,
+#mainNav a:hover {
+  color: #d66229;
 }
 
 hr {
@@ -1005,7 +1005,7 @@ div.right-side {
   width: 100%;
 }
 
-#firstname input input::placeholder,
+#firstname input::placeholder,
 #langugage input::placeholder,
 #lastname input::placeholder {
   color: #999;
@@ -1635,10 +1635,10 @@ div.steps {
 /*Host Preview Page*/
 .carousel-section{
   width:98%;
-  height:500px;
-  text-align: center;
+  height:490px;
+  text-align:center;
   background-color: #000;
-  margin:0 auto;
+  margin:0 auto 10px auto;
 }
 
 .img-responsive {
@@ -1758,7 +1758,7 @@ color:#1a1a1a}
   letter-spacing: .08em;}
 
 .main-info .greeting{
-  width:95%;
+  width:99%;
   height:100px;
   padding:10px;
   border:1px solid #999;
@@ -1805,7 +1805,10 @@ p.item{
 padding:20px 30px;
 border-radius: 5px;
 }
-.preview-question p.item{color:#1a1a1a}
+.preview-question p.item{
+  color:#1a1a1a;
+  margin-top:5px;}
+
 div.level-wrap {
   background-color: transparent;
   position: fixed;
@@ -1819,16 +1822,18 @@ div.level-wrap {
 }
 p#levels{
   display:inline-block;
+
 }
 span#level1,
 span#level2,
 span#level3,
 span#level4,
 span#level5 {
-  background-color:#b3b3b3;
-  width: 100%;
-  padding:1px 30px;
-  border:1px solid #fff;
+  border:1px solid #d66229;
+  padding:0 20px;
+  height:5px;
+  margin-right:5px;
+  border-radius:40px;
 }
 
 span#level1,
@@ -1916,3 +1921,128 @@ header#community {
     #community button.backpage:hover {
      background-color: #bd5624;
    }
+
+/* FQA Page*/
+
+row #faq{margin: 0 auto;}
+.faq-header{
+  font-size: 1.2em;
+  border-bottom: 1px dotted #ccc;
+  padding: 25px 0 10px 0;
+  font-weight: 500;
+  color:#d66229;
+}
+
+.faq-c {
+  border-bottom: 1px dotted #ccc;
+  padding: .6em 0;
+}
+
+.faq-t {
+  line-height: 1.3em;
+  color: #aaa;
+  font-family: sans-serif;
+  float:left;
+  font-weight: 700;
+  padding-right: 0.3em;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.faq-o {
+  transform: rotate(-45deg);
+  transform-origin: 50% 50%;
+  -ms-transform: rotate(-45deg);
+  -ms-transform-origin: 50% 50%;
+  -webkit-transform: rotate(-45deg);
+  -webkit-transform-origin: 50% 50%;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.faq-q {
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 100;
+    color: #555;
+
+}
+
+.faq-a {
+  clear: both;
+  color: #666;
+  display: none;
+  padding-left: 1.5em;
+  font-size: .8em;
+}
+#faq section{
+  padding:0 10px;
+}
+
+#faq .faq-section{
+  width:55%;
+  margin: 0 25px;
+
+}
+#faq .contact-section{
+  width:36%;
+    margin: 0 25px;
+}
+
+#faq .contact-section img{
+width:100%;
+margin-top:-2px;
+}
+
+#faq .contact-section p{
+  color:#666;
+}
+
+
+#faqForm .form-group{
+  margin:0;
+}
+#faqForm fieldset{
+  text-align: left;
+    margin:10px auto;
+}
+
+#faqForm fieldset h6 {
+  color: #666;
+  margin: 10px auto;
+  font-size:1em;
+  font-weight:500;
+
+}
+.faqType-dropdown select{
+font-size: 0.9em;
+width:100%;
+height: 50px;
+background-color: transparent;
+border-radius: 5px;
+border: 1px solid #ccc;
+color: #999;
+letter-spacing: 1.2px;}
+
+#faqForm textarea {
+  width: 100%;
+  height: 150px;
+  font-size: 0.9em;
+  color: #666;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  clear: both;
+  overflow: hidden;
+  padding: 10px;}
+
+
+#faqForm  textarea::placeholder{
+  color: #999;}
+
+#faq .contact-section button{
+    width:60%;
+    float:none;
+    margin:5px auto;
+  }
