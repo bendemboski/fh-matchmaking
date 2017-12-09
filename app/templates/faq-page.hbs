@@ -26,8 +26,8 @@
     <div class="faq-header">Profile Building</div>
     <div class="faq-c">
       <!--Here, I change the span tag to button and add the onclick -->
-      {{!-- <div class="faq-q"><button class="faq-t" onclick={{action "expand" target=code}}>+</button>What is Bacon ipsum dolor amet kielbasa spare ribs tail?</div> --}}
-      <div class="faq-q"><span class="faq-t">+</span>What is Bacon ipsum dolor amet kielbasa spare ribs tail?</div>
+      <div class="faq-q"><button class="faq-t" onclick={{action "expand" target=code}}>+</button>What is Bacon ipsum dolor amet kielbasa spare ribs tail?</div>
+      {{!-- <div class="faq-q"><span class="faq-t">+</span>What is Bacon ipsum dolor amet kielbasa spare ribs tail?</div> --}}
 
       <div class="faq-a">
         <p>Bacon ipsum dolor amet kielbasa spare ribs tail, meatball pig prosciutto turducken shank leberkas sausage beef corned beef kevin jowl picanha. Pastrami bresaola ribeye prosciutto, fatback pork belly ground round. Pork jowl porchetta t-bone short loin. </p>
@@ -118,20 +118,15 @@
       <fieldset>
 
         <div class="form-group">
-          <h6>Question Type</h6>
-          <div class="faqType-dropdown">
-            <select name="faq-type" id="faq-type">
-              <option value="profile">Profile Building</option>
-              <option value="02">Account Setting</option>
-              <option value="03">Privacy Issue</option>
-            </select>
-        </div>
-        <div class="faq-details">
-          <h6>Question Details</h6>
-          <textarea name="fag-details" form="faqform" placeholder="Please describe your question here."></textarea>
+          <div class="faq-subject">
+            <h6>Subject</h6>
+            <textarea name="faq-subject" form="faqform"></textarea>
+          </div>
+        <div class="faq-description">
+          <h6>Description</h6>
+          <textarea name="faq-description" form="faqform"></textarea>
         </div>
 </div>
-
       </fieldset>
     </form>
 

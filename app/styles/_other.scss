@@ -2026,7 +2026,8 @@ border: 1px solid #ccc;
 color: #999;
 letter-spacing: 1.2px;}
 
-#faqForm textarea {
+.faq-description textarea,
+.faq-subject textarea{
   width: 100%;
   height: 150px;
   font-size: 0.9em;
@@ -2037,9 +2038,11 @@ letter-spacing: 1.2px;}
   overflow: hidden;
   padding: 10px;}
 
+  .faq-subject textarea {
+    height: 50px;
+  }
 
-#faqForm  textarea::placeholder{
-  color: #999;}
+
 
 #faq .contact-section button{
     width:60%;
