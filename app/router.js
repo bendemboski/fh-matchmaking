@@ -24,6 +24,7 @@ Router.map(function () {
   this.route('previewpage_host');
   this.route('community');
   this.route('faq_page');
+  this.route('residentprofile1-1');
 });
 
 export default Router;

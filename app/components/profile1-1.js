@@ -3,8 +3,8 @@ import Ember from 'ember';
 const { Component } = Ember;
 
 export default Component.extend({
+  formName: "hostform",
   profileSrc: '/assets/images/icon_photoPreview.png',
-
 
   didInsertElement() {
     this._super(...arguments);

@@ -1,23 +1,18 @@
 {{#hostprofile2-1-code}}
-  {{#nav-bar id="hostProfileNav" }}
-    <li class="nav-item dropdown">
-      <a href="#hostMainPage" class="dropdown-toggle nav-link js-scroll-trigger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUR PROFILE</a>
-      <ul class="dropdown-menu">
-        <li><a href="#howItWorks" class="nav-link js-scroll-trigger"> HOW IT WORKS</a> </li>
-        <li role="separator" class="divider"></li>
-        <li><a href="#buildProfile" class="nav-link js-scroll-trigger"> BUILD PROFILE</a> </li>
-      </ul>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#community">COMMUNITY</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#help">HELP</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
-    </li>
-  {{/nav-bar}}
+{{#nav-bar id="profileNav" }}
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'hostprofile1-1'}}YOUR PROFILE{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'community'}}COMMUNITY{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faq_page'}}HELP{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+  </li>
+{{/nav-bar}}
 
   <!-- Profile Section -->
 
@@ -118,11 +113,6 @@
               <input type="text" name="enviroment" placeholder="e.g. Supermarket, park, library, church">
             </div>
 
-            <!--Page Buttons-->
-            <div id="pageButton-expand">
-              {{#link-to 'hostsaving1'}}<button class="backpage" name="prev" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
-              {{#link-to 'hostprofile2-2'}} <button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>{{/link-to}}
-            </div>
 
           </fieldset>
         </form>
@@ -139,13 +129,22 @@
 
 
   <!-- Footer Section -->
-  <footer class="progress-wrap">
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-        <span class="sr-only">50%</span>
-      </div>
+  <footer class="profile">
+    <!--Page Buttons-->
+    <div id="pageButton-expand">
+      {{#link-to 'hostsaving1'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
+      {{#link-to 'hostprofile2-2'}}<button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>{{/link-to}}
     </div>
 
+    <!--Preogress Wrapper-->
+    <div class="progress-wrap">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+          <span class="sr-only">50%</span>
+        </div>
+      </div>
+    </div>
   </footer>
+
 
 {{/hostprofile2-1-code}}
