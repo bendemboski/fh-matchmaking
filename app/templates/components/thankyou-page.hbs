@@ -1,0 +1,22 @@
+{{set-body-class "community"}}
+<!-- Profile Section -->
+
+<header id="thankyoupage">
+<h1>Congradulation</h1>
+  {{#if isHost}}
+<h4>We are so blessed to have you in the community!<br>
+Our team will be working on finding the best fit resident for you. <br>
+Once there is one, we will contact you through your email.</h4>
+{{#link-to 'homepage_host'}}
+<button type="button" class="backpage" name="prev" value="home-page">Home Page</button>  {{/link-to}}
+{{#link-to 'accountpage-host'}}
+<button type="button" class="nextpage" name="next" value="account-setting"> Change Email </button> {{/link-to}}
+
+    {{else}}
+    <h4>We are so blessed to have you in the community.<br>
+     </h4>
+    {{#link-to 'resident-list'}}
+    <button id="resident-homepage-btn" type="button" class="backpage" name="prev" value="communityPage">Home Page</button>  {{/link-to}}
+  
+  {{/if}}
+</header>

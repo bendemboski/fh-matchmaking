@@ -3,6 +3,7 @@ import Ember from 'ember';
 const { Component } = Ember;
 
 export default Component.extend({
+  formName: "hostform",
   profileSrc_1: '/assets/images/icon_imageUpload.png',
   profileSrc_2: '/assets/images/icon_imageUpload.png',
   profileSrc_3: '/assets/images/icon_imageUpload.png',

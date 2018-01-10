@@ -634,8 +634,6 @@ pre code {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -4682,8 +4680,9 @@ tbody.collapse.show {
   background-color: #e9ecef;
   border-radius: 0.25rem;
 }
-
-.progress-bar {
+/* .progress-bar  */
+.progress-bar
+ {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;

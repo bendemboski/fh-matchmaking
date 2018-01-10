@@ -1,0 +1,81 @@
+{{#nav-bar id="profileNav" }}
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#homepage-host">{{#link-to 'hostprofile1-1'}}YOUR PROFILE{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'community'}}COMMUNITY{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faq_page'}}HELP{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+  </li>
+{{/nav-bar}}
+
+<!-- Profile Section -->
+<div class="container" id="user-account">
+  <div class="row">
+
+        <!-- edit form column -->
+<form action="#" id="account-setting" role="form">
+        <h6>Account Setting</h6>
+  <section class="left-side col-lg-6">
+            <div class="form-group" id="first_name">
+              <label for="first_name" class=" control-label">First Name</label>
+              <div>
+                <input  class="form-control" type="text" value="Kim">
+              </div>
+            </div>
+            <div class="form-group"  id="last_name">
+              <label for="last_name" class="control-label">Last Name</label>
+              <div>
+                <input  class="form-control" type="text" value="Sherman">
+              </div>
+            </div>
+
+            <div class="form-group"  id="user_bod_day" >
+              <label for="usr_bod" class="control-label">Birthday</label>
+              <div>
+                  <input type='date'/ class="form-control" value="1972-12-24" >
+              </div>
+            </div>
+            <div class="form-group" id="user_phone" >
+              <label for="user_phone" class="control-label">Phone Number</label>
+            <div >
+                <input class="form-control" type="tel" value="625-000-000">
+              </div>
+            </div>
+            <div class="form-group"  id="user_email" >
+              <label for="user_email" class="control-label">Email</label>
+              <div>
+                <input class="form-control" type="text" value="kimsherman123@gmail.com">
+              </div>
+            </div>
+
+  </section>
+  <section class="right-side col-lg-6">
+            <div class="form-group" id="pass" >
+              <label for="pass" class="control-label">New Password</label>
+              <div>
+                <input class="form-control" type="password" value="11111122333">
+              </div>
+            </div>
+            <div class="form-group"   id="pass_repet" >
+              <label for="pass_repet" class="control-label">Confirm Password</label>
+              <div>
+                <input class="form-control" type="password" value="11111122333">
+              </div>
+            </div>
+          </section>
+          <div class="form-group"  id="savebtn" >
+            <label class="control-label" ></label>
+            <div>
+              <input type="button" class="btn btn-primary" id="save-change" value="Save Changes">
+          </div>
+          </div>
+          </form>
+
+
+  </div>
+</div>

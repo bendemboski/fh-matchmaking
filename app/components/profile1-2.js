@@ -3,6 +3,7 @@ import Ember from 'ember';
 const { Component } = Ember;
 
 export default Component.extend({
+  formName: "hostform",
   adultCount: 1,
   kidCount: 0,
   petCount: 0,

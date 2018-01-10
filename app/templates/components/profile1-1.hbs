@@ -1,3 +1,4 @@
+{{#if isHost}}
 {{#nav-bar id="profileNav" }}
   <li class="nav-item">
     <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'hostprofile1-1'}}YOUR PROFILE{{/link-to}}</a>
@@ -13,6 +14,26 @@
   </li>
 {{/nav-bar}}
 
+    {{else}}
+    {{#nav-bar id="cwkNav-light"}}
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'resident-list'}}MY RESIDENT{{/link-to}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'residentprofile1-1'}}NEW RESIDENT{{/link-to}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faq_page'}}FIND A MATCH{{/link-to}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faq_page'}}HELP{{/link-to}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+      </li>
+    {{/nav-bar}}
+    {{/if}}
+
 <!-- Profile Section -->
 
 {{!-- <div class="container" id="host-profile"> --}}
@@ -21,7 +42,11 @@
     <div class="col-lg-7 col-md-12 col-sm-12 col-12 " id="left-column">
       <form action="#" id= {{formName}}>
         <fieldset>
-          <legend>STEP 1: Say HI, and introduce yourself!</legend>
+    {{#if isHost}}
+          <legend class="hostHeading">STEP 1: Say HI, and introduce yourself!</legend>
+          {{else}}
+          <legend class="residentHeading">STEP 1: Say HI, and introduce yourself!</legend>
+          {{/if}}
           <div class="form-group">
             <h6>Upload Your Profile Photo</h6>
             <div id="profile-container">
@@ -39,7 +64,6 @@
 
           {{else}}
 
-
             <div class="form-group" id="email">
               <h6>Email (Optional)</h6>
               <input type="email" name="email">
@@ -50,12 +74,10 @@
             </div>
           {{/if}}
 
-
-
         </fieldset>
       </form>
     </div>
-
+  {{#if isHost}}
     <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
       <div class="notebox" id="profilephoto">
         <h6 class="note">
@@ -78,24 +100,55 @@
 
       </div>
     </div>
+
+          {{else}}
+            <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
+          <div class="notebox" id="profilephoto">
+            <h6 class="note">
+          <i class="fa fa-pencil" aria-hidden="true"></i>How to make a good quality photo:</h6>
+            <ul>
+              <li>Do bring your smile</li>
+              <li>Do take it under natural light</li>
+              <li>Do upload photo at least 170 x 170px</li>
+            </ul>
+
+          </div>
+        </div>
+{{/if}}
   </div>
 </div>
 
-
 <!-- Footer Section -->
+
 <footer class="profile">
+{{#if isHost}}
   <!--Page Buttons-->
-  <div id="pageButton-expand">
+  <div id="hostPageButton">
     {{#link-to 'homepage_host'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
     {{#link-to 'hostprofile1-2'}}<button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>{{/link-to}}
   </div>
   <!--Preogress Wrapper-->
   <div class="progress-wrap">
     <div class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%">
+      <div id="hostProgressBar" class="progress-bar"  role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%">
         <span class="sr-only">10%</span>
       </div>
     </div>
   </div>
 
+  {{else}}
+  <!--Page Buttons-->
+  <div id="residentPageButton">
+    {{#link-to 'resident-list'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
+    {{#link-to 'residentprofile1-2'}}<button class="nextpage" name="next" type="submit" value="host-page1">NEXT</button>{{/link-to}}
+  </div>
+  <!--Preogress Wrapper-->
+  <div class="progress-wrap">
+    <div class="progress">
+      <div id="residentProgressBar" class="progress-bar"  role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%">
+        <span class="sr-only">10%</span>
+      </div>
+    </div>
+  </div>
+{{/if}}
 </footer>
