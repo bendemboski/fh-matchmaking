@@ -1,4 +1,4 @@
-{{#faq-page-code as |code|}}
+{{#if isHost}}
 {{#nav-bar id="profileNav" }}
   <li class="nav-item">
     <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'hostprofile1-1'}}YOUR PROFILE{{/link-to}}</a>
@@ -14,6 +14,26 @@
   </li>
 {{/nav-bar}}
 
+    {{else}}
+    {{#nav-bar id="cwkNav-light"}}
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'resident-list'}}MY RESIDENT{{/link-to}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'residentprofile1-1'}}NEW RESIDENT{{/link-to}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faq_page'}}FIND A MATCH{{/link-to}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faq_page'}}HELP{{/link-to}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+      </li>
+    {{/nav-bar}}
+    {{/if}}
+
 <!-- Profile Section -->
 <div class="container" id="host-profile">
   <div class="row" id="faq">
@@ -21,8 +41,8 @@
     <div class="faq-header">Profile Building</div>
     <div class="faq-c">
       <!--Here, I change the span tag to button and add the onclick -->
-      <div class="faq-q"><button class="faq-t" onclick={{action "expand" target=code}}>+</button>What is Bacon ipsum dolor amet kielbasa spare ribs tail?</div>
-      {{!-- <div class="faq-q"><span class="faq-t">+</span>What is Bacon ipsum dolor amet kielbasa spare ribs tail?</div> --}}
+      {{!-- <div class="faq-q"><button class="faq-t" onclick={{action "expand" target=code}}>+</button>What is Bacon ipsum dolor amet kielbasa spare ribs tail?</div> --}}
+      <div class="faq-q"><span class="faq-t">+</span>What is Bacon ipsum dolor amet kielbasa spare ribs tail?</div>
 
       <div class="faq-a">
         <p>Bacon ipsum dolor amet kielbasa spare ribs tail, meatball pig prosciutto turducken shank leberkas sausage beef corned beef kevin jowl picanha. Pastrami bresaola ribeye prosciutto, fatback pork belly ground round. Pork jowl porchetta t-bone short loin. </p>
@@ -129,7 +149,3 @@
 </section>
 </div>
 </div>
-
-
-
-{{/faq-page-code}}

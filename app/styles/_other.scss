@@ -2409,7 +2409,7 @@ i.fa-user-circle-o:hover,
   #cwkNav-dark.navbar-shrink {
     border-color: rgba(34, 34, 34, 0.1);
     background-color: black;
-    height: 80px;
+    height: 65px;
   }
 
   #cwkNav-dark.navbar-shrink .navbar-nav > li > a,
@@ -2630,6 +2630,7 @@ button.addNew{
   background-color: transparent;
 }
 
+
 #cwkNav-light .navbar-nav > li > a:focus:hover,
 #cwkNav-light .navbar-nav > li > a:hover {
   color: #8BA334;
@@ -2650,9 +2651,9 @@ button.addNew{
   color: #000;
 }
 
-i.fa-user-circle-o:hover,
- i.fa-user-circle-o.active,{
-  color: #8BA334 !important;
+#cwkNav-light i.fa-user-circle-o:hover,
+ #cwkNav-light i.fa-user-circle-o.active,{
+  color: #8BA334;
   background-color: transparent;
 }
 
@@ -2686,18 +2687,25 @@ i.fa-user-circle-o:hover,
 #cwkNav-light.navbar-shrink {
     border-color: rgba(34, 34, 34, 0.1);
     background-color: black;
-    height: 80px;
+    height: 65px;
   }
 
-#cwkNav-light.navbar-shrink .navbar-nav > li > a,
-#cwkNav-light.navbar-shrink .navbar-nav > li > a:focus {
-    color: #fff;
-  }
+#cwkNav-light.navbar-shrink a,
+#cwkNav-light.navbar-shrink:focus {
+  color:#fff;
+}
 
-#cwkNav-light.navbar-shrink .navbar-nav > li > a:focus:hover,
-#cwkNav-light.navbar-shrink .navbar-nav > li > a:hover {
-    color: #8BA334;
-  }
+#cwkNav-light.navbar-shrink i.fa-user-circle-o {
+  color: #fff;
+}
+
+#cwkNav-light.navbar-shrink a:focus:hover,
+#cwkNav-light.navbar-shrink a:hover,
+i.fa-user-circle-o:hover,
+ i.fa-user-circle-o.active,{
+  color: #8BA334  !important;
+  background-color: transparent;
+}
 
 #cwkNav-light > ul .dropdown-menu {
     background-color: #000;
