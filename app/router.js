@@ -40,6 +40,7 @@ Router.map(function () {
   this.route('accountpage-resident');
   this.route('resident-list');
   this.route('faqpage-host');
+  this.route('faqpage-resident');
 });
 
 export default Router;

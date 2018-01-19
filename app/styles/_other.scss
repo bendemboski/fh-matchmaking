@@ -708,6 +708,12 @@ footer p {
   padding: 8px 0 0 10px;
   color: #000;
 }
+
+#profileNav i.fa-user-circle-o:hover,
+#profileNav i.fa-user-circle-o.active,{
+  color:  #d66229;
+  background-color: transparent;
+}
 /*desktop device*/
 @media (min-width: 980px) {
   #profileNav {
@@ -2373,11 +2379,6 @@ i.fa-user-circle-o {
   color: #fff;
 }
 
-i.fa-user-circle-o:hover,
- i.fa-user-circle-o.active,{
-  color: #8BA334 !important;
-  background-color: transparent;
-}
 
 /*desktop device*/
 @media (min-width: 980px) {
@@ -2698,11 +2699,14 @@ button.addNew{
 #cwkNav-light.navbar-shrink i.fa-user-circle-o {
   color: #fff;
 }
+#cwkNav-light.navbar-shrink i.fa-user-circle-o:hover,
+ #cwkNav-light.navbar-shrink i.fa-user-circle-o.active, {
+  color: #8BA334;
+}
 
 #cwkNav-light.navbar-shrink a:focus:hover,
 #cwkNav-light.navbar-shrink a:hover,
-i.fa-user-circle-o:hover,
- i.fa-user-circle-o.active,{
+{
   color: #8BA334  !important;
   background-color: transparent;
 }
