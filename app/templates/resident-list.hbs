@@ -16,122 +16,46 @@
     <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
   </li>
 {{/nav-bar}}
-  <!-- Profile Section -->
-  <div class="container" id="resident-list">
-    <div class="row">
-<div class="list">
-  <table id="resident-table">
-<thead>
-    <tr>
-      <th colspan="2"><input type="text" id="resident-name-input" onkeyup="myFunction()" placeholder="Search for names" title="Type in a name"></th>
-      <th> Location <button class="chevron-down"><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
-      <th> Occupation <button class="chevron-down"><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
-      <th> Onboard <button class="chevron-down"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
-      <th> Status <button class="chevron-down"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
-      <th> Note </th>
-    </tr>
-  </thead>
-    <tr>
-      <td> <img id="resident1" src="/assets/images/residentProfile.jpg" alt="nick-rschlebusch"> </td>
-      <td> <a href="#">Nick Rschlebusch</a> </td>
-      <td> U District </td>
-      <td> IT Specialist</td>
-      <td> 1 week ago</td>
-      <td>Matching</td>
-      <td> <button id="note-icon"onclick="myFunction()"><i class="fa fa-sticky-note" aria-hidden="true"></i> </button></td>
-    </tr>
-    <tr>
-      <td colspan="7" class="note">
-          <textarea id="cwk-note"  name="cwk-note" form="resident-form" placeholder="Take a note here">
-          </textarea>
-        </td>
-    </tr>
-
-    <tr>
-      <td> <img id="resident1" src="/assets/images/residentProfile.jpg" alt="nick-rschlebusch"> </td>
-      <td> <a href="#">Nick Rschlebusch</a> </td>
-      <td> U District </td>
-      <td> IT Specialist</td>
-      <td> 1 week ago</td>
-      <td>Matching</td>
-      <td> <button id="note-icon"onclick="myFunction()"><i class="fa fa-sticky-note" aria-hidden="true"></i> </button></td>
-    </tr>
-    <tr>
-      <td colspan="7" class="note">
-          <textarea id="cwk-note"  name="cwk-note" form="resident-form" placeholder="Take a note here">
-          </textarea>
-        </td>
-    </tr>
-
-    <tr>
-      <td> <img id="resident1" src="/assets/images/residentProfile.jpg" alt="nick-rschlebusch"> </td>
-      <td> <a href="#">Nick Rschlebusch</a> </td>
-      <td> U District </td>
-      <td> IT Specialist</td>
-      <td> 1 week ago</td>
-      <td>Matching</td>
-      <td> <button id="note-icon"onclick="myFunction()"><i class="fa fa-sticky-note" aria-hidden="true"></i> </button></td>
-    </tr>
-    <tr>
-      <td colspan="7" class="note">
-          <textarea id="cwk-note"  name="cwk-note" form="resident-form" placeholder="Take a note here">
-          </textarea>
-        </td>
-    </tr>
-
-    <tr>
-      <td> <img id="resident1" src="/assets/images/residentProfile.jpg" alt="nick-rschlebusch"> </td>
-      <td> <a href="#">Nick Rschlebusch</a> </td>
-      <td> U District </td>
-      <td> IT Specialist</td>
-      <td> 1 week ago</td>
-      <td>Matching</td>
-      <td> <button id="note-icon"onclick="myFunction()"><i class="fa fa-sticky-note" aria-hidden="true"></i> </button></td>
-    </tr>
-    <tr>
-      <td colspan="7" class="note">
-          <textarea id="cwk-note"  name="cwk-note" form="resident-form" placeholder="Take a note here">
-          </textarea>
-        </td>
-    </tr>
-
-    <tr>
-      <td> <img id="resident1" src="/assets/images/residentProfile.jpg" alt="nick-rschlebusch"> </td>
-      <td> <a href="#">Nick Rschlebusch</a> </td>
-      <td> U District </td>
-      <td> IT Specialist</td>
-      <td> 1 week ago</td>
-      <td>Matching</td>
-      <td> <button id="note-icon"onclick="myFunction()"><i class="fa fa-sticky-note" aria-hidden="true"></i> </button></td>
-    </tr>
-    <tr>
-      <td colspan="7" class="note">
-          <textarea id="cwk-note"  name="cwk-note" form="resident-form" placeholder="Take a note here">
-          </textarea>
-        </td>
-    </tr>
-
-    <tr>
-      <td> <img id="resident1" src="/assets/images/residentProfile.jpg" alt="nick-rschlebusch"> </td>
-      <td> <a href="#">Nick Rschlebusch</a> </td>
-      <td> U District </td>
-      <td> IT Specialist</td>
-      <td> 1 week ago</td>
-      <td>Matching</td>
-      <td> <button id="note-icon"onclick="myFunction()"><i class="fa fa-sticky-note" aria-hidden="true"></i> </button></td>
-    </tr>
-    <tr>
-      <td colspan="7" class="note">
-          <textarea id="cwk-note"  name="cwk-note" form="resident-form" placeholder="Take a note here">
-          </textarea>
-        </td>
-    </tr>
-
-  </table>
+<!-- Profile Section -->
+<div class="container" id="resident-list">
+  <div class="row">
+    <div class="list">
+      <table id="resident-table">
+        <thead>
+          <tr>
+            <th colspan="2">
+              <input
+                type="text"
+                id="resident-name-input"
+                value={{filterText}}
+                oninput={{action (mut filterText) value='target.value'}}
+                placeholder="Search for names"
+                title="Type in a name">
+            </th>
+            <th> Location <button class="chevron-down" onclick={{action (mut residentsSort) 'location'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
+            <th> Occupation <button class="chevron-down" onclick={{action (mut residentsSort) 'occupation'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
+            <th> Onboard <button class="chevron-down" onclick={{action (mut residentsSort) 'joined:desc'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
+            <th> Status <button class="chevron-down" onclick={{action (mut residentsSort) 'status'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
+            <th> Note </th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each residents as |res|}}
+            <tr>
+              <td> <img id="resident1" src="/assets/images/residentProfile.jpg" alt="nick-rschlebusch"> </td>
+              <td> <a href="#">{{res.name}}</a> </td>
+              <td>{{res.location}}</td>
+              <td>{{res.occupation}}</td>
+              <td>{{moment-from-now res.joined}}</td>
+              <td>{{res.status}}</td>
+              <td> <button id="note-icon"onclick="myFunction()"><i class="fa fa-sticky-note" aria-hidden="true"></i> </button></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
-
-    </div>
 
   <!-- Footer Section -->
   <footer class="resident-list">
