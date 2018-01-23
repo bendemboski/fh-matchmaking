@@ -1,0 +1,13 @@
+{{#basic-dropdown as |dd|}}
+  {{#dd.trigger class="chevron-down"}}
+    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+  {{/dd.trigger}}
+  {{#dd.content}}
+    <ul class="filter-menu">
+      <li role="button" class={{if (eq value '') 'active'}} onclick={{action setValue ''}}>All</li>
+      {{#each options as |option|}}
+        <li role="button" class={{if (eq value option) 'active'}} onclick={{action setValue option}}>{{option}}</li>
+      {{/each}}
+    </ul>
+  {{/dd.content}}
+{{/basic-dropdown}}

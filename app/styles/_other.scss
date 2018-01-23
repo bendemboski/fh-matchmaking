@@ -2525,9 +2525,24 @@ i.fa-user-circle-o {
   padding: 12px 12px 5px 12px;
 }
 /*End Search Bar*/
-button.chevron-down {
-  background-color: transparent;
-  border: none;
+.chevron-down {
+  display: inline-block;
+}
+
+.filter-menu {
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 100px;
+
+  > li {
+    padding: 5px 10px;
+
+    &:hover, &.active {
+      background: #eeeeee;
+    }
+  }
 }
 
 button#note-icon {
