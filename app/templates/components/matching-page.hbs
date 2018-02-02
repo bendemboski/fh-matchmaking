@@ -1,0 +1,122 @@
+{{#if isHost}}
+  {{#nav-bar id="profileNav" }}
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'hostprofile1-1'}}YOUR PROFILE{{/link-to}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'community'}}COMMUNITY{{/link-to}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faq_page'}}HELP{{/link-to}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+    </li>
+  {{/nav-bar}}
+
+{{else}}
+  {{#nav-bar id="cwkNav-light" }}
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'resident-list'}}MY RESIDENT{{/link-to}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'residentprofile1-1'}}NEW RESIDENT{{/link-to}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'matchingpage-resident'}}FIND A MATCH{{/link-to}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faq_page'}}HELP{{/link-to}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+    </li>
+  {{/nav-bar}}
+{{/if}}
+
+<!-- Search Section -->
+<div class="container" id="matchMaking-preview">
+  <div class="row">
+    <section id="filterDropdown">
+
+      <button onclick="toggleFunction()" class="dropbtn">Location <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+      <div id="locationDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <a href="#belltown">Belltown</a>
+        <a href="#broadmoor">Broadmoor</a>
+        <a href="#capitol Hill">Capitol Hill</a>
+
+      </div>
+
+      <button onclick="toggleFunction()" class="dropbtn">Family Structure<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+      <div id="locationDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <a href="#loveAll">Love all</a>
+        <a href="#noKid">No Kid(s)</a>
+        <a href="#noPet">No Pet(s)</a>
+        <a href="#noKidPet">No Kid(s) & Pet(s)</a>
+
+      </div>
+
+      <button onclick="toggleFunction()" class="dropbtn">More Filters<i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+      <div id="locationDropdown" class="dropdown-content">
+        <div id="baths-dropdown" class="combobox custom-dropdown" data-dropdown-id="baths-select" tabindex="0"><span id="baths-readout" class="options-display" data-za-action="Baths">0+</span><span class="zsg-icon-arrow-menu-down"></span>
+          <ul id="bath-options" class="zf-dropdown-options combobox-options zsg-menu-linklist">
+            <li data-value="0," id="yui_3_18_1_1_1516397071367_1688" class="selected"><a class="option" tabindex="-1">0+</a></li>
+            <li data-value="1.0,"><a class="option" tabindex="-1">1+</a></li>
+            <li data-value="1.5,"><a class="option" tabindex="-1">1.5+</a></li>
+            <li data-value="2.0,"><a class="option" tabindex="-1">2+</a></li>
+            <li data-value="3.0,"><a class="option" tabindex="-1">3+</a></li>
+            <li data-value="4.0,"><a class="option" tabindex="-1">4+</a></li>
+            <li data-value="5.0,"><a class="option" tabindex="-1">5+</a></li>
+            <li data-value="6.0,"><a class="option" tabindex="-1">6+</a></li>
+          </ul>
+        </div>
+        <select id="baths-select" class="hide"><option value="0,">0+</option>
+          <option value="1.0,">1+</option>
+          <option value="1.5,">1.5+</option>
+          <option value="2.0,">2+</option>
+          <option value="3.0,">3+</option>
+          <option value="4.0,">4+</option>
+          <option value="5.0,">5+</option>
+          <option value="6.0,">6+</option>
+        </select>
+      </div>
+<button id="searchBtn" type="search" name="filterSearch">Search</button>
+  </section>
+  <!-- End Search Section -->
+
+<!--House List-->
+<main>
+
+  <section id="houseList">
+  <div class="house" id="house1">
+<img src="/assets/images/bky-sample1.jpg" alt="sampl1">
+<p class="location">South Lake Union</p>
+<p class="family">Adult 2 Kid 1 Pet 1</p>
+</div>
+
+<div class="house" id="house2">
+<img src="/assets/images/bky-sample2.jpg" alt="sampl2">
+<p class="location">South Lake Union</p>
+<p class="family">Adult 2 Pet 1</p>
+</div>
+
+<div class="house" id="house3">
+<img src="/assets/images/bky-sample3.jpg" alt="sampl2">
+<p class="location">Capital Hill</p>
+<p class="family">Adult 1 Pet 2</p>
+</div>
+  </section>
+
+  <section id="map">
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10758.84199694172!2d-122.31991839999999!3d47.61231864999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1516407958676" allowfullscreen>
+</iframe>
+
+  </section>
+
+
+</main>
+</div>
+</div>

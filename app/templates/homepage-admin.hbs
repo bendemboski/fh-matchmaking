@@ -1,0 +1,37 @@
+
+{{set-body-class "homepage-admin"}}
+
+{{#nav-bar id="adminNav-dark"}}
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'homepage_admin'}}DASHBOARD{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'host-list'}}MANAGEMENT{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faq_page'}}HELP{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+  </li>
+{{/nav-bar}}
+
+<div class="container h-100">
+    <div class="row h-100">
+              <div class="col-lg-4 hostResult">
+                <h1><b>100</b></h1>
+                <h5>Hosts</h5>
+                {{#link-to 'host-list'}} <p>See Details</p>{{/link-to}}
+              </div>
+              <div class="col-lg-4 resResult">
+                <h1><b>30</b></h1>
+                <h5>Residents</h5>
+                  {{#link-to 'resident-list'}} <p>See Details</p>{{/link-to}}
+              </div>
+              <div class="col-lg-4 cwkResult">
+                <h1><b>10</b></h1>
+                <h5>Matched</h5>
+              {{#link-to 'resident-list'}}  <p>See Details</p>{{/link-to}}
+              </div>
+    </div>
+</div>

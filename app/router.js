@@ -41,6 +41,11 @@ Router.map(function () {
   this.route('resident-list');
   this.route('faqpage-host');
   this.route('faqpage-resident');
+  this.route('matchingpage-resident');
+  this.route('previewpage_matching');
+  this.route('matching_question');
+  this.route('thankyoupage-matching');
+  this.route('homepage_admin');
 });
 
 export default Router;

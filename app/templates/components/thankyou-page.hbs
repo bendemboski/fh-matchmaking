@@ -2,8 +2,8 @@
 <!-- Profile Section -->
 
 <header id="thankyoupage">
-<h1>Congradulation</h1>
   {{#if isHost}}
+  <h1>Congradulation</h1>
 <h4>We are so blessed to have you in the community!<br>
 Our team will be working on finding the best fit resident for you. <br>
 Once there is one, we will contact you through your email.</h4>
@@ -11,12 +11,19 @@ Once there is one, we will contact you through your email.</h4>
 <button type="button" class="backpage" name="prev" value="home-page">Home Page</button>  {{/link-to}}
 {{#link-to 'accountpage-host'}}
 <button type="button" class="nextpage" name="next" value="account-setting"> Change Email </button> {{/link-to}}
+{{else if isMatch}}
+  <h4>Thanks for all your patience and time.
+    <br>  Our team will be working on finding the best neightbor for you <br>Please hold on a bit.
+  </h4>
+  {{#link-to 'matchingpage-resident'}}
+  <button type="button" class="backpage" name="prev" value="matching-page">Find Other Match</button>  {{/link-to}}
 
     {{else}}
+    <h1>Congradulation</h1>
     <h4>We are so blessed to have you in the community.<br>
      </h4>
-    {{#link-to 'resident-list'}}
-    <button id="resident-homepage-btn" type="button" class="backpage" name="prev" value="communityPage">Home Page</button>  {{/link-to}}
-  
+    {{#link-to 'matchingpage-resident'}}
+    <button id="resident-homepage-btn" type="button" class="backpage" name="prev" value="communityPage">Find a Match</button>  {{/link-to}}
+
   {{/if}}
 </header>
