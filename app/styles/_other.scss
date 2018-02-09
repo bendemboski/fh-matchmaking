@@ -2498,14 +2498,12 @@ i.fa-user-circle-o {
   padding: 2px 2px;
   margin-top: 50px;
     margin-bottom: 30px;
-
 }
 
 #resident-table {
   width: 100%;
   background-color: #F9F8F8;
-  margin-bottom:50px;
-    margin-top:50px;
+  margin:50px 0;
 }
 
 #resident-table td,
@@ -3103,4 +3101,126 @@ body.homepage-admin{
 .hostResult,
 .resResult{
   border-right: 1px solid #999;
+}
+
+
+/* Admin List Pages*/
+#admin-host-list {
+  width: 90%;
+  color: #000;
+  background-color: #fff;
+  padding: 2px 2px;
+  margin-top: 20px;
+    margin-bottom: 30px;
+}
+ul#admin-subnav {
+    list-style-type: none;
+    margin:80px 0 20px 0;
+    padding: 0;
+    height:30px;
+    line-height: 30px;
+}
+
+ul#admin-subnav li {
+    float: left;
+
+}
+
+ul#admin-subnav li a {
+  font-size:.8em;
+  border:1px solid #666;
+  background-color: white;
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 0 16px;
+  text-decoration: none;
+  height:30px;
+  line-height: 30px;
+  width:120px;
+  margin-right: 5px;
+}
+
+/* Change the link color to #111 (black) on hover */
+ul#admin-subnav li a.acitve {
+    background-color: #666;
+    color:white;
+}
+
+ul#admin-subnav li a:hover,
+ul#admin-subnav li a:focus {
+    background-color: #666;
+    color:white;
+}
+
+#host-table {
+  width: 100%;
+  background-color: #F9F8F8;
+  margin:20px 0;
+}
+
+#host-table td,
+#host-table th {
+  font-weight: 400;
+  border-bottom: 1px solid #eee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+    font-size: .8em;
+}
+
+#host-table th {
+  background-color: white;
+  color: #979797;
+  font-weight: 600;
+}
+
+#host-table td {
+  color: #656565;
+}
+
+#host-table img {
+  width: 45px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+/*Start Search Bar*/
+/* #myTable -> #host-table */
+/* #myInput -> #host-name-input*/
+#host-name-input {
+  background-image: url("../../assets/images/icon_search.png");
+  background-position: 5px 5px;
+  background-repeat: no-repeat;
+  width: 90%;
+  font-size: 0.9em;
+  padding: 8px 20px 8px 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: #656565;
+}
+
+
+#host-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#host-table td,
+#host-table th {
+  text-align: left;
+  padding: 12px 12px 10px 12px;
+}
+
+#host-table th {
+  color: #000;
+}
+
+#host-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#host-table tr td.note {
+  padding: 12px 12px 5px 12px;
 }

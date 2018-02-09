@@ -1,0 +1,63 @@
+{{#admin-host-list-code}}
+{{#nav-bar id="adminNav-dark"}}
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'homepage_admin'}}DASHBOARD{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'homepage_admin'}}MANAGEMENT{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'homepage_admin'}}HELP{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+  </li>
+{{/nav-bar}}
+<!-- Profile Section -->
+<div class="container" id="admin-resident-list">
+  <div class="row">
+    <ul id="admin-subnav">
+      <li>{{#link-to 'resident-list'}}Residents{{/link-to}}</li>
+          <li><a href="admin-host-list">Hosts </a> </li>
+              <li><a href="#">Caseworkers </a> </li>
+    </ul>
+    <div class="list">
+      <table id="host-table">
+        <thead>
+          <tr>
+            <th colspan="2">
+              <input
+                type="text"
+                id="host-name-input"
+                value={{filterText}}
+                oninput={{action (mut filterText) value='target.value'}}
+                placeholder="Search for names"
+                title="Type in a name">
+            </th>
+            <th> Location <button class="chevron-down" onclick={{action (mut residentsSort) 'location'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
+            <th> Occupation <button class="chevron-down" onclick={{action (mut residentsSort) 'occupation'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
+            <th> Onboard <button class="chevron-down" onclick={{action (mut residentsSort) 'joined:desc'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
+            <th> Status <button class="chevron-down" onclick={{action (mut residentsSort) 'status'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
+            <th> Note </th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each residents as |res|}}
+            <tr>
+               {{!-- <td> {{res.image}} </td> --}}
+                 <td> <img id="resident1" src="/assets/images/hostimg.png" alt="nick-rschlebusch"> </td>
+              <td> <a href="#">{{res.name}}</a> </td>
+              <td>{{res.location}}</td>
+              <td>{{res.occupation}}</td>
+              <td>{{moment-from-now res.joined}}</td>
+              <td>{{res.status}}</td>
+              <td> <button id="note-icon" onclick="myFunction()"><i class="fa fa-sticky-note" aria-hidden="true"></i> </button></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{{/admin-host-list-code}}
