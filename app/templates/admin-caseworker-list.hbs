@@ -1,4 +1,4 @@
-{{#admin-resident-list-code}}
+{{#admin-caseworker-list-code}}
 {{#nav-bar id="adminNav-dark"}}
   <li class="nav-item">
     <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'homepage_admin'}}DASHBOARD{{/link-to}}</a>
@@ -17,9 +17,9 @@
 <div class="container" id="admin-resident-list">
   <div class="row">
     <ul id="admin-subnav">
-          <li class="active">{{#link-to 'admin-host-list'}}Hosts{{/link-to}}</li>
+          <li >{{#link-to 'admin-host-list'}}Hosts{{/link-to}}</li>
                 <li >{{#link-to 'admin-resident-list'}}Residents{{/link-to}}</li>
-              <li><a href="#">Caseworkers </a> </li>
+              <li class="active">{{#link-to 'admin-caseworker-list'}}Caseworkers{{/link-to}} </li>
     </ul>
     <div class="list">
       <table id="host-table">
@@ -45,7 +45,7 @@
           {{#each residents as |res|}}
             <tr>
                {{!-- <td> {{res.image}} </td> --}}
-                 <td> <img id="resident1" src="/assets/images/hostimg.png" alt="nick-rschlebusch"> </td>
+                 <td> <img id="resident1" src="/assets/images/cwkimg.jpg" alt="nick-rschlebusch"> </td>
               <td> <a href="#">{{res.name}}</a> </td>
               <td>{{res.location}}</td>
               <td>{{res.occupation}}</td>
@@ -60,4 +60,4 @@
   </div>
 </div>
 
-{{/admin-resident-list-code}}
+{{/admin-caseworker-list-code}}

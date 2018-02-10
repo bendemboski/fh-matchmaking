@@ -46,6 +46,9 @@ Router.map(function () {
   this.route('matching_question');
   this.route('thankyoupage-matching');
   this.route('homepage_admin');
+  this.route('admin-host-list');
+  this.route('admin-resident-list');
+  this.route('admin-caseworker-list');
 });
 
 export default Router;

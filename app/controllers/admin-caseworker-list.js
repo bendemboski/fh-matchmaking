@@ -6,7 +6,7 @@ import moment from 'moment';
 const residents = [
   {
   // { image: '/images/hostimg.png',
-    name: 'Bill Gates ',
+    name: 'Bill Gates',
     location: 'South Lake Union',
     occupation: 'CEO',
     joined: moment().subtract(1, 'year').toDate(),
@@ -20,7 +20,7 @@ const residents = [
     status: 'matched'
   },
   {
-    name: 'Kim Sherman',
+    name: 'Jessica',
     location: 'Medina',
     occupation: 'Housewife',
     joined: moment().subtract(6, 'hours').toDate(),
