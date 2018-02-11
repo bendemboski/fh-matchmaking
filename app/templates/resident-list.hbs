@@ -42,7 +42,7 @@
         <tbody>
           {{#each residents as |res|}}
             <tr>
-              <td> <img id="resident1" src="/assets/images/resimg_nick.jpg" alt="nick-rschlebusch"> </td>
+            <td> <img id="residents-img" src={{res.image}} alt="res-img"> </td>
               <td> <a href="#">{{res.name}}</a> </td>
               <td>{{res.location}}</td>
               <td>{{res.occupation}}</td>
