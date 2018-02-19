@@ -5,7 +5,7 @@ import moment from 'moment';
 
 const residents = [
   {
-    image: '/assets/images/hostimg.png',
+    image: '/assets/images/hostimg_bill_gate.jpeg',
     name: 'Bill Gates ',
     location: 'South Lake Union',
     occupation: 'CEO',
@@ -13,7 +13,7 @@ const residents = [
     status: 'matched'
   },
   {
-    image: '/assets/images/hostimg.png',
+    image: '/assets/images/hostimg_jimi_hendrix.jpg',
     name: 'Jimi Hendrix',
     location: 'Capitol Hill',
     occupation: 'Guitarist',
@@ -21,7 +21,7 @@ const residents = [
     status: 'matched'
   },
   {
-    image: '/assets/images/hostimg.png',
+    image: '/assets/images/hostimg_kim_sherman.png',
     name: 'Kim Sherman',
     location: 'Medina',
     occupation: 'Housewife',
@@ -29,7 +29,7 @@ const residents = [
     status: 'matching'
   },
   {
-    image: '/assets/images/hostimg.png',
+    image: '/assets/images/hostimg_melinda_ gates.jpg',
     name: 'Melinda Gates',
     location: 'Medina',
     occupation: 'Philanthropist',
@@ -37,10 +37,10 @@ const residents = [
     status: 'matching'
   },
   {
-    image: '/assets/images/hostimg.png',
-    name: 'Jenny Durkan',
+    image: '/assets/images/hostimg_visala_durkan.jpg',
+    name: 'Visala Durkan',
     location: 'Downtown',
-    occupation: 'Mayor',
+    occupation: 'Instructors',
     joined: moment().subtract(1, 'months').toDate(),
     status: 'matched'
   },

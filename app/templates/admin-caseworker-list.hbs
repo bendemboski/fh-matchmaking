@@ -34,24 +34,23 @@
                 placeholder="Search for names"
                 title="Type in a name">
             </th>
-            <th> Location <button class="chevron-down" onclick={{action (mut residentsSort) 'location'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
-            <th> Occupation <button class="chevron-down" onclick={{action (mut residentsSort) 'occupation'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
-            <th> Onboard <button class="chevron-down" onclick={{action (mut residentsSort) 'joined:desc'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
-            <th> Status <button class="chevron-down" onclick={{action (mut residentsSort) 'status'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
-            <th> Note </th>
+            <th> Agency <button class="chevron-down" onclick={{action (mut caseworkersSort) 'agency'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
+            <th> Email <button class="chevron-down" onclick={{action (mut caseworkersSort) 'email'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
+            <th> Mobile <button class="chevron-down" onclick={{action (mut caseworkersSort) 'mobile'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
+            <th> Total <br>Residents <button class="chevron-down" onclick={{action (mut caseworkersSort) 'totalnumber'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
+              <th> Matched <button class="chevron-down" onclick={{action (mut caseworkersSort) 'matched'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
           </tr>
         </thead>
         <tbody>
-          {{#each residents as |res|}}
+          {{#each caseworkers as |cwk|}}
             <tr>
-               {{!-- <td> {{res.image}} </td> --}}
-                 <td> <img id="resident1" src="/assets/images/cwkimg.jpg" alt="nick-rschlebusch"> </td>
-              <td> <a href="#">{{res.name}}</a> </td>
-              <td>{{res.location}}</td>
-              <td>{{res.occupation}}</td>
-              <td>{{moment-from-now res.joined}}</td>
-              <td>{{res.status}}</td>
-              <td> <button id="note-icon" onclick="myFunction()"><i class="fa fa-sticky-note" aria-hidden="true"></i> </button></td>
+                <td> <img id="cwkimg" src={{cwk.image}} alt=""> </td>
+              <td> <a href="#">{{cwk.name}}</a> </td>
+              <td>{{cwk.agency}}</td>
+              <td>{{cwk.email}}</td>
+              <td>{{cwk.mobile}}</td>
+              <td>{{cwk.totalnumber}}</td>
+              <td>{{cwk.matched}}</td>
             </tr>
           {{/each}}
         </tbody>
