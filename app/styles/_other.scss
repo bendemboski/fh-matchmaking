@@ -21,10 +21,9 @@ body.signin-page {
 }
 
 #signinPage {
-  font-size: 120%;
+  font-size: 100%;
   width: 30%;
   height: 100vh;
-  // margin:100px auto;
   float: right;
   padding: 20px;
   background: #fff;
@@ -201,7 +200,7 @@ div.resetPassword a:hover {
     width: 360px;
     margin: 100px auto;
     padding: 20px;
-    font-size: 90%;
+    font-size: 70%;
     letter-spacing: 110%;
   }
 }
@@ -209,6 +208,7 @@ div.resetPassword a:hover {
 body.homepage-host {
   background: #fff;
   overflow: auto;
+  font-size:90%;
 }
 
 #mainNav a {
@@ -633,6 +633,7 @@ footer p {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
+    font-size:90%;
 }
 
 #profileNav a:focus,
@@ -773,7 +774,7 @@ footer p {
   padding: 0 2px;
   margin-top: 63px;
   border-top: 1.5px solid #eee;
-  font-size: 120%;
+  font-size: 100%;
 }
 
 form#hostform {
@@ -1793,7 +1794,8 @@ div.steps {
 
 .main-info#host-preview {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 30px;
+  font-size:80%;
 }
 
 .main-info .image {
@@ -1815,6 +1817,7 @@ div.steps {
   height: 125px;
   // background-color: yellow;
   display: inline-block;
+  font-size:80%;
 }
 
 .main-info .content .l1 {
@@ -1841,7 +1844,7 @@ div.steps {
   color: #999;
   border-radius: 2px;
   margin: 10px auto;
-  font-size: 0.9em;
+  font-size:70%;
   // background-color: green;
 }
 
