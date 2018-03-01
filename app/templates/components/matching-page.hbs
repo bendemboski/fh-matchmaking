@@ -1,34 +1,34 @@
 {{#if isHost}}
   {{#nav-bar id="profileNav" }}
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'hostprofile1-1'}}YOUR PROFILE{{/link-to}}</a>
+      <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'hostprofile1-1'}}YOUR PROFILE{{/link-to}}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'community'}}COMMUNITY{{/link-to}}</a>
+      <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'community'}}COMMUNITY{{/link-to}}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faqpage-host'}}HELP{{/link-to}}</a>
+      <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'faqpage-host'}}HELP{{/link-to}}</a>
     </li>
     <li class="nav-item">
-    <a class="nav-link js-scroll-trigger" href="#accountpage-host">{{#link-to 'accountpage-host'}}<i class="fa fa-user-circle-o"></i>{{/link-to}}</a></li>
+    <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'accountpage-host'}}<i class="fa fa-user-circle-o"></i>{{/link-to}}</a></li>
   {{/nav-bar}}
 
 {{else}}
   {{#nav-bar id="cwkNav-light" }}
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'resident-list'}}MY RESIDENT{{/link-to}}</a>
+      <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'resident-list'}}MY RESIDENT{{/link-to}}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'residentprofile1-1'}}NEW RESIDENT{{/link-to}}</a>
+      <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'residentprofile1-1'}}NEW RESIDENT{{/link-to}}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'matchingpage-resident'}}FIND A MATCH{{/link-to}}</a>
+      <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'matchingpage-resident'}}FIND A MATCH{{/link-to}}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#help">{{#link-to 'faqpage-resident'}}HELP{{/link-to}}</a>
+      <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'faqpage-resident'}}HELP{{/link-to}}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#account-setting"><i class="fa fa-user-circle-o"></i></a>
+      <a class="nav-link js-scroll-trigger" href="#account-setting">{{#link-to 'accountpage-resident'}}<i class="fa fa-user-circle-o"></i>{{/link-to}}</a>
     </li>
   {{/nav-bar}}
 {{/if}}
