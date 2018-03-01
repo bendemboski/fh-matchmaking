@@ -223,6 +223,11 @@ body.homepage-host {
   color: #d66229;
   text-decoration: none;
 }
+#mainNav i:focus,
+#mainNav i:hover {
+  color: #d66229;
+  text-decoration: none;
+}
 
 hr {
   max-width: 90%;
