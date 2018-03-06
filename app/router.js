@@ -32,10 +32,7 @@ Router.map(function () {
   this.route('thankyoupage-resident');
   this.route('signin-page');
   this.route('accountpage-host');
-  this.route('accountpage-resident');
-  this.route('resident-list');
   this.route('faqpage-host');
-  this.route('faqpage-resident');
   this.route('matchingpage-resident');
   this.route('thankyoupage-matching');
   this.route('admin-host-list');
@@ -48,6 +45,10 @@ Router.map(function () {
   this.route('previewpage-host');
   this.route('homepage-admin');
   this.route('matching-question');
+  this.route('accountpage-caseworker');
+  this.route('faqpage-caseworker');
+  this.route('homepage-caseworker');
+  this.route('resident-list');
 });
 
 export default Router;
