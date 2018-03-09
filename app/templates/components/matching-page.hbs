@@ -16,7 +16,7 @@
 {{else}}
   {{#nav-bar id="cwkNav-light" }}
     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'resident-list'}}MY RESIDENT{{/link-to}}</a>
+      <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'homepage-caseworker'}}MY RESIDENT{{/link-to}}</a>
     </li>
     <li class="nav-item">
       <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'residentprofile1-1'}}NEW RESIDENT{{/link-to}}</a>
@@ -89,11 +89,11 @@
 <main>
 
   <section id="houseList">
-  <div class="house" id="house1">
+{{#link-to 'previewpage-matching'}}<div class="house" id="house1">
 <img src="/assets/images/bky-sample1.jpg" alt="sampl1">
 <p class="location">South Lake Union</p>
 <p class="family">Adult 2 Kid 1 Pet 1</p>
-</div>
+</div>{{/link-to}}
 
 <div class="house" id="house2">
 <img src="/assets/images/bky-sample2.jpg" alt="sampl2">

@@ -1,13 +1,27 @@
 {{#community-code}}
 
 {{set-body-class "community"}}
+{{#nav-bar id="mainNav"}}
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'hostprofile1-1'}}YOUR PROFILE{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+<a class="nav-link js-scroll-trigger" href="#community">{{#link-to 'community'}}COMMUNITY{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'faqpage-host'}}HELP{{/link-to}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'accountpage-host'}}<i class="fa fa-user-circle-o"></i>{{/link-to}}</a>
+  </li>
+{{/nav-bar}}
 <!-- Profile Section -->
 
 <header id="community">
 <h1>Coming Soon</h1>
-<h4>We are Looking Forward to Bringing all Neighbors Together</h4>
-{{#link-to 'homepage_host'}}
-<button type="button" class="backpage" name="prev" value="communityPage">Go Back</button>  {{/link-to}}
+<h5>We are looking forward to bringing all neighbors together. <br>Stay Tuned with us!</h5>
+{{#link-to 'homepage-host'}}
+<button type="button" class="backpage" name="prev" value="communityPage">Back to Home</button>  {{/link-to}}
 
 </header>
 {{/community-code}}

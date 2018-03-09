@@ -16,7 +16,7 @@
     {{else}}
     {{#nav-bar id="cwkNav-light"}}
       <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'resident-list'}}MY RESIDENT{{/link-to}}</a>
+        <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'homepage-caseworker'}}MY RESIDENT{{/link-to}}</a>
       </li>
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'residentprofile1-1'}}NEW RESIDENT{{/link-to}}</a>
@@ -391,21 +391,21 @@
   <!--Page Buttons-->
   {{#if isHost}}
     <div id="hostPageButton-shrink">
-      {{#link-to 'hostsaving3'}}<button class="edit" name="edit" type="submit" value="host-page1">EDIT</button>{{/link-to}}
-    {{#link-to 'thankyoupage-host'}} <button class="submit" name="submit" type="submit" value="thankyou-page">SUBMIT</button>{{/link-to}}
+      {{#link-to 'hostsaving3'}}<button class="edit" name="edit" type="submit" value="host-page1">Edit</button>{{/link-to}}
+    {{#link-to 'thankyoupage-host'}} <button class="submit" name="submit" type="submit" value="thankyou-page">Submit</button>{{/link-to}}
     </div>
 
 {{else if isMatch}}
 <div id="residentPageButton-shrink">
-    {{#link-to 'matchingpage-resident'}}<button class="back" name="edit" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
-{{#link-to 'thankyoupage-matching'}} <button class="meetHost" name="submit" type="submit" value="meet-host">MEET HOST</button>{{/link-to}}
+    {{#link-to 'matchingpage-resident'}}<button class="back" name="edit" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</button>{{/link-to}}
+{{#link-to 'thankyoupage-matching'}} <button class="meetHost" name="submit" type="submit" value="meet-host">Meet Host</button>{{/link-to}}
 </div>
 
     {{else}}
     <!--Page Buttons-->
     <div id="residentPageButton-shrink">
-      {{#link-to 'residentprofile3-2'}}<button class="edit" name="edit" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
-    {{#link-to 'thankyoupage-resident'}} <button class="submit" name="submit" type="submit" value="thankyou-page">SUBMIT</button>{{/link-to}}
+      {{#link-to 'residentprofile3-2'}}<button class="edit" name="edit" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</button>{{/link-to}}
+    {{#link-to 'thankyoupage-resident'}} <button class="submit" name="submit" type="submit" value="thankyou-page">Submit</button>{{/link-to}}
     </div>
 
   {{/if}}

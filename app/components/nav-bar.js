@@ -3,6 +3,7 @@ import Ember from 'ember';
 const {
   $,
   Component,
+  inject: { service },
   run
 } = Ember;
 
@@ -10,6 +11,9 @@ export default Component.extend({
   tagName: 'nav',
   classNames: [ 'navbar', 'navbar-expand-lg', 'fixed-top' ],
   classNameBindings: [ 'shrink:navbar-shrink' ],
+
+//Define a property -service injection
+  userService: service('user'),
 
   shrink: false,
 

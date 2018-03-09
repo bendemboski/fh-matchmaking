@@ -7,7 +7,6 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function () {
-  this.route('signin');
   this.route('hostprofile1-1');
   this.route('hostprofile1-2');
   this.route('hostprofile1-3');
@@ -48,7 +47,6 @@ Router.map(function () {
   this.route('accountpage-caseworker');
   this.route('faqpage-caseworker');
   this.route('homepage-caseworker');
-  this.route('resident-list');
 });
 
 export default Router;
