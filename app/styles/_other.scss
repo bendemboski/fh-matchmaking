@@ -453,7 +453,7 @@ footer p {
   background-color: white;
   padding: 0 2px;
   margin-top: 63px;
-  border-top: 1.5px solid #eee;
+  // border-top: 1.5px solid #eee;
   font-size: 100%;
 }
 
@@ -981,7 +981,7 @@ select#neighborhood {
 
 
 
-#cwkNav-dark label {
+#cwkNav label {
   padding: 0;
 }
 
@@ -2228,7 +2228,6 @@ div.resident-movie-dropdown select {
   font-size: 120%;
 }
 section#filterDropdown{
-border-top: 1.5px solid #999;
     width:100%;
     padding:20px 0;
     margin-top:60px;
