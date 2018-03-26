@@ -10,7 +10,7 @@ const {
 export default Component.extend({
   tagName: 'nav',
   classNames: [ 'navbar', 'navbar-expand-lg', 'fixed-top'],
-  classNameBindings: [ 'shrink:navbar-shrink','userService.isHost:navbar-host:navbar-cwk','userService.isAdmin:navbar-admin' ],
+  classNameBindings: [ 'shrink:navbar-shrink','userService.isHost:navbar-host', 'userService.isCaseWorker:navbar-cwk', 'userService.isAdmin:navbar-admin' ],
 
   shrink: false,
 

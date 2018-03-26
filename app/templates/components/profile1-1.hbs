@@ -1,7 +1,9 @@
-{{#if isHost}}
+{{#nav-bar}}{{/nav-bar}}
+
+{{!-- {{#if isHost}}
 {{#nav-bar userService.isHost}}
-{{!-- {{#nav-bar id="hostNav"}} --}}
-  {{!-- <li class="nav-item">
+{{#nav-bar id="hostNav"}}
+ <li class="nav-item">
     <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'hostprofile1-1'}}MY PROFILE{{/link-to}}</a>
   </li>
   <li class="nav-item">
@@ -12,13 +14,13 @@
   </li>
   <li class="nav-item">
     <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'accountpage-host'}}<i class="fa fa-cog fa-lg"></i>{{/link-to}}</a>
-  </li> --}}
+  </li>
 {{/nav-bar}}
 
     {{else}}
     {{#nav-bar userService.isCaseworker}}
-    {{!-- {{#nav-bar id="cwkNav"}} --}}
-    {{!-- <li class="nav-item">
+{{#nav-bar id="cwkNav"}}
+ <li class="nav-item">
       <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'homepage-caseworker'}}MY RESIDENT{{/link-to}}</a>
     </li>
     <li class="nav-item">
@@ -32,9 +34,9 @@
     </li>
     <li class="nav-item">
       <a class="nav-link js-scroll-trigger" href="#account-setting">{{#link-to 'accountpage-caseworker'}}<i class="fa fa-cog fa-lg"></i>{{/link-to}}</a>
-    </li> --}}
+    </li>
     {{/nav-bar}}
-    {{/if}}
+    {{/if}} --}}
 
 <!-- Profile Section -->
 
