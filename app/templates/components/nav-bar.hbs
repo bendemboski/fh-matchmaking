@@ -23,7 +23,7 @@
     <a class="navbar-brand" href="#">{{#link-to 'homepage-host'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> MENU <i class="fa fa-bars" ></i></button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav navbar-host ml-auto">
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">{{#link-to 'hostprofile1-1'}}YOUR PROFILE{{/link-to}}</a>
         </li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">{{#link-to 'community'}}COMMUNITY{{/link-to}}</a>
@@ -34,12 +34,12 @@
         </li>
       </ul>
     </div>
-    {{else if userService.isCaseworker}}
+    {{else if userService.isCaseWorker}}
 
     <a class="navbar-brand" href="#">{{#link-to 'homepage-caseworker'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> MENU <i class="fa fa-bars" ></i></button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav navbar-cwk ml-auto">
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'homepage-caseworker'}}MY RESIDENT{{/link-to}}</a>
         </li>
@@ -61,7 +61,7 @@
   <a class="navbar-brand" href="#">{{#link-to 'homepage-admin'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> MENU <i class="fa fa-bars" ></i></button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav navbar-admin ml-auto">
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'homepage-admin'}}DASHBOARD{{/link-to}}</a>
         </li>

@@ -9,13 +9,13 @@ const {
 
 export default Component.extend({
   tagName: 'nav',
-  classNames: [ 'navbar', 'navbar-expand-lg', 'fixed-top' ],
-  classNameBindings: [ 'shrink:navbar-shrink' ],
-
-//Define a property -service injection
-  userService: service('user'),
+  classNames: [ 'navbar', 'navbar-expand-lg', 'fixed-top'],
+  classNameBindings: [ 'shrink:navbar-shrink','userService.isHost:navbar-host:navbar-cwk','userService.isAdmin:navbar-admin' ],
 
   shrink: false,
+
+  //Define a property -service injection
+  userService: service('user'),
 
   didInsertElement() {
     this._super(...arguments);

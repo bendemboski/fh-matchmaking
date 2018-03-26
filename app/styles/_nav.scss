@@ -17,9 +17,7 @@
 /* NOTE General Nav */
 
 /* Mobile */
-#hostNav,
-#cwkNav,
-#adminNav {
+nav {
   border-color: transparent;
   background-color: #000;
   -webkit-transition: all 0.35s;
@@ -29,9 +27,7 @@
   letter-spacing: 1.6px;
 }
 
-#hostNav .navbar-toggler,
-#cwkNav .navbar-toggler,
-#adminNav .navbar-toggler  {
+.navbar-toggler  {
   font-size: 0.8em;
   padding: 12px;
   color: #fff;
@@ -39,90 +35,64 @@
   border: 1px solid #fff;
 }
 
-#hostNav i.fa-bars,
-#cwkNav i.fa-bars,
-#adminNav i.fa-bars {
+i.fa-bars {
   font-size: 0.8em;
   color: #fff;
 }
-#hostNav .navbar-nav,
-#cwkNav .navbar-nav,
-#adminNav .navbar-nav {
+.navbar-nav {
   line-height: 50px;
   height:50px;
   background-color: transparent;
 }
 
-#hostNav a,
-#cwkNav a,
-#adminNav a {
+nav a {
   color: #fff;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
 
-#hostNav .navbar-nav > li > a,
-#hostNav .navbar-nav > li > a:focus,
-#cwkNav .navbar-nav > li > a,
-#cwkNav .navbar-nav > li > a:focus,
-#adminNav .navbar-nav > li > a,
-#adminNav .navbar-nav > li > a:focus {
+.navbar-nav > li > a,
+.navbar-nav > li > a:focus{
   color: #fff;
   text-align: center;
   background-color: transparent;
   text-decoration: none;
 }
 
-#hostNav.navbar-shrink a,
-#hostNav.navbar-shrink a:focus,
-#cwkNav.navbar-shrink a,
-#cwkNav.navbar-shrink a:focus,
-#adminNav.navbar-shrink a,
-#adminNav.navbar-shrink a:focus  {
+.navbar-shrink a,
+.navbar-shrink a:focus,
+  {
   color: #fff;
 }
 /* Desktop */
 @media (min-width: 980px) {
-  #hostNav,
-  #cwkNav,
-  #adminNav {
+nav {
     border-color: transparent;
     background-color:#000;
     font-size: 0.8em;
     height:50px;
   }
 
-  #cwkNav,
-  #adminNav{
-  background-color: #000;
-  }
-
-  #hostNav .navbar-brand img,
-  #cwkNav .navbar-brand img,
-  #adminNav .navbar-brand img  {
+.navbar-brand img  {
     height: 40px;
     width: 40px;
   }
 
-  #hostNav .navbar-nav > li > a,
-  #cwkNav .navbar-nav > li > a,
-  #adminNav .navbar-nav > li > a {
+.navbar-nav > li > a {
     font-size: 0.9em;
     padding: 2px 10px;
     color: #fff;
   }
 
-  #hostNav .navbar-nav > li > a,
-  #hostNav .navbar-nav > li > a:focus {
+.navbar-nav > li > a,
+.navbar-nav > li > a:focus {
     color: #fff;
     background-color: transparent;
     text-decoration: none;
   }
 
-  #hostNav.navbar-shrink,
-  #cwkNav.navbar-shrink,
-  #adminNav.navbar-shrink {
+.navbar-shrink {
     background-color: #000;
     height: 50px;
     color:#000;
@@ -133,56 +103,40 @@
 /* NOTE hostNav */
 /* Mobile */
 
-#hostNav .navbar-nav > li > a.active {
+.navbar-host .navbar-nav > li > a.active {
   color: #d66229;
   background-color: transparent;
 }
 
-#hostNav .navbar-nav > li > a:focus:hover,
-#hostNav .navbar-nav > li > a:hover {
+.navbar-host .navbar-nav > li > a:focus:hover,
+.navbar-host .navbar-nav > li > a:hover {
   color: #d66229;
   background-color: transparent;
-}
-
-#hostNav .dropdown-menu > li > a.active {
-  color: #d66229;
-  background-color: transparent;
-}
-
-#hostNav .dropdown-menu > li > a,
-#hostNav .dropdown-menu > li > a:focus {
-  color: #5a5a5a;
-  text-align: center;
-}
-
-#hostNav .dropdown-menu > li > a:focus:hover,
-#hostNav .dropdown-menu > li > a:hover {
-  color: #d66229;
 }
 
 /* Desktop */
 
 @media (min-width: 980px) {
-  #hostNav .navbar-nav > li > a:focus:hover,
-  #hostNav .navbar-nav > li > a:hover {
+.navbar-host .navbar-nav > li > a:focus:hover,
+.navbar-host .navbar-nav > li > a:hover {
     color: #d66229;
     background-color: transparent;
     text-decoration: none;
   }
 
-  #hostNav a:focus,
-  #hostNav a:hover {
+.navbar-host .navbar-nav a:focus,
+.navbar-host .navbar-nav a:hover {
     color: #d66229;
     text-decoration: none;
   }
-  #hostNav i:focus,
-  #hostNav i:hover {
+.navbar-host .navbar-nav i:focus,
+.navbar-host .navbar-nav i:hover {
     color: #d66229;
     text-decoration: none;
   }
 
-  #hostNav.navbar-shrink .navbar-nav > li > a:focus:hover,
-  #hostNav.navbar-shrink .navbar-nav > li > a:hover {
+.navbar-host.navbar-shrink .navbar-nav > li > a:focus:hover,
+.navbar-host.navbar-shrink .navbar-nav > li > a:hover {
     color: #d66229;
   }
 }
@@ -190,70 +144,84 @@
 /* NOTE caseworkerNav */
 
 /* mobile device */
-#cwkNav a:focus,
-#cwkNav a:hover,{
+.navbar-cwk a:focus,
+.navbar-cwk a:hover,{
   color: #8BA334;
   text-decoration: none;
 }
 
-#cwkNav .navbar-nav > li > a.active, {
+.navbar-cwk .navbar-nav > li > a.active, {
   color: #8BA334;
   background-color: transparent;
 }
 
-#cwkNav .navbar-nav > li > a:focus:hover,
-#cwkNav .navbar-nav > li > a:hover{
+.navbar-cwk .navbar-nav > li > a:focus:hover,
+.navbar-cwk .navbar-nav > li > a:hover{
   color: #8BA334;
   background-color: transparent;
 }
+
+.navbar-cwk .navbar-nav i:focus,
+.navbar-cwk .navbar-nav i:hover {
+  color: #8BA334;
+  text-decoration: none;
+  }
 
 /*desktop device*/
 @media (min-width: 980px) {
-  #cwkNav .navbar-nav > li > a:focus:hover,
-  #cwkNav .navbar-nav > li > a:hover{
+.navbar-cwk .navbar-nav > li > a:focus:hover,
+.navbar-cwk .navbar-nav > li > a:hover{
     color: #8BA334;
     background-color: transparent;
     text-decoration: none;
   }
 
-  #cwkNav.navbar-shrink .navbar-nav > li > a:focus:hover,
-  #cwkNav.navbar-shrink .navbar-nav > li > a:hover  {
+  .navbar-cwk.navbar-shrink .navbar-nav > li > a:focus:hover,
+  .navbar-cwk.navbar-shrink .navbar-nav > li > a:hover  {
     color: #8BA334;
   }
 
-  #adminNav.navbar-shrink .navbar-nav > li > a:focus:hover,
-  #adminNav.navbar-shrink .navbar-nav > li > a:hover  {
-    color: #B0B2AA;
-  }
 }
 
 /* NOTE adminNav */
 
 /* Mobile */
-#adminNav .navbar-nav > li > a.active {
+.navbar-admin .navbar-nav > li > a.active {
   color: #B0B2AA;
   background-color: transparent;
 }
-#adminNav a:focus,
-#adminNav a:hover {
+.navbar-admin a:focus,
+.navbar-admin a:hover {
   color: #B0B2AA;
   text-decoration: none;
 }
 
-#adminNav .navbar-nav > li > a:focus:hover,
-#adminNav .navbar-nav > li > a:hover {
+.navbar-admin .navbar-nav > li > a:focus:hover,
+.navbar-admin .navbar-nav > li > a:hover {
   color: #B0B2AA;
   background-color: transparent;
 }
+
+.navbar-admin .navbar-nav i:focus,
+.navbar-admin .navbar-nav i:hover {
+  color: #B0B2AA;
+  text-decoration: none;
+  }
 
 /* Desktop */
 @media (min-width: 980px){
-#adminNav .navbar-nav > li > a:focus:hover,
-#adminNav .navbar-nav > li > a:hover{
+.navbar-admin .navbar-nav > li > a:focus:hover,
+.navbar-admin .navbar-nav > li > a:hover{
   color: #B0B2AA;
   background-color: transparent;
   text-decoration: none;
 }
+
+.navbar-admin.navbar-shrink .navbar-nav > li > a:focus:hover,
+.navbar-admin.navbar-shrink .navbar-nav > li > a:hover  {
+  color: #B0B2AA;
+}
+
 }
 
 /* NOTE General LightNav */
