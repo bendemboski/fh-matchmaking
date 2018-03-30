@@ -3,7 +3,7 @@ import Ember from 'ember';
 const { computed: { equal } } = Ember;
 
 export default Ember.Service.extend({
-  type: 'admin',
+  type: 'host',
 
   isHost: equal('type', 'host'),
   isCaseWorker: equal('type', 'caseWorker'),

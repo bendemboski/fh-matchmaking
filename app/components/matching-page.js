@@ -1,23 +1,26 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
-});
+const { Component } = Ember;
 
-function toggleFunction() {
-    document.getElementById("locationDropdown").classList.toggle("show");
-}
+export default Component.extend({
+  formName: "hostform",
+  adultCount: 1,
+  kidCount: 0,
+  petCount: 0,
 
-function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("locationDropdown");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-        } else {
-            a[i].style.display = "none";
-        }
+  didInsertElement() {
+    this._super(...arguments);
+
+    // let $ = this.$.bind(this);
+  },
+
+  actions: {
+    increment(propName) {
+      this.incrementProperty(propName);
+    },
+
+    decrement(propName) {
+      this.decrementProperty(propName);
     }
-}
+  }
+});
