@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
-/* Number Incrementation */
+export default Component.extend({
+  /* Number Incrementation */
   formName: "hostform",
   adultCount: 1,
   kidCount: 0,

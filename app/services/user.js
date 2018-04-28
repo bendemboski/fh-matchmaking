@@ -1,8 +1,7 @@
-import Ember from 'ember';
+import Service from '@ember/service';
+import { equal } from '@ember/object/computed';
 
-const { computed: { equal } } = Ember;
-
-export default Ember.Service.extend({
+export default Service.extend({
   type: 'host',
 
   isHost: equal('type', 'host'),

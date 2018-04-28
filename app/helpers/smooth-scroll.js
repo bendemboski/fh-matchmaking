@@ -1,6 +1,5 @@
-import Ember from 'ember';
-
-const { $ } = Ember;
+import { helper as buildHelper } from '@ember/component/helper';
+import $ from 'jquery';
 
 //
 // A helper to add smooth scrolling to an anchor the points to an element on the
@@ -25,4 +24,4 @@ export function smoothScroll() {
   };
 }
 
-export default Ember.Helper.helper(smoothScroll);
+export default buildHelper(smoothScroll);

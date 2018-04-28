@@ -1,11 +1,7 @@
-import Ember from 'ember';
-
-const {
-  $,
-  Component,
-  inject: { service },
-  run
-} = Ember;
+import $ from 'jquery';
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
+import { run } from '@ember/runloop';
 
 export default Component.extend({
   tagName: 'nav',
