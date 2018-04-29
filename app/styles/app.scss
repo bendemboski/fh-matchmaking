@@ -1,5 +1,11 @@
-@import './other';
+//This is the CSS styling file
+// @import './other';
+
+//This is the SCSS styling file
+@import './main';
+@import './color';
 @import './nav';
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
