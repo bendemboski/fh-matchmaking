@@ -1,16 +1,22 @@
-//This is the CSS styling file
-// @import './other';
-
-//This is the SCSS styling file
-@import './main';
+//SCSS styling links
 @import './color';
 @import './nav';
+@import './main';
+
+//CSS styling link
+// @import './other';
+
+
+
+//Google Font
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,500,600');
+
 
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-      font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 body,
@@ -22,7 +28,7 @@ html {
 
 body {
 
-    background: #fff;
+    background: $white;
 }
 
 h1,

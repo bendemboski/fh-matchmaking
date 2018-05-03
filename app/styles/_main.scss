@@ -4,20 +4,46 @@ button {
 }
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,500,600');
 
-/* buttons -orange */
-// @mixin button($color){
-//   background-color:$color;
-//   width: 25%;
-//   height: 30px;
-//   display: inline-block;
-//   color: #989898;
-//   border-style: none;
-//   background-color: transparent;
-//   border-radius: 22.5px;
-//   font-weight: 600;
-//   text-align: left;
-//   font-size: 0.8em;
-// }
+
+/* Profile Page Buttons */
+/* next-button */
+@mixin next-button($color){
+  background:$color;
+  color: $white;
+  width: 20%;
+  height: 30px;
+  display: inline-block;
+  border-style: none;
+  float:right;
+  border-radius: 22.5px;
+  cursor: pointer;
+    &:hover {
+      background:darken($color,6%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      background:darken($color,10%);
+    }
+}
+
+/* back-button */
+@mixin back-button{
+  background:transparent;
+  color:$lightGrey;
+  width: 25%;
+  height: 30px;
+  display: inline-block;
+  border-style: none;
+  text-align: left;
+  cursor: pointer;
+    &:hover {
+      color:darken($lightGrey,6%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      color:darken($lightGrey,10%);
+    }
+}
 
 /* NOTE Signin Page */
 body.signin-page {
@@ -585,7 +611,7 @@ footer.profile {
   bottom: 0;
   width: 100%;
   padding: 0;
-  text-align: none;
+  overflow: hidden;
 }
 
 div.progress {
@@ -607,39 +633,14 @@ div#hostPageButton {
 }
 
 #hostPageButton button.backpage {
-  width: 25%;
-  height: 30px;
-  display: inline-block;
-  color: #989898;
-  border-style: none;
-  background-color: transparent;
-  border-radius: 22.5px;
-  font-weight: 600;
-  text-align: left;
-  font-size: 0.8em;
+  @include back-button;
 }
 
-#hostPageButton button.backpage:hover {
-  color: #6a6a6a;
-}
 
 #hostPageButton button.nextpage {
-  width: 18%;
-  height: 35px;
-  float: right;
-  display: inline-block;
-  color: #fff;
-  border: 1px solid;
-  border-color: transparent;
-  background-color: #d66229;
-  border-radius: 22.5px;
-  text-align: center;
-  font-size: 0.8em;
+  @include next-button($mainOrange);
 }
 
-#hostPageButton button.nextpage:hover {
-  background-color: #C24F17;
-}
 /*ResidentProfile1-1*/
 #email input,
 #tel input {
@@ -661,38 +662,11 @@ div#residentPageButton {
 }
 
 #residentPageButton button.backpage {
-  width: 25%;
-  height: 40px;
-  display: inline-block;
-  color: #989898;
-  border-style: none;
-  background-color: transparent;
-  border-radius: 22.5px;
-  font-weight: 600;
-  text-align: left;
-  font-size: 0.8em;
-}
-
-#residentPageButton button.backpage:hover {
-  color: #6a6a6a;
+  @include back-button;
 }
 
 #residentPageButton button.nextpage {
-  width: 18%;
-  height: 35px;
-  float: right;
-  display: inline-block;
-  color: #fff;
-  border: 1px solid;
-  border-color: transparent;
-  background-color: #8BA334;
-  border-radius: 22.5px;
-  text-align: center;
-  font-size: 0.8em;
-}
-
-#residentPageButton button.nextpage:hover {
-  background-color: #5B8021;
+  @include next-button($mainGreen);
 }
 
 div#residentProgressBar.progress-bar {
