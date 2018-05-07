@@ -24,6 +24,8 @@ export default Ember.Component.extend({
       this.decrementProperty(propName);
     },
 
+    /* Show&Hide Panel */
+    
     familyFilterShow() {
       if (this.familyPanelShow) {
         this.set('familyPanelShow', false);
