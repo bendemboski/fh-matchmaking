@@ -2289,6 +2289,7 @@ select#neighborhood-entries {
   color: grey;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 
@@ -2332,7 +2333,9 @@ ul#location-div{
   position:absolute;
   margin-bottom:10px;
   width:100%;
+  cursor: pointer;
 }
+
 #family-filter .filter-pane{
   z-index:1000;
   position:relative;
@@ -2345,9 +2348,16 @@ ul#location-div{
   padding:10px 20px;
   width:250px;
 }
-.hide{
-  display: none;
+#family-entries:hover,
+#family-entries:focus{
+    border:1px solid #999;
 }
+// .hide{
+//   display:none;
+// }
+// #family-filter:focus + .filter-pane{
+//   display:block;
+// }
 
 span#text-space{
   padding:6px;
@@ -2494,8 +2504,8 @@ button#searchBtn {
   width: 100px;
   margin-left: 15px;
   position:relative;
-bottom:16px;
-border:none;
+  bottom:16px;
+  border:none;
 }
 
 #searchBtn:focus,
@@ -2511,15 +2521,15 @@ border:none;
 .filter-setting{
   padding-top:10px;
   font-size:.8em;
-
   height:30px;
 }
+
 .filter-setting span > a {
     text-decoration: none;
     color:grey;
 }
-.filter-setting span.apply-btn a,
-.filter-setting span > a:focus{
+
+.filter-setting span.apply-btn a{
   float:right;
   color:#8BA334;
 }
@@ -2538,11 +2548,9 @@ section#houseList {
   width: 35%;
   overflow:auto;
   padding: 0;
-  max-height: 420px;
+  max-height: 650px;
   display: inline-block;
   border: 1px solid #eee;
-
-
 }
 
 #houseList img {
@@ -2586,11 +2594,11 @@ section#houseList {
   background-color: #000;
   opacity: .7;
   bottom:0;
-margin-top:165px;
-height:35px;
-line-height: 35px;
-padding-left:10px;
-padding-right:10px;
+  margin-top:165px;
+  height:35px;
+  line-height: 35px;
+  padding-left:10px;
+  padding-right:10px;
 }
 
 #house2.house {
@@ -2630,19 +2638,20 @@ padding-right:10px;
   padding-left:10px;
   padding-right:10px;
 }
+
 section#map {
   width: 64%;
   display: inline-block;
   padding: 0;
   border: none;
-  height:450px;
+  height:650px;
   float:left;
 }
 
 section#map iframe {
   border: none;
   width: 100%;
-  height: 420px;}
+  height: 650px;}
 
 main {
   width: 100%;

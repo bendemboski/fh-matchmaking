@@ -78,11 +78,12 @@
           </legend>
             </fieldset>
           <fieldset class="filter-menu listing-menu col-lg-3">
-          <legend id="family-filter">
-            <div id="family-entries" onclick="">Family Size
+          <legend id="family-filter" >
+            <div id="family-entries" {{action 'familyFilterShow'}}>Family Size
             <span class="dropdown-icon"><i class="fa fa-chevron-down"></i></span>
             </div>
-            <div class="filter-pane hide">
+             {{#if familyPanelShow}}
+            <div class="filter-pane">
               <div class="form-group" id="family-structure">
                 <div id="adult-filter">
                 <p class="family" for="name"><i class="fa fa-male"></i> Adult </p>
@@ -121,20 +122,22 @@
                 </div>
 
                 <div class="filter-setting">
-                  <span class="cancel-btn"><a href="">Cancel</a></span>
-                  <span class="apply-btn"><a href="">Apply</a></span>
+                  <span class="cancel-btn" {{action 'familyFilterHide'}}><a href="">Cancel</a></span>
+                  <span class="apply-btn" {{action 'familyFilterHide'}}><a href="">Apply</a></span>
                 </div>
               </div>
             </div>
           </div>
+           {{/if}}
         </legend>
 </fieldset>
         <fieldset class="filter-menu listing-menu col-lg-3">
         <legend id="more-filter">
-          <div id="more-entries" onclick="">More Filters
+          <div id="more-entries" {{action 'moreFilterShow'}}>More Filters
           <span class="filter-icon"><i class="fa fa-filter"></i></span>
           </div>
-          <div class="filter-pane hide">
+               {{#if morePanelShow}}
+          <div class="filter-pane">
             <div class="form-group" id="acceptable-sub">
               <h6><strong> Acceptable Substances</strong></h6>
                 <input type="checkbox" id="matching-illicit" name="substances" value="illicit" checked>
@@ -163,10 +166,11 @@
               </div>
             </div>
               <div class="filter-setting">
-                <span class="cancel-btn"><a href="">Cancel</a></span>
-                <span class="apply-btn"><a href="">Apply</a></span>
+                <span class="cancel-btn" {{action 'moreFilterHide'}}><a href="">Cancel</a></span>
+                <span class="apply-btn" {{action 'moreFilterHide'}}><a href="">Apply</a></span>
               </div>
             </div>
+               {{/if}}
       </legend>
       </fieldset>
 <button id="searchBtn" type="search" name="filterSearch">Search</button>
