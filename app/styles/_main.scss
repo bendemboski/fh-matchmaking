@@ -1144,220 +1144,96 @@ input#imageUpload_4 {
   float: left;
   margin: 100px 0 0 -300px;
 }
-/* Saving Page 1*/
+
+/* Saving Pages */
+
 div.heading {
   text-align: center;
   width: 100%;
+  h5 {
+    font-weight: 500;
+    margin: 5px auto;
+    padding: 50px;
+    color: #666;
+    font-size: 1em;
+  }
 }
 
-.heading h5 {
-  font-weight: 500;
-  margin: 5px auto;
-  padding: 50px;
-  color: #666;
-  font-size: 1em;
+#hostsaving1,
+#hostsaving2,
+#hostsaving3 {
+  .steps{
+    display: inline-block;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    &:not(:last-child){
+      border-right: 1px solid #bebebe;
+    }
+    img {
+      width: 65%;
+      margin: 20px 58px;
+    }
+    .subHeading {
+      font-size: 0.9em;
+      font-weight: 500;
+      color: #666;
+      padding-left: 20px;
+      display: inline-block;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      font-size: 0.8em;
+      li{
+        color: #bebebe;
+        a:hover{
+          color:#636363;
+          }
+        i{
+          padding: 5px 15px 5px 25px;
+          color: #b3b3b3;
+          &.checked{
+            color: #d66229;
+          }
+        }
+      }
+    }
+    a.edit{
+      float: right;
+      margin-right: 15px;
+      display: inline-block;
+      font-weight: 500;
+      padding: 2px 12px;
+      border-radius: 18px;
+      text-decoration: none;
+      color: #d66229;
+      border: 1px solid #d66229;
+      font-size: 0.6em;
+      &:hover{
+        color: #fff;
+        text-decoration: none;
+        background-color: #d66229;
+        border: 1px solid #d66229;
+      }
+    }
+  }
 }
 
-div.steps {
-  display: inline-block;
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
+#hostsaving1 {
+  #step2 .subHeading,
+  #step3 .subHeading{
+    color: #bebebe;
+  }
 }
 
-#step1,
-#step2 {
-  border-right: 1px solid #bebebe;
+#hostsaving2{
+  #step3 .subHeading{
+    color: #bebebe;
+    font-size: 0.9em;
+  }
 }
 
-#hostsaving1 .steps div.subHeading {
-  font-size: 0.9em;
-  font-weight: 500;
-  color: #666;
-  padding-left: 20px;
-  display: inline-block;
-}
-
-#hostsaving1 #step2 div.subHeading,
-#hostsaving1 #step3 div.subHeading {
-  color: #bebebe;
-  font-size: 0.9em;
-}
-
-.steps img {
-  width: 50%;
-  margin: 20px 58px;
-}
-
-.steps ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#step1 ul li {
-  color: #666;
-  font-size: 0.8em;
-}
-
-,
-#step2 ul li,
-#step3 ul li {
-  color: #bebebe;
-  font-size: 0.8em;
-}
-
-.steps ul li i {
-  padding: 5px 15px 5px 25px;
-}
-
-,
-#hostsaving1 i#basic-info,
-#hostsaving1 i#greeting,
-#hostsaving1 i#lifestyle {
-  color: #d66229;
-}
-
-#hostsaving1 i#health {
-  color: #b3b3b3;
-}
-
-.steps .edit {
-  float: right;
-  margin-right: 15px;
-  display: inline-block;
-  font-weight: 500;
-  padding: 2px 12px;
-  border-radius: 18px;
-  text-decoration: none;
-}
-
-#step1 .edit {
-  color: #d66229;
-  border: 1px solid #d66229;
-  font-size: 0.6em;
-}
-
-#hostsaving1 #step1 .edit:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #d66229;
-  border: 1px solid #d66229;
-}
-
-,
-#hostsaving1 #step2 .edit,
-#hostsaving1 #step3 .edit {
-  color: #bebebe;
-}
-/* Saving Page 2*/
-#hostsaving2 .steps div.subHeading {
-  font-size: 0.9em;
-  font-weight: 500;
-  color: #666;
-  padding-left: 20px;
-  display: inline-block;
-}
-
-#hostsaving2 #step3 div.subHeading {
-  color: #bebebe;
-  font-size: 0.9em;
-}
-
-#hostsaving2 .steps ul li {
-  color: #666;
-  font-size: 0.8em;
-}
-
-#hostsaving2 #step3 ul li {
-  color: #bebebe;
-  font-size: 0.8em;
-}
-
-#hostsaving2 li i#backyard-scene,
-#hostsaving2 li i#basic-info,
-#hostsaving2 li i#greeting,
-#hostsaving2 li i#lifestyle,
-#hostsaving2 li i#location,
-#hostsaving2 li i#photos {
-  color: #d66229;
-}
-
-.steps .edit {
-  float: right;
-  margin-right: 15px;
-  display: inline-block;
-  font-size: 0.6em;
-  font-weight: 500;
-  padding: 2px 12px;
-  border-radius: 18px;
-  text-decoration: none;
-}
-
-#step1 .edit,
-#step2 .edit {
-  color: #d66229;
-  border: 1px solid #d66229;
-}
-
-#hostsaving2 #step1 .edit:hover,
-#hostsaving2 #step2 .edit:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #d66229;
-  border: 1px solid #d66229;
-}
-
-,
-#hostsaving2 #step3 .edit {
-  color: #bebebe;
-  border: 1px solid #bebebe;
-}
-/* Saving Page 3*/
-#hostsaving3 .steps div.subHeading {
-  font-size: 0.9em;
-  font-weight: 500;
-  color: #666;
-  padding-left: 20px;
-  display: inline-block;
-}
-
-.steps ul li i {
-  padding: 5px 15px 5px 25px;
-}
-
-#hostsaving3 li i#backyard-scene,
-#hostsaving3 li i#basic-info,
-#hostsaving3 li i#expectation,
-#hostsaving3 li i#greeting,
-#hostsaving3 li i#lifestyle,
-#hostsaving3 li i#location,
-#hostsaving3 li i#photos,
-#hostsaving3 li i#question {
-  color: #d66229;
-}
-
-#hostsaving3 .steps ul li {
-  color: #666;
-}
-
-#hostsaving3 .steps .edit {
-  float: right;
-  margin-right: 15px;
-  display: inline-block;
-  font-size: 0.6em;
-  font-weight: 500;
-  padding: 2px 12px;
-  border-radius: 18px;
-  color: #666;
-  border: 1px solid #666;
-}
-
-#hostsaving3 .steps .edit:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #666;
-  border: 1px solid #666;
-}
 /*Host Preview Page*/
 #profile-preview {
   width: 100%;

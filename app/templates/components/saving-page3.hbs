@@ -1,103 +1,81 @@
 {{#nav-bar}}{{/nav-bar}}
 
-  <!-- Profile Section -->
-
-  <div class="container" id="host-profile">
-    <div class="row" id="hostsaving3">
-
-
-      <div class="heading">
-        <h5>
-        Awesome!<br>
+<!-- Profile Section -->
+<div class="container" id="host-profile">
+  <div class="row" id="hostsaving3">
+    <div class="heading">
+      <h5>Awesome!<br>
         Thanks for your time completing your profile.<br>
         You can preview the list before submitting it.
       </h5>
-      </div>
+    </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 col-12 steps" id="step1">
-        <img src="/assets/images/icon_hello_2.png" alt="hello-icon">
-        <div class="subHeading">Start with a hello </div>
-            {{#link-to 'hostprofile1-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
-        <ul>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="greeting"></i>Greeting</li>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="basic-info"></i>Basics</li>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="lifestyle"></i>Lifestyle</li>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="health"></i>Health Condition</li>
-        </ul>
-      </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12 steps" id="step1">
+      <img src="/assets/images/icon_hello_2.png" alt="hello-icon">
+      <div class="subHeading">Start with a hello </div>
+      {{#link-to 'hostprofile1-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
+      <ul>
+        <li>{{#link-to 'hostprofile1-1'}}<i class="fa fa-check-circle checked" aria-hidden="true" id="greeting"></i>Greeting{{/link-to}} </li>
+        <li>{{#link-to 'hostprofile1-2'}}<i class="fa fa-check-circle checked" aria-hidden="true" id="basic-info"></i>Basics{{/link-to}} </li>
+        <li>{{#link-to 'hostprofile1-3'}}<i class="fa fa-check-circle checked" aria-hidden="true" id="lifestyle"></i>Lifestyle{{/link-to}} </li>
+        <li>{{#link-to 'hostprofile1-4'}}<i class="fa fa-check-circle" aria-hidden="true" id="health"></i>Health Condition{{/link-to}} </li>
+      </ul>
+    </div>
 
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step2">
+      <img src="/assets/images/icon_backyard.png" alt="backyard-icon">
+      <div class="subHeading"> Share your backyard </div>
+      {{#link-to 'hostprofile2-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
+      <ul>
+        <li>{{#link-to 'hostprofile2-1'}}<i class="fa fa-check-circle checked" aria-hidden="true" id="location"></i>Location{{/link-to}}</li>
+        <li>{{#link-to 'hostprofile2-2'}}<i class="fa fa-check-circle checked" aria-hidden="true" id="backyard-scene"></i>Backyard Scene {{/link-to}}</li>
+        <li>{{#link-to 'hostprofile2-3'}}<i class="fa fa-check-circle  checked" aria-hidden="true" id="photos"></i>Photos{{/link-to}} </li>
+      </ul>
+    </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step2">
-        <img src="/assets/images/icon_backyard.png" alt="backyard-icon">
-        <div class="subHeading"> Share your backyard </div>
-          {{#link-to 'hostprofile2-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
-        <ul>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="location"></i>Location</li>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="backyard-scene"></i>Backyard Scene </li>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="photos"></i>Photos </li>
-        </ul>
-      </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step3">
+      <img src="/assets/images/icon_commitment.png" alt="commitment-icon">
+      <div class="subHeading"> Set Expectation &amp; Contribution</div>
+      {{#link-to 'hostprofile3-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
+      <ul>
+        <li>{{#link-to 'hostprofile3-1'}}<i class="fa fa-check-circle checked" aria-hidden="true" id="expectation"></i>Expectation{{/link-to}}</li>
+        <li>{{#link-to 'hostprofile3-2'}}<i class="fa fa-check-circle checked" aria-hidden="true"id="question"></i>Customized questions{{/link-to}}</li>
+      </ul>
+    </div>
 
-
-      <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step3">
-        <img src="/assets/images/icon_commitment.png" alt="commitment-icon">
-        <div class="subHeading"> Set Expectation &amp; Contribution</div>
-                {{#link-to 'hostprofile3-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
-        <ul>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="expectation"></i>Expectation</li>
-          <li><i class="fa fa-check-circle" aria-hidden="true"id="question"></i>Customized questions</li>
-        </ul>
-      </div>
   </div>
 </div>
-  {{!-- <!-- Footer Section -->
-  <footer class="profile">
-    <!--Page Buttons-->
-    <div id="pageButton-expand">
-      {{#link-to 'hostprofile3-1'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>BACK</button>{{/link-to}}
-      {{#link-to 'previewpage_host'}} <button class="nextpage" name="preview" type="submit" value="host-page1">PREVIEW</button>{{/link-to}}
-    </div>
 
-    <!--Preogress Wrapper-->
-    <div class="progress-wrap">
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-          <span class="sr-only">90%</span>
-        </div>
-      </div>
-    </div>
-  </footer> --}}
 
-  <!-- Footer Section -->
-  <footer class="profile">
+<!-- Footer Section -->
+<footer class="profile">
   {{#if isHost}}
-    <!--Page Buttons-->
-    <div id="hostPageButton">
-      {{#link-to 'hostprofile3-2'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</button>{{/link-to}}
+  <!--Page Buttons-->
+  <div id="hostPageButton">
+    {{#link-to 'hostprofile3-2'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</button>{{/link-to}}
     {{#link-to 'previewpage-host'}} <button class="nextpage" name="preview" type="submit" value="host-page1">Preview</button>{{/link-to}}
-    </div>
-    <!--Progress Wrapper-->
-    <div class="progress-wrap">
-      <div class="progress">
-        <div id="hostProgressBar" class="progress-bar"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-          <span class="sr-only">100%</span>
-        </div>
+  </div>
+  <!--Progress Wrapper-->
+  <div class="progress-wrap">
+    <div class="progress">
+      <div id="hostProgressBar" class="progress-bar"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+        <span class="sr-only">100%</span>
       </div>
     </div>
-
-    {{else}}
-    <!--Page Buttons-->
-    <div id="residentPageButton">
-      {{#link-to 'residentsaving3'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</button>{{/link-to}}
+  </div>
+  {{else}}
+  <!--Page Buttons-->
+  <div id="residentPageButton">
+    {{#link-to 'residentsaving3'}}<button class="backpage" name="next" type="submit" value="host-page1"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</button>{{/link-to}}
     {{#link-to 'previewpage_resident'}} <button class="nextpage" name="preview" type="submit" value="host-page1">Preview</button>{{/link-to}}
-    </div>
-    <!--Preogress Wrapper-->
-    <div class="progress-wrap">
-      <div class="progress">
-        <div id="residentProgressBar" class="progress-bar"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-          <span class="sr-only">100%</span>
-        </div>
+  </div>
+  <!--Preogress Wrapper-->
+  <div class="progress-wrap">
+    <div class="progress">
+      <div id="residentProgressBar" class="progress-bar"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+        <span class="sr-only">100%</span>
       </div>
     </div>
+  </div>
   {{/if}}
-  </footer>
+</footer>

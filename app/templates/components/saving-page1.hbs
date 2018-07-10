@@ -1,54 +1,46 @@
 {{#nav-bar}}{{/nav-bar}}
 
-  <!-- Profile Section -->
-
-  <div class="container" id="host-profile">
-    <div class="row" id="hostsaving1">
-
-
-      <div class="heading">
-        <h5>
-        Excellent! You completed the very first step!<br>
+<!-- Profile Section -->
+<div class="container" id="host-profile">
+  <div class="row" id="hostsaving1">
+    <div class="heading">
+      <h5>Excellent! You completed the very first step!<br>
         Continue to complete your profile before get matched.
       </h5>
-      </div>
+    </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 col-12 steps" id="step1">
-        <img src="/assets/images/icon_hello_2.png" alt="hello-icon">
-        <div class="subHeading">Start with a hello </div>
-            {{#link-to 'hostprofile1-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
-        <ul>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="greeting"></i>Greeting</li>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="basic-info"></i>Basics</li>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="lifestyle"></i>Lifestyle</li>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="health"></i>Health Condition</li>
-        </ul>
-      </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12 steps" id="step1">
+      <img src="/assets/images/icon_hello_2.png" alt="hello-icon">
+      <div class="subHeading">Start with a hello </div>
+      {{#link-to 'hostprofile1-1'}}<a class="edit" href="#">Edit</a>{{/link-to}}
+      <ul>
+        <li>{{#link-to 'hostprofile1-1'}}<i class="fa fa-check-circle checked" aria-hidden="true" id="greeting"></i>Greeting{{/link-to}} </li>
+        <li>{{#link-to 'hostprofile1-2'}}<i class="fa fa-check-circle checked" aria-hidden="true" id="basic-info"></i>Basics{{/link-to}} </li>
+        <li>{{#link-to 'hostprofile1-3'}}<i class="fa fa-check-circle checked" aria-hidden="true" id="lifestyle"></i>Lifestyle{{/link-to}} </li>
+        <li>{{#link-to 'hostprofile1-4'}}<i class="fa fa-check-circle" aria-hidden="true" id="health"></i>Health Condition{{/link-to}} </li>
+      </ul>
+    </div>
 
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step2">
+      <img src="/assets/images/icon_backyard_grey.png" alt="backyard-icon">
+      <div class="subHeading"> Share your backyard </div>
+      <ul>
+        <li><i class="fa fa-check-circle" aria-hidden="true" id="location"></i>Location</li>
+        <li><i class="fa fa-check-circle" aria-hidden="true" id="backyard-scene"></i>Backyard Scene </li>
+        <li><i class="fa fa-check-circle" aria-hidden="true" id="photos"></i>Photos </li>
+      </ul>
+    </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step2">
-        <img src="/assets/images/icon_backyard_grey.png" alt="backyard-icon">
-        <div class="subHeading"> Share your backyard </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step3">
+      <img src="/assets/images/icon_commitment_grey.png" alt="commitment-icon">
+      <div class="subHeading"> Set Expectation &amp; Contribution</div>
+      <ul>
+        <li><i class="fa fa-check-circle" aria-hidden="true" id="expectation"></i>Expectation</li>
+        <li><i class="fa fa-check-circle" aria-hidden="true"id="question"></i>Customized questions</li>
+      </ul>
+    </div>
 
-        <ul>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="location"></i>Location</li>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="backyard-scene"></i>Backyard Scene </li>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="photos"></i>Photos </li>
-        </ul>
-      </div>
-
-
-      <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step3">
-        <img src="/assets/images/icon_commitment_grey.png" alt="commitment-icon">
-        <div class="subHeading"> Set Expectation &amp; Contribution</div>
-
-        <ul>
-          <li><i class="fa fa-check-circle" aria-hidden="true" id="expectation"></i>Expectation</li>
-          <li><i class="fa fa-check-circle" aria-hidden="true"id="question"></i>Customized questions</li>
-        </ul>
-      </div>
   </div>
-
 </div>
 
 <!-- Footer Section -->
