@@ -1,0 +1,45 @@
+{{#nav-bar}}{{/nav-bar}}
+
+<div class="container" id="host-profile">
+  <div class="row">
+    <div class="col-lg-7 col-md-12 col-sm-12 col-12 " id="left-column">
+      <form action="#" id="hostform">
+        <fieldset>
+          <legend class={{if (user-is-type 'host') "hostHeading" "residentHeading"}}>
+            STEP 3: Set Expectation &amp; Contribution!
+          </legend>
+
+          <div class="form-group" id="relationship">
+            <h6>Name one relationship that you imagine you and your neighbor would be like?</h6>
+            <input type="text" name="relationship" placeholder="Friends, family members...">
+          </div>
+
+          <div class="form-group" id="slideContainer">
+            <h6>How much would you like to interaction with your future neighbors?</h6>
+            <input type="range" min="0" max="5" value="1" class="slider" id="myRange">
+            <ul>
+              <li id="level1">1</li>
+              <li id="level2">2</li>
+              <li id="level3">3</li>
+              <li id="level4">4</li>
+              <li id="level5">5</li>
+            </ul>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
+      <div class="quote-section" id="story3">
+        <div class="img-description">
+          <p class="quote">“I feel like a million bucks!”- Bobby, first home resident</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{profile-footer
+  backRoute=(if (user-is-type 'host') 'auth.profile.2-save' 'auth.profile.2-1')
+  nextRoute='auth.profile.3-2'
+  percent=90}}

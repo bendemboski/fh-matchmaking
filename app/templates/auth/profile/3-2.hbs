@@ -1,0 +1,37 @@
+{{#nav-bar}}{{/nav-bar}}
+
+<div class="container" id="host-profile">
+  <div class="row">
+    <div class="col-lg-7 col-md-12 col-sm-12 col-12 " id="left-column">
+      <form action="#" id="hostform">
+        <fieldset>
+          <legend class={{if (user-is-type 'host') "hostHeading" "residentHeading"}}>
+            STEP 3: Almost Done
+          </legend>
+          <div class="form-group">
+            <h6> Now, your turn to ask a question to your future neighbor!  </h6>
+            <textarea name="hostQuestion" form="hostform" placeholder="Type the question here..."></textarea>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
+      <div class="notebox">
+        <h6 class="note">
+          <i class="fa fa-pencil" aria-hidden="true"></i>Ideas to ask a killer question that find the perfect neighbor:
+        </h6>
+        <ul>
+          <li>What’s your 1st thing to do when you wake up in the morning?</li>
+          <li>What’s your favorite football team?</li>
+          <li>What is your favorite animal?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{profile-footer
+  backRoute='auth.profile.3-1'
+  nextRoute=(if (user-is-type 'host') 'auth.profile.3-save' 'auth.profile.view')
+  percent=100}}

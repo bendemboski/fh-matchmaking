@@ -1,0 +1,141 @@
+{{#nav-bar}}{{/nav-bar}}
+
+<div class="container" id="matchMaking-preview">
+  <div class="row">
+    <section id="search-bar-container">
+      <form id="search-filter">
+        <fieldset class="filter-menu listing-menu col-lg-3">
+          <legend id="location-filter">
+            {{select-neighborhood class='match-select-neighborhood'}}
+          </legend>
+        </fieldset>
+        <fieldset class="filter-menu listing-menu col-lg-3">
+          <legend id="family-filter">
+            <div id="family-entries" role="button" onclick={{action (mut shownPanel 'family')}}>
+              Family Size
+              <span class="dropdown-icon"><i class="fa fa-chevron-down"></i></span>
+            </div>
+            {{#if (eq shownPanel 'family')}}
+              <div class="filter-pane">
+                <div class="form-group" id="family-structure">
+                  <div id="adult-filter">
+                    <p class="family" for="name"><i class="fa fa-male"></i> Adult </p>
+                    {{number-input value=adultCount minValue=1 onChange=(action (mut adultCount))}}
+                  </div>
+                  <div id="kid-filter">
+                    <p class="family" for="name"><i class="fa fa-child"></i> Child </p>
+                    {{number-input value=kidCount onChange=(action (mut kidCount))}}
+                  </div>
+                  <div id="pet-filter">
+                    <p class="family" for="name"><i class="fa fa-paw"></i> Pet<span id="text-space"></span></p>
+                    {{number-input value=petCount onChange=(action (mut petCount))}}
+
+                    <div class="filter-setting">
+                      <span class="cancel-btn"><a href="#" onclick={{action (mut shownPanel) ''}}>Cancel</a></span>
+                      <span class="apply-btn"><a href="#" onclick={{action (mut shownPanel) ''}}>Apply</a></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/if}}
+          </legend>
+        </fieldset>
+        <fieldset class="filter-menu listing-menu col-lg-3">
+          <legend id="more-filter">
+            <div id="more-entries" role="button" onclick={{action (mut shownPanel 'more')}}>
+              More Filters
+              <span class="filter-icon"><i class="fa fa-filter"></i></span>
+            </div>
+            {{#if (eq shownPanel 'more')}}
+              <div class="filter-pane">
+                <div class="form-group" id="acceptable-sub">
+                  <h6><strong> Acceptable Substances</strong></h6>
+                  <input type="checkbox" id="matching-illicit" name="substances" value="illicit" checked>
+                  <label for="matching-illicit">Illicit Substances</label>
+                  <input type="checkbox" id="matching-marijuana" name="substances" value="marijuana">
+                  <label for="matching-marijuana">Marijuana</label>
+                  <input type="checkbox" id="matching-alcohol" name="substances" value="alcohol">
+                  <label for="matching-alcohol">Alcohol</label>
+                  <input type="checkbox" id="matching-tabacco" name="substances" value="tabacco">
+                  <label for="matching-tabacco">Tabacco</label>
+                  <input type="checkbox" id="matching-none" name="substances" value="none">
+                  <label for="matching-none">None of them</label>
+                </div>
+                <hr class="more-seperate">
+                <div class="form-group" id="acceptable-sub">
+                  <h6><strong> Connection Level </strong></h6>
+                  <div class="form-group" id="slideContainer">
+                    <input type="range" min="0" max="5" value="1" class="slider" id="myRange">
+                    <ul>
+                      <li id="level1">1</li>
+                      <li id="level2">2</li>
+                      <li id="level3">3</li>
+                      <li id="level4">4</li>
+                      <li id="level5">5</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="filter-setting">
+                  <span class="cancel-btn"><a href="#" onclick={{action (mut shownPanel) ''}}>Cancel</a></span>
+                  <span class="apply-btn"><a href="#" onclick={{action (mut shownPanel) ''}}>Apply</a></span>
+                </div>
+              </div>
+            {{/if}}
+          </legend>
+        </fieldset>
+        <button id="searchBtn" type="search" name="filterSearch">Search</button>
+      </form>
+
+    </section>
+
+    <main>
+      <section id="map">
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10758.84199694172!2d-122.31991839999999!3d47.61231864999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1516407958676" allowfullscreen>
+        </iframe>
+
+      </section>
+
+      <section id="houseList">
+        <div class="home-result">
+          <h6> Homes Available: 4 </h6>
+        </div>
+        {{#link-to 'auth.match.profile'}}
+          <div class="house" id="house1">
+            <div class="house-highlight">
+              <p class="location">South Lake Union</p>
+              <p class="family"><i class="fa fa-male"></i> 2 <i class="fa fa-child"></i> 1 <i class="fa fa-paw"></i> 1</p>
+            </div>
+          </div>
+        {{/link-to}}
+
+        <div class="house" id="house2">
+          <div class="house-highlight">
+            <p class="location">International District</p>
+            <p class="family"><i class="fa fa-male"></i> 1 <i class="fa fa-paw"></i> 1</p>
+          </div>
+        </div>
+
+        <div class="house" id="house3">
+          <div class="house-highlight">
+            <p class="location">Capital Hill</p>
+            <p class="family"><i class="fa fa-male"></i> 1 <i class="fa fa-paw"></i>  2</p>
+          </div>
+        </div>
+
+        <div class="page">
+          <span><a href="">1</a></span>
+          <span><a href="">2 </a></span>
+          <span><a href="">3 </a></span>
+          <span><a href="">4 </a></span>
+          <span><a href="">5 </a></span>
+          <span id="next-page">
+            <a href="">
+              <i class="fa fa-angle-double-right"></i>
+            </a>
+          </span>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>

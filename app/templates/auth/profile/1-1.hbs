@@ -1,0 +1,82 @@
+{{#nav-bar}}{{/nav-bar}}
+
+<div class="container" id="host-profile">
+  <div class="row">
+    <div class="col-lg-7 col-md-12 col-sm-12 col-12 " id="left-column">
+
+      <form action="#" id="hostform">
+        <fieldset>
+          <legend class={{if (user-is-type 'host') "hostHeading" "residentHeading"}}>
+            STEP 1: Say HI, and introduce yourself!
+          </legend>
+          <div class="form-group">
+            <h6>Upload Your Profile Photo</h6>
+            {{picture-uploader
+              wrapperId="profile-container"
+              altText="profile picture"
+              url=profilePic
+              onPicture=(action (mut profilePic))}}
+          </div>
+
+          {{#if (user-is-type 'host')}}
+            <div class="form-group">
+              <h6>Greet Your New Neighbors</h6>
+              <textarea name="greetings" form="hostform" placeholder="Write a sentence to welcome your future neighbors..."></textarea>
+            </div>
+          {{else}}
+            <div class="form-group" id="email" >
+              <h6>Email</h6>
+              <input type="email" name="email" required>
+            </div>
+            <div class="form-group" id="tel" required>
+              <h6>Telephone </h6>
+              <input type="tel" name="tel">
+            </div>
+          {{/if}}
+        </fieldset>
+      </form>
+    </div>
+    {{#if (user-is-type 'host')}}
+      <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
+        <div class="notebox">
+          <h6 class="note">
+            <i class="fa fa-pencil" aria-hidden="true"></i>How to make a good quality photo:
+          </h6>
+          <ul>
+            <li>Do bring your smile</li>
+            <li>Do take it under natural light</li>
+            <li>Do upload photo at least 170 x 170px</li>
+          </ul>
+        </div>
+        <div class="notebox" id="greetings">
+          <h6 class="note">
+            <i class="fa fa-pencil" aria-hidden="true"></i>Ideas to write a greeting:
+          </h6>
+          <ul>
+            <li>General introduction of yourself and your neighborhood with some fun facts</li>
+            <li>Reasons of joining the program</li>
+            <li>Expect of being a host</li>
+          </ul>
+        </div>
+      </div>
+    {{else}}
+      <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
+        <div class="notebox">
+          <h6 class="note">
+            <i class="fa fa-pencil" aria-hidden="true"></i>How to make a good quality photo:
+          </h6>
+          <ul>
+            <li>Do bring your smile</li>
+            <li>Do take it under natural light</li>
+            <li>Do upload photo at least 170 x 170px</li>
+          </ul>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</div>
+
+{{profile-footer
+  backRoute='auth.home'
+  nextRoute='auth.profile.1-2'
+  percent=10}}

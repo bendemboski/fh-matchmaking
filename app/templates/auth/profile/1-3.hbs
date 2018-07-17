@@ -1,0 +1,68 @@
+{{#nav-bar}}{{/nav-bar}}
+
+<div class="container" id="host-profile">
+  <div class="row">
+    <div class="col-lg-7 col-md-12 col-sm-12 col-12" id="left-column">
+      <form action="#" id="hostform">
+        <fieldset>
+          <legend class={{if (user-is-type 'host') "hostHeading" "residentHeading"}}>
+            STEP 1: Say HI, and introduce yourself!
+          </legend>
+          <div class="form-group" id="host-favorite-activity">
+            <h6>What do you do in your free time?</h6>
+            <input type="text" name="host-favorite-activity" placeholder="Watch football game, hike, garden, bike…">
+          </div>
+
+          <div class="form-group" id="host-favorite-food">
+            <h6>What’s your favorite food?</h6>
+            <input type="text" name="host-favorite-food" placeholder="Steak, seafood, I like all food!">
+          </div>
+
+          <div class="form-group">
+            <h6>What kind of movie do you like?</h6>
+            <div class={{if (user-is-type 'host') "host-movie-dropdown" "resident-movie-dropdown"}}>
+              <select name="gender" id={{if (user-is-type 'host') "host-fav-movie" "resident-fav-movie"}}>
+                <option value="">Genres</option>
+                <option value="">-----</option>
+                <option value="actionMovie"> Action Movies </option>
+                <option value="adventureMovie"> Adventure Movies </option>
+                <option value="comedies"> Comedies </option>
+                <option value="gangsterMovie"> Gangster Movies </option>
+                <option value="dramas"> Dramas</option>
+                <option value="epicsHistorical"> Epics/Historical </option>
+                <option value="horrorMovie"> Horror Movies </option>
+                <option value="musicalMovie"> Musical Movies </option>
+                <option value="sci-fiMovie"> Sci-fi Movies </option>
+                <option value="adventureMovie"> War / Anti-war Movies </option>
+                <option value="westerns">Westerns</option>
+              </select>
+            </div>
+          </div>
+
+          {{#if (not (user-is-type 'host'))}}
+            <div class="form-group" id="resident-funfact">
+              <h6>Some fun facts about you!</h6>
+              <textarea type="text" name="resident-funfact" placeholder="Tell us more about you..."></textarea>
+            </div>
+          {{/if}}
+
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
+      <div class="quote-section" id="story2">
+        <div class="img-description">
+          <p class="quote">
+            “When we first heard about the BLOCK Project, we immediately knew we wanted to be involved,"- Kim Sherman & Dan Tenenbaum, the first host family
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{profile-footer
+  backRoute='auth.profile.1-2'
+  nextRoute='auth.profile.1-4'
+  percent=30}}

@@ -1,0 +1,53 @@
+{{! host-only page }}
+{{#nav-bar}}{{/nav-bar}}
+
+<div class="container" id="host-profile">
+  <div class="row" id="hostsaving1">
+    <div class="heading">
+      <h5>
+        Excellent! You completed the very first step!<br>
+        Continue to complete your profile before get matched.
+      </h5>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12 steps" id="step1">
+      <img src="/assets/images/icon_hello_2.png" alt="hello-icon">
+      <div class="subHeading">Start with a hello </div>
+      {{#link-to 'auth.profile.1-1' class="edit"}}
+        Edit
+      {{/link-to}}
+      <ul>
+        <li>{{#link-to 'auth.profile.1-1'}}<i class="fa fa-check-circle" aria-hidden="true" id="greeting"></i>Greeting{{/link-to}}</li>
+        <li>{{#link-to 'auth.profile.1-1'}}<i class="fa fa-check-circle" aria-hidden="true" id="basic-info"></i>Basics{{/link-to}}</li>
+        <li>{{#link-to 'auth.profile.1-1'}}<i class="fa fa-check-circle" aria-hidden="true" id="lifestyle"></i>Lifestyle{{/link-to}}</li>
+        <li>{{#link-to 'auth.profile.1-1'}}<i class="fa fa-check-circle" aria-hidden="true" id="health"></i>Health Condition{{/link-to}}</li>
+      </ul>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12 steps" id="step2">
+      <img src="/assets/images/icon_backyard_grey.png" alt="backyard-icon">
+      <div class="subHeading"> Share your backyard </div>
+
+      <ul>
+        <li><i class="fa fa-check-circle" aria-hidden="true" id="location"></i>Location</li>
+        <li><i class="fa fa-check-circle" aria-hidden="true" id="backyard-scene"></i>Backyard Scene </li>
+        <li><i class="fa fa-check-circle" aria-hidden="true" id="photos"></i>Photos </li>
+      </ul>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12  steps" id="step3">
+      <img src="/assets/images/icon_commitment_grey.png" alt="commitment-icon">
+      <div class="subHeading"> Set Expectation &amp; Contribution</div>
+
+      <ul>
+        <li><i class="fa fa-check-circle" aria-hidden="true" id="expectation"></i>Expectation</li>
+        <li><i class="fa fa-check-circle" aria-hidden="true" id="question"></i>Customized questions</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{profile-footer
+  backRoute='auth.profile.1-4'
+  nextRoute='auth.profile.2-1'
+  percent=40}}

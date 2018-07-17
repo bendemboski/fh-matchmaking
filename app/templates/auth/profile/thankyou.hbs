@@ -1,0 +1,23 @@
+{{! Profile Section }}
+<header id="thankyoupage">
+  {{#if (user-is-type 'host')}}
+    <h1>Congratulations</h1>
+    <h5>
+      We are so blessed to have you in the community.<br>
+      Our team will be matching the best resident for you.<br>
+      Keep eyes on your email box!
+    </h5>
+    {{#link-to 'auth.home'}}
+      <button type="button" class="backpage" name="prev" value="home-page">Home Page</button>
+    {{/link-to}}
+    {{#link-to 'auth.account'}}
+      <button type="button" class="nextpage" name="next" value="account-setting">Change Email</button>
+    {{/link-to}}
+  {{else}}
+    <h1>Congratulations</h1>
+    <h5>We are so blessed to have you in the community.</h5>
+    {{#link-to 'auth.match.index'}}
+      <button id="resident-homepage-btn" type="button" class="backpage" name="prev" value="communityPage">Find a Match</button>
+    {{/link-to}}
+  {{/if}}
+</header>

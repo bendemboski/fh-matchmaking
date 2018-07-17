@@ -1,0 +1,22 @@
+{{set-body-class "signin-page"}}
+
+<form id="signinPage">
+  <h2 class="formHeader">Sign in</h2>
+  <div class="loginGroup">
+    <input type="email" name="useremail" onblur={{action 'checkTyped'}} required><span class="highlight"></span><span class="bar"></span>
+    <label>User Email</label>
+  </div>
+  <div class="loginGroup">
+    <input type="password" name="psw" onblur={{action 'checkTyped'}} required><span class="highlight"></span><span class="bar"></span>
+    <label>Password</label>
+    <div class="notification">
+      <i class="fa fa-exclamation-circle" aria-hidden="true"></i>The initial password should be the sign-in code sent to your email by the Block Project team.
+      <a href="#">
+        <span class="getCode">Didn't get a code?</span>
+      </a>
+    </div>
+  </div>
+  {{#link-to 'auth.home'}}<button type="button" class="enter-button">Enter</button>{{/link-to}}
+
+  <div class="resetPassword"> <a href="#">Forget your password?</a></div>
+</form>

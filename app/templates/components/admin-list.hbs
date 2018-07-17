@@ -1,0 +1,45 @@
+{{#nav-bar}}{{/nav-bar}}
+
+<div class="container" id="admin-resident-list">
+  <div class="row">
+    <ul id="admin-subnav">
+      <li>{{#link-to 'auth.admin.host-list'}}Hosts{{/link-to}}</li>
+      <li>{{#link-to 'auth.admin.resident-list'}}Residents{{/link-to}}</li>
+    </ul>
+    <div class="list">
+      <table id="host-table">
+        <thead>
+          <tr>
+            <th colspan="2">
+              <input
+                type="text"
+                id="host-name-input"
+                value={{filterText}}
+                oninput={{action (mut filterText) value='target.value'}}
+                placeholder="Search for names"
+                title="Type in a name">
+            </th>
+            <th> Location <button class="chevron-down" onclick={{action (mut sortField) 'location'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
+            <th> Occupation <button class="chevron-down" onclick={{action (mut sortField) 'occupation'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button> </th>
+            <th> Onboard <button class="chevron-down" onclick={{action (mut sortField) 'joined:desc'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
+            <th> Status <button class="chevron-down" onclick={{action (mut sortField) 'status'}}><i class="fa fa-chevron-down" aria-hidden="true"></i></button>  </th>
+            <th> Note </th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each peopleList as |person|}}
+            <tr>
+              <td> <img id="resident1" src={{person.image}} alt="nick-rschlebusch"> </td>
+              <td> <a href="#">{{person.name}}</a> </td>
+              <td>{{person.location}}</td>
+              <td>{{person.occupation}}</td>
+              <td>{{moment-from-now person.joined}}</td>
+              <td>{{person.status}}</td>
+              <td><button id="note-icon"><i class="fa fa-sticky-note" aria-hidden="true"></i> </button></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

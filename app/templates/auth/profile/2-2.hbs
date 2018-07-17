@@ -1,0 +1,45 @@
+{{! host-only page }}
+{{#nav-bar}}{{/nav-bar}}
+
+<div class="container" id="host-profile">
+  <div class="row">
+    <div class="col-lg-7 col-md-12 col-sm-12 col-12 " id="left-column">
+      <form action="#" id="hostform">
+        <fieldset>
+          <legend class="hostHeading">
+            STEP 2: Share about your backyard
+          </legend>
+          <div class="form-group">
+            <div id="thingtodo">
+              <h6>What do you like to do in your backyard?</h6>
+              <input type="text" name="thing-to-do" placeholder="e.g. garden, do yoga, enjoy a cup of coffee…">
+            </div>
+          </div>
+          <div class="form-group">
+            <div id="bky-description">
+              <h6>One sentence to describe your backyard. </h6>
+              <textarea name="backyard-brief" form="hostform" placeholder=""></textarea>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
+      <div class="notebox">
+        <h6 class="note">
+          <i class="fa fa-lightbulb-o" aria-hidden="true"></i>Other Hosts' Samples:
+        </h6>
+        <ul>
+          <li>It’s a place that filled with happiness and we’d love to share it out with our neighborhood.</li>
+          <li>A heaven for our dog, Giant, who loves to play around with our neighbors.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{profile-footer
+  backRoute='auth.profile.2-1'
+  nextRoute='auth.profile.2-3'
+  percent=60}}

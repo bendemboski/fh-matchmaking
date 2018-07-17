@@ -799,9 +799,7 @@ p.family {
   margin-bottom: 0;
 }
 
-span#adult.form-control,
-span#kid.form-control,
-span#pet.form-control {
+.number-input-value {
   text-align: center;
   border-style: none;
   width: 5%;
@@ -959,8 +957,9 @@ div.host-movie-dropdown select {
   padding-left: 0;
   color: #bebebe;
 }
+
 /* Hostprofile2-1*/
-select#neighborhood {
+.profile-select-neighborhood {
   font-size: 0.7em;
   height: 35px;
   background-color: transparent;
@@ -1082,12 +1081,6 @@ input#bus-number::placeholder {
   cursor: pointer;
 }
 
-input#imageUpload_1,
-input#imageUpload_2,
-input#imageUpload_3,
-input#imageUpload_4 {
-  display: none;
-}
 /*Host Profile3-1*/
 #slideContainer {
   width: 99%;
@@ -1383,7 +1376,6 @@ div.steps {
 
 .carousel-section {
   width: 97%;
-  height: 400px;
   text-align: center;
   background-color: #000;
   margin: 0 auto 10px;
@@ -2294,7 +2286,7 @@ span.dropdown-icon{
 
 }
 
-select#neighborhood-entries {
+.match-select-neighborhood {
   font-size: 0.5em;
   height: 35px;
   background-color: transparent;

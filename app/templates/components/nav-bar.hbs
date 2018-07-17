@@ -1,82 +1,82 @@
 <div class="container">
-  {{#if userService.isHost}}
-    <a class="navbar-brand" href="#">{{#link-to 'homepage-host'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
+  {{#if currentUser.isHost}}
+    <a class="navbar-brand" href="#">{{#link-to 'auth.home'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> MENU <i class="fa fa-bars" ></i></button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-host ml-auto">
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">{{#link-to 'hostprofile1-1'}}YOUR PROFILE{{/link-to}}</a>
+        <li class="nav-item">
+          {{#link-to 'auth.profile.1-1' class="nav-link js-scroll-trigger"}}YOUR PROFILE{{/link-to}}
         </li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">{{#link-to 'community'}}COMMUNITY{{/link-to}}</a>
+        <li class="nav-item">
+          {{#link-to 'auth.community' class="nav-link js-scroll-trigger"}}COMMUNITY{{/link-to}}
         </li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">{{#link-to 'faqpage-host'}}HELP{{/link-to}}</a>
+        <li class="nav-item">
+          {{#link-to 'auth.faq' class="nav-link js-scroll-trigger"}}HELP{{/link-to}}
         </li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">{{#link-to 'accountpage-host'}}<i class="fa fa-cog fa-lg"></i>
-{{/link-to}}</a>
+        <li class="nav-item">
+          {{#link-to 'auth.account' class="nav-link js-scroll-trigger"}}
+            <i class='fa fa-cog fa-lg'></i>
+          {{/link-to}}
         </li>
       </ul>
     </div>
-    {{else if userService.isCaseWorker}}
-
-    <a class="navbar-brand" href="#">{{#link-to 'homepage-caseworker'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> MENU <i class="fa fa-bars" ></i></button>
+  {{else if currentUser.isGuest}}
+    {{#link-to 'auth.home' class="navbar-brand"}}
+      <img src="/assets/images/theblockproject_logo_80px.png"
+           alt="the-block-project-logo" height="65px" width="65px">
+    {{/link-to}}
+    <button class="navbar-toggler navbar-toggler-right" type="button"
+            data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+      MENU <i class="fa fa-bars"></i>
+    </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-cwk ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'homepage-caseworker'}}MY RESIDENT{{/link-to}}</a>
+          {{#link-to 'auth.home' class="nav-link js-scroll-trigger"}}MY RESIDENT{{/link-to}}
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'residentprofile1-1'}}NEW RESIDENT{{/link-to}}</a>
+          {{#link-to 'auth.profile.1-1' class="nav-link js-scroll-trigger"}}NEW RESIDENT{{/link-to}}
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'matchingpage-resident'}}FIND A MATCH{{/link-to}}</a>
+          {{#link-to 'auth.match.index' class="nav-link js-scroll-trigger"}}FIND A MATCH{{/link-to}}
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'faqpage-caseworker'}}HELP{{/link-to}}</a>
+          {{#link-to 'auth.faq' class="nav-link js-scroll-trigger"}}HELP{{/link-to}}
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'accountpage-caseworker'}}<i class="fa fa-cog fa-lg"></i>
-
-{{/link-to}}</a>
+          {{#link-to 'auth.account' class="nav-link js-scroll-trigger"}}
+            <i class="fa fa-cog fa-lg"></i>
+          {{/link-to}}
         </li>
       </ul>
     </div>
   {{else}}
-  <a class="navbar-brand" href="#">{{#link-to 'homepage-admin'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> MENU <i class="fa fa-bars" ></i></button>
+    {{#link-to 'auth.home' class="navbar-brand"}}
+      <img src="/assets/images/theblockproject_logo_80px.png"
+           alt="the-block-project-logo" height="65px" width="65px">
+    {{/link-to}}
+    <button class="navbar-toggler navbar-toggler-right" type="button"
+            data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+      MENU <i class="fa fa-bars"></i>
+    </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-admin ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'homepage-admin'}}DASHBOARD{{/link-to}}</a>
+          {{#link-to 'auth.home' class="nav-link js-scroll-trigger"}}DASHBOARD{{/link-to}}
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'admin-host-list'}}MANAGEMENT{{/link-to}}</a>
+          {{#link-to 'auth.admin.host-list' class="nav-link js-scroll-trigger"}}MANAGEMENT{{/link-to}}
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">{{#link-to 'accountpage-admin'}}<i class="fa fa-cog fa-lg"></i>
-
-{{/link-to}}</a>
+          {{#link-to 'auth.account' class="nav-link js-scroll-trigger"}}
+            <i class="fa fa-cog fa-lg"></i>
+          {{/link-to}}
         </li>
       </ul>
     </div>
   {{/if}}
-    </div>
-
-    <!--Old Script-->
-    {{!-- <div class="container">
-    {{#if userService.isHost}}
-      <a class="navbar-brand" href="#">{{#link-to 'homepage-host'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
-    {{else if userService.isAdmin}}
-    <a class="navbar-brand" href="#">{{#link-to 'homepage-admin'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
-    {{else}}
-    <a class="navbar-brand" href="#">{{#link-to 'homepage-caseworker'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
-    {{/if}}
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        MENU
-        <i class="fa fa-bars" ></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          {{yield}}
-        </ul>
-      </div>
-    </div> --}}
+</div>

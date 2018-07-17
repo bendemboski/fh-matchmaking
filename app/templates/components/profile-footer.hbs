@@ -1,0 +1,24 @@
+<div id={{if (user-is-type 'host') "hostPageButton" "residentPageButton"}}>
+  {{#link-to backRoute}}
+    <button class="backpage" name="next" type="submit" value="host-page1">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>Back
+    </button>
+  {{/link-to}}
+  {{#link-to nextRoute}}
+    <button class="nextpage" name="next" type="submit" value="host-page1">
+      Next
+    </button>
+  {{/link-to}}
+</div>
+
+{{! Progress Wrapper }}
+<div class="progress-wrap">
+  <div class="progress">
+    <div id={{if (user-is-type 'host') "hostProgressBar" "residentProgressBar"}}
+         class="progress-bar" role="progressbar"
+         aria-valuenow={{percent}} aria-valuemin="0" aria-valuemax="100"
+         style={{concat 'width: ' percent '%'}}>
+      <span class="sr-only">{{percent}}%</span>
+    </div>
+  </div>
+</div>

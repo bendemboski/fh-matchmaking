@@ -1,0 +1,119 @@
+{{#nav-bar}}{{/nav-bar}}
+
+{{#if (user-is-type 'admin')}}
+  {{set-body-class "homepage-admin"}}
+
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-4 hostResult">
+        <h1><b>100</b></h1>
+        <h5>Hosts</h5>
+        {{#link-to 'auth.admin.host-list'}} <p>See Details</p>{{/link-to}}
+      </div>
+      <div class="col-lg-4 resResult">
+        <h1><b>30</b></h1>
+        <h5>Residents</h5>
+        {{#link-to 'auth.admin.resident-list'}} <p>See Details</p>{{/link-to}}
+      </div>
+      <div class="col-lg-4 cwkResult">
+        <h1><b>10</b></h1>
+        <h5>Matched</h5>
+        <p>See Details</p>
+      </div>
+    </div>
+  </div>
+{{else}}
+  {{set-body-class "homepage-host"}}
+
+  <header>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-5 my-auto">
+          <div class="header-content mx-auto" id="mainpageTop">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolore, error, in perspiciatis quasi.</h2>
+            {{#link-to 'auth.profile.1-1' class="btn btn-outline btn-xl js-scroll-trigger"}}
+              Build My Profile
+            {{/link-to}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="process" id="howItWorks">
+    <div class="container">
+      <div class="heading">
+        <h1>HOW IT WORKS</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="process-item">
+            <img class="process-icon" src="../../assets/images/icon_buildprofile.png" alt="build profile">
+            <h3> 1. Build Your Profile</h3>
+            <h5 class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloribus velit, hic fugit magni accusamus inventore nihil architecto quisquam eligendi!</h5>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="process-item">
+
+            <img class="process-icon" src="../../assets/images/icon_getmatched.png" alt="get matched">
+            <h3>2. Get Matched</h3>
+            <h5 class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloribus velit, hic fugit magni accusamus inventore nihil architecto quisquam eligendi!</h5>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="process-item">
+
+            <img class="process-icon" src="../../assets/images/icon_meetneighbors.jpg" alt="meet neighbors">
+            <h3>3. Meet Your Neighbors</h3>
+            <h5 class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloribus velit, hic fugit magni accusamus inventore nihil architecto quisquam eligendi!</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <ul class="list-inline list-social">
+        <li class="list-inline-item social-facebook">
+          <a href="https://www.facebook.com/HomelessInSeattle/" target="_blank" rel="noopener">
+            <i class="fa fa-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item social-instagram">
+          <a href="https://www.instagram.com/facinghomelessness/" target="_blank" rel="noopener">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </li>
+
+      </ul>
+      <ul class=contact-information>
+        <li class=phone>206.632.7299 </li>
+        <li class=email>
+          <a href="mailto:info@facinghomelessness.org">info@facinghomelessness.org</a>
+        </li>
+
+        <li class=address> 4001 9th Ave NE, Seattle, WA 98105</li>
+        <li class=fhLink>
+          <a href="https://www.facinghomelessness.org/about" target="_blank" rel="noopener">
+            Facing Homelessness
+          </a>
+        </li>
+        <li class=tbpLink>
+          <a href="http://www.the-block-project.com/home/" target="_blank" rel="noopener">
+            The Block Project
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="homepage">
+    <div class="container">
+      <p>&copy; 2017 The Block Project. All Rights Reserved.</p>
+    </div>
+  </footer>
+{{/if}}

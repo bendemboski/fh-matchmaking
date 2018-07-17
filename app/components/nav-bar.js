@@ -6,12 +6,11 @@ import { run } from '@ember/runloop';
 export default Component.extend({
   tagName: 'nav',
   classNames: [ 'navbar', 'navbar-expand-lg', 'fixed-top'],
-  classNameBindings: [ 'shrink:navbar-shrink','userService.isHost:navbar-host', 'userService.isCaseWorker:navbar-cwk', 'userService.isAdmin:navbar-admin' ],
+  classNameBindings: [ 'shrink:navbar-shrink','currentUser.isHost:navbar-host', 'currentUser.isGuest:navbar-cwk', 'currentUser.isAdmin:navbar-admin' ],
 
   shrink: false,
 
-  //Define a property -service injection
-  userService: service('user'),
+  currentUser: service(),
 
   didInsertElement() {
     this._super(...arguments);
