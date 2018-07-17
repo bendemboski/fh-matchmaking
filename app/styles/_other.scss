@@ -1,23 +1,8 @@
 /* NOTE General */
 button {
   font-size: 0.8em;
+  font-weight: 600;
 }
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,500,600');
-
-/* buttons -orange */
-// @mixin button($color){
-//   background-color:$color;
-//   width: 25%;
-//   height: 30px;
-//   display: inline-block;
-//   color: #989898;
-//   border-style: none;
-//   background-color: transparent;
-//   border-radius: 22.5px;
-//   font-weight: 600;
-//   text-align: left;
-//   font-size: 0.8em;
-// }
 
 /* NOTE Signin Page */
 body.signin-page {
@@ -599,6 +584,8 @@ div#hostProgressBar.progress-bar {
   background-color: #dc7a4b;
 }
 /* Page Button */
+
+
 div#hostPageButton {
   bottom: 0;
   // position: fixed;
@@ -630,8 +617,8 @@ div#hostPageButton {
   display: inline-block;
   color: #fff;
   border: 1px solid;
-  border-color: transparent;
-  background-color: #d66229;
+  border-color: #D66229;
+  background-color: #D66229;
   border-radius: 22.5px;
   text-align: center;
   font-size: 0.8em;
@@ -640,6 +627,7 @@ div#hostPageButton {
 #hostPageButton button.nextpage:hover {
   background-color: #C24F17;
 }
+
 /*ResidentProfile1-1*/
 #email input,
 #tel input {

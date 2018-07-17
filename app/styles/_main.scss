@@ -4,20 +4,46 @@ button {
 }
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,500,600');
 
-/* buttons -orange */
-// @mixin button($color){
-//   background-color:$color;
-//   width: 25%;
-//   height: 30px;
-//   display: inline-block;
-//   color: #989898;
-//   border-style: none;
-//   background-color: transparent;
-//   border-radius: 22.5px;
-//   font-weight: 600;
-//   text-align: left;
-//   font-size: 0.8em;
-// }
+
+/* Profile Page Buttons */
+/* next-button */
+@mixin next-button($color){
+  background:$color;
+  color: $white;
+  width: 20%;
+  height: 42px;
+  display: inline-block;
+  border-style: none;
+  float:right;
+  border-radius: 22.5px;
+  cursor: pointer;
+    &:hover {
+      background:darken($color,6%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      background:darken($color,10%);
+    }
+}
+
+/* back-button */
+@mixin back-button{
+  background:transparent;
+  color:$lightGrey;
+  width: 25%;
+  height: 42px;
+  display: inline-block;
+  border-style: none;
+  text-align: left;
+  cursor: pointer;
+    &:hover {
+      color:darken($lightGrey,6%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      color:darken($lightGrey,10%);
+    }
+}
 
 /* NOTE Signin Page */
 body.signin-page {
@@ -585,7 +611,7 @@ footer.profile {
   bottom: 0;
   width: 100%;
   padding: 0;
-  text-align: none;
+  overflow: hidden;
 }
 
 div.progress {
@@ -607,39 +633,14 @@ div#hostPageButton {
 }
 
 #hostPageButton button.backpage {
-  width: 25%;
-  height: 30px;
-  display: inline-block;
-  color: #989898;
-  border-style: none;
-  background-color: transparent;
-  border-radius: 22.5px;
-  font-weight: 600;
-  text-align: left;
-  font-size: 0.8em;
+  @include back-button;
 }
 
-#hostPageButton button.backpage:hover {
-  color: #6a6a6a;
-}
 
 #hostPageButton button.nextpage {
-  width: 18%;
-  height: 35px;
-  float: right;
-  display: inline-block;
-  color: #fff;
-  border: 1px solid;
-  border-color: transparent;
-  background-color: #d66229;
-  border-radius: 22.5px;
-  text-align: center;
-  font-size: 0.8em;
+  @include next-button($mainOrange);
 }
 
-#hostPageButton button.nextpage:hover {
-  background-color: #C24F17;
-}
 /*ResidentProfile1-1*/
 #email input,
 #tel input {
@@ -661,38 +662,11 @@ div#residentPageButton {
 }
 
 #residentPageButton button.backpage {
-  width: 25%;
-  height: 40px;
-  display: inline-block;
-  color: #989898;
-  border-style: none;
-  background-color: transparent;
-  border-radius: 22.5px;
-  font-weight: 600;
-  text-align: left;
-  font-size: 0.8em;
-}
-
-#residentPageButton button.backpage:hover {
-  color: #6a6a6a;
+  @include back-button;
 }
 
 #residentPageButton button.nextpage {
-  width: 18%;
-  height: 35px;
-  float: right;
-  display: inline-block;
-  color: #fff;
-  border: 1px solid;
-  border-color: transparent;
-  background-color: #8BA334;
-  border-radius: 22.5px;
-  text-align: center;
-  font-size: 0.8em;
-}
-
-#residentPageButton button.nextpage:hover {
-  background-color: #5B8021;
+  @include next-button($mainGreen);
 }
 
 div#residentProgressBar.progress-bar {
@@ -821,8 +795,8 @@ span#pet.form-control {
 }
 
 .quote-section {
-  width: 95%;
-  height: 420px;
+  width: 90%;
+  height: 550px;
   border-style: none;
   margin: 0 auto;
   background-position: center;
@@ -845,25 +819,25 @@ span#pet.form-control {
 
 .img-description{
   width:100%;
-  padding:10px;
+  padding:10px 20px;
   position:relative;
-  top:300px;
-  height:120px;
-  line-height:120px;
+  top:450px;
+  height:100px;
+  line-height:100px;
   background-color:#000;
   opacity: .6;
 }
 
 #story2 .img-description{
   padding-top:10px;
-  top:320px;
+  top:400px;
   height:100px;
   line-height:100px;
 }
 
 #story3 .img-description{
   padding-top:10px;
-  top:370px;
+  top:450px;
   height:50px;
   line-height:50px;
 }
@@ -875,6 +849,7 @@ p.quote {
   line-height: 25px;
   font-size:.7em;
   font-style: italic;
+  margin-bottom:0;
 }
 
 
@@ -1169,220 +1144,96 @@ input#imageUpload_4 {
   float: left;
   margin: 100px 0 0 -300px;
 }
-/* Saving Page 1*/
+
+/* Saving Pages */
+
 div.heading {
   text-align: center;
   width: 100%;
+  h5 {
+    font-weight: 500;
+    margin: 5px auto;
+    padding: 50px;
+    color: #666;
+    font-size: 1em;
+  }
 }
 
-.heading h5 {
-  font-weight: 500;
-  margin: 5px auto;
-  padding: 50px;
-  color: #666;
-  font-size: 1em;
+#hostsaving1,
+#hostsaving2,
+#hostsaving3 {
+  .steps{
+    display: inline-block;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    &:not(:last-child){
+      border-right: 1px solid #bebebe;
+    }
+    img {
+      width: 65%;
+      margin: 20px 58px;
+    }
+    .subHeading {
+      font-size: 0.9em;
+      font-weight: 500;
+      color: #666;
+      padding-left: 20px;
+      display: inline-block;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      font-size: 0.8em;
+      li{
+        color: #bebebe;
+        a:hover{
+          color:#636363;
+          }
+        i{
+          padding: 5px 15px 5px 25px;
+          color: #b3b3b3;
+          &.checked{
+            color: #d66229;
+          }
+        }
+      }
+    }
+    a.edit{
+      float: right;
+      margin-right: 15px;
+      display: inline-block;
+      font-weight: 500;
+      padding: 2px 12px;
+      border-radius: 18px;
+      text-decoration: none;
+      color: #d66229;
+      border: 1px solid #d66229;
+      font-size: 0.6em;
+      &:hover{
+        color: #fff;
+        text-decoration: none;
+        background-color: #d66229;
+        border: 1px solid #d66229;
+      }
+    }
+  }
 }
 
-div.steps {
-  display: inline-block;
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
+#hostsaving1 {
+  #step2 .subHeading,
+  #step3 .subHeading{
+    color: #bebebe;
+  }
 }
 
-#step1,
-#step2 {
-  border-right: 1px solid #bebebe;
+#hostsaving2{
+  #step3 .subHeading{
+    color: #bebebe;
+    font-size: 0.9em;
+  }
 }
 
-#hostsaving1 .steps div.subHeading {
-  font-size: 0.9em;
-  font-weight: 500;
-  color: #666;
-  padding-left: 20px;
-  display: inline-block;
-}
-
-#hostsaving1 #step2 div.subHeading,
-#hostsaving1 #step3 div.subHeading {
-  color: #bebebe;
-  font-size: 0.9em;
-}
-
-.steps img {
-  width: 50%;
-  margin: 20px 58px;
-}
-
-.steps ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#step1 ul li {
-  color: #666;
-  font-size: 0.8em;
-}
-
-,
-#step2 ul li,
-#step3 ul li {
-  color: #bebebe;
-  font-size: 0.8em;
-}
-
-.steps ul li i {
-  padding: 5px 15px 5px 25px;
-}
-
-,
-#hostsaving1 i#basic-info,
-#hostsaving1 i#greeting,
-#hostsaving1 i#lifestyle {
-  color: #d66229;
-}
-
-#hostsaving1 i#health {
-  color: #b3b3b3;
-}
-
-.steps .edit {
-  float: right;
-  margin-right: 15px;
-  display: inline-block;
-  font-weight: 500;
-  padding: 2px 12px;
-  border-radius: 18px;
-  text-decoration: none;
-}
-
-#step1 .edit {
-  color: #d66229;
-  border: 1px solid #d66229;
-  font-size: 0.6em;
-}
-
-#hostsaving1 #step1 .edit:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #d66229;
-  border: 1px solid #d66229;
-}
-
-,
-#hostsaving1 #step2 .edit,
-#hostsaving1 #step3 .edit {
-  color: #bebebe;
-}
-/* Saving Page 2*/
-#hostsaving2 .steps div.subHeading {
-  font-size: 0.9em;
-  font-weight: 500;
-  color: #666;
-  padding-left: 20px;
-  display: inline-block;
-}
-
-#hostsaving2 #step3 div.subHeading {
-  color: #bebebe;
-  font-size: 0.9em;
-}
-
-#hostsaving2 .steps ul li {
-  color: #666;
-  font-size: 0.8em;
-}
-
-#hostsaving2 #step3 ul li {
-  color: #bebebe;
-  font-size: 0.8em;
-}
-
-#hostsaving2 li i#backyard-scene,
-#hostsaving2 li i#basic-info,
-#hostsaving2 li i#greeting,
-#hostsaving2 li i#lifestyle,
-#hostsaving2 li i#location,
-#hostsaving2 li i#photos {
-  color: #d66229;
-}
-
-.steps .edit {
-  float: right;
-  margin-right: 15px;
-  display: inline-block;
-  font-size: 0.6em;
-  font-weight: 500;
-  padding: 2px 12px;
-  border-radius: 18px;
-  text-decoration: none;
-}
-
-#step1 .edit,
-#step2 .edit {
-  color: #d66229;
-  border: 1px solid #d66229;
-}
-
-#hostsaving2 #step1 .edit:hover,
-#hostsaving2 #step2 .edit:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #d66229;
-  border: 1px solid #d66229;
-}
-
-,
-#hostsaving2 #step3 .edit {
-  color: #bebebe;
-  border: 1px solid #bebebe;
-}
-/* Saving Page 3*/
-#hostsaving3 .steps div.subHeading {
-  font-size: 0.9em;
-  font-weight: 500;
-  color: #666;
-  padding-left: 20px;
-  display: inline-block;
-}
-
-.steps ul li i {
-  padding: 5px 15px 5px 25px;
-}
-
-#hostsaving3 li i#backyard-scene,
-#hostsaving3 li i#basic-info,
-#hostsaving3 li i#expectation,
-#hostsaving3 li i#greeting,
-#hostsaving3 li i#lifestyle,
-#hostsaving3 li i#location,
-#hostsaving3 li i#photos,
-#hostsaving3 li i#question {
-  color: #d66229;
-}
-
-#hostsaving3 .steps ul li {
-  color: #666;
-}
-
-#hostsaving3 .steps .edit {
-  float: right;
-  margin-right: 15px;
-  display: inline-block;
-  font-size: 0.6em;
-  font-weight: 500;
-  padding: 2px 12px;
-  border-radius: 18px;
-  color: #666;
-  border: 1px solid #666;
-}
-
-#hostsaving3 .steps .edit:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #666;
-  border: 1px solid #666;
-}
 /*Host Preview Page*/
 #profile-preview {
   width: 100%;
@@ -1483,7 +1334,7 @@ div.steps {
 
 .main-info#host-preview {
   width: 100%;
-  margin-top: 45px;
+  margin-top: 100px;
   font-size: 80%;
 }
 
@@ -1720,7 +1571,6 @@ header#community {
 row #faq {
   margin: 0 auto;
 }
-
 .faq-header {
   font-size: 0.9em;
   border-bottom: 1px dotted #ccc;
@@ -1729,49 +1579,77 @@ row #faq {
   color: #d66229;
 }
 
-.faq-c {
-  border-bottom: 1px dotted #ccc;
-  padding: 0.6em 0;
-}
+/* accordion style*/
 
-.faq-t {
-  line-height: 1em;
-  font-size: 1.3em;
-  color: #aaa;
-  float: left;
-  font-weight: 700;
-  padding-right: 0.3em;
-  -webkit-transition: all 200ms;
-  -moz-transition: all 200ms;
-  transition: all 200ms;
+.tab {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #424242;
+  overflow: hidden;
 }
-
-.faq-o {
-  transform: rotate(-45deg);
-  transform-origin: 50% 50%;
-  -ms-transform: rotate(-45deg);
-  -ms-transform-origin: 50% 50%;
-  -webkit-transform: rotate(-45deg);
-  -webkit-transform-origin: 50% 50%;
-  -webkit-transition: all 200ms;
-  -moz-transition: all 200ms;
-  transition: all 200ms;
+.tab input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
 }
-
-.faq-q {
+.tab label {
+  position: relative;
+  display: block;
+  background: #fff;
   cursor: pointer;
-  font-size: 0.8em;
-  font-weight: 100;
-  color: #555;
+  margin-top:.5rem;
+  height: 1.5em;
+  line-height: 2;
+  font-size:.9em;
 }
 
-.faq-a {
-  clear: both;
-  color: #666;
-  display: none;
-  padding-left: 1.5em;
-  font-size: 0.8em;
+.tab-content {
+  max-height: 0;
+  overflow: hidden;
+  border-bottom:1px solid #eee;
+  -webkit-transition: max-height .35s;
+  -o-transition: max-height .35s;
+  transition: max-height .35s;
+    font-size:.8em;
 }
+
+.tab-content p {
+  margin: 1em;
+}
+/* :checked */
+input:checked ~ .tab-content {
+  max-height: 10em;
+}
+/* Icon */
+label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: .5em;
+  height: .5em;
+  line-height: .8;
+  text-align: center;
+  -webkit-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
+  font-size:2em;
+}
+.tab input[type=checkbox] +label::after {
+  content: "+";
+}
+input[type=radio] +label::after {
+  content: "\25BC";
+}
+.tab input[type=checkbox]:checked +label::after {
+  transform: rotate(42deg);
+}
+.tab input[type=radio]:checked +label::after {
+  transform: rotateX(180deg);
+}
+/* end accordion*/
+
 
 #faq section {
   padding: 0 10px;
@@ -2315,6 +2193,7 @@ select#neighborhood-entries {
   color: grey;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 
@@ -2358,7 +2237,9 @@ ul#location-div{
   position:absolute;
   margin-bottom:10px;
   width:100%;
+  cursor: pointer;
 }
+
 #family-filter .filter-pane{
   z-index:1000;
   position:relative;
@@ -2371,9 +2252,16 @@ ul#location-div{
   padding:10px 20px;
   width:250px;
 }
-.hide{
-  display: none;
+#family-entries:hover,
+#family-entries:focus{
+    border:1px solid #999;
 }
+// .hide{
+//   display:none;
+// }
+// #family-filter:focus + .filter-pane{
+//   display:block;
+// }
 
 span#text-space{
   padding:6px;
@@ -2520,8 +2408,8 @@ button#searchBtn {
   width: 100px;
   margin-left: 15px;
   position:relative;
-bottom:16px;
-border:none;
+  bottom:16px;
+  border:none;
 }
 
 #searchBtn:focus,
@@ -2537,15 +2425,15 @@ border:none;
 .filter-setting{
   padding-top:10px;
   font-size:.8em;
-
   height:30px;
 }
+
 .filter-setting span > a {
     text-decoration: none;
     color:grey;
 }
-.filter-setting span.apply-btn a,
-.filter-setting span > a:focus{
+
+.filter-setting span.apply-btn a{
   float:right;
   color:#8BA334;
 }
@@ -2564,11 +2452,9 @@ section#houseList {
   width: 35%;
   overflow:auto;
   padding: 0;
-  max-height: 420px;
+  max-height: 650px;
   display: inline-block;
   border: 1px solid #eee;
-
-
 }
 
 #houseList img {
@@ -2612,11 +2498,11 @@ section#houseList {
   background-color: #000;
   opacity: .7;
   bottom:0;
-margin-top:165px;
-height:35px;
-line-height: 35px;
-padding-left:10px;
-padding-right:10px;
+  margin-top:165px;
+  height:35px;
+  line-height: 35px;
+  padding-left:10px;
+  padding-right:10px;
 }
 
 #house2.house {
@@ -2656,19 +2542,20 @@ padding-right:10px;
   padding-left:10px;
   padding-right:10px;
 }
+
 section#map {
   width: 64%;
   display: inline-block;
   padding: 0;
   border: none;
-  height:450px;
+  height:650px;
   float:left;
 }
 
 section#map iframe {
   border: none;
   width: 100%;
-  height: 420px;}
+  height: 650px;}
 
 main {
   width: 100%;
@@ -2718,7 +2605,7 @@ button.back:hover {
 }
 /*Resident Question Page*/
 #hostform #question {
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 #hostform fieldset p {
