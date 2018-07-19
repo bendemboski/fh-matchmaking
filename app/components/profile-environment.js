@@ -1,6 +1,6 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  id: 'environment',
+  elementId: 'environment',
   classNames: [ 'form-group' ]
 });

@@ -2,6 +2,6 @@ import Component from '@ember/component';
 
 export default Component.extend({
   tagName: 'select',
-  id: 'neighborhood',
+  elementId: 'neighborhood',
   classNames: [ 'form-control', 'dropdown' ]
 });

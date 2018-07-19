@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  id: 'profile-container',
+  elementId: 'profile-container',
   profileSrc: '/assets/images/icon_photoPreview.png',
 
   actions: {
