@@ -789,11 +789,12 @@ span#adult.form-control,
 span#kid.form-control,
 span#pet.form-control {
   text-align: center;
-  border-style: none;
   width: 5%;
   font-size:.8em;
 }
-
+.input-group .form-control{
+  border-color:transparent;
+}
 .quote-section {
   width: 90%;
   height: 550px;
@@ -947,9 +948,11 @@ div.host-movie-dropdown select {
   color: #bebebe;
 }
 /* Hostprofile2-1*/
-select#neighborhood {
+select.form-control:not([size]):not([multiple]){
+    height: 35px;
+}
+select.form-control.profile-select-neighborhood {
   font-size: 0.7em;
-  height: 35px;
   background-color: transparent;
   border-radius: 5px;
   border: 1px solid #bebebe;
