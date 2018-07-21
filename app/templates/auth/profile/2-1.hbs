@@ -43,7 +43,7 @@
         </fieldset>
       </form>
     </div>
-
+  {{#if (user-is-type 'host')}}
     <div class="col-lg-5 col-md-12 col-sm-12 col-12" id="right-column">
       <div class="notebox">
         <h6 class="note">
@@ -53,6 +53,7 @@
         Thus, the public transportation and neighborhood environment are two key decision points for a resident to make decision.
       </div>
     </div>
+  {{/if}}
   </div>
 </div>
 

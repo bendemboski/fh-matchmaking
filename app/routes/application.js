@@ -4,7 +4,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 import { getOwner } from '@ember/application';
 import Test from 'ember-simple-auth/authenticators/test';
 
-const fakeAuthType = 'host';
+const fakeAuthType = 'guest';
 
 export default Route.extend(ApplicationRouteMixin, {
   currentUser: service(),

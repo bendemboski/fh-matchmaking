@@ -8,26 +8,8 @@
           <legend class={{if (user-is-type 'host') "hostHeading" "residentHeading"}}>
             STEP 1: Say HI, and introduce yourself!
           </legend>
-          {{#if isHost}}
+          {{#if (user-is-type 'host')}}
             <div id="host1-4">
-              {{!--
-              <div class="form-group" id="illness">
-                <h6>Do you have an active mental illness?</h6>
-                <input type="radio" id="radio1-1" name="illness" value="no" checked>
-                <label for="radio1-1">No</label>
-                <input type="radio" id="radio1-2" name="illness" value="yes">
-                <label for="radio1-2">Yes</label>
-                <input type="text" name="name-of-illness" placeholder="If so, please list the illness">
-              </div>
-              <div class="form-group" id="family-medical-history">
-                <h6>Do you have any medical family history?</h6>
-                <input type="radio" id="radio2-1" name="family-medical-history" value="no" checked>
-                <label for="radio2-1">No</label>
-                <input type="radio" id="radio2-2" name="family-medical-history" value="yes">
-                <label for="radio2-2">Yes</label>
-                <input type="text" name="family-medical-history" placeholder="If so, please lists the details">
-              </div>
-              --}}
               <div class="form-group" id="host-used-substances">
                 <h6>What substances you use currently?</h6>
                 <input type="checkbox" id="host-chk1-1" name="substances" value="illicit" checked>
@@ -57,24 +39,6 @@
             </div>
           {{else}}
             <div id="resident1-4">
-              {{!--
-              <div class="form-group" id="illness">
-                <h6>Do you have an active mental illness?</h6>
-                <input type="radio" id="radio1-1" name="illness" value="no" checked>
-                <label for="radio1-1">No</label>
-                <input type="radio" id="radio1-2" name="illness" value="yes">
-                <label for="radio1-2">Yes</label>
-                <input type="text" name="name-of-illness" placeholder="If so, please list the illness">
-              </div>
-              <div class="form-group" id="family-medical-history">
-                <h6>Do you have any medical family history?</h6>
-                <input type="radio" id="radio2-1" name="family-medical-history" value="no" checked>
-                <label for="radio2-1">No</label>
-                <input type="radio" id="radio2-2" name="family-medical-history" value="yes">
-                <label for="radio2-2">Yes</label>
-                <input type="text" name="family-medical-history" placeholder="If so, please lists the details">
-              </div>
-              --}}
               <div class="form-group" id="host-used-substances">
                 <h6>What substances you use currently?</h6>
                 <input type="checkbox" id="host-chk1-1" name="substances" value="illicit" checked>
