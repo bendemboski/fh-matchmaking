@@ -2187,7 +2187,7 @@ span.dropdown-icon{
 
 }
 
-select#neighborhood-entries {
+.select-neighborhood {
   font-size: 0.5em;
   height: 35px;
   background-color: transparent;
@@ -2198,7 +2198,6 @@ select#neighborhood-entries {
   margin-bottom: 10px;
   cursor: pointer;
 }
-
 
 .filter-menu legend a div {
   display: inline-block;
