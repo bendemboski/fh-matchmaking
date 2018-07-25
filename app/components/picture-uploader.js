@@ -14,7 +14,7 @@ export default Component.extend({
       let files = e.target.files || [];
       let file = files[0];
       if (file) {
-        this.get('onPicture', window.URL.createObjectURL(file));
+        this.onPicture;
       }
     }
   }

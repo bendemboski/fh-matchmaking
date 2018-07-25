@@ -14,7 +14,7 @@ export default Controller.extend({
 
   actions: {
     setBackyardPic(index, url) {
-      this.get('backyardPics').replace(index, 1, url);
+      this.backyardPics.replace(index, 1, url);
     }
   }
 })

@@ -54,7 +54,7 @@ export default Controller.extend({
 
   residentsSort: 'name',
   residentsSortDef: computed('residentsSort', function() {
-    return [ this.get('residentsSort') ];
+    return [ this.residentsSort ];
   }),
   sortedResidents: sort('allResidents', 'residentsSortDef'),
 
@@ -62,7 +62,7 @@ export default Controller.extend({
     let {
       sortedResidents,
       filterText
-    } = this.getProperties('sortedResidents', 'filterText');
+    } = this;
     if (!filterText) {
       return sortedResidents;
     }

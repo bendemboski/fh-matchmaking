@@ -18,6 +18,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
     if (!owner.lookup('authenticator:test')) {
       owner.register('authenticator:test', Test);
     }
-    return this.get('session').authenticate('authenticator:test', { id: 1 });
+    return this.session.authenticate('authenticator:test', { id: 1 });
   }
 });

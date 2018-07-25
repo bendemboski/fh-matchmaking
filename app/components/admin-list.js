@@ -7,7 +7,7 @@ export default Component.extend({
 
   sortField: 'name',
   sortDef: computed('sortField', function() {
-    return [ this.get('sortField') ];
+    return [ this.sortField ];
   }),
   sortedPeople: sort('people', 'sortDef'),
 
@@ -15,7 +15,7 @@ export default Component.extend({
     let {
       sortedPeople,
       filterText
-    } = this.getProperties('sortedPeople', 'filterText');
+    } = this;
     if (!filterText) {
       return sortedPeople;
     }

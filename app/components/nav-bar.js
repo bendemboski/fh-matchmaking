@@ -22,7 +22,7 @@ export default Component.extend({
 
     // Set up scrollspy
     $('body').scrollspy({
-      target: `#${this.get('id')}`,
+      target: `#${this.id}`,
       offset: 54
     });
   },

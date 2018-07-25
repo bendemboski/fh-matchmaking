@@ -14,7 +14,7 @@ export default Service.extend({
 
   load() {
     if (this.get('session.isAuthenticated')) {
-      return this.get('cognitoUser').getUserAttributes().then((userAttributes) => {
+      return this.cognitoUser.getUserAttributes().then((userAttributes) => {
         userAttributes.forEach((attr) => {
           this.set(attr.getName(), attr.getValue());
         });

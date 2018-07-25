@@ -9,10 +9,10 @@ export default Component.extend({
 
   actions: {
     increment() {
-      this.get('onChange')(this.get('value') + 1);
+      this.onChange(this.value + 1);
     },
     decrement() {
-      this.get('onChange')(this.get('value') - 1);
+      this.onChange(this.value - 1);
     }
   }
 });
