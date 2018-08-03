@@ -23,9 +23,18 @@ module.exports = function(environment) {
     },
 
     cognito: {
-      poolId: 'us-west-2_VGdsdNdST',
-      clientId: '1svgoc3tmf24oe0deo93f1bfj5',
+      poolId: 'us-west-2_hiYFp34ja',
+      clientId: '13l02eij1vuvq4ujql2kj6vcal',
       autoRefreshSession: true
+    },
+
+    'ember-cli-notifications': {
+      autoClear: true,
+      clearDuration: 5000
+    },
+
+    matchmaking: {
+      apiUrl: 'https://pz6vun2soi.execute-api.us-west-2.amazonaws.com/dev'
     }
   };
 

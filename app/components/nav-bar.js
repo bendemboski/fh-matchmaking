@@ -11,6 +11,7 @@ export default Component.extend({
   shrink: false,
 
   currentUser: service(),
+  session: service(),
 
   didInsertElement() {
     this._super(...arguments);
@@ -37,5 +38,11 @@ export default Component.extend({
   // shrink.
   checkShrink() {
     this.set('shrink', window.pageYOffset > 100);
+  },
+
+  actions: {
+    signOut() {
+      this.get('session').invalidate();
+    }
   }
 });

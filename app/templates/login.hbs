@@ -1,6 +1,6 @@
 {{set-body-class "signin-page"}}
 
-<form id="signinPage" onsubmit={{perform login}}>
+<form id="signinPage" onsubmit={{prevent-default (perform login)}}>
   <h2 class="formHeader">Sign in</h2>
   <div class="loginGroup">
     <input
@@ -30,11 +30,87 @@
   </div>
   <input type='submit' value='Enter'>
 
-  {{#if error}}
-    <div class='alert alert-error'>
-      {{error}}
-    </div>
-  {{/if}}
-
-  <div class="resetPassword"> <a href="#">Forget your password?</a></div>
+  <div class="resetPassword"> <a href="#" onclick={{prevent-default (action openModal 'forgotPassword')}}>Forget your password?</a></div>
 </form>
+
+{{#if (eq modalName 'changePassword')}}
+  {{#modal-dialog
+    onClose=closeModal
+    translucentOverlay=true
+  }}
+    <h2>Welcome!</h2>
+    <form onsubmit={{prevent-default (perform changePassword)}}>
+      <legend>
+        Before continuing you need to change your password.
+      </legend>
+      <div>
+        <label>password:</label>
+        <input
+          type='password'
+          minlength=8
+          required
+          oninput={{action (mut modalContext.newPassword1) value='target.value'}}>
+      </div>
+      <div>
+        <label>password (confirm):</label>
+        <input
+          type='password'
+          minlength=8
+          required
+          oninput={{action (mut modalContext.newPassword2) value='target.value'}}>
+      </div>
+      <input type='submit' value='Change'>
+    </form>
+  {{/modal-dialog}}
+{{else if (eq modalName 'forgotPassword')}}
+  {{#modal-dialog
+    onClose=closeModal
+    translucentOverlay=true
+  }}
+    <h2>Forgot password</h2>
+    <form onsubmit={{prevent-default (perform forgotPassword)}}>
+      <legend>
+        First we need the e-mail address on your account
+      </legend>
+      <div>
+        <label>email address:</label>
+        <input
+          type='email'
+          required
+          oninput={{action (mut modalContext.email) value='target.value'}}>
+      </div>
+      <input type='button' value='Cancel' onclick={{action closeModal}}>
+      <input type='submit' value='Submit'>
+    </form>
+  {{/modal-dialog}}
+{{else if (eq modalName 'completeForgotPassword')}}
+  {{#modal-dialog
+    onClose=closeModal
+    translucentOverlay=true
+  }}
+    <h2>Forgot password</h2>
+    <form onsubmit={{prevent-default (perform completeForgotPassword)}}>
+      <legend>
+        You should receive an email with a confirmation code. Enter it here and
+        choose a new password
+      </legend>
+      <div>
+        <label>code:</label>
+        <input
+          type='text'
+          required
+          oninput={{action (mut modalContext.code) value='target.value'}}>
+      </div>
+      <div>
+        <label>password:</label>
+        <input
+          type='password'
+          minlength=8
+          required
+          oninput={{action (mut modalContext.password) value='target.value'}}>
+      </div>
+      <input type='button' value='Cancel' onclick={{action closeModal}}>
+      <input type='submit' value='Submit'>
+    </form>
+  {{/modal-dialog}}
+{{/if}}
