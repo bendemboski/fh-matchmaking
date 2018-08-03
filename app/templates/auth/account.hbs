@@ -2,62 +2,113 @@
 
 <div class="container" id="user-account">
   <div class="row">
-    <form action="#" id="account-setting" role="form">
-      <h6>Account Setting</h6>
-      <section class="left-side col-lg-6">
-        <div class="form-group" id="first_name">
-          <label for="first_name" class=" control-label">First Name</label>
-          <div>
-            <input class="form-control" type="text" value="Kim">
+    {{#let submit as |task|}}
+      <form id="account-setting" role="form" onsubmit={{prevent-default (perform submit)}}>
+        <h6>Account Setting</h6>
+        <section class="left-side col-lg-6">
+          <div class="form-group" id="first_name">
+            <label for="first_name" class=" control-label">First Name</label>
+            <div>
+              <input
+                class="form-control"
+                type="text"
+                required
+                value={{changeset.givenName}}
+                oninput={{action (mut changeset.givenName) value='target.value'}}>
+            </div>
           </div>
-        </div>
-        <div class="form-group"  id="last_name">
-          <label for="last_name" class="control-label">Last Name</label>
-          <div>
-            <input class="form-control" type="text" value="Sherman">
+          <div class="form-group"  id="last_name">
+            <label for="last_name" class="control-label">Last Name</label>
+            <div>
+              <input
+                class="form-control"
+                type="text"
+                required
+                value={{changeset.familyName}}
+                oninput={{action (mut changeset.familyName) value='target.value'}}>
+            </div>
           </div>
-        </div>
 
-        <div class="form-group"  id="user_bod_day" >
-          <label for="usr_bod" class="control-label">Birthday</label>
-          <div>
-            <input type='date'/ class="form-control" value="1972-12-24" >
+          <div class="form-group"  id="user_bod_day" >
+            <label for="usr_bod" class="control-label">Birthday</label>
+            <div>
+              <input
+                class="form-control"
+                type="date"
+                value={{changeset.birthdate}}
+                oninput={{action (mut changeset.birthdate) value='target.value'}}>
+            </div>
           </div>
-        </div>
-        <div class="form-group" id="user_phone" >
-          <label for="user_phone" class="control-label">Phone Number</label>
-          <div >
-            <input class="form-control" type="tel" value="625-000-000">
+          <div class="form-group" id="user_phone" >
+            <label for="user_phone" class="control-label">Phone Number</label>
+            <div >
+              <input
+                class="form-control"
+                type="tel"
+                minlength=10
+                maxlength=10
+                value={{changeset.phoneNumber}}
+                oninput={{action (mut changeset.phoneNumber) value='target.value'}}>
+            </div>
           </div>
-        </div>
-        <div class="form-group"  id="user_email" >
-          <label for="user_email" class="control-label">Email</label>
-          <div>
-            <input class="form-control" type="text" value="kimsherman123@gmail.com">
+          <div class="form-group"  id="user_email" >
+            <label for="user_email" class="control-label">Email</label>
+            <div>
+              <input
+                class="form-control"
+                type="email"
+                required
+                value={{changeset.email}}
+                oninput={{action (mut changeset.email) value='target.value'}}>
+            </div>
           </div>
-        </div>
 
-      </section>
-      <section class="right-side col-lg-6">
-        <div class="form-group" id="pass" >
-          <label for="pass" class="control-label">New Password</label>
+        </section>
+        <section class="right-side col-lg-6">
+          <div class="form-group" id="oldpass" >
+            <label for="oldpass" class="control-label">Current Password</label>
+            <div>
+              <input
+                class="form-control"
+                type="password"
+                minlength=8
+                value={{oldPassword}}
+                oninput={{action (mut oldPassword) value='target.value'}}>
+            </div>
+          </div>
+          <div class="form-group" id="pass" >
+            <label for="pass" class="control-label">New Password</label>
+            <div>
+              <input
+                class="form-control"
+                type="password"
+                minlength=8
+                value={{password1}}
+                oninput={{action (mut password1) value='target.value'}}>
+            </div>
+          </div>
+          <div class="form-group"   id="pass_repet" >
+            <label for="pass_repet" class="control-label">Confirm Password</label>
+            <div>
+              <input
+                class="form-control"
+                type="password"
+                minlength=8
+                value={{password2}}
+                oninput={{action (mut password2) value='target.value'}}>
+            </div>
+          </div>
+        </section>
+        <div class="form-group"  id="savebtn" >
+          <label class="control-label" ></label>
           <div>
-            <input class="form-control" type="password" value="11111122333">
+            <input
+              type='submit'
+              value={{if task.isRunning 'Saving...' 'Save changes'}}
+              disabled={{task.isRunning}}>
           </div>
         </div>
-        <div class="form-group"   id="pass_repet" >
-          <label for="pass_repet" class="control-label">Confirm Password</label>
-          <div>
-            <input class="form-control" type="password" value="11111122333">
-          </div>
-        </div>
-      </section>
-      <div class="form-group"  id="savebtn" >
-        <label class="control-label" ></label>
-        <div>
-          <input type="button" class="btn btn-primary" id="save-change" value="Save Changes">
-        </div>
-      </div>
-    </form>
+      </form>
+    {{/let}}
   </div>
 </div>

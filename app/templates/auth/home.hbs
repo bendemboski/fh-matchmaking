@@ -34,42 +34,51 @@
       translucentOverlay=true
     }}
       <h2>Invite User</h2>
-      <form onsubmit={{prevent-default (perform inviteUser)}}>
-        <legend>
-          Before continuing you need to change your password.
-        </legend>
-        <div>
-          <label>First name</label>
+      {{#let inviteUser as |task|}}
+        <form onsubmit={{prevent-default (perform task)}}>
+          <legend>
+            Before continuing you need to change your password.
+          </legend>
+          <div>
+            <label>First name</label>
+            <input
+              type='text'
+              required
+              oninput={{action (mut modalContext.givenName) value='target.value'}}>
+          </div>
+          <div>
+            <label>Last name</label>
+            <input
+              type='text'
+              required
+              oninput={{action (mut modalContext.familyName) value='target.value'}}>
+          </div>
+          <div>
+            <label>Email address</label>
+            <input
+              type='email'
+              required
+              oninput={{action (mut modalContext.email) value='target.value'}}>
+          </div>
+          <div>
+            <label>Type</label>
+            <select onchange={{action (mut modalContext.type) value='target.value'}}>
+              <option value='host' selected={{eq modalContext.type 'host'}}>host</option>
+              <option value='guest' selected={{eq modalContext.type 'guest'}}>guest</option>
+              <option value='admin' selected={{eq modalContext.type 'admin'}}>admin</option>
+            </select>
+          </div>
           <input
-            type='text'
-            required
-            oninput={{action (mut modalContext.givenName) value='target.value'}}>
-        </div>
-        <div>
-          <label>Last name</label>
+            type='button'
+            value='Cancel'
+            onclick={{action closeModal}}
+            disabled={{task.isRunning}}>
           <input
-            type='text'
-            required
-            oninput={{action (mut modalContext.familyName) value='target.value'}}>
-        </div>
-        <div>
-          <label>Email address</label>
-          <input
-            type='email'
-            required
-            oninput={{action (mut modalContext.email) value='target.value'}}>
-        </div>
-        <div>
-          <label>Type</label>
-          <select onchange={{action (mut modalContext.type) value='target.value'}}>
-            <option value='host' selected={{eq modalContext.type 'host'}}>host</option>
-            <option value='guest' selected={{eq modalContext.type 'guest'}}>guest</option>
-            <option value='admin' selected={{eq modalContext.type 'admin'}}>admin</option>
-          </select>
-        </div>
-        <input type='button' value='Cancel' onclick={{action closeModal}}>
-        <input type='submit' value='Invite'>
-      </form>
+            type='submit'
+            value={{if task.isRunning 'Inviting...' 'Invite'}}
+            disabled={{task.isRunning}}>
+        </form>
+      {{/let}}
     {{/modal-dialog}}
   {{/if}}
 {{else}}

@@ -6,6 +6,7 @@ import raw from 'ember-macro-helpers/raw';
 import { task, all } from 'ember-concurrency';
 import { CognitoUserPool, CognitoUser } from 'amazon-cognito-identity-js';
 import { Promise } from 'rsvp';
+import { camelize, decamelize } from '@ember/string';
 
 export default Service.extend({
   session: service(),
@@ -29,11 +30,7 @@ export default Service.extend({
       ]);
 
       attributes.forEach((attr) => {
-        let name = attr.getName();
-        if (name.slice(0, 'custom:'.length) === 'custom:') {
-          name = name.slice('custom:'.length);
-        }
-        this.set(name, attr.getValue());
+        this.set(camelize(attr.getName()), attr.getValue());
       });
 
       if (groups.includes('admins')) {
@@ -53,6 +50,21 @@ export default Service.extend({
   //
   changePassword: task(function*(oldPassword, newPassword) {
     yield this.cognitoUser.changePassword(oldPassword, newPassword);
+  }),
+
+  //
+  // Update the current user's attributes
+  //
+  updateAttributes: task(function*(attrs) {
+    yield this.cognitoUser.updateAttributes(Object.keys(attrs).map((key) => {
+      return {
+        Name: decamelize(key),
+        Value: attrs[key]
+      };
+    }));
+
+    // Success, now update our local properties
+    this.setProperties(attrs);
   }),
 
   //
