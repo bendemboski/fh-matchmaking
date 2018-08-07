@@ -1,12 +1,30 @@
 import NotificationsService from 'ember-cli-notifications/services/notification-messages-service';
 
 export default NotificationsService.extend({
-  error(e, { preamble } = {}) {
+  error(e, options = {}) {
+    let { preamble } = options;
+
     let message = buildMessage(e);
     if (preamble) {
       message = `${preamble}: ${message}`;
     }
-    this._super(message);
+
+    this._super(message, options);
+  },
+
+  // work around un-customizable styles
+  addNotification(options) {
+    options = Object.assign({}, options);
+    options.type = options.type || 'info';
+
+    let extraClass = `notification-${options.type}`;
+    if (options.cssClasses) {
+      options.cssClasses = `${extraClass} ${options.cssClasses}`;
+    } else {
+      options.cssClasses = extraClass;
+    }
+
+    return this._super(options);
   }
 });
 
