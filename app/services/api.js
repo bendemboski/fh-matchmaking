@@ -3,7 +3,7 @@ import { inject as service } from '@ember/service';
 import { getOwner } from '@ember/application';
 import { computed } from '@ember/object';
 import { readOnly } from '@ember/object/computed';
-import { task } from 'ember-concurrency';
+import { task, hash } from 'ember-concurrency';
 
 export default AjaxService.extend({
   session: service(),
@@ -24,6 +24,13 @@ export default AjaxService.extend({
   inviteUser: task(function*({ givenName, familyName, email, type }) {
     yield this.post('/createUser', {
       data: { givenName, familyName, email, type }
+    });
+  }),
+
+  getUserStats: task(function*() {
+    return yield hash({
+      hosts: this.request('/hosts/stats'),
+      guests: this.request('/guests/stats')
     });
   })
 });

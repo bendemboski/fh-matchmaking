@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import ModalContainerMixin from '../../mixins/modal-container';
+import ModalContainerMixin from '../../../mixins/modal-container';
 import { inject as service } from '@ember/service';
 import { task } from 'ember-concurrency';
 

@@ -3,41 +3,9 @@
 
 //SCSS styling links
 @import './color';
+@import './general';
 @import './nav';
 @import './main';
 @import './login';
 @import './admin-list';
-
-//Google Font
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,500,600');
-
-
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-
-}
-
-body {
-
-    background: $white;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-
-    font-weight: 300;
-    letter-spacing: 1px;
-}
+@import './home';

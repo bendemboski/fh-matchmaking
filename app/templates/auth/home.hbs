@@ -1,178 +1,91 @@
 {{#nav-bar}}{{/nav-bar}}
 
-{{#if (user-is-type 'admin')}}
-  {{set-body-class "homepage-admin"}}
+{{set-body-class "homepage-host"}}
 
+<header>
   <div class="container h-100">
-    <div class="row h-75">
-      <div class="col-lg-4 hostResult">
-        <h1><b>100</b></h1>
-        <h5>Hosts</h5>
-        {{#link-to 'auth.admin.host-list'}} <p>See Details</p>{{/link-to}}
-      </div>
-      <div class="col-lg-4 resResult">
-        <h1><b>30</b></h1>
-        <h5>Residents</h5>
-        {{#link-to 'auth.admin.resident-list'}} <p>See Details</p>{{/link-to}}
-      </div>
-      <div class="col-lg-4 cwkResult">
-        <h1><b>10</b></h1>
-        <h5>Matched</h5>
-        <p>See Details</p>
-      </div>
-    </div>
-    <div class="row h-25 text-center">
-      <div class="col-lg-12">
-        <button onclick={{action openModal 'inviteUser' (hash type='host')}}>Invite new user</button>
+    <div class="row h-100">
+      <div class="col-lg-5 my-auto">
+        <div class="header-content mx-auto" id="mainpageTop">
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolore, error, in perspiciatis quasi.</h2>
+          {{#link-to 'auth.profile.1-1' class="btn btn-outline btn-xl js-scroll-trigger"}}
+            Build My Profile
+          {{/link-to}}
+        </div>
       </div>
     </div>
   </div>
+</header>
 
-  {{#if (eq modalName 'inviteUser')}}
-    {{#modal-dialog
-      onClose=closeModal
-      translucentOverlay=true
-    }}
-      <h2>Invite User</h2>
-      {{#let inviteUser as |task|}}
-        <form onsubmit={{prevent-default (perform task)}}>
-          <legend>
-            Before continuing you need to change your password.
-          </legend>
-          <div>
-            <label>First name</label>
-            <input
-              type='text'
-              required
-              oninput={{action (mut modalContext.givenName) value='target.value'}}>
-          </div>
-          <div>
-            <label>Last name</label>
-            <input
-              type='text'
-              required
-              oninput={{action (mut modalContext.familyName) value='target.value'}}>
-          </div>
-          <div>
-            <label>Email address</label>
-            <input
-              type='email'
-              required
-              oninput={{action (mut modalContext.email) value='target.value'}}>
-          </div>
-          <div>
-            <label>Type</label>
-            <select onchange={{action (mut modalContext.type) value='target.value'}}>
-              <option value='host' selected={{eq modalContext.type 'host'}}>host</option>
-              <option value='guest' selected={{eq modalContext.type 'guest'}}>guest</option>
-              <option value='admin' selected={{eq modalContext.type 'admin'}}>admin</option>
-            </select>
-          </div>
-          <input
-            type='button'
-            value='Cancel'
-            onclick={{action closeModal}}
-            disabled={{task.isRunning}}>
-          <input
-            type='submit'
-            value={{if task.isRunning 'Inviting...' 'Invite'}}
-            disabled={{task.isRunning}}>
-        </form>
-      {{/let}}
-    {{/modal-dialog}}
-  {{/if}}
-{{else}}
-  {{set-body-class "homepage-host"}}
+<section class="process">
+  <div class="container">
+    <h1 class='process-heading'>HOW IT WORKS</h1>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="process-item">
+          <img class="process-icon" src="/assets/images/icon_buildprofile.png" alt="build profile">
+          <h3> 1. Build Your Profile</h3>
+          <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloribus velit, hic fugit magni accusamus inventore nihil architecto quisquam eligendi!</h5>
+        </div>
+      </div>
 
-  <header>
-    <div class="container h-100">
-      <div class="row h-100">
-        <div class="col-lg-5 my-auto">
-          <div class="header-content mx-auto" id="mainpageTop">
-            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolore, error, in perspiciatis quasi.</h2>
-            {{#link-to 'auth.profile.1-1' class="btn btn-outline btn-xl js-scroll-trigger"}}
-              Build My Profile
-            {{/link-to}}
-          </div>
+      <div class="col-lg-4">
+        <div class="process-item">
+
+          <img class="process-icon" src="/assets/images/icon_getmatched.png" alt="get matched">
+          <h3>2. Get Matched</h3>
+          <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloribus velit, hic fugit magni accusamus inventore nihil architecto quisquam eligendi!</h5>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="process-item">
+
+          <img class="process-icon" src="/assets/images/icon_meetneighbors.jpg" alt="meet neighbors">
+          <h3>3. Meet Your Neighbors</h3>
+          <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloribus velit, hic fugit magni accusamus inventore nihil architecto quisquam eligendi!</h5>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section class="process" id="howItWorks">
-    <div class="container">
-      <div class="heading">
-        <h1>HOW IT WORKS</h1>
-      </div>
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="process-item">
-            <img class="process-icon" src="../../assets/images/icon_buildprofile.png" alt="build profile">
-            <h3> 1. Build Your Profile</h3>
-            <h5 class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloribus velit, hic fugit magni accusamus inventore nihil architecto quisquam eligendi!</h5>
-          </div>
-        </div>
+<section class="contact">
+  <div class="container">
+    <ul class="list-inline list-social">
+      <li class="list-inline-item">
+        <a href="https://www.facebook.com/HomelessInSeattle/" target="_blank" rel="noopener">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.instagram.com/facinghomelessness/" target="_blank" rel="noopener">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </li>
 
-        <div class="col-lg-4">
-          <div class="process-item">
+    </ul>
+    <ul class='contact-information'>
+      <li>206.632.7299 </li>
+      <li>
+        <a href="mailto:info@facinghomelessness.org">info@facinghomelessness.org</a>
+      </li>
 
-            <img class="process-icon" src="../../assets/images/icon_getmatched.png" alt="get matched">
-            <h3>2. Get Matched</h3>
-            <h5 class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloribus velit, hic fugit magni accusamus inventore nihil architecto quisquam eligendi!</h5>
-          </div>
-        </div>
+      <li> 4001 9th Ave NE, Seattle, WA 98105</li>
+      <li class='fh-link'>
+        <a href="https://www.facinghomelessness.org/about" target="_blank" rel="noopener">
+          Facing Homelessness
+        </a>
+      </li>
+      <li class='fh-link'>
+        <a href="http://www.the-block-project.com/home/" target="_blank" rel="noopener">
+          The Block Project
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-        <div class="col-lg-4">
-          <div class="process-item">
-
-            <img class="process-icon" src="../../assets/images/icon_meetneighbors.jpg" alt="meet neighbors">
-            <h3>3. Meet Your Neighbors</h3>
-            <h5 class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloribus velit, hic fugit magni accusamus inventore nihil architecto quisquam eligendi!</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="container">
-      <ul class="list-inline list-social">
-        <li class="list-inline-item social-facebook">
-          <a href="https://www.facebook.com/HomelessInSeattle/" target="_blank" rel="noopener">
-            <i class="fa fa-facebook"></i>
-          </a>
-        </li>
-        <li class="list-inline-item social-instagram">
-          <a href="https://www.instagram.com/facinghomelessness/" target="_blank" rel="noopener">
-            <i class="fa fa-instagram"></i>
-          </a>
-        </li>
-
-      </ul>
-      <ul class=contact-information>
-        <li class=phone>206.632.7299 </li>
-        <li class=email>
-          <a href="mailto:info@facinghomelessness.org">info@facinghomelessness.org</a>
-        </li>
-
-        <li class=address> 4001 9th Ave NE, Seattle, WA 98105</li>
-        <li class=fhLink>
-          <a href="https://www.facinghomelessness.org/about" target="_blank" rel="noopener">
-            Facing Homelessness
-          </a>
-        </li>
-        <li class=tbpLink>
-          <a href="http://www.the-block-project.com/home/" target="_blank" rel="noopener">
-            The Block Project
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <footer class="homepage">
-    <div class="container">
-      <p>&copy; 2017 The Block Project. All Rights Reserved.</p>
-    </div>
-  </footer>
-{{/if}}
+<footer class="homepage">
+  &copy; 2017 The Block Project. All Rights Reserved.
+</footer>
