@@ -1,0 +1,34 @@
+.admin-subnav {
+  list-style-type: none;
+  margin:100px 0 0 0;
+  padding: 0;
+  height:30px;
+  line-height: 30px;
+
+  > li {
+    float: left;
+
+    > a {
+      border-radius:5px;
+      font-size:.8em;
+      border:1px solid #666;
+      background-color: white;
+      display: block;
+      color: #666;
+      text-align: center;
+      padding: 0 16px;
+      text-decoration: none;
+      height:30px;
+      line-height: 30px;
+      width:125px;
+      margin-right: 5px;
+
+      &.active,
+      &:hover,
+      &:focus {
+        background-color: #666;
+        color:white;
+      }
+    }
+  }
+}

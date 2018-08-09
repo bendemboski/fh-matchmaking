@@ -1,0 +1,190 @@
+.signin-page {
+  background-image: url("../../assets/images/signin_heroimg2.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: block;
+
+  @media (max-width: 470px) {
+    background-image: url("../../assets/images/signin_heroimg2_470.jpg");
+  }
+}
+
+.signin-form {
+  float: right;
+  height: 100vh;
+  padding: 20px;
+  background: #fff;
+
+  width: 30%;
+  font-size: 100%;
+
+  @media (max-width: 470px) {
+    width: 360px;
+    font-size: 70%;
+    letter-spacing: 110%;
+    margin: 100px auto;
+  }
+}
+
+.signin-form-header {
+  text-align: center;
+  color: #363636;
+  font-weight: 600;
+  margin: 100px auto 10px;
+  font-size: 1.5em;
+}
+
+.signin-form-group {
+  position: relative;
+  margin: 10px auto 20px;
+  font-size: 1em;
+
+  //
+  // input
+  //
+  > input {
+    font-size: 0.9em;
+    padding: 10px 10px 5px 8px;
+    margin: 0 auto;
+    -webkit-appearance: none;
+    display: block;
+    background: #fff;
+    color: #636363;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #757575;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid #ffffff;
+    }
+  }
+
+  //
+  // highlight
+  //
+  .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  // animate when the input is focused
+  &.focus .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+  }
+
+  //
+  // underline
+  //
+  .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    &:before,
+    &:after {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 1px;
+      position: absolute;
+      background: #757575;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+
+    &:before {
+      left: 50%;
+    }
+
+    &:after {
+      right: 50%;
+    }
+  }
+
+  // bar grows to 50% width when input is focused
+  &.focus .bar {
+    &:before,
+    &:after {
+      width: 50%;
+    }
+  }
+
+  //
+  // label
+  //
+  > label {
+    color: #999;
+    font-size: 0.9em;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    background-color: transparent;
+  }
+
+  // The label shrinks when the field has focus or has a value
+  &.focus, &.has-value {
+    > label {
+      top: -20px;
+      left: -5px;
+      -webkit-transform: scale(.75);
+      transform: scale(.75);
+      color: #999;
+    }
+  }
+
+  //
+  // notification
+  //
+  .notification {
+    font-size: 0.7em;
+    margin: 10px 2px 5px;
+    color: #636363;
+    letter-spacing: 0.07em;
+    line-height: 150%;
+
+    > .fa {
+      padding: 0 5px;
+    }
+
+    .get-code {
+      margin-top: 10px;
+      text-decoration-style: none;
+      color: #636363;
+
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.reset-password {
+  text-align: center;
+
+  > a {
+    text-decoration-style: none;
+    font-size: 0.7em;
+    color: #636363;
+
+    &:hover {
+      &, &:focus {
+        color: #535353;
+      }
+    }
+  }
+}

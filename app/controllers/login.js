@@ -81,15 +81,5 @@ export default Controller.extend(ModalContainerMixin, {
     } catch (e) {
       this.notifications.error(e);
     }
-  }),
-
-  actions: {
-    checkTyped({ target }) {
-      if (target.value) {
-        target.classList.add('typed');
-      } else {
-        target.classList.remove('typed');
-      }
-    }
-  }
+  })
 })

@@ -1,6 +1,6 @@
 <div class="container">
   {{#if currentUser.isHost}}
-    <a class="navbar-brand" href="#">{{#link-to 'auth.home'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}</a>
+    {{#link-to 'auth.home' class='navbar-brand'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> MENU <i class="fa fa-bars" ></i></button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-host ml-auto">

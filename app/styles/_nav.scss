@@ -1,23 +1,6 @@
 /* NOTE General Nav Styles */
 
-.navbar-brand img{
-  width:40px;
-  height:40px;
-}
-
-.nav-link {
-  display: block;
-  padding: 0;
-  color: #fff;
-  height: 50px;
-  line-height: 50px;
-}
-/* End General Nav Styles */
-
-/* NOTE General Nav */
-
-/* Mobile */
-nav {
+.navbar {
   border-color: transparent;
   background-color: #000;
   -webkit-transition: all 0.35s;
@@ -25,6 +8,22 @@ nav {
   transition: all 0.35s;
   font-weight: 300;
   letter-spacing: 1.6px;
+
+  /* Desktop */
+  @media (min-width: 980px) {
+    font-size: 0.8em;
+    height: 50px;
+  }
+
+  .fa-bars {
+    font-size: 0.8em;
+    color: #fff;
+  }
+}
+
+.navbar-brand > img {
+  width: 40px;
+  height: 40px;
 }
 
 .navbar-toggler  {
@@ -35,420 +34,51 @@ nav {
   border: 1px solid #fff;
 }
 
-i.fa-bars {
-  font-size: 0.8em;
-  color: #fff;
-}
 .navbar-nav {
   line-height: 50px;
   height:50px;
   background-color: transparent;
-}
 
-nav a {
-  color: #fff;
-  -webkit-transition: all 0.35s;
-  -moz-transition: all 0.35s;
-  transition: all 0.35s;
-}
-
-.navbar-nav > li > a,
-.navbar-nav > li > a:focus{
-  color: #fff;
-  text-align: center;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-.navbar-shrink a,
-.navbar-shrink a:focus,
-  {
-  color: #fff;
-}
-/* Desktop */
-@media (min-width: 980px) {
-nav {
-    border-color: transparent;
-    background-color:#000;
-    font-size: 0.8em;
-    height:50px;
-  }
-
-.navbar-brand img  {
-    height: 40px;
-    width: 40px;
-  }
-
-.navbar-nav > li > a {
-    font-size: 0.7em;
-    padding: 2px 10px;
+  > li {
+    display: block;
+    padding: 0;
     color: #fff;
-  }
+    height: 50px;
+    line-height: 50px;
 
-.navbar-nav > li > a,
-.navbar-nav > li > a:focus {
-    color: #fff;
-    background-color: transparent;
-    text-decoration: none;
+    > a {
+      font-size: 0.7em;
+      padding: 2px 10px;
+      text-align: center;
+      -webkit-transition: all 0.35s;
+      -moz-transition: all 0.35s;
+      transition: all 0.35s;
+      color: #fff;
+
+      &.active,
+      &:hover,
+      &:focus:hover {
+        background-color: transparent;
+        text-decoration: none;
+
+        .navbar-host & {
+          color: #d66229;
+        }
+
+        .navbar-cwk & {
+          color: #8BA334;
+        }
+
+        .navbar-admin & {
+          color: #B0B2AA;
+        }
+      }
+    }
   }
+}
 
 .navbar-shrink {
-    background-color: #000;
-    height: 50px;
-    color:#000;
-    }
-}
-/* End General Nav */
-
-/* NOTE hostNav */
-/* Mobile */
-
-.navbar-host .navbar-nav > li > a.active {
-  color: #d66229;
-  background-color: transparent;
-}
-
-.navbar-host .navbar-nav > li > a:focus:hover,
-.navbar-host .navbar-nav > li > a:hover {
-  color: #d66229;
-  background-color: transparent;
-}
-
-/* Desktop */
-
-@media (min-width: 980px) {
-.navbar-host .navbar-nav > li > a:focus:hover,
-.navbar-host .navbar-nav > li > a:hover {
-    color: #d66229;
-    background-color: transparent;
-    text-decoration: none;
-  }
-
-.navbar-host .navbar-nav a:focus,
-.navbar-host .navbar-nav a:hover {
-    color: #d66229;
-    text-decoration: none;
-  }
-.navbar-host .navbar-nav i:focus,
-.navbar-host .navbar-nav i:hover {
-    color: #d66229;
-    text-decoration: none;
-  }
-
-.navbar-host.navbar-shrink .navbar-nav > li > a:focus:hover,
-.navbar-host.navbar-shrink .navbar-nav > li > a:hover {
-    color: #d66229;
-  }
-}
-
-/* NOTE caseworkerNav */
-
-/* mobile device */
-.navbar-cwk a:focus,
-.navbar-cwk a:hover,{
-  color: #8BA334;
-  text-decoration: none;
-}
-
-.navbar-cwk .navbar-nav > li > a.active, {
-  color: #8BA334;
-  background-color: transparent;
-}
-
-.navbar-cwk .navbar-nav > li > a:focus:hover,
-.navbar-cwk .navbar-nav > li > a:hover{
-  color: #8BA334;
-  background-color: transparent;
-}
-
-.navbar-cwk .navbar-nav i:focus,
-.navbar-cwk .navbar-nav i:hover {
-  color: #8BA334;
-  text-decoration: none;
-  }
-
-/*desktop device*/
-@media (min-width: 980px) {
-.navbar-cwk .navbar-nav > li > a:focus:hover,
-.navbar-cwk .navbar-nav > li > a:hover{
-    color: #8BA334;
-    background-color: transparent;
-    text-decoration: none;
-  }
-
-  .navbar-cwk.navbar-shrink .navbar-nav > li > a:focus:hover,
-  .navbar-cwk.navbar-shrink .navbar-nav > li > a:hover  {
-    color: #8BA334;
-  }
-
-}
-
-/* NOTE adminNav */
-
-/* Mobile */
-.navbar-admin .navbar-nav > li > a.active {
-  color: #B0B2AA;
-  background-color: transparent;
-}
-.navbar-admin a:focus,
-.navbar-admin a:hover {
-  color: #B0B2AA;
-  text-decoration: none;
-}
-
-.navbar-admin .navbar-nav > li > a:focus:hover,
-.navbar-admin .navbar-nav > li > a:hover {
-  color: #B0B2AA;
-  background-color: transparent;
-}
-
-.navbar-admin .navbar-nav i:focus,
-.navbar-admin .navbar-nav i:hover {
-  color: #B0B2AA;
-  text-decoration: none;
-  }
-
-/* Desktop */
-@media (min-width: 980px){
-.navbar-admin .navbar-nav > li > a:focus:hover,
-.navbar-admin .navbar-nav > li > a:hover{
-  color: #B0B2AA;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-.navbar-admin.navbar-shrink .navbar-nav > li > a:focus:hover,
-.navbar-admin.navbar-shrink .navbar-nav > li > a:hover  {
-  color: #B0B2AA;
-}
-
-}
-
-/* NOTE General LightNav */
-/* Mobile */
-// #hostNav-light,
-// #cwkNav-light {
-//   border-color: transparent;
-//   background-color: #fff;
-//   -webkit-transition: all 0.35s;
-//   -moz-transition: all 0.35s;
-//   transition: all 0.35s;
-//   font-weight: 300;
-//   letter-spacing: 1.5px;
-//   height:50px;
-// }
-//
-// #hostNav-light .navbar-toggler,
-// #cwkNav-light .navbar-toggler {
-//   font-size: 0.8em;
-//   padding: 12px;
-//   color: #000;
-//   background-color: #fff;
-//   border: 1px solid #000;
-// }
-//
-// #hostNav-light i.fa-bars,
-// #cwkNav-light i.fa-bars {
-//   font-size: 0.8em;
-//   color: #000;
-// }
-//
-// #hostNav-light .navbar-nav,
-// #cwkNav-light .navbar-nav {
-//   line-height: 70px;
-//   background-color: transparent;
-// }
-//
-// #hostNav-light .navbar-nav > li > a {
-//   font-size: 0.9em;
-//   padding: 2px 10px;
-//   color: #000;
-// }
-//
-// #hostNav-light a,
-// #cwkNav-light a {
-//   color: #000;
-//   -webkit-transition: all 0.35s;
-//   -moz-transition: all 0.35s;
-//   transition: all 0.35s;
-//   font-size:90%;
-// }
-// #hostNav-light .navbar-nav > li > a,
-// #hostNav-light .navbar-nav > li > a:focus,
-// #cwkNav-light .navbar-nav > li > a,
-// #cwkNav-light .navbar-nav > li > a:focus {
-//   color: #000;
-//   text-align: center;
-//   background-color: transparent;
-// }
-//
-//
-// // #cwkNav-light  {
-// //   font-size: 0.8em;
-// //   padding: 5px 0px;
-// //   color: #fff;
-// // }
-//
-//
-// /* Desktop */
-// @media (min-width: 980px) {
-//   #hostNav-light,
-//   #cwkNav-light {
-//     border-color: transparent;
-//     background-color: #fff;
-//     font-size: 0.8em;
-//     padding: 5px 0;
-//     border-bottom:1px solid #eee;
-//   }
-//
-//   #hostNav-light .navbar-nav > li > a,
-//   #hostNav-light .navbar-nav > li > a:focus,
-//   #cwkNav-light .navbar-nav > li > a,
-//   #cwkNav-light .navbar-nav > li > a:focus {
-//     color: #000;
-//     background-color: transparent;
-//     text-decoration: none;
-//   }
-//
-//   #hostNav-light.navbar-shrink,
-//   #cwkNav-light.navbar-shrink {
-//     border-color: rgba(34, 34, 34, 0.1);
-//     background-color: #fff;
-//     height: 50px;
-//   }
-//   #hostNav-light.navbar-shrink .navbar-nav > li > a,
-//   #hostNav-light.navbar-shrink .navbar-nav > li > a:focus {
-//     color: #fff;
-//   }
-// }
-//
-// /* End General LightNav */
-//
-// /* NOTE hostNav-light */
-//
-// /* mobile */
-// #hostNav-light a:focus,
-// #hostNav-light a:hover {
-//   color: #d66229;
-//   text-decoration: none;
-// }
-//
-// #hostNav-light .navbar-nav > li > a.active {
-//   color: #d66229 !important;
-//   background-color: transparent;
-// }
-//
-// #hostNav-light .navbar-nav > li > a:focus:hover,
-// #hostNav-light .navbar-nav > li > a:hover {
-//   color: #d66229;
-//   background-color: transparent;
-// }
-//
-// #hostNav-light i.fa-user-circle-o {
-//   font-size: 1.5em;
-//   padding: 8px 0 0 10px;
-//   color: #000;
-// }
-//
-// #hostNav-light i.fa-user-circle-o:hover,
-// #hostNav-light i.fa-user-circle-o.active,{
-//   color:  #d66229;
-//   background-color: transparent;
-// }
-//
-// /* Desktop Device*/
-// @media (min-width: 980px) {
-//
-//   #hostNav-light .navbar-nav > li > a:focus:hover,
-//   #hostNav-light .navbar-nav > li > a:hover {
-//     color: #d66229;
-//     background-color: transparent;
-//     text-decoration: none;
-//   }
-//
-//   #hostNav-light.navbar-shrink .navbar-nav > li > a:focus:hover,
-//   #hostNav-light.navbar-shrink .navbar-nav > li > a:hover {
-//     color: #d66229;
-//   }
-// }
-//
-// /* NOTE CaseworderNav - Light */
-// /* mobile device */
-//
-// #cwkNav-light a:focus,
-// #cwkNav-light a:hover {
-//   color: #8BA334;
-//   text-decoration: none;
-// }
-//
-// #cwkNav-light .navbar-nav > li > a.active {
-//   color: #8BA334;
-//   background-color: transparent;
-// }
-//
-// #cwkNav-light .navbar-nav > li > a:focus:hover,
-// #cwkNav-light .navbar-nav > li > a:hover {
-//   color: #8BA334;
-//   background-color: transparent;
-// }
-//
-//
-// /* Desktop */
-// @media (min-width: 980px) {
-// #cwkNav-light .navbar-nav > li > a:focus:hover,
-// #cwkNav-light .navbar-nav > li > a:hover {
-//     color: #8BA334;
-//     background-color: transparent;
-//     text-decoration: none;
-//   }
-//
-// #cwkNav-light.navbar-shrink a:focus:hover,
-// #cwkNav-light.navbar-shrink a:hover{
-//   color: #8BA334;
-//   background-color: transparent;
-// }
-//
-// }
-/* End CaseworderNav - Light */
-
-
-ul#admin-subnav {
-    list-style-type: none;
-    margin:100px 0 0 0;
-    padding: 0;
-    height:30px;
-    line-height: 30px;
-
-}
-
-ul#admin-subnav li {
-    float: left;
-
-}
-
-ul#admin-subnav li a {
-      border-radius:5px;
-  font-size:.8em;
-  border:1px solid #666;
-  background-color: white;
-  display: block;
-  color: #666;
-  text-align: center;
-  padding: 0 16px;
-  text-decoration: none;
-  height:30px;
-  line-height: 30px;
-  width:125px;
-  margin-right: 5px;
-}
-#admin-subnav li .active{
-
-  background-color: #666;
-  color:white;
-}
-
-ul#admin-subnav li a:hover,
-ul#admin-subnav li a:focus {
-    background-color: #666;
-    color:white;
+  background-color: #000;
+  height: 50px;
+  color:#000;
 }
