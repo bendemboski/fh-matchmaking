@@ -1,49 +1,61 @@
 {{set-body-class "signin-page"}}
 
 {{#let login as |task|}}
-  <form class='signin-form' onsubmit={{prevent-default (perform task)}}>
+  <form class="signin-form" onsubmit={{prevent-default (perform task)}}>
     <h2 class="signin-form-header">Sign in</h2>
-    <div class={{concat 'signin-form-group' (if email ' has-value')(if emailHasFocus ' focus')}}>
+    <div
+      class={{concat
+        "signin-form-group"
+        (if email " has-value")
+        (if emailHasFocus " focus")
+      }}
+    >
       <input
         type="email"
         name="useremail"
-        oninput={{action (mut email) value='target.value'}}
+        oninput={{action (mut email) value="target.value"}}
         onfocus={{action (mut emailHasFocus) true}}
         onblur={{action (mut emailHasFocus) false}}
         required>
-      <span class='highlight'></span>
-      <span class='bar'></span>
+      <span class="highlight"></span>
+      <span class="bar"></span>
       <label>User Email</label>
     </div>
-    <div class={{concat 'signin-form-group' (if password ' has-value')(if passwordHasFocus ' focus')}}>
+    <div
+      class={{concat
+        "signin-form-group"
+        (if password " has-value")
+        (if passwordHasFocus " focus")
+      }}
+    >
       <input
         type="password"
         name="psw"
-        oninput={{action (mut password) value='target.value'}}
+        oninput={{action (mut password) value="target.value"}}
         onfocus={{action (mut passwordHasFocus) true}}
         onblur={{action (mut passwordHasFocus) false}}
         required>
-      <span class='highlight'></span>
-      <span class='bar'></span>
+      <span class="highlight"></span>
+      <span class="bar"></span>
       <label>Password</label>
       <div class="notification">
         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>The initial password should be the sign-in code sent to your email by the Block Project team.
-        <a href="#" class='get-code'>
+        <a href="#" class="get-code">
           Didn't get a code?
         </a>
       </div>
     </div>
     <input
-      type='submit'
-      value={{if task.isRunning 'Signing in...' 'Sign in'}}
+      type="submit"
+      value={{if task.isRunning "Signing in..." "Sign in"}}
       disabled={{task.isRunning}}>
-    <div class='reset-password'>
-      <a href="#" onclick={{prevent-default (action openModal 'forgotPassword')}}>Forget your password?</a>
+    <div class="reset-password">
+      <a href="#" onclick={{prevent-default (action openModal "forgotPassword")}}>Forget your password?</a>
     </div>
   </form>
 {{/let}}
 
-{{#if (eq modalName 'changePassword')}}
+{{#if (eq modalName "changePassword")}}
   {{#modal-dialog
     onClose=closeModal
     translucentOverlay=true
@@ -57,27 +69,27 @@
         <div>
           <label>password:</label>
           <input
-            type='password'
-            minlength=8
+            type="password"
+            minlength="8"
             required
-            oninput={{action (mut modalContext.newPassword1) value='target.value'}}>
+            oninput={{action (mut modalContext.newPassword1) value="target.value"}}>
         </div>
         <div>
           <label>password (confirm):</label>
           <input
-            type='password'
-            minlength=8
+            type="password"
+            minlength="8"
             required
-            oninput={{action (mut modalContext.newPassword2) value='target.value'}}>
+            oninput={{action (mut modalContext.newPassword2) value="target.value"}}>
         </div>
         <input
-          type='submit'
-          value={{if task.isRunning 'Changing...' 'Change'}}
+          type="submit"
+          value={{if task.isRunning "Changing..." "Change"}}
           disabled={{task.isRunning}}>
       </form>
     {{/let}}
   {{/modal-dialog}}
-{{else if (eq modalName 'forgotPassword')}}
+{{else if (eq modalName "forgotPassword")}}
   {{#modal-dialog
     onClose=closeModal
     translucentOverlay=true
@@ -91,23 +103,23 @@
         <div>
           <label>email address:</label>
           <input
-            type='email'
+            type="email"
             required
-            oninput={{action (mut modalContext.email) value='target.value'}}>
+            oninput={{action (mut modalContext.email) value="target.value"}}>
         </div>
         <input
-          type='button'
-          value='Cancel'
+          type="button"
+          value="Cancel"
           onclick={{action closeModal}}
           disabled={{task.isRunning}}>
         <input
-          type='submit'
-          value={{if task.isRunning 'Submitting...' 'Submit'}}
+          type="submit"
+          value={{if task.isRunning "Submitting..." "Submit"}}
           disabled={{task.isRunning}}>
       </form>
     {{/let}}
   {{/modal-dialog}}
-{{else if (eq modalName 'completeForgotPassword')}}
+{{else if (eq modalName "completeForgotPassword")}}
   {{#modal-dialog
     onClose=closeModal
     translucentOverlay=true
@@ -122,26 +134,26 @@
         <div>
           <label>code:</label>
           <input
-            type='text'
+            type="text"
             required
-            oninput={{action (mut modalContext.code) value='target.value'}}>
+            oninput={{action (mut modalContext.code) value="target.value"}}>
         </div>
         <div>
           <label>password:</label>
           <input
-            type='password'
-            minlength=8
+            type="password"
+            minlength="8"
             required
-            oninput={{action (mut modalContext.password) value='target.value'}}>
+            oninput={{action (mut modalContext.password) value="target.value"}}>
         </div>
         <input
-          type='button'
-          value='Cancel'
+          type="button"
+          value="Cancel"
           onclick={{action closeModal}}
           disabled={{task.isRunning}}>
         <input
-          type='submit'
-          value={{if task.isRunning 'Submitting...' 'Submit'}}
+          type="submit"
+          value={{if task.isRunning "Submitting..." "Submit"}}
           disabled={{task.isRunning}}>
       </form>
     {{/let}}
