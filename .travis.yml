@@ -28,5 +28,6 @@ script:
   - yarn test
 
 script:
+  - npm run lint:hbs
   - npm run lint:js
   - npm test
