@@ -1,91 +1,36 @@
 <div class="container">
-  {{#if currentUser.isHost}}
-    {{#link-to 'auth.home' class='navbar-brand'}}<img src="/assets/images/theblockproject_logo_80px.png" alt="the-block-project-logo" height="65px" width="65px">{{/link-to}}
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> MENU <i class="fa fa-bars" ></i></button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-host ml-auto">
-        <li class="nav-item">
-          {{#link-to 'auth.profile.1-1' class="nav-link js-scroll-trigger"}}YOUR PROFILE{{/link-to}}
-        </li>
-        <li class="nav-item">
-          {{#link-to 'auth.community' class="nav-link js-scroll-trigger"}}COMMUNITY{{/link-to}}
-        </li>
-        <li class="nav-item">
-          {{#link-to 'auth.faq' class="nav-link js-scroll-trigger"}}HELP{{/link-to}}
-        </li>
-        <li class="nav-item">
-          <a href='#' class="nav-link" onclick={{action 'signOut'}}>SIGN OUT</a>
-        </li>
-        <li class="nav-item">
-          {{#link-to 'auth.account' class="nav-link js-scroll-trigger"}}
-            <i class='fa fa-cog fa-lg'></i>
-          {{/link-to}}
-        </li>
-      </ul>
-    </div>
-  {{else if currentUser.isGuest}}
-    {{#link-to 'auth.home' class="navbar-brand"}}
-      <img src="/assets/images/theblockproject_logo_80px.png"
-           alt="the-block-project-logo" height="65px" width="65px">
-    {{/link-to}}
-    <button class="navbar-toggler navbar-toggler-right" type="button"
-            data-toggle="collapse" data-target="#navbarResponsive"
-            aria-controls="navbarResponsive" aria-expanded="false"
-            aria-label="Toggle navigation">
-      MENU <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-cwk ml-auto">
-        <li class="nav-item">
-          {{#link-to 'auth.home' class="nav-link js-scroll-trigger"}}MY RESIDENT{{/link-to}}
-        </li>
-        <li class="nav-item">
-          {{#link-to 'auth.profile.1-1' class="nav-link js-scroll-trigger"}}NEW RESIDENT{{/link-to}}
-        </li>
-        <li class="nav-item">
-          {{#link-to 'auth.match.index' class="nav-link js-scroll-trigger"}}FIND A MATCH{{/link-to}}
-        </li>
-        <li class="nav-item">
-          {{#link-to 'auth.faq' class="nav-link js-scroll-trigger"}}HELP{{/link-to}}
-        </li>
-        <li class="nav-item">
-          <a href='#' class="nav-link" onclick={{action 'signOut'}}>SIGN OUT</a>
-        </li>
-        <li class="nav-item">
-          {{#link-to 'auth.account' class="nav-link js-scroll-trigger"}}
-            <i class="fa fa-cog fa-lg"></i>
-          {{/link-to}}
-        </li>
-      </ul>
-    </div>
-  {{else}}
-    {{#link-to 'auth.home' class="navbar-brand"}}
-      <img src="/assets/images/theblockproject_logo_80px.png"
-           alt="the-block-project-logo" height="65px" width="65px">
-    {{/link-to}}
-    <button class="navbar-toggler navbar-toggler-right" type="button"
-            data-toggle="collapse" data-target="#navbarResponsive"
-            aria-controls="navbarResponsive" aria-expanded="false"
-            aria-label="Toggle navigation">
-      MENU <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-admin ml-auto">
-        <li class="nav-item">
-          {{#link-to 'auth.home' class="nav-link js-scroll-trigger"}}DASHBOARD{{/link-to}}
-        </li>
-        <li class="nav-item">
-          {{#link-to 'auth.admin.host-list' class="nav-link js-scroll-trigger"}}MANAGEMENT{{/link-to}}
-        </li>
-        <li class="nav-item">
-          <a href='#' class="nav-link" onclick={{action 'signOut'}}>SIGN OUT</a>
-        </li>
-        <li class="nav-item">
-          {{#link-to 'auth.account' class="nav-link js-scroll-trigger"}}
-            <i class="fa fa-cog fa-lg"></i>
-          {{/link-to}}
-        </li>
-      </ul>
-    </div>
-  {{/if}}
+  {{#link-to "auth.index" class="navbar-brand"}}
+    <img src="/assets/images/theblockproject_logo_80px.png"
+         alt="the-block-project-logo" height="65px" width="65px">
+  {{/link-to}}
+  <button type="button"
+          class="navbar-toggler navbar-toggler-right"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    MENU {{fa-icon "bars"}}
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+
+      {{#if currentUser.isAdmin}}
+        {{admin/nav-bar-content}}
+      {{else if currentUser.isCaseworker}}
+        {{caseworker/nav-bar-content}}
+      {{else}}
+        {{host/nav-bar-content}}
+      {{/if}}
+
+      <li class="nav-item">
+        <a href="#" class="nav-link" onclick={{action "signOut"}}>SIGN OUT</a>
+      </li>
+      <li class="nav-item">
+        {{#link-to "auth.account" class="nav-link"}}
+          {{fa-icon "cog" size="lg"}}
+        {{/link-to}}
+      </li>
+    </ul>
+  </div>
 </div>

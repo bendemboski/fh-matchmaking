@@ -4,13 +4,18 @@ import { inject as service } from '@ember/service';
 import { task } from 'ember-concurrency';
 
 export default Controller.extend(ModalContainerMixin, {
-  api: service(),
+  store: service(),
   notifications: service(),
 
   inviteUser: task(function*() {
-    let { givenName, familyName, email, type } = this.modalContext;
+    let { type, email, givenName, familyName } = this.modalContext;
+    let user = this.store.createRecord(type, {
+      email,
+      givenName,
+      familyName
+    });
     try {
-      yield this.api.inviteUser.perform({ givenName, familyName, email, type });
+      yield user.save();
     } catch (e) {
       this.notifications.error(e);
       return;

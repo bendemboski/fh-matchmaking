@@ -1,0 +1,35 @@
+{{#profile-page
+  changeset=this.changeset
+  backRoute="auth.host.location"
+  nextRoute="auth.host.photos"
+as |page|
+}}
+  {{#page.left-column}}
+    {{#page.profile-form as |form|}}
+      <legend>
+        STEP 2: Share about your backyard
+      </legend>
+
+      {{#form.group label="What do you like to do in your backyard?" as |group|}}
+        {{group.input
+          placeholder="e.g. garden, do yoga, enjoy a cup of coffee…"
+          value=this.changeset.backyardActivities
+        }}
+      {{/form.group}}
+
+      {{#form.group label="One sentence to describe your backyard." as |group|}}
+        {{group.textarea value=this.changeset.backyardDescription}}
+      {{/form.group}}
+    {{/page.profile-form}}
+  {{/page.left-column}}
+  {{#page.right-column}}
+    {{#page.notebox icon="lightbulb-o" heading="Other Hosts' Samples:"}}
+      <ul>
+        <li>It’s a place that filled with happiness and we’d love to share it out with our neighborhood.</li>
+        <li>A heaven for our dog, Giant, who loves to play around with our neighbors.</li>
+      </ul>
+    {{/page.notebox}}
+  {{/page.right-column}}
+
+  {{page.footer percent=60}}
+{{/profile-page}}

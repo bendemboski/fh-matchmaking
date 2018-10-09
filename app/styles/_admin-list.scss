@@ -32,3 +32,64 @@
     }
   }
 }
+
+.admin-list {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  background-color: #F9F8F8;
+  font-size: 14px;
+
+  .search-input {
+    background-image: url("../../assets/images/icon_search.png");
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    width: 90%;
+    font-size: 0.9em;
+    padding: 8px 20px 8px 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 10px;
+    color: #656565;
+  }
+
+  thead {
+    font-weight: 600;
+    color: #000;
+    background-color: white;
+  }
+
+  tbody {
+    font-weight: 400;
+    color: #656565;
+  }
+
+  tr {
+    border-bottom: 1px solid #eee;    
+  }
+
+  th, td {
+    padding: 12px 12px 10px 12px;
+  }
+
+  .sort-by {
+    border: none;
+    background-color: transparent;
+  }
+
+  .profile-pic {
+    width: 45px;
+    border-radius: 50%;
+    margin-left: 20px;
+  }
+
+  .note {
+    border: none;
+    background: transparent;
+
+    &:hover {
+      color: #8BA334;
+    }
+  }
+}

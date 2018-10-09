@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    {{#profile-page/review-page isSection2Complete=true}}
+      Great Job!<br>
+      You are heading to the last step of the profile.
+    {{/profile-page/review-page}}
+
+    {{profile-page/footer
+      percent=70
+      backRoute="auth.host.photos"
+      nextRoute="auth.host.relationship"
+    }}
+  </div>
+</div>

@@ -1,26 +1,24 @@
-{{#nav-bar}}{{/nav-bar}}
-
-<div class="container" id="host-profile">
-  <div class="row" id="faq">
-    <div class="faq-section">
-      <div class="faq-header">Profile Building</div>
+<div class="container faq-page">
+  <div class="row">
+    <div class="col-7">
+      <div class="header">Profile Building</div>
 
       <div class="tab">
-        <input id="profileTitle1" type="checkbox" name="tabs">
+        <input id="profileTitle1" type="checkbox">
         <label for="profileTitle1">What is Bacon ipsum dolor amet kielbasa spare ribs tail?</label>
         <div class="tab-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
         </div>
       </div>
       <div class="tab">
-        <input id="profileTitle2" type="checkbox" name="tabs">
+        <input id="profileTitle2" type="checkbox">
         <label for="profileTitle2">What is Bacon ipsum dolor amet kielbasa spare ribs tail?</label>
         <div class="tab-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
         </div>
       </div>
       <div class="tab">
-        <input id="profileTitle3" type="checkbox" name="tabs">
+        <input id="profileTitle3" type="checkbox">
         <label for="profileTitle3">What is Bacon ipsum dolor amet kielbasa spare ribs tail?</label>
         <div class="tab-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
@@ -28,72 +26,69 @@
       </div>
 
 
-      <div class="faq-header">Account Setting</div>
+      <div class="header">Account Setting</div>
       <div class="tab">
-        <input id="accountTitle1" type="checkbox" name="tabs">
+        <input id="accountTitle1" type="checkbox">
         <label for="accountTitle1">What is Bacon ipsum dolor amet kielbasa spare ribs tail?</label>
         <div class="tab-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
         </div>
       </div>
       <div class="tab">
-        <input id="accountTitle2" type="checkbox" name="tabs">
+        <input id="accountTitle2" type="checkbox">
         <label for="accountTitle2">What is Bacon ipsum dolor amet kielbasa spare ribs tail?</label>
         <div class="tab-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
         </div>
       </div>
       <div class="tab">
-        <input id="accountTitle3" type="checkbox" name="tabs">
+        <input id="accountTitle3" type="checkbox">
         <label for="accountTitle3">What is Bacon ipsum dolor amet kielbasa spare ribs tail?</label>
         <div class="tab-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
         </div>
       </div>
-      <div class="faq-header">Privacy Issue</div>
+      <div class="header">Privacy Issue</div>
       <div class="tab">
-        <input id="privacyTitle1" type="checkbox" name="tabs">
+        <input id="privacyTitle1" type="checkbox">
         <label for="privacyTitle1">What is Bacon ipsum dolor amet kielbasa spare ribs tail?</label>
         <div class="tab-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
         </div>
       </div>
       <div class="tab">
-        <input id="privacyTitle2" type="checkbox" name="tabs">
+        <input id="privacyTitle2" type="checkbox">
         <label for="privacyTitle2">What is Bacon ipsum dolor amet kielbasa spare ribs tail?</label>
         <div class="tab-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
         </div>
       </div>
       <div class="tab">
-        <input id="privacyTitle3" type="checkbox" name="tabs">
+        <input id="privacyTitle3" type="checkbox">
         <label for="privacyTitle3">What is Bacon ipsum dolor amet kielbasa spare ribs tail?</label>
         <div class="tab-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
         </div>
       </div>
     </div>
-    <section class="contact-section">
-      <div class="faq-header">More Questions? We're Here to Help!</div>
+    <div class="col-5">
+      <div class="header">More Questions? We're Here to Help!</div>
       <img src="/assets/images/team_image.jpeg" alt="fhteam_image">
 
-      <form action="#" id="faqForm">
+      <form action="#" class="faq-form">
         <fieldset>
-
           <div class="form-group">
-            <div class="faq-subject">
-              <h6>Subject</h6>
-              <textarea name="faq-subject" form="faqform"></textarea>
-            </div>
-            <div class="faq-description">
-              <h6>Description</h6>
-              <textarea name="faq-description" form="faqform"></textarea>
-            </div>
+            <label>Subject</label>
+            <textarea rows="1"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea rows="8"></textarea>
           </div>
         </fieldset>
-      </form>
 
-      <button class="nextpage" name="next" type="submit" value="host-page1">Submit</button>
-    </section>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </div>
 </div>

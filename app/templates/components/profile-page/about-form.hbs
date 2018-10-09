@@ -1,0 +1,47 @@
+{{#component
+  @profile-form
+  onsubmit=@onsubmit
+as |form|
+}}
+  <legend>
+    STEP 1: Say HI, and introduce yourself!
+  </legend>
+
+  {{#form.group label="What do you do in your free time?" as |group|}}
+    {{group.input
+      placeholder="Watch football game, hike, garden, bike…"
+      value=@changeset.freeTime
+    }}
+  {{/form.group}}
+
+  {{#form.group label="What’s your favorite food?" as |group|}}
+    {{group.input
+      placeholder="Steak, seafood, I like all food!"
+      value=@changeset.favoriteFood
+    }}
+  {{/form.group}}
+
+  {{#form.group label="What kind of movies do you like?"}}
+    {{!-- template-lint-disable attribute-indentation --}}
+    {{! seem to be a bug in ember-template-lint flagging indentation}}
+    {{#power-select
+      placeholder="Genres"
+      options=this.movieGenres
+      selected=this.selectedMovieGenre
+      searchEnabled=false
+      onchange=(action (mut @changeset.movieGenre) value="value")
+    as |genre|
+    }}
+      {{genre.label}}
+    {{/power-select}}
+  {{/form.group}}
+
+  {{#if (not @isHost)}}
+    {{#form.group label="Some fun facts about you!" as |group|}}
+      {{group.input
+        placeholder="Tell us more about you…"
+        value=@changeset.funFact
+      }}
+    {{/form.group}}
+  {{/if}}
+{{/component}}

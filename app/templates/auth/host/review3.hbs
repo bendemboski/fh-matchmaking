@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    {{#profile-page/review-page
+      isSection2Complete=true
+      isSection3Complete=true
+    }}
+      Awesome!<br>
+      Thanks for your time completing your profile.<br>
+      You can preview the list before submitting it.
+    {{/profile-page/review-page}}
+
+    {{profile-page/footer
+      percent=100
+      backRoute="auth.host.question"
+      nextRoute="auth.host.profile"
+      nextLabel="Preview"
+    }}
+  </div>
+</div>

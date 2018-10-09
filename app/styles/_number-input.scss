@@ -1,0 +1,19 @@
+.number-incrementer {
+  display: inline-block;
+}
+
+.number-input-button {
+  padding: 0 2px;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.number-input-value {
+  font-size:.8em;
+  border-color: transparent;
+}

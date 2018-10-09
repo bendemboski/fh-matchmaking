@@ -6,7 +6,7 @@ import { task } from 'ember-concurrency';
 export default Route.extend(ApplicationRouteMixin, {
   currentUser: service(),
 
-  routeAfterAuthentication: 'auth.home',
+  routeAfterAuthentication: 'auth.index',
 
   beforeModel() {
     return this._loadCurrentUser.perform();

@@ -1,0 +1,116 @@
+<div class="container profile-page view-profile">
+  <div class="row">
+    <div class="col-12 carousel-section">
+      {{#carousel-container transitionInterval=400 as |ui controls|}}
+        <div class="carousel-body">
+          {{#ui.item}}
+            <img class="carousel-image" src="/assets/images/bky-sample1.jpg" alt="sample">
+          {{/ui.item}}
+          {{#ui.item}}
+            <img class="carousel-image" src="/assets/images/bky-sample3.jpg" alt="sample">
+          {{/ui.item}}
+          {{#ui.item}}
+            <img class="carousel-image" src="/assets/images/bky-sample4.jpg" alt="sample">
+          {{/ui.item}}
+        </div>
+        <div role="button" class="arrow left" onclick={{controls.previous}}></div>
+        <div role="button" class="arrow right" onclick={{controls.next}}></div>
+      {{/carousel-container}}
+    </div>
+  </div>
+
+  <div class="row summary">
+    <div class="col-2">
+      <img class="profile-pic" src="/assets/images/hostimg.png" width="125px" alt="">
+    </div>
+    <div class="col-8 info">
+      <h5>{{@user.fullName}}</h5>
+      <h6>
+        {{gender-display @profile.gender}}
+        {{#if @user.yearsOld}}
+          • {{@user.yearsOld}} years old
+        {{/if}}
+        • {{@profile.occupation}}
+      </h6>
+      <h6 class="highlight">
+        {{@profile.neighborhoodDisplay}}
+        • Adults {{@profile.adultCount}}
+        {{#if @profile.kidCount}}
+          • Kids {{@profile.kidCount}}
+        {{/if}}
+        {{#if @profile.petCount}}
+          • Pets {{@profile.petCount}}
+        {{/if}}
+      </h6>
+    </div>
+  </div>
+
+  <div class="row greeting">
+    <div class="col-12">
+      <p>{{@profile.greeting}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="preview-section col-md-6">
+      <h6>Transportation</h6>
+      <ul>
+        <li>Link</li>
+        <li>Bus: 49, 70</li>
+      </ul>
+    </div>
+    <div class="preview-section col-md-6">
+      <h6>Environment</h6>
+      <p>{{@profile.neighborhoodFeatures}}</p>
+    </div>
+  </div>
+
+  <div class="row divider-above">
+    <div class="preview-section col-md-6">
+      <h6>Language Spoken</h6>
+      <p>{{@profile.languages}}</p>
+
+      <h6>Habit</h6>
+      <p>{{@profile.freeTime}}</p>
+
+      <h6>Favorite Food</h6>
+      <p>{{@profile.favoriteFood}}</p>
+
+      <h6>Movie Type</h6>
+      <p>{{movie-genre-display @profile.movieGenre}}</p>
+    </div>
+    <div class="preview-section col-md-6">
+      <h6>Use Illicit Substance/Drug</h6>
+      <p>{{substances-display @profile.mySubstances}}</p>
+
+      <h6>Accept Illicit Substance/Drug </h6>
+      <p>{{substances-display @profile.residentSubstances}}</p>
+    </div>
+  </div>
+
+  <div class="row divider-above">
+    <div class="preview-section col-12">
+      <h6>Expectation</h6>
+      <ul>
+        <li>Let's be friends!</li>
+        <li>
+          Connection Level:
+          <span class="level on"></span>
+          <span class="level on"></span>
+          <span class="level on"></span>
+          <span class="level on"></span>
+          <span class="level"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="preview-section question col-12">
+      <h6>Question</h6>
+      <p>{{@profile.question}}</p>
+    </div>
+  </div>
+</div>
+
+{{yield}}

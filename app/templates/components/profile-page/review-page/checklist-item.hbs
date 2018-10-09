@@ -1,0 +1,7 @@
+{{#if @isEditable}}
+  {{#link-to @route class="checklist-link"}}
+    {{fa-icon 'check-circle' class="checklist-icon"}}{{yield}}
+  {{/link-to}}
+{{else}}
+  {{fa-icon 'check-circle' class="checklist-icon"}}{{yield}}
+{{/if}}

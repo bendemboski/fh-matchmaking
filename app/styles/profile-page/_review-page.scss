@@ -1,0 +1,80 @@
+.review-page {
+  margin-top: $page-top-margin;
+
+  h5 {
+    margin: 5px 0;
+    padding: 50px;
+    color: #666;
+    font-weight: 500;
+    font-size: 1em;
+    text-align: center;
+  }
+}
+
+.review-section {
+  &:not(:last-child) {
+    border-right: 1px solid #bebebe;
+  }
+
+  color: #bebebe;
+  &.complete {
+    color: #666;
+  }
+
+  .section-image {
+    width: 55%;
+    margin: 20px 58px;
+  }
+
+  .section-heading {
+    display: inline-block;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 0.9em;
+  }
+
+  .edit {
+    float: right;
+    margin-right: 15px;
+    padding: 2px 12px;
+    border-radius: 18px;
+    border: 1px solid $mainOrange;
+    font-weight: 500;
+    font-size: 0.6em;
+    color: $mainOrange;
+
+    &, &:hover {
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $mainOrange;
+      border: 1px solid $mainOrange;
+    }
+  }
+
+  ul.section-checklist {
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 0.8em;
+  }
+
+  .checklist-icon {
+    margin-right: 15px;
+    color: #b3b3b3;
+  }
+
+  &.complete {
+    .checklist-icon {
+      color: $mainOrange;
+    }
+  }
+
+  .checklist-link {
+    &, &:hover, &:active {
+      color: inherit;
+    }
+  }
+}

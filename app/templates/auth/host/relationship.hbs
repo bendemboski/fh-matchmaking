@@ -1,0 +1,17 @@
+{{#profile-page
+  changeset=this.changeset
+  backRoute="auth.host.review2"
+  nextRoute="auth.host.question"
+as |page|
+}}
+  {{#page.left-column}}
+    {{page.relationship-form changeset=this.changeset}}
+  {{/page.left-column}}
+  {{#page.right-column}}
+    {{#profile-page/testimonial-pic}}
+      “I feel like a million bucks!”- Bobby, first home resident
+    {{/profile-page/testimonial-pic}}
+  {{/page.right-column}}
+
+  {{page.footer percent=80}}
+{{/profile-page}}

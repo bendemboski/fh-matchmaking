@@ -1,0 +1,68 @@
+footer.profile {
+  background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 4;
+
+  .nav-buttons {
+    bottom: 0;
+    margin: 0 auto 20px auto;
+    width: 70%;
+
+    .back-arrow {
+      font-size: 1.2em;
+      padding-right: 10px;
+      font-weight: 600;
+    }
+  }
+
+  .nav-button {
+    height: 42px;
+    display: inline-block;
+
+    &:hover {
+      transition: all 0.3s ease;
+    }
+
+    &.back {
+      background: white;
+      border: none;
+      color: $lightGrey;
+      text-align: left;
+
+      &:hover {
+        color: darken($lightGrey, 6%);
+      }
+      &:active {
+        color: darken($lightGrey, 10%);
+      }
+    }
+
+    &.next {
+      width: 20%;
+      float: right;
+    }
+  }
+}
+
+.footer-progress {
+  height: 20px;
+
+  .bar {
+    height: 100%;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+
+    .user-type-host & {
+      background-color: #dc7a4b;
+    }
+
+    .user-type-caseworker & {
+      background-color: #8ba334;
+    }
+  }
+}

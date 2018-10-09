@@ -1,0 +1,174 @@
+// This component mixes custom styles with bootstrap styles...it's kinda weird
+.carousel-section {
+  .carousel-item {
+    position: relative;
+    transition: all 0.4s ease-in-out;
+
+    &.left,
+    &.right {
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &.left {
+      left: 100%;
+
+      &.active.slide-out {
+        left: -100%;
+      }
+      &.slide-in {
+        left: 0;
+      }
+    }
+
+    &.right {
+      left: -100%;
+
+      &.active.slide-out {
+        left: 100%;
+      }
+      &.slide-in {
+        left: 0;
+      }
+    }
+
+    &.active {
+      position: relative;
+      left: 0;
+    }
+
+    .carousel-image {
+      max-width: 100%;
+      max-height: 500px;
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 12px;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    top: 50%;
+    cursor: pointer;
+
+    $border-color: #a9a9a9;
+
+    &.left {
+      border-top: 2px solid $border-color;
+      border-left: 2px solid $border-color;
+      transform: rotate(-54deg) skew(-20deg);
+      left: 20px;
+    }
+
+    &.right {
+      border-top: 2px solid $border-color;
+      border-right: 2px solid $border-color;
+      transform: rotate(54deg) skew(20deg);
+      right: 20px;
+    }
+
+    &.left, &.right {
+      &:hover {
+        border-color: #444;
+      }
+    }
+  }
+}
+
+.view-profile {
+  font-size: 80%;
+
+  .summary {
+    margin-top: 20px;
+
+    .profile-pic {
+      border-radius: 50%;
+      width: 100%;
+    }
+
+    .info {
+      color: #1a1a1a;
+
+      h5 {
+        font-weight: 600;
+        font-size: 1em;
+      }
+
+      h6 {
+        font-size: 0.9em;
+
+        .highlight {
+          .user-type-host & {
+            background-color: $mainOrange;
+          }
+
+          .user-type-caseworker & {
+            background-color: $mainGreen;
+          }
+        }
+      }
+    }
+  }
+
+  .divider-above {
+    border-top: 1px solid #b3b3b3;
+  }
+
+  .greeting {
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #999;
+    color: #999;
+    border-radius: 2px;
+    margin: 10px 0;
+  }
+
+  .preview-section {
+    padding: 10px 30px;
+    color: #999;
+
+    &.question {
+      background-color: #eee;
+      padding: 20px 30px;
+      border-radius: 5px;
+
+      > p {
+        color: #1a1a1a;
+        margin-top: 5px;
+      }
+    }
+
+    > h6 {
+      font-weight: 500;
+      margin-bottom: 2px;
+      color: #1a1a1a;
+      font-size: 0.9em;
+    }
+
+    > p {
+      margin-bottom: 10px;
+    }
+  }
+
+  .level {
+    border: 1px solid #666;
+    padding: 0 20px;
+    height: 5px;
+    margin-right: 5px;
+    border-radius: 40px;
+
+    &.on {
+      background-color: #666;
+    }
+  }
+
+  .buttons {
+    margin: 35px 0;
+    text-align: center;
+  }
+}

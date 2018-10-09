@@ -1,5 +1,6 @@
-<div id={{wrapperId}}>
-  <img src={{profileSrc}} role="button"
-       alt={{altText}} onclick={{action 'choosePicture'}}>
-</div>
-<input id="imageUpload" type="file" capture onchange={{action 'onPicture'}}>
+<img src={{@src}}
+     alt={{@altText}}
+     class='picture-uploader-preview'
+     role='button'
+     onclick={{action 'choosePicture'}}>
+<input type='file' class='d-none' capture onchange={{action 'onPicture' value='target.files.0'}}>

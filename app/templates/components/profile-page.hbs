@@ -1,0 +1,29 @@
+<div class="row">
+  {{!-- template-lint-disable attribute-indentation --}}
+  {{#let
+    (component "profile-page/profile-form" onsubmit=(perform this.submit))
+  as |profile-form|
+  }}
+    {{yield
+      (hash
+        left-column=(component "profile-page/column" right=false)
+        right-column=(component "profile-page/column" right=true)
+        profile-form=profile-form
+        bio-form=(component "profile-page/bio-form"
+                  profile-form=profile-form
+                  onsubmit=(perform this.submit))
+        about-form=(component "profile-page/about-form"
+                    profile-form=profile-form
+                    onsubmit=(perform this.submit))
+        relationship-form=(component "profile-page/relationship-form"
+                           profile-form=profile-form
+                           onsubmit=(perform this.submit))
+        footer=(component "profile-page/footer"
+                backRoute=@backRoute
+                nextAction=(action "onClickNext"))
+        notebox=(component "profile-page/notebox")
+        photo-notebox=(component "profile-page/photo-notebox")
+      )
+    }}
+  {{/let}}
+</div>

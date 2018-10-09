@@ -1,0 +1,40 @@
+.profile-page {
+  // leave room for header and footer
+  margin-top: $page-top-margin;
+  padding-bottom: 105px;
+  color: #000;
+
+  h5 {
+    margin: 5px 0;
+  }
+}
+
+.profile-page-column {
+  margin: 20px 0;
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+.profile-form {
+  textarea {
+    height: 120px;
+  }
+}
+
+.family-label {
+  font-size: 0.9em;
+  font-weight: 500;
+  display: inline-block;
+  color: #999;
+  letter-spacing: 1.2px;
+}
+
+@import './profile-page/bio-form';
+@import './profile-page/check-box';
+@import './profile-page/footer';
+@import './profile-page/notebox';
+@import './profile-page/review-page';
+@import './profile-page/testimonial-pic';
+@import './profile-page/transit';

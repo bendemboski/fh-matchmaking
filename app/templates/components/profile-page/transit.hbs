@@ -1,0 +1,15 @@
+<div class="col-3">
+  {{profile-page/check-box
+    value="link"
+    label="Link"
+    checked=this.changeset.link
+    onchange=(action (mut this.changeset.link) (not this.changeset.link))
+  }}
+</div>
+<div class="col-9">
+  {{input
+    class="busses"
+    value=this.changeset.busses
+    placeholder="List accessible bus numbers (e.g. 70, 11)"
+  }}
+</div>

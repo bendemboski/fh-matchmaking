@@ -26,7 +26,7 @@ export default Mixin.create({
           modalName: null,
           modalContext: null
         });
-        if (actionToCall) {
+        if (actionToCall && !(actionToCall instanceof Event)) {
           actionToCall(context, ...args);
         }
       }

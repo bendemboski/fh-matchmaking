@@ -1,114 +1,106 @@
-{{#nav-bar}}{{/nav-bar}}
-
-<div class="container" id="user-account">
-  <div class="row">
-    {{#let submit as |task|}}
-      <form id="account-setting" role="form" onsubmit={{prevent-default (perform submit)}}>
-        <h6>Account Setting</h6>
-        <section class="left-side col-lg-6">
-          <div class="form-group" id="first_name">
-            <label for="first_name" class=" control-label">First Name</label>
-            <div>
+<div class="container page-with-header">
+  {{#let (changeset currentUser.model) submit as |changeset task|}}
+    <form class="account-form" onsubmit={{prevent-default (perform submit changeset)}}>
+      <h6>Account Settings</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="firstName" class="control-label">First Name</label>
               <input
-                class="form-control"
                 type="text"
+                id="firstName"
+                class="form-control"
                 required
                 value={{changeset.givenName}}
-                oninput={{action (mut changeset.givenName) value='target.value'}}>
+                oninput={{action (mut changeset.givenName) value="target.value"}}
+              >
             </div>
-          </div>
-          <div class="form-group"  id="last_name">
-            <label for="last_name" class="control-label">Last Name</label>
-            <div>
+            <div class="col-md-6">
+              <label for="lastName" class="control-label">Last Name</label>
               <input
-                class="form-control"
                 type="text"
+                id="lastName"
+                class="form-control"
                 required
                 value={{changeset.familyName}}
-                oninput={{action (mut changeset.familyName) value='target.value'}}>
+                oninput={{action (mut changeset.familyName) value="target.value"}}
+              >
             </div>
           </div>
 
-          <div class="form-group"  id="user_bod_day" >
-            <label for="usr_bod" class="control-label">Birthday</label>
-            <div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="birthdate" class="control-label">Birthday</label>
               <input
-                class="form-control"
                 type="date"
+                id="birthdate"
+                class="form-control"
                 value={{changeset.birthdate}}
-                oninput={{action (mut changeset.birthdate) value='target.value'}}>
+                oninput={{action (mut changeset.birthdate) value="target.value"}}
+              >
             </div>
-          </div>
-          <div class="form-group" id="user_phone" >
-            <label for="user_phone" class="control-label">Phone Number</label>
-            <div >
+            <div class="col-md-6">
+              <label for="phoneNumber" class="control-label">Phone Number</label>
               <input
-                class="form-control"
                 type="tel"
-                minlength=10
-                maxlength=10
-                value={{changeset.phoneNumber}}
-                oninput={{action (mut changeset.phoneNumber) value='target.value'}}>
-            </div>
-          </div>
-          <div class="form-group"  id="user_email" >
-            <label for="user_email" class="control-label">Email</label>
-            <div>
-              <input
+                id="phoneNumber"
                 class="form-control"
-                type="email"
-                required
-                value={{changeset.email}}
-                oninput={{action (mut changeset.email) value='target.value'}}>
+                minlength="10"
+                maxlength="10"
+                value={{changeset.phoneNumber}}
+                oninput={{action (mut changeset.phoneNumber) value="target.value"}}
+              >
             </div>
           </div>
 
-        </section>
-        <section class="right-side col-lg-6">
-          <div class="form-group" id="oldpass" >
-            <label for="oldpass" class="control-label">Current Password</label>
-            <div>
-              <input
-                class="form-control"
-                type="password"
-                minlength=8
-                value={{oldPassword}}
-                oninput={{action (mut oldPassword) value='target.value'}}>
-            </div>
-          </div>
-          <div class="form-group" id="pass" >
-            <label for="pass" class="control-label">New Password</label>
-            <div>
-              <input
-                class="form-control"
-                type="password"
-                minlength=8
-                value={{password1}}
-                oninput={{action (mut password1) value='target.value'}}>
-            </div>
-          </div>
-          <div class="form-group"   id="pass_repet" >
-            <label for="pass_repet" class="control-label">Confirm Password</label>
-            <div>
-              <input
-                class="form-control"
-                type="password"
-                minlength=8
-                value={{password2}}
-                oninput={{action (mut password2) value='target.value'}}>
-            </div>
-          </div>
-        </section>
-        <div class="form-group"  id="savebtn" >
-          <label class="control-label" ></label>
-          <div>
-            <input
-              type='submit'
-              value={{if task.isRunning 'Saving...' 'Save changes'}}
-              disabled={{task.isRunning}}>
-          </div>
+          <label for="email" class="control-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            required
+            value={{changeset.email}}
+            oninput={{action (mut changeset.email) value="target.value"}}
+          >
         </div>
-      </form>
-    {{/let}}
-  </div>
+
+        <div class="col-md-6">
+          <label for="oldpass" class="control-label">Current Password</label>
+          <input
+            type="password"
+            id="oldpass"
+            class="form-control"
+            minlength="8"
+            value={{oldPassword}}
+            oninput={{action (mut oldPassword) value="target.value"}}
+          >
+          <label for="password1" class="control-label">New Password</label>
+          <input
+            type="password"
+            id="password1"
+            class="form-control"
+            minlength="8"
+            value={{password1}}
+            oninput={{action (mut password1) value="target.value"}}
+          >
+          <label for="password2" class="control-label">Confirm Password</label>
+          <input
+            type="password"
+            id="password2"
+            class="form-control"
+            minlength="8"
+            value={{password2}}
+            oninput={{action (mut password2) value="target.value"}}
+          >
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" disabled={{task.isRunning}}>
+          {{if task.isRunning "Saving..." "Save changes"}}
+        </button>
+      </div>
+    </form>
+  {{/let}}
 </div>

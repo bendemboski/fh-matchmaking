@@ -1,0 +1,122 @@
+<div class="container page-with-header">
+  <form class="match-search-form">
+    <div class="filter">
+      {{select-neighborhood
+        neighborhood=neighborhood
+        onchange=(action (mut neighborhood))
+      }}
+    </div>
+    <div class="filter">
+      {{#basic-dropdown as |dd|}}
+        {{#dd.trigger class="form-dropdown-trigger"}}
+          Family Size
+          <span class="dropdown-icon">{{fa-icon "chevron-down"}}</span>
+        {{/dd.trigger}}
+        {{#dd.content class="match-search-filter-content family"}}
+          <div class="family-filter">
+            <div class="label">
+              {{fa-icon "male"}} Adults
+            </div>
+            {{number-input value=adultCount minValue=1 onChange=(action (mut adultCount))}}
+          </div>
+
+          <div class="family-filter">
+            <div class="label">
+              {{fa-icon "child"}} Children
+            </div>
+            {{number-input value=kidCount onChange=(action (mut kidCount))}}
+          </div>
+
+          <div class="family-filter">
+            <div class="label">
+              {{fa-icon "paw"}} Pets
+            </div>
+            {{number-input value=petCount onChange=(action (mut petCount))}}
+          </div>
+
+          <div class="actions">
+            <span role="button" class="apply" onclick={{dd.actions.close}}>Apply</span>
+          </div>
+        {{/dd.content}}
+      {{/basic-dropdown}}
+    </div>
+    <div class="filter">
+      {{#basic-dropdown as |dd|}}
+        {{#dd.trigger class="form-dropdown-trigger"}}
+          More Filters
+          <span class="dropdown-icon">{{fa-icon "filter"}}</span>
+        {{/dd.trigger}}
+        {{#dd.content class="match-search-filter-content more"}}
+          <h6><strong>Acceptable Substances</strong></h6>
+          {{substance-picker
+            substances=substances
+            onchange=(action (mut substances))
+          }}
+
+          <hr>
+
+          <h6><strong>Interaction Level</strong></h6>
+          {{interaction-level-picker
+            value=interactionLevel
+            onchange=(action (mut interactionLevel))
+          }}
+
+          <div class="actions">
+            <span role="button" class="apply" onclick={{dd.actions.close}}>Apply</span>
+          </div>
+        {{/dd.content}}
+      {{/basic-dropdown}}
+    </div>
+    <div>
+      <button type="submit">Search</button>
+    </div>
+  </form>
+
+  <div class="match-results-container">
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10758.84199694172!2d-122.31991839999999!3d47.61231864999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1516407958676" allowfullscreen>
+    </iframe>
+
+    <div class="results">
+      <h6>Homes Available: 4</h6>
+      {{#link-to "auth.caseworker.match.host.index" "1"}}
+        <div class="result">
+          <img class="image" src="/assets/images/bky-sample1.jpg" alt="result">
+          <div class="info">
+            <div class="neighborhood">South Lake Union</div>
+            <div class="family">
+              {{fa-icon "male"}} 2
+              {{fa-icon "child"}} 1
+              {{fa-icon "paw"}} 1
+            </div>
+          </div>
+        </div>
+      {{/link-to}}
+
+      {{#link-to "auth.caseworker.match.host.index" "1"}}
+        <div class="result">
+          <img class="image" src="/assets/images/bky-sample2.jpg" alt="result">
+          <div class="info">
+            <div class="neighborhood">International District</div>
+            <div class="family">
+              {{fa-icon "male"}} 1
+              {{fa-icon "paw"}} 1
+            </div>
+          </div>
+        </div>
+      {{/link-to}}
+
+      {{#link-to "auth.caseworker.match.host.index" "1"}}
+        <div class="result">
+          <img class="image" src="/assets/images/bky-sample3.jpg" alt="result">
+          <div class="info">
+            <div class="neighborhood">Capitol Hill</div>
+            <div class="family">
+              {{fa-icon "male"}} 1
+              {{fa-icon "paw"}} 2
+            </div>
+          </div>
+        </div>
+      {{/link-to}}
+    </div>
+  </div>
+</div>

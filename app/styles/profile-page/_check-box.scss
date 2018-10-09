@@ -1,0 +1,26 @@
+.check-box-label {
+  display: inline-block;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: transparent;
+  text-align: center;
+  vertical-align: middle;
+  line-height: $form-control-height - 2px; // 1px border
+  font-size: 0.7em;
+  font-weight: inherit;
+  color: #999;
+  cursor: pointer;
+
+  input:checked + & {
+    .user-type-host & {
+      border-color: #e59f7c;
+      color: #e59f7c;
+    }
+
+    .user-type-caseworker & {
+      border-color: #aac643;
+      color: #aac643;
+    }
+  }
+}

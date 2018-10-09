@@ -1,0 +1,35 @@
+{{#power-select
+  placeholder="Month"
+  options=this.months
+  selected=this.selectedMonth
+  searchEnabled=false
+  triggerClass="date-picker month"
+  onchange=(action 'setMonth')
+  as |month|
+}}
+  {{month.label}}
+{{/power-select}}
+
+{{#power-select
+  placeholder="Day"
+  options=this.days
+  selected=this.selectedDay
+  searchEnabled=false
+  triggerClass="date-picker day"
+  onchange=(action 'setDay')
+  as |day|
+}}
+  {{day.label}}
+{{/power-select}}
+
+{{#power-select
+  placeholder="Year"
+  options=this.years
+  selected=this.selectedYear
+  searchEnabled=false
+  triggerClass="date-picker year"
+  onchange=(action 'setYear')
+  as |year|
+}}
+  {{year.label}}
+{{/power-select}}

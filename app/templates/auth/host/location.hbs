@@ -1,0 +1,50 @@
+{{#profile-page
+  changeset=this.changeset
+  backRoute="auth.host.review1"
+  nextRoute="auth.host.activities"
+as |page|
+}}
+  {{#page.left-column}}
+    {{#page.profile-form as |form|}}
+      <legend>
+        STEP 2: Share about your backyard
+      </legend>
+
+      {{#form.group label="Neighborhood"}}
+        {{select-neighborhood
+          neighborhood=this.changeset.neighborhood
+          onchange=(action (mut this.changeset.neighborhood))
+        }}
+      {{/form.group}}
+
+      {{#form.group label="Street Address" as |group|}}
+        {{group.input
+          placeholder="Please enter your address"
+          value=this.changeset.address
+        }}
+      {{/form.group}}
+
+      {{#form.group label="Public Transportation"}}
+        {{profile-page/transit changeset=this.changeset}}
+      {{/form.group}}
+
+      {{#form.group label="Neighborhood Environment" as |group|}}
+        {{group.input
+          placeholder="e.g. supermarket, park, library, church"
+          value=this.changeset.neighborhoodFeatures
+        }}
+      {{/form.group}}
+    {{/page.profile-form}}
+  {{/page.left-column}}
+  {{#page.right-column}}
+    {{#page.notebox icon="shield" heading="Worried about the privacy?"}}
+      We do care about privacy! So your detailed address will only be appeared
+      to the resident who shows interested to meet and you hit “Let’s meet”
+      after viewing their profile.<br>
+      Thus, the public transportation and neighborhood environment are two key
+      decision points for a resident to make decision.
+    {{/page.notebox}}
+  {{/page.right-column}}
+
+  {{page.footer percent=50}}
+{{/profile-page}}

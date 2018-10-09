@@ -1,0 +1,17 @@
+<img src={{@headingImage}} class="section-image" alt="hello-icon">
+<div class="section-heading">{{@headingText}}</div>
+{{#if @isComplete}}
+  {{#link-to @editRoute class="edit"}}
+    Edit
+  {{/link-to}}
+{{/if}}
+<ul class="section-checklist">
+  {{yield
+    (hash
+      checklist-item=(component
+        'profile-page/review-page/checklist-item'
+        isEditable=@isComplete
+      )
+    )
+  }}
+</ul>

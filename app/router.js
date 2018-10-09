@@ -10,38 +10,54 @@ Router.map(function () {
   this.route('login');
 
   this.route('auth', { path: '' }, function() {
-    this.route('home', { path: '' });
-    this.route('account');
-
-    this.route('profile', function() {
-      this.route('1-1');
-      this.route('1-2');
-      this.route('1-3');
-      this.route('1-4');
-      this.route('1-save');
-      this.route('2-1');
-      this.route('2-2');
-      this.route('2-3');
-      this.route('2-save');
-      this.route('3-1');
-      this.route('3-2');
-      this.route('3-save');
-
-      this.route('view');
-      this.route('thankyou');
-    });
-
-    this.route('match', function() {
-      this.route('profile');
-      this.route('meet');
-      this.route('thankyou');
-    });
-
+    // admin-only pages
     this.route('admin', function() {
       this.route('host-list');
       this.route('resident-list');
     });
 
+    // host-only pages
+    this.route('host', function() {
+      this.route('greeting');
+      this.route('bio');
+      this.route('about');
+      this.route('substances');
+      this.route('review1');
+      this.route('location');
+      this.route('activities');
+      this.route('photos');
+      this.route('review2');
+      this.route('relationship');
+      this.route('question');
+      this.route('review3');
+      this.route('profile');
+      this.route('thankyou');
+    });
+
+    // caseworker-only pages
+    this.route('caseworker', function() {
+      this.route('new-resident');
+
+      // build profile pages
+      this.route('resident', { path: '/resident/:resident_profile_id' }, function() {
+        this.route('bio');
+        this.route('about');
+        this.route('substances');
+        this.route('location');
+        this.route('relationship');
+        this.route('question');
+        this.route('profile');
+      });
+
+      this.route('match', function() {
+        this.route('host', { path: '/host/:host_id' }, function() {
+          this.route('meet');
+        });
+        this.route('thankyou');
+      });
+    });
+
+    this.route('account');
     this.route('faq');
     this.route('community');
   });

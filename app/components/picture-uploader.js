@@ -1,20 +1,16 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  wrapperId: null,
-  altText: null,
-  url: null,
+  classNames: [ 'picture-uploader' ],
 
   actions: {
     choosePicture() {
-      this.$('#imageUpload').click();
+      this.element.querySelector('input[type="file"]').click();
     },
 
-    onPicture(e) {
-      let files = e.target.files || [];
-      let file = files[0];
+    onPicture(file) {
       if (file) {
-        this.onPicture;
+        this.onPicture(file);
       }
     }
   }

@@ -61,15 +61,15 @@
         background-color: transparent;
         text-decoration: none;
 
-        .navbar-host & {
-          color: #d66229;
+        .user-type-host & {
+          color: $mainOrange;
         }
 
-        .navbar-cwk & {
+        .user-type-caseworker & {
           color: #8BA334;
         }
 
-        .navbar-admin & {
+        .user-type-admin & {
           color: #B0B2AA;
         }
       }
@@ -81,4 +81,12 @@
   background-color: #000;
   height: 50px;
   color:#000;
+}
+
+.nav-link {
+  display: block;
+  padding: 0;
+  color: #000;
+  height: 50px;
+  line-height: 50px;
 }

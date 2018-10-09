@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    {{#profile-page/review-page}}
+      Excellent! You completed the very first step!<br>
+      Continue to complete your profile before get matched.
+    {{/profile-page/review-page}}
+
+    {{profile-page/footer
+      percent=40
+      backRoute="auth.host.substances"
+      nextRoute="auth.host.location"
+    }}
+  </div>
+</div>

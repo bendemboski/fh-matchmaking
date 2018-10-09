@@ -1,10 +1,20 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 export default Component.extend({
   classNames: [ 'number-incrementer' ],
 
-  value: 0,
-  minValue: 0,
+  value: computed({
+    get() {
+      return 0;
+    },
+    set(key, value) {
+      // if it's undefined or null, make it 0
+      value = value || 0;
+      return value;
+    }
+  }),
+
   onChange: null,
 
   actions: {

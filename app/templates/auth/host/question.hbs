@@ -1,0 +1,40 @@
+{{#profile-page
+  changeset=this.changeset
+  backRoute="auth.host.relationship"
+  nextRoute="auth.host.review3"
+as |page|
+}}
+  {{#page.left-column}}
+    {{#page.profile-form as |form|}}
+      <legend>
+        STEP 3: Set Expectation &amp; Contribution!
+      </legend>
+
+      {{!-- template-lint-disable attribute-indentation --}}
+      {{! seem to be a bug in ember-template-lint flagging indentation}}
+      {{#form.group
+        label="Now, your turn to ask a question to your future neighbor!"
+        as |group|
+      }}
+        {{group.textarea
+          placeholder="Type the question here..."
+          value=this.changeset.question
+        }}
+      {{/form.group}}
+    {{/page.profile-form}}
+  {{/page.left-column}}
+  {{#page.right-column}}
+    {{#page.notebox
+      icon="pencil"
+      heading="Ideas to ask a killer question that find the perfect neighbor:"
+    }}
+      <ul>
+        <li>What’s your 1st thing to do when you wake up in the morning?</li>
+        <li>What’s your favorite football team?</li>
+        <li>What is your favorite animal?</li>
+      </ul>
+    {{/page.notebox}}
+  {{/page.right-column}}
+
+  {{page.footer percent=90}}
+{{/profile-page}}
