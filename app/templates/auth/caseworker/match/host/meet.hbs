@@ -1,0 +1,31 @@
+{{!-- Not really a profile page, but uses the same layout --}}
+{{#profile-page
+  backRoute="auth.caseworker.match.index"
+  nextRoute="auth.caseworker.match.thankyou"
+as |page|
+}}
+  {{#page.left-column}}
+    {{#page.profile-form onsubmit=(action "submit") as |form|}}
+      <legend>
+        HEY! It’s a BIG move, Nick!<br>
+        Before meeting Kim, here is a question she would like to <br>
+        know more about your story.
+      </legend>
+      {{#form.group label="What makes you a day today?" as |group|}}
+        {{group.textarea}}
+      {{/form.group}}
+    {{/page.profile-form}}
+  {{/page.left-column}}
+  {{#page.right-column}}
+    {{#page.notebox icon="lightbulb-o" heading="Ideas to take backyard photos:"}}
+      <ul>
+        <li>Show the place where the BLOCK Home will be located</li>
+        <li>Find a spot that can take the whole backyard view</li>
+        <li>Share a family photo taken in the backyard</li>
+        <li>Take photos that are at least 1024 x 683px</li>
+      </ul>
+    {{/page.notebox}}
+  {{/page.right-column}}
+
+  {{page.footer nextLabel="Submit"}}
+{{/profile-page}}

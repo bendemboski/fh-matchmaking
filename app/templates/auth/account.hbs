@@ -1,0 +1,106 @@
+<div class="container page-with-header">
+  {{#let (changeset currentUser.model) submit as |changeset task|}}
+    <form class="account-form" onsubmit={{prevent-default (perform submit changeset)}}>
+      <h6>Account Settings</h6>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="firstName" class="control-label">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                class="form-control"
+                required
+                value={{changeset.givenName}}
+                oninput={{action (mut changeset.givenName) value="target.value"}}
+              >
+            </div>
+            <div class="col-md-6">
+              <label for="lastName" class="control-label">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                class="form-control"
+                required
+                value={{changeset.familyName}}
+                oninput={{action (mut changeset.familyName) value="target.value"}}
+              >
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <label for="birthdate" class="control-label">Birthday</label>
+              <input
+                type="date"
+                id="birthdate"
+                class="form-control"
+                value={{changeset.birthdate}}
+                oninput={{action (mut changeset.birthdate) value="target.value"}}
+              >
+            </div>
+            <div class="col-md-6">
+              <label for="phoneNumber" class="control-label">Phone Number</label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                class="form-control"
+                minlength="10"
+                maxlength="10"
+                value={{changeset.phoneNumber}}
+                oninput={{action (mut changeset.phoneNumber) value="target.value"}}
+              >
+            </div>
+          </div>
+
+          <label for="email" class="control-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            required
+            value={{changeset.email}}
+            oninput={{action (mut changeset.email) value="target.value"}}
+          >
+        </div>
+
+        <div class="col-md-6">
+          <label for="oldpass" class="control-label">Current Password</label>
+          <input
+            type="password"
+            id="oldpass"
+            class="form-control"
+            minlength="8"
+            value={{oldPassword}}
+            oninput={{action (mut oldPassword) value="target.value"}}
+          >
+          <label for="password1" class="control-label">New Password</label>
+          <input
+            type="password"
+            id="password1"
+            class="form-control"
+            minlength="8"
+            value={{password1}}
+            oninput={{action (mut password1) value="target.value"}}
+          >
+          <label for="password2" class="control-label">Confirm Password</label>
+          <input
+            type="password"
+            id="password2"
+            class="form-control"
+            minlength="8"
+            value={{password2}}
+            oninput={{action (mut password2) value="target.value"}}
+          >
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" disabled={{task.isRunning}}>
+          {{if task.isRunning "Saving..." "Save changes"}}
+        </button>
+      </div>
+    </form>
+  {{/let}}
+</div>

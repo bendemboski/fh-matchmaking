@@ -1,0 +1,12 @@
+{{#power-select
+  placeholder="Neighborhood"
+  options=this.neighborhoodOptions
+  selected=this.selectedNeighborhood
+  searchField="label"
+  disabled=@disabled
+  triggerClass="neighborhood"
+  onchange=(action this.onchange value="value")
+as |neighborhood|
+}}
+  {{neighborhood.label}}
+{{/power-select}}

@@ -1,0 +1,7 @@
+<label class="control-label" for={{this.inputId}}>{{@label}}</label>
+{{yield
+  (hash
+    input=(component "profile-page/profile-form/input" elementId=this.inputId)
+    textarea=(component "profile-page/profile-form/textarea" elementId=this.inputId)
+  )
+}}

@@ -1,0 +1,76 @@
+{{#component
+  @profile-form
+  class="bio-form"
+  onsubmit=@onsubmit
+as |form|
+}}
+  <legend>
+    STEP 1: Say HI, and introduce yourself!
+  </legend>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="control-label" for="dob-day">Birth Date</label>
+        {{date-picker
+          date=@changeset.birthdate
+          onchange=(action (mut @changeset.birthdate))
+        }}
+      </div>
+    </div>
+    <div class="col-sm-6">
+      {{#form.group label="Gender"}}
+        {{!-- template-lint-disable attribute-indentation --}}
+        {{! seem to be a bug in ember-template-lint flagging indentation}}
+        {{#power-select
+          placeholder="select"
+          options=this.genders
+          selected=this.selectedGender
+          searchEnabled=false
+          onchange=(action (mut @changeset.gender) value="value")
+        as |gender|
+        }}
+          {{gender.label}}
+        {{/power-select}}
+      {{/form.group}}
+    </div>
+  </div>
+  {{#form.group label="Occupation" as |group|}}
+    {{group.input
+      placeholder="Musician, Engineer, Social Caseworker, Dentist..."
+      value=@changeset.occupation
+    }}
+  {{/form.group}}
+  {{#form.group label="Languages Spoken" as |group|}}
+    {{group.input
+      placeholder="English, Spanish, Sign Language..."
+      value=@changeset.languages
+    }}
+  {{/form.group}}
+  <div class="form-group">
+    <label class="control-label">Family Size</label>
+    {{#if @isHost}}
+      <span class="family-label">Adult</span>
+      {{number-input
+        value=@changeset.adultCount
+        minValue=1
+        onChange=(action (mut @changeset.adultCount))
+      }}
+    {{/if}}
+
+    <span class="family-label">Kid</span>
+    {{number-input
+      value=@changeset.kidCount
+      onChange=(action (mut @changeset.kidCount))
+    }}
+
+    <span class="family-label">Pet</span>
+    {{number-input
+      value=@changeset.petCount
+      onChange=(action (mut @changeset.petCount))
+    }}
+
+    {{#if (not @isHost)}}
+      {{input class="pet-breed" placeholder="Pet breed" value=@changeset.petBreed}}
+    {{/if}}
+  </div>
+{{/component}}

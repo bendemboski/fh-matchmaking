@@ -5454,7 +5454,7 @@ button.close {
   width: 100%;
   overflow: hidden;
 }
-
+/*
 .carousel-item {
   position: relative;
   display: none;
@@ -5638,7 +5638,7 @@ button.close {
   color: #fff;
   text-align: center;
 }
-
+*/
 .align-baseline {
   vertical-align: baseline !important;
 }

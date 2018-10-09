@@ -1,0 +1,13 @@
+.admin-summary {
+  margin-top: 200px;
+
+  .item {
+    height: 300px;
+    padding: 75px 0;
+    text-align: center;
+
+    &:not(:last-child) {
+      border-right: 1px solid #999;
+    }
+  }
+}

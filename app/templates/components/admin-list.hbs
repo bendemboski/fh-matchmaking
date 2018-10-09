@@ -1,0 +1,77 @@
+<div class="container">
+  <ul class="admin-subnav">
+    <li>{{#link-to "auth.admin.host-list"}}Hosts{{/link-to}}</li>
+    <li>{{#link-to "auth.admin.resident-list"}}Residents{{/link-to}}</li>
+  </ul>
+  <div class="list">
+    <table class="admin-list">
+      <thead>
+        <tr>
+          <th colspan="2">
+            <input
+              type="search"
+              class="search-input"
+              value={{filterText}}
+              oninput={{action (mut filterText) value="target.value"}}
+              placeholder="Search for names"
+              title="Type in a name">
+          </th>
+          <th>
+            Location
+            <button class="sort-by" onclick={{action (mut sortField) "location"}}>
+              {{fa-icon "chevron-down"}}
+            </button>
+          </th>
+          <th>
+            Occupation
+            <button class="sort-by" onclick={{action (mut sortField) "occupation"}}>
+              {{fa-icon "chevron-down"}}
+            </button>
+          </th>
+          <th>
+            Onboard
+            <button class="sort-by" onclick={{action (mut sortField) "joined:desc"}}>
+              {{fa-icon "chevron-down"}}
+            </button>
+          </th>
+          <th>
+            Status
+            <button class="sort-by" onclick={{action (mut sortField) "status"}}>
+              {{fa-icon "chevron-down"}}
+            </button>
+          </th>
+          <th>
+            Note
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each peopleList as |person|}}
+          <tr>
+            <td>
+              <img class="profile-pic" id="resident1" src={{person.image}} alt="nick-rschlebusch">
+            </td>
+            <td>
+              <a href="#">{{person.name}}</a>
+            </td>
+            <td>
+              {{person.location}}
+            </td>
+            <td>
+              {{person.occupation}}
+            </td>
+            <td>
+              {{moment-from-now person.joined}}
+            </td>
+            <td>
+              {{person.status}}
+            </td>
+            <td>
+              <button class="note">{{fa-icon "sticky-note"}}</button>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

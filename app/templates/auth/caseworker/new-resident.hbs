@@ -1,0 +1,5 @@
+{{#let (changeset profile) as |changeset|}}
+  {{caseworker/resident-info-page
+    changeset=changeset
+    nextAction=(perform this.next)}}
+{{/let}}

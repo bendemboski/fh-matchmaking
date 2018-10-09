@@ -1,0 +1,47 @@
+{{#profile-page
+  changeset=@changeset
+  backRoute="auth.caseworker.index"
+  nextRoute=@nextRoute
+  nextAction=@nextAction
+as |page|
+}}
+  {{#page.left-column}}
+    {{#page.profile-form as |form|}}
+      <legend>
+        STEP 1: Say HI, and introduce yourself!
+      </legend>
+      {{#form.group label="Upload Your Profile Photo"}}
+        {{picture-uploader
+          class="profile-pic-uploader"
+          altText="profile picture"
+          src=(or profilePic "/assets/images/icon_photoPreview.png")
+          onPicture=(action (mut profilePic))
+        }}
+      {{/form.group}}
+
+      <div class="row">
+        <div class="col-sm-6">
+          {{#form.group label="First Name" as |group|}}
+            {{group.input value=@changeset.firstName}}
+          {{/form.group}}
+        </div>
+        <div class="col-sm-6">
+          {{#form.group label="Last Name" as |group|}}
+            {{group.input value=@changeset.lastName}}
+          {{/form.group}}
+        </div>
+      </div>
+      {{#form.group label="Email" as |group|}}
+        {{group.input type="email" value=@changeset.email}}
+      {{/form.group}}
+      {{#form.group label="Phone Number" as |group|}}
+        {{group.input type="tel" value=@changeset.phoneNumber}}
+      {{/form.group}}
+    {{/page.profile-form}}
+  {{/page.left-column}}
+  {{#page.right-column}}
+    {{page.photo-notebox}}
+  {{/page.right-column}}
+
+  {{page.footer percent=12}}
+{{/profile-page}}

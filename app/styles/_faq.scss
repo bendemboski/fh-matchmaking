@@ -1,0 +1,107 @@
+.faq-page {
+  margin-top: $page-top-margin;
+
+  .header {
+    font-size: 0.9em;
+    border-bottom: 1px dotted #ccc;
+    padding: 25px 0 10px;
+    font-weight: 500;
+
+    .user-type-host & {
+      color: $mainOrange;
+    }
+
+    .user-type-caseworker & {
+      color: $mainGreen;
+    }
+  }
+
+  .tab {
+    position: relative;
+    margin-bottom: 1px;
+    width: 100%;
+    color: #424242;
+    overflow: hidden;
+
+    > input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+
+      &:checked ~ .tab-content {
+        max-height: 10em;
+      }
+    }
+
+    > label {
+      position: relative;
+      display: block;
+      background: #fff;
+      cursor: pointer;
+      margin-top: .5rem;
+      height: 1.5em;
+      line-height: 2;
+      font-size: .9em;
+
+      &::after {
+        content: "+";
+
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        width: .5em;
+        height: .5em;
+        line-height: .8;
+        text-align: center;
+        -webkit-transition: all .35s;
+        -o-transition: all .35s;
+        transition: all .35s;
+        font-size: 2em;
+      }
+    }
+
+    input[type=checkbox]:checked +label::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  .tab-content {
+    max-height: 0;
+    overflow: hidden;
+    border-bottom:1px solid #eee;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+    font-size: .8em;
+
+    > p {
+      margin: 1em;
+    }
+  }
+
+  .submit-button {
+
+  }
+}
+
+.faq-form {
+  margin-top: 10px;
+  padding: 0;
+
+  .form-group {
+    margin: 0;
+  }
+
+  label {
+    color: #666;
+    margin: 10px auto;
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+
+  [type="submit"] {
+    width: 100%;
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,42 @@
+{{#profile-page
+  changeset=this.changeset
+  backRoute="auth.host.index"
+  nextRoute="auth.host.bio"
+  prepareChangeset=(perform this.prepareChangeset)
+as |page|
+}}
+  {{#page.left-column}}
+    {{#page.profile-form as |form|}}
+      <legend>
+        STEP 1: Say HI, and introduce yourself!
+      </legend>
+      {{#form.group label="Upload Your Profile Photo"}}
+        {{picture-uploader
+          class="profile-pic-uploader"
+          altText="profile picture"
+          src=(or this.profilePic.url "/assets/images/icon_photoPreview.png")
+          onPicture=(action (mut this.profilePic.blob))
+        }}
+      {{/form.group}}
+
+      {{#form.group label="Greet Your New Neighbors" as |group|}}
+        {{group.textarea
+          placeholder="Write a sentence to welcome your future neighbors..."
+          value=this.changeset.greeting
+        }}
+      {{/form.group}}
+    {{/page.profile-form}}
+  {{/page.left-column}}
+  {{#page.right-column}}
+    {{page.photo-notebox}}
+    {{#page.notebox icon="pencil" heading="Ideas to write a greeting:"}}
+      <ul>
+        <li>General introduction of yourself and your neighborhood with some fun facts</li>
+        <li>Reasons of joining the program</li>
+        <li>Expect of being a host</li>
+      </ul>
+    {{/page.notebox}}
+  {{/page.right-column}}
+
+  {{page.footer percent=10}}
+{{/profile-page}}

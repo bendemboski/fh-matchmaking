@@ -1,0 +1,23 @@
+.notebox {
+  margin: 35px 0 0 30px;
+  padding: 15px;
+  border: 1px solid #bebebe;
+  border-radius: 8px;
+  color: #989898;
+  letter-spacing: 0.06em;
+  font-size: 0.7em;
+
+  .note {
+    font-size: 100%;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+  }
+
+  .note-icon {
+    padding-right: 10px;    
+  }
+
+  li {
+    line-height: 1.6em;
+  }
+}

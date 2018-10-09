@@ -1,4 +1,3 @@
-/* eslint-env node */
 'use strict';
 
 module.exports = function(environment) {
@@ -21,6 +20,21 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    cognito: {
+      poolId: 'us-west-2_hiYFp34ja',
+      clientId: '13l02eij1vuvq4ujql2kj6vcal',
+      autoRefreshSession: true
+    },
+
+    'ember-cli-notifications': {
+      autoClear: true,
+      clearDuration: 5000
+    },
+
+    matchmaking: {
+      apiUrl: 'https://pz6vun2soi.execute-api.us-west-2.amazonaws.com/dev'
     }
   };
 
@@ -41,10 +55,11 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
-
+    // here you can enable a production-specific feature
   }
 
   return ENV;

@@ -1,0 +1,147 @@
+$map-width: 65%;
+
+.match-search-form {
+  width: $map-width;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .filter {
+    flex: 1 1 auto;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    .dropdown-icon {
+      color: grey;
+      float: right;
+      padding-right: 10px;
+    }
+  }
+
+  [type="submit"] {
+    height: $form-control-height;
+    border: none;
+    border-radius: 5px;
+    background-color: $mainGreen;
+    color: #fff;
+    font-size: 0.8em;
+    width: 100px;
+    margin-left: 15px;
+
+    &:focus,
+    &:hover {
+      background-color: $darkGreen;
+    }
+  }
+}
+
+// This is dropdown content, so it ends up not being a DOM descendant of
+// .match-search-form
+.match-search-filter-content {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #fff;
+  font-size: 14px;
+
+  &.family {
+    width: 250px;
+  }
+
+  .family-filter {
+    display: flex;
+    align-items: center;
+
+    .label {
+      flex: 1 0 auto;
+    }
+  }
+
+  &.more {
+    width: 600px;
+
+    h6 {
+      font-size: .7em;
+      color: #666666;
+    }
+
+    hr {
+      margin: 10px 0;
+    }
+  }
+
+  .actions {
+    margin-top: 10px;
+    font-size: .8em;
+    text-align: right;
+
+    .apply {
+      &, &:hover {
+        text-decoration: none;
+        color: $mainGreen;
+      }
+    }
+  }
+}
+
+.match-results-container {
+  display: flex;
+  height: 650px;
+
+  .map {
+    flex: 0 0 $map-width;
+    border: none;
+    height: 100%;
+  }
+
+  .results {
+    flex: 1 1 auto;
+    height: 100%;
+    overflow: auto;
+    border: 1px solid #eee;
+
+    h6 {
+      margin-bottom: 0;
+      padding: 6px 10px;
+      font-size: .6em;
+    }
+
+    .result {
+      position: relative;
+      margin-bottom: 10px;
+      border: 1px solid #eee;
+
+      .image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        line-height: 35px;
+        padding: 0 10px;
+        opacity: 0.7;
+        background-color: #000;
+        color: #fff;
+        font-size: 0.7em;
+        display: flex;
+
+        .neighborhood {
+          font-weight: 400;
+        }
+
+        .family {
+          flex: 1 0 auto;
+          font-weight: 500;
+          text-align: right;
+        }
+      }
+    }
+  }
+}

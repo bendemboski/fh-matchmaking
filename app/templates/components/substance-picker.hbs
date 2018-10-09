@@ -1,0 +1,7 @@
+{{#each options as |option|}}
+  {{profile-page/check-box
+    value=option.value
+    label=option.label
+    checked=option.selected
+    onchange=(action 'toggle' option)}}
+{{/each}}
