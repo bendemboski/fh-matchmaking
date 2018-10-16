@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  host: DS.belongsTo('caseworker'),
+  caseworker: DS.belongsTo('caseworker'),
 
   // index
   firstName: DS.attr('string'),

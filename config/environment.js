@@ -33,8 +33,13 @@ module.exports = function(environment) {
       clearDuration: 5000
     },
 
-    matchmaking: {
-      apiUrl: 'https://pz6vun2soi.execute-api.us-west-2.amazonaws.com/dev'
+    'ember-cli-mirage': {
+      enabled: false
+    },
+
+    api: {
+      host: 'https://pz6vun2soi.execute-api.us-west-2.amazonaws.com',
+      namespace: 'dev'
     }
   };
 
