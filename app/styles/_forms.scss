@@ -1,5 +1,5 @@
 form {
-  padding: 0 10px;
+  padding: 0 20px;
 
   fieldset {
     border-style: none;
@@ -7,7 +7,7 @@ form {
 
   legend {
     font-weight: 600;
-    font-size: 1em;
+    font-size: .9em;
     letter-spacing: 1.5px;
 
     .user-type-host & {
@@ -46,7 +46,7 @@ form {
   input,
   .ember-power-select-trigger,
   .form-dropdown-trigger {
-    line-height: $form-control-height - 4; // 1px border, 1px padding
+    line-height: $form-control-height - 2; // 1px border, 1px padding
   }
 
   .ember-power-select-trigger,
@@ -71,6 +71,15 @@ form {
   // date inputs end up slightly taller than others for some reason
   input[type="date"] {
     height: 30px;
+  }
+
+  input[type="submit"]{
+      background-color: grey;
+      border: grey;
+      color: #ffffff;
+      &:focus, &:hover{
+      background-color: black;
+    }
   }
 
   .form-group {
