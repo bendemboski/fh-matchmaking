@@ -46,7 +46,7 @@ form {
   input,
   .ember-power-select-trigger,
   .form-dropdown-trigger {
-    line-height: $form-control-height - 2; // 1px border, 1px padding
+    line-height: $form-control-height - 4; // 1px border, 1px padding
   }
 
   .ember-power-select-trigger,
@@ -73,11 +73,12 @@ form {
     height: 30px;
   }
 
-  input[type="submit"]{
-      background-color: grey;
-      border: grey;
-      color: #ffffff;
-      &:focus, &:hover{
+  input[type="submit"] {
+    background-color: grey;
+    border: grey;
+    color: #ffffff;
+
+    &:focus, &:hover {
       background-color: black;
     }
   }

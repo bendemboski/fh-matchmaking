@@ -26,7 +26,6 @@
     letter-spacing: 110%;
     margin: 100px auto;
   }
-
 }
 
 .signin-form-header {
@@ -189,25 +188,29 @@
   }
 }
 
-.ember-modal-dialog{
+.ember-modal-dialog {
   padding: 30px 40px;
   width: 42%;
-    form input{
-      margin: 10px 0;
-      &[type=submit],
-      &[type=button]{
-        margin-top: 10px;
-      }
-      &[type=submit]{
-          &:focus, &:hover{
-          background-color: black;
-        }
-      }
-      &[type=button]{
-        border: none;
-        text-decoration: underline;
+
+  form input {
+    margin: 10px 0;
+
+    &[type=submit],
+    &[type=button] {
+      margin-top: 10px;
+    }
+
+    &[type=submit] {
+      &:focus, &:hover {
+        background-color: black;
       }
     }
+
+    &[type=button] {
+      border: none;
+      text-decoration: underline;
+    }
+  }
 }
 
 h2.modal-header{
