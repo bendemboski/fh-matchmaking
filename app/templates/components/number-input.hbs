@@ -1,13 +1,24 @@
 <div class="input-group">
   <span class="input-group-btn">
-    <button type="button"  class="number-input-button" onclick={{action "decrement"}} disabled={{eq value @minValue}}>
+    <button
+      type="button"
+      class="number-input-button"
+      onclick={{action "decrement"}}
+      disabled={{eq value @minValue}}
+      data-test-decrement
+    >
       <img class="host-only" src="/assets/images/icon_minusbtn_org.png" alt="plusbtn" height="25px" width="25px">
       <img class="caseworker-only" src="/assets/images/icon_minusbtn_grn.png" alt="plusbtn" height="25px" width="25px">
     </button>
   </span>
-  <span class="form-control number-input-value">{{value}}</span>
+  <span class="form-control number-input-value" data-test-value>{{value}}</span>
   <span class="input-group-btn">
-    <button type="button" class="number-input-button" onclick={{action "increment"}}>
+    <button
+      type="button"
+      class="number-input-button"
+      onclick={{action "increment"}}
+      data-test-increment
+    >
       <img class="host-only" src="/assets/images/icon_plusbtn_org.png" alt="plusbtn" height="25px" width="25px">
       <img class="caseworker-only" src="/assets/images/icon_plusbtn_grn.png" alt="plusbtn" height="25px" width="25px">
     </button>

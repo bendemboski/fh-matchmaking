@@ -29,4 +29,11 @@ export default function() {
 
   this.del('/host-profiles/:id');
   this.del('/resident-profiles/:id');
+
+  this.get('/userStats', ({ hosts, residentProfiles }) => {
+    return {
+      hosts: hosts.length,
+      residents: residentProfiles.length
+    };
+  });
 }

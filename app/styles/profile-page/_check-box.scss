@@ -12,7 +12,7 @@
   color: #999;
   cursor: pointer;
 
-  input:checked + & {
+  &.checked {
     .user-type-host & {
       border-color: #e59f7c;
       color: #e59f7c;

@@ -18,6 +18,6 @@ export default DS.Model.extend({
       return null;
     }
 
-    return moment(this.birthdate).diff(moment(), 'years');
+    return moment().diff(moment(this.birthdate), 'years');
   })
 });

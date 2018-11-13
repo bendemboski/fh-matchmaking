@@ -10,7 +10,11 @@ as |page|
         STEP 1: Say HI, and introduce yourself!
       </legend>
 
-      {{#form.group class="substances" label="What substances do you use currently?"}}
+      {{#form.group
+        class="substances"
+        label="What substances do you use currently?"
+        data-test-substance-picker="my"
+      }}
         {{substance-picker
           substances=this.changeset.mySubstances
           onchange=(action (mut this.changeset.mySubstances))
@@ -24,6 +28,7 @@ as |page|
         {{substance-picker
           substances=this.changeset.residentSubstances
           onchange=(action (mut this.changeset.residentSubstances))
+          data-test-substance-picker="resident"
         }}
       {{/form.group}}
 

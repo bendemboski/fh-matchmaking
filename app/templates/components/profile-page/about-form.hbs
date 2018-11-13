@@ -11,6 +11,7 @@ as |form|
     {{group.input
       placeholder="Watch football game, hike, garden, bike…"
       value=@changeset.freeTime
+      data-test-free-time=true
     }}
   {{/form.group}}
 
@@ -18,10 +19,14 @@ as |form|
     {{group.input
       placeholder="Steak, seafood, I like all food!"
       value=@changeset.favoriteFood
+      data-test-favorite-food=true
     }}
   {{/form.group}}
 
-  {{#form.group label="What kind of movies do you like?"}}
+  {{#form.group
+    label="What kind of movies do you like?"
+    data-test-movie-genre=true
+  }}
     {{!-- template-lint-disable attribute-indentation --}}
     {{! seem to be a bug in ember-template-lint flagging indentation}}
     {{#power-select
@@ -29,6 +34,7 @@ as |form|
       options=this.movieGenres
       selected=this.selectedMovieGenre
       searchEnabled=false
+      renderInPlace=true
       onchange=(action (mut @changeset.movieGenre) value="value")
     as |genre|
     }}
@@ -41,6 +47,7 @@ as |form|
       {{group.input
         placeholder="Tell us more about you…"
         value=@changeset.funFact
+        data-test-fun-fact=true
       }}
     {{/form.group}}
   {{/if}}

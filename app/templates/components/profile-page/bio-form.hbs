@@ -14,10 +14,11 @@ as |form|
         {{date-picker
           date=@changeset.birthdate
           onchange=(action (mut @changeset.birthdate))
+          data-test-birthdate=true
         }}
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6" data-test-gender>
       {{#form.group label="Gender"}}
         {{!-- template-lint-disable attribute-indentation --}}
         {{! seem to be a bug in ember-template-lint flagging indentation}}
@@ -26,6 +27,7 @@ as |form|
           options=this.genders
           selected=this.selectedGender
           searchEnabled=false
+          renderInPlace=true
           onchange=(action (mut @changeset.gender) value="value")
         as |gender|
         }}
@@ -38,12 +40,14 @@ as |form|
     {{group.input
       placeholder="Musician, Engineer, Social Caseworker, Dentist..."
       value=@changeset.occupation
+      data-test-occupation=true
     }}
   {{/form.group}}
   {{#form.group label="Languages Spoken" as |group|}}
     {{group.input
       placeholder="English, Spanish, Sign Language..."
       value=@changeset.languages
+      data-test-languages=true
     }}
   {{/form.group}}
   <div class="form-group">
@@ -54,6 +58,7 @@ as |form|
         value=@changeset.adultCount
         minValue=1
         onChange=(action (mut @changeset.adultCount))
+        data-test-adult-count=true
       }}
     {{/if}}
 
@@ -61,16 +66,23 @@ as |form|
     {{number-input
       value=@changeset.kidCount
       onChange=(action (mut @changeset.kidCount))
+      data-test-kid-count=true
     }}
 
     <span class="family-label">Pet</span>
     {{number-input
       value=@changeset.petCount
       onChange=(action (mut @changeset.petCount))
+      data-test-pet-count=true
     }}
 
     {{#if (not @isHost)}}
-      {{input class="pet-breed" placeholder="Pet breed" value=@changeset.petBreed}}
+      {{input
+        class="pet-breed"
+        placeholder="Pet breed"
+        value=@changeset.petBreed
+        data-test-pet-breed=true
+      }}
     {{/if}}
   </div>
 {{/component}}
