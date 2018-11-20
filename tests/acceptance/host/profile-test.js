@@ -47,7 +47,9 @@ module('Acceptance | host/profile', function(hooks) {
 
     // Bio
     assert.equal(currentRouteName(), 'auth.host.bio');
-    await bioPage.birthdate.fillIn(3, 18, 1980);
+    let m = moment().subtract(32, 'years');
+    m.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+    await bioPage.birthdate.fillIn(m.month() + 1, m.date(), m.year());
     await bioPage.gender.fillIn('Male');
     await bioPage.occupation.fillIn('Banana Stand Manager');
     await bioPage.languages.fillIn('English, Klingon');
@@ -59,7 +61,7 @@ module('Acceptance | host/profile', function(hooks) {
     await bioPage.footer.next();
 
     mirageUser.reload();
-    assert.equal(mirageUser.profile.birthdate, new Date(1980, 2, 18).toISOString());
+    assert.equal(mirageUser.profile.birthdate, m.toISOString());
     assert.equal(mirageUser.profile.gender, 'male');
     assert.equal(mirageUser.profile.occupation, 'Banana Stand Manager');
     assert.equal(mirageUser.profile.languages, 'English, Klingon');

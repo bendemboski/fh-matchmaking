@@ -9,6 +9,9 @@ function neighborhood(index) {
     },
     set(key, value) {
       let neighborhoods = this.changeset.get('neighborhoods') || [];
+      // We have to push a different array into the changeset for its dirty
+      // tracking to work properly
+      neighborhoods = [...neighborhoods];
       neighborhoods[index] = value;
       this.changeset.set('neighborhoods', neighborhoods);
       return value;

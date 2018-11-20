@@ -1,6 +1,8 @@
 import {
+  attribute,
   clickable,
-  clickOnText
+  clickOnText,
+  collection
 } from 'ember-cli-page-object';
 import { getter } from 'ember-cli-page-object/macros';
 import { findElement } from 'ember-cli-page-object/extend';
@@ -17,4 +19,9 @@ export default {
 
   open: clickable('.ember-power-select-trigger'),
   choose: clickOnText('.ember-power-select-option'),
+
+  isDisabled: attribute('aria-disabled', '.ember-power-select-trigger'),
+  items: collection('.ember-power-select-option', {
+    isDisabled: attribute('aria-disabled')
+  })
 };

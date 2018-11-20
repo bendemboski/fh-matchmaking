@@ -1,4 +1,9 @@
 import DS from 'ember-data';
+import { computed } from '@ember/object';
+import moment from 'moment';
+import { raw } from 'ember-awesome-macros';
+import { join, map } from 'ember-awesome-macros/array';
+import { getNeighborhoodDisplay } from '../utils/profile';
 
 export default DS.Model.extend({
   caseworker: DS.belongsTo('caseworker'),
@@ -39,5 +44,22 @@ export default DS.Model.extend({
   interaction: DS.attr('number'),
 
   // question
-  question: DS.attr('string')
+  question: DS.attr('string'),
+
+  fullName: computed('firstName', 'lastName', function() {
+    return `${this.firstName} ${this.lastName}`.trim();
+  }),
+
+  yearsOld: computed('birthdate', function() {
+    if (!this.birthdate) {
+      return null;
+    }
+
+    return moment().diff(moment(this.birthdate), 'years');
+  }),
+
+  neighborhoodsDisplay: join(
+    map('neighborhoods', getNeighborhoodDisplay),
+    raw(', ')
+  )
 });

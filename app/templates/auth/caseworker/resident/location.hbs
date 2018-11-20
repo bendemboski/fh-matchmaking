@@ -11,23 +11,29 @@ as |page|
       </legend>
 
       {{#form.group label="Choose top 3 neighborhoods you are looking for"}}
-        {{select-neighborhood
-          neighborhood=this.neighborhood1
-          disabledOptions=this.disabledNeighborhoods1
-          onchange=(action (mut this.neighborhood1))
-        }}
-        {{select-neighborhood
-          neighborhood=this.neighborhood2
-          disabled=(not this.neighborhood1)
-          disabledOptions=this.disabledNeighborhoods2
-          onchange=(action (mut this.neighborhood2))
-        }}
-        {{select-neighborhood
-          neighborhood=this.neighborhood3
-          disabled=(not this.neighborhood2)
-          disabledOptions=this.disabledNeighborhoods3
-          onchange=(action (mut this.neighborhood3))
-        }}
+        <span data-test-neighborhood1>
+          {{select-neighborhood
+            neighborhood=this.neighborhood1
+            disabledOptions=this.disabledNeighborhoods1
+            onchange=(action (mut this.neighborhood1))
+          }}
+        </span>
+        <span data-test-neighborhood2>
+          {{select-neighborhood
+            neighborhood=this.neighborhood2
+            disabled=(not this.neighborhood1)
+            disabledOptions=this.disabledNeighborhoods2
+            onchange=(action (mut this.neighborhood2))
+          }}
+        </span>
+        <span data-test-neighborhood3>
+          {{select-neighborhood
+            neighborhood=this.neighborhood3
+            disabled=(not this.neighborhood2)
+            disabledOptions=this.disabledNeighborhoods3
+            onchange=(action (mut this.neighborhood3))
+          }}
+        </span>
       {{/form.group}}
 
       {{#form.group label="Public Transportation"}}
@@ -38,6 +44,7 @@ as |page|
         {{group.input
           placeholder="e.g. supermarket, park, library, church"
           value=this.changeset.neighborhoodFeatures
+          data-test-environment=true
         }}
       {{/form.group}}
     {{/page.profile-form}}
