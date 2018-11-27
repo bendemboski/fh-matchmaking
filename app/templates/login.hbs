@@ -94,27 +94,27 @@
     onClose=closeModal
     translucentOverlay=true
   }}
-    <h2>Forgot password</h2>
+    <h2 class="modal-header">Forgot password</h2>
     {{#let forgotPassword as |task|}}
       <form onsubmit={{prevent-default (perform task)}}>
         <legend>
-          First we need the e-mail address on your account
+          Enter your email address below and we'll email the instruction for setting a new one.
         </legend>
         <div>
-          <label>email address:</label>
           <input
             type="email"
             required
-            oninput={{action (mut modalContext.email) value="target.value"}}>
+            oninput={{action (mut modalContext.email) value="target.value"}}
+            placeholder="youremailaddress@gmail.com">
         </div>
+        <input
+          type="submit"
+          value={{if task.isRunning "Submitting..." "Submit"}}
+          disabled={{task.isRunning}}>
         <input
           type="button"
           value="Cancel"
           onclick={{action closeModal}}
-          disabled={{task.isRunning}}>
-        <input
-          type="submit"
-          value={{if task.isRunning "Submitting..." "Submit"}}
           disabled={{task.isRunning}}>
       </form>
     {{/let}}
@@ -124,7 +124,7 @@
     onClose=closeModal
     translucentOverlay=true
   }}
-    <h2>Forgot password</h2>
+    <h2 class="modal-header">Forgot password</h2>
     {{#let completeForgotPassword as |task|}}
       <form onsubmit={{prevent-default (perform task)}}>
         <legend>
@@ -132,29 +132,31 @@
           choose a new password
         </legend>
         <div>
-          <label>code:</label>
           <input
             type="text"
             required
-            oninput={{action (mut modalContext.code) value="target.value"}}>
+            oninput={{action (mut modalContext.code) value="target.value"}}
+            placeholder="Enter the 6-digit confirmation code">
         </div>
         <div>
-          <label>password:</label>
           <input
             type="password"
             minlength="8"
             required
-            oninput={{action (mut modalContext.password) value="target.value"}}>
+            oninput={{action (mut modalContext.password) value="target.value"}}
+            placeholder="Enter your new password">
         </div>
-        <input
-          type="button"
-          value="Cancel"
-          onclick={{action closeModal}}
-          disabled={{task.isRunning}}>
-        <input
-          type="submit"
-          value={{if task.isRunning "Submitting..." "Submit"}}
-          disabled={{task.isRunning}}>
+        <div>
+          <input
+            type="submit"
+            value={{if task.isRunning "Submitting..." "Submit"}}
+            disabled={{task.isRunning}}>
+          <input
+            type="button"
+            value="Cancel"
+            onclick={{action closeModal}}
+            disabled={{task.isRunning}}>
+        </div>
       </form>
     {{/let}}
   {{/modal-dialog}}
