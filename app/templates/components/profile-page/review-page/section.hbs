@@ -1,7 +1,7 @@
 <img src={{@headingImage}} class="section-image" alt="hello-icon">
 <div class="section-heading">{{@headingText}}</div>
 {{#if @isComplete}}
-  {{#link-to @editRoute class="edit"}}
+  {{#link-to @editRoute class="edit" data-test-edit-link=true}}
     Edit
   {{/link-to}}
 {{/if}}

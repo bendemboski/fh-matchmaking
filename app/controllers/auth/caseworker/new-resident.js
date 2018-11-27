@@ -13,7 +13,7 @@ export default Controller.extend({
     this._super(...arguments);
 
     this.set('profile', this.store.createRecord('resident-profile', {
-      user: this.currentUser.model
+      caseworker: this.currentUser.model
     }));
   },
 

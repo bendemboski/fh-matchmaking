@@ -1,15 +1,24 @@
 <div class="nav-buttons">
   {{#link-to @backRoute}}
-    <button class="btn nav-button back">
+    <button class="btn nav-button back" data-test-back>
       {{fa-icon "arrow-left" class="back-arrow"}}Back
     </button>
   {{/link-to}}
   {{#if @nextAction}}
-    <button class="btn btn-primary nav-button next" onclick={{@nextAction}}>
+    <button
+      class="btn btn-primary nav-button next"
+      onclick={{@nextAction}}
+      data-test-next
+    >
       {{if @nextLabel @nextLabel "Next"}}
     </button>
   {{else}}
-    {{#link-to @nextRoute tagName="button" class="btn btn-primary nav-button next"}}
+    {{#link-to
+      @nextRoute
+      tagName="button"
+      class="btn btn-primary nav-button next"
+      data-test-next=true
+    }}
       {{if @nextLabel @nextLabel "Next"}}
     {{/link-to}}
   {{/if}}

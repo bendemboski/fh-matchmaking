@@ -6,7 +6,8 @@
   onchange={{@onchange}}>
 <label
   for={{this.inputId}}
-  class="check-box-label"
+  class={{concat "check-box-label" (if @checked " checked")}}
+  data-test-check-box
 >
   {{@label}}
 </label>

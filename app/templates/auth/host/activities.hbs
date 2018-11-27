@@ -14,11 +14,15 @@ as |page|
         {{group.input
           placeholder="e.g. garden, do yoga, enjoy a cup of coffee…"
           value=this.changeset.backyardActivities
+          data-test-activities=true
         }}
       {{/form.group}}
 
       {{#form.group label="One sentence to describe your backyard." as |group|}}
-        {{group.textarea value=this.changeset.backyardDescription}}
+        {{group.textarea
+          value=this.changeset.backyardDescription
+          data-test-description=true
+        }}
       {{/form.group}}
     {{/page.profile-form}}
   {{/page.left-column}}

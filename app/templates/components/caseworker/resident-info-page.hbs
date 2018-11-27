@@ -22,20 +22,34 @@ as |page|
       <div class="row">
         <div class="col-sm-6">
           {{#form.group label="First Name" as |group|}}
-            {{group.input value=@changeset.firstName}}
+            {{group.input
+              value=@changeset.firstName
+              data-test-first-name=true
+            }}
           {{/form.group}}
         </div>
         <div class="col-sm-6">
           {{#form.group label="Last Name" as |group|}}
-            {{group.input value=@changeset.lastName}}
+            {{group.input
+              value=@changeset.lastName
+              data-test-last-name=true
+            }}
           {{/form.group}}
         </div>
       </div>
       {{#form.group label="Email" as |group|}}
-        {{group.input type="email" value=@changeset.email}}
+        {{group.input
+          type="email"
+          value=@changeset.email
+          data-test-email=true
+        }}
       {{/form.group}}
       {{#form.group label="Phone Number" as |group|}}
-        {{group.input type="tel" value=@changeset.phoneNumber}}
+        {{group.input
+          type="tel"
+          value=@changeset.phoneNumber
+          data-test-phone-number=true
+        }}
       {{/form.group}}
     {{/page.profile-form}}
   {{/page.left-column}}

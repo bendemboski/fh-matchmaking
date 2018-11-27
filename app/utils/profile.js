@@ -72,7 +72,7 @@ export function getNeighborhoods() {
         { value: 'northgate', label: 'Northgate' },
         { value: 'ravenna', label: 'Ravenna' },
         { value: 'roosevelt', label: 'Roosevelt' },
-        { value: 'uDist', label: 'U-District' },
+        { value: 'uDist', label: 'U District' },
         { value: 'viewRidge', label: 'View Ridge' },
         { value: 'wedgewood', label: 'Wedgwood' },
         { value: 'widermere', label: 'Windermere' }

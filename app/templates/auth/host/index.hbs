@@ -6,7 +6,11 @@
       <div class="col-lg-5 my-auto">
         <div class="header-content mx-auto" id="mainpageTop">
           <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolore, error, in perspiciatis quasi.</h2>
-          {{#link-to "auth.host.greeting" class="btn btn-outline btn-xl"}}
+          {{#link-to
+            "auth.host.greeting"
+            class="btn btn-outline btn-xl"
+            data-test-build-profile=true
+          }}
             Build My Profile
           {{/link-to}}
         </div>

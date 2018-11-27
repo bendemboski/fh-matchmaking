@@ -21,6 +21,7 @@ as |page|
         {{group.input
           placeholder="Please enter your address"
           value=this.changeset.address
+          data-test-street-address=true
         }}
       {{/form.group}}
 
@@ -32,6 +33,7 @@ as |page|
         {{group.input
           placeholder="e.g. supermarket, park, library, church"
           value=this.changeset.neighborhoodFeatures
+          data-test-environment=true
         }}
       {{/form.group}}
     {{/page.profile-form}}
