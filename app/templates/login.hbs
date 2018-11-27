@@ -1,7 +1,7 @@
 {{set-body-class "signin-page"}}
 
 {{#let login as |task|}}
-  <form class="signin-form" onsubmit={{prevent-default (perform task)}}>
+  <form class="auth-form signin-form" onsubmit={{prevent-default (perform task)}}>
     <h2 class="signin-form-header">Sign in</h2>
     <div
       class={{concat
@@ -62,7 +62,7 @@
   }}
     <h2>Welcome!</h2>
     {{#let changePassword as |task|}}
-      <form onsubmit={{prevent-default (perform task)}}>
+      <form class="auth-form" onsubmit={{prevent-default (perform task)}}>
         <legend>
           Before continuing you need to change your password.
         </legend>
@@ -96,7 +96,7 @@
   }}
     <h2 class="modal-header">Forgot password</h2>
     {{#let forgotPassword as |task|}}
-      <form onsubmit={{prevent-default (perform task)}}>
+      <form class="auth-form" onsubmit={{prevent-default (perform task)}}>
         <legend>
           Enter your email address below and we'll email the instruction for setting a new one.
         </legend>
@@ -126,7 +126,7 @@
   }}
     <h2 class="modal-header">Forgot password</h2>
     {{#let completeForgotPassword as |task|}}
-      <form onsubmit={{prevent-default (perform task)}}>
+      <form class="auth-form" onsubmit={{prevent-default (perform task)}}>
         <legend>
           You should receive an email with a confirmation code. Enter it here and
           choose a new password

@@ -12,6 +12,49 @@
   }
 }
 
+.auth-form {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  legend {
+    font-size: 0.9em;
+  }
+
+  input {
+    width: 100%;
+    border-radius: 5px;
+    line-height: 31px;
+    font-size: 0.7em;
+    letter-spacing: 1.2px;
+    border: 1px solid #bebebe;
+    padding-left: 10px;
+
+    &[type="submit"],
+    &[type="button"] {
+      cursor: pointer;
+    }
+
+    &[type="submit"] {
+      background-color: grey;
+      color: #ffffff;
+
+      &:focus, &:hover {
+        background-color: black;
+      }
+    }
+
+    &[type="button"] {
+      display: block;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+
+  input::placeholder {
+    color: #999;
+  }
+}
+
 .signin-form {
   float: right;
   height: 100vh;

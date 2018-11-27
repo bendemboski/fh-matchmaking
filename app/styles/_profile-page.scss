@@ -18,8 +18,83 @@
 }
 
 .profile-form {
+  padding: 0 10px;
+
+  fieldset {
+    border-style: none;
+  }
+
+  legend {
+    font-weight: 600;
+    font-size: 1em;
+    letter-spacing: 1.5px;
+
+    .user-type-host & {
+      color: $mainOrange;
+    }
+
+    .user-type-caseworker & {
+      color: #8ba334;
+    }
+  }
+
+  .control-label {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: #666;
+    margin-bottom: 5px;
+  }
+
+  input,
+  textarea,
+  .ember-power-select-trigger,
+  .form-dropdown-trigger {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+    padding: 1px 1px 1px 10px;
+    color: grey;
+    font-size: 0.7em;
+    letter-spacing: 1.2px;
+  }
+
+  input,
+  .ember-power-select-trigger,
+  .form-dropdown-trigger {
+    line-height: $form-control-height - 4; // 1px border, 1px padding
+  }
+
+  .ember-power-select-trigger,
+  .form-dropdown-trigger  {
+    cursor: pointer;
+  }
+
+  .ember-power-select-placeholder,
+  .ember-power-select-selected-item {
+    margin-left: 0;
+  }
+
   textarea {
+    padding: 10px;
     height: 120px;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #999;
+  }
+
+  // date inputs end up slightly taller than others for some reason
+  input[type="date"] {
+    height: 30px;
+  }
+
+  .form-group {
+    margin: 0 10px 10px 0;
   }
 }
 
