@@ -1,5 +1,51 @@
 'use strict';
 
+const awsConfigs = {
+  dev: {
+    api: {
+      host: 'https://0gdb6u1f1m.execute-api.us-west-2.amazonaws.com',
+      namespace: 'dev'
+    },
+    cognito: {
+      poolId: 'us-west-2_ySNN3uOb9',
+      clientId: '7sceo078sm4a3jebp6cra3d6hs',
+      autoRefreshSession: true
+    }
+  },
+  stage: {
+    api: {
+      host: 'https://htvq3k5hl5.execute-api.us-west-2.amazonaws.com',
+      namespace: 'stage'
+    },
+    cognito: {
+      poolId: 'us-west-2_6jA15quMY',
+      clientId: '1r3hhfja6nemosiv7p4uik9djc',
+      autoRefreshSession: true
+    }
+  },
+  prod: {
+    api: {
+      host: 'https://ekeu21ypxh.execute-api.us-west-2.amazonaws.com',
+      namespace: 'prod'
+    },
+    cognito: {
+      poolId: 'us-west-2_LRHMlIol4',
+      clientId: '78s0sk4r5iorq2lqcj77vanlrg',
+      autoRefreshSession: true
+    }
+  },
+  test: {
+    api: {
+      host: '',
+      namespace: ''
+    },
+    cognito: {
+      poolId: '',
+      clientId: ''
+    }
+  }
+}
+
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'fh-matchmaking',
@@ -22,12 +68,6 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    cognito: {
-      poolId: 'us-west-2_hiYFp34ja',
-      clientId: '13l02eij1vuvq4ujql2kj6vcal',
-      autoRefreshSession: true
-    },
-
     'ember-cli-notifications': {
       autoClear: true,
       clearDuration: 5000
@@ -35,11 +75,6 @@ module.exports = function(environment) {
 
     'ember-cli-mirage': {
       enabled: false
-    },
-
-    api: {
-      host: 'https://pz6vun2soi.execute-api.us-west-2.amazonaws.com',
-      namespace: 'dev'
     }
   };
 
@@ -49,6 +84,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    Object.assign(ENV, awsConfigs.dev);
   }
 
   if (environment === 'test') {
@@ -61,10 +97,21 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
+    Object.assign(ENV, awsConfigs.test);
   }
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    Object.assign(ENV, awsConfigs.stage);
+  }
+
+  let { AWS_CONFIG: awsConfigName } = process.env;
+  if (awsConfigName) {
+    if (!awsConfigs[awsConfigName]) {
+      throw new Error(`Unknown AWS_CONFIG: ${awsConfigName}`);
+    }
+
+    Object.assign(ENV, awsConfigs[awsConfigName]);
   }
 
   return ENV;

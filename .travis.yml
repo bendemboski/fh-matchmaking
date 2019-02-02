@@ -25,9 +25,13 @@ install:
   - yarn install --non-interactive
 
 script:
+  - yarn lint:hbs
+  - yarn lint:js
   - yarn test
 
-script:
-  - npm run lint:hbs
-  - npm run lint:js
-  - npm test
+deploy:
+  provider: script
+  script: ci/deploy.sh 2>&1
+  skip_cleanup: true
+  on:
+    branch: master
