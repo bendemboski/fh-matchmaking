@@ -9,6 +9,7 @@ export default DS.Model.extend({
   caseworker: DS.belongsTo('caseworker'),
 
   // index
+  profilePic: DS.attr('string'),
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
   email: DS.attr('string'),

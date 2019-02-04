@@ -1,8 +1,11 @@
 import ProfileBase from './profile-base';
+import { inject as service } from '@ember/service';
 import ImageProp from '../../../utils/image-prop';
 import { task } from 'ember-concurrency';
 
 export default ProfileBase.extend({
+  ajax: service(),
+
   setup() {
     this._super(...arguments);
     this.set('profilePic', ImageProp.create({
@@ -17,8 +20,8 @@ export default ProfileBase.extend({
 
   prepareChangeset: task(function*() {
     if (this.profilePic.blob) {
-      // TODO: upload profile pic and set URL on changeset
-      yield null;
+      let url = yield this.profilePic.uploadBlob(this.ajax);
+      this.changeset.set('profilePic', url);
     }
   })
 });

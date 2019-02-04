@@ -6,6 +6,7 @@ export default DS.Model.extend({
   host: DS.belongsTo('host'),
 
   // greeting
+  profilePic: DS.attr('string'),
   greeting: DS.attr('string'),
 
   // bio

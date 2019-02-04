@@ -1,4 +1,5 @@
 import {
+  attribute,
   create,
   text,
   visitable,
@@ -9,6 +10,7 @@ export default create({
   visit: visitable('/caseworker/resident/:resident_profile_id/profile'),
   footer: Footer,
 
+  profilePic: attribute('src', '[data-test-profile-pic]'),
   name: text('[data-test-name]'),
   gender: text('[data-test-gender]'),
   age: text('[data-test-age]'),

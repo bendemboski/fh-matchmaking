@@ -36,4 +36,13 @@ export default function() {
       residents: residentProfiles.length
     };
   });
+
+  this.post('/mediaUpload', () => {
+    return {
+      uploadUrl: 'http://s3.amazon.com/upload',
+      downloadUrl: 'http://s3.amazon.com/download'
+    };
+  });
+
+  this.put('http://s3.amazon.com/upload', () => {});
 }

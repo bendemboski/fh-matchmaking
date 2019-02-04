@@ -13,6 +13,7 @@ import locationPage from '../../pages/caseworker/resident/location';
 import relationshipPage from '../../pages/caseworker/resident/relationship';
 import questionPage from '../../pages/caseworker/resident/question';
 import profilePage from '../../pages/caseworker/resident/profile';
+import imageBlob from '../../helpers/image-blob';
 
 module('Acceptance | caseworker/resident profile', function(hooks) {
   setupApplicationTest(hooks);
@@ -28,6 +29,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     await newResidentPage.visit();
 
     // new resident
+    await newResidentPage.profilePic.setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
     await newResidentPage.firstName.fillIn('Buster');
     await newResidentPage.lastName.fillIn('Bluth');
     await newResidentPage.email.fillIn('buster@bluth.com');
@@ -37,6 +39,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     mirageUser.reload();
     assert.equal(mirageUser.residents.length, 1);
     let mirageResident = mirageUser.residents.models[0];
+    assert.equal(mirageResident.profilePic, 'http://s3.amazon.com/download');
     assert.equal(mirageResident.firstName, 'Buster');
     assert.equal(mirageResident.lastName, 'Bluth');
     assert.equal(mirageResident.email, 'buster@bluth.com');
@@ -133,6 +136,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
 
     // profile
     assert.equal(currentRouteName(), 'auth.caseworker.resident.profile');
+    assert.equal(profilePage.profilePic, 'http://s3.amazon.com/download');
     assert.equal(profilePage.name, 'Buster Bluth');
     assert.equal(profilePage.gender, 'Male');
     assert.equal(profilePage.age, '32');

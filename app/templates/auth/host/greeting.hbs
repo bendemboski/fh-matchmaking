@@ -16,6 +16,7 @@ as |page|
           altText="profile picture"
           src=(or this.profilePic.url "/assets/images/icon_photoPreview.png")
           onPicture=(action (mut this.profilePic.blob))
+          data-test-profile-pic=true
         }}
       {{/form.group}}
 

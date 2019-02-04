@@ -15,8 +15,9 @@ import photosPage from '../../pages/host/photos';
 import review2Page from '../../pages/host/review2';
 import relationshipPage from '../../pages/host/relationship';
 import questionPage from '../../pages/host/question';
-import review3Page from '../../pages/host/review2';
+import review3Page from '../../pages/host/review3';
 import profilePage from '../../pages/host/profile';
+import imageBlob from '../../helpers/image-blob';
 
 module('Acceptance | host/profile', function(hooks) {
   setupApplicationTest(hooks);
@@ -38,11 +39,12 @@ module('Acceptance | host/profile', function(hooks) {
 
     // Greeting
     assert.equal(currentRouteName(), 'auth.host.greeting');
-    // TODO: picture
+    await greetingPage.profilePic.setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
     await greetingPage.greeting.fillIn('Hey brother!');
     await greetingPage.footer.next();
 
     mirageUser.reload();
+    assert.equal(mirageUser.profile.profilePic, 'http://s3.amazon.com/download');
     assert.equal(mirageUser.profile.greeting, 'Hey brother!');
 
     // Bio
@@ -154,6 +156,7 @@ module('Acceptance | host/profile', function(hooks) {
 
     // Profile
     assert.equal(currentRouteName(), 'auth.host.profile');
+    assert.equal(profilePage.profilePic, 'http://s3.amazon.com/download');
     assert.equal(profilePage.name, 'Buster Bluth');
     assert.equal(profilePage.gender, 'Male');
     assert.equal(profilePage.age, '32');
