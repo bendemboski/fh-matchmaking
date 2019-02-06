@@ -3,6 +3,7 @@
   backRoute="auth.caseworker.index"
   nextRoute=@nextRoute
   nextAction=@nextAction
+  prepareChangeset=(perform this.prepareChangeset)
 as |page|
 }}
   {{#page.left-column}}
@@ -14,8 +15,9 @@ as |page|
         {{picture-uploader
           class="profile-pic-uploader"
           altText="profile picture"
-          src=(or profilePic "/assets/images/icon_photoPreview.png")
-          onPicture=(action (mut profilePic))
+          src=(or this.profilePic.url "/assets/images/icon_photoPreview.png")
+          onPicture=(action (mut this.profilePic.blob))
+          data-test-profile-pic=true
         }}
       {{/form.group}}
 

@@ -2,6 +2,7 @@
   changeset=this.changeset
   backRoute="auth.host.activities"
   nextRoute="auth.host.review2"
+  prepareChangeset=(perform this.prepareChangeset)
 as |page|
 }}
   {{#page.left-column}}
@@ -16,24 +17,28 @@ as |page|
           altText="backyard picture"
           src=(or this.photo1.url this.emptySrc)
           onPicture=(action (mut photo1.blob))
+          data-test-photo=true
         }}
         {{picture-uploader
           class="backyard-pic-uploader"
           altText="backyard picture"
           src=(or this.photo2.url this.emptySrc)
           onPicture=(action (mut photo2.blob))
+          data-test-photo=true
         }}
         {{picture-uploader
           class="backyard-pic-uploader"
           altText="backyard picture"
           src=(or this.photo3.url this.emptySrc)
           onPicture=(action (mut photo3.blob))
+          data-test-photo=true
         }}
         {{picture-uploader
           class="backyard-pic-uploader"
           altText="backyard picture"
           src=(or this.photo4.url this.emptySrc)
           onPicture=(action (mut photo4.blob))
+          data-test-photo=true
         }}
       {{/form.group}}
     {{/page.profile-form}}

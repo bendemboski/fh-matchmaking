@@ -1,7 +1,13 @@
 <div class="container view-profile">
   <div class="row summary">
     <div class="col-2">
-      <img class="profile-pic" src="/assets/images/residentProfile.jpg" width="125px" alt="">
+      <img
+        class="profile-pic"
+        src={{or @profile.profilePic "/assets/images/icon_photoPreview.png"}}
+        width="125px"
+        alt=""
+        data-test-profile-pic
+      >
     </div>
     <div class="col-8 info">
       <h5 data-test-name>{{@profile.fullName}}</h5>

@@ -105,6 +105,8 @@ module.exports = function(environment) {
     Object.assign(ENV, awsConfigs.stage);
   }
 
+  // The default config for the build environment will have been assigned
+  // above, so now see if the environment is overriding it.
   let { AWS_CONFIG: awsConfigName } = process.env;
   if (awsConfigName) {
     if (!awsConfigs[awsConfigName]) {
@@ -112,6 +114,12 @@ module.exports = function(environment) {
     }
 
     Object.assign(ENV, awsConfigs[awsConfigName]);
+  }
+
+  // And finally, if the LOCAL_API environment variable is set, point to a
+  // local server
+  if (process.env.LOCAL_API) {
+    ENV.api = { host: 'http://localhost:3100' };
   }
 
   return ENV;

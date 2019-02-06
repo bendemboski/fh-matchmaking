@@ -6,6 +6,7 @@ export default DS.Model.extend({
   host: DS.belongsTo('host'),
 
   // greeting
+  profilePic: DS.attr('string'),
   greeting: DS.attr('string'),
 
   // bio
@@ -36,6 +37,12 @@ export default DS.Model.extend({
   // activities
   backyardActivities: DS.attr('string'),
   backyardDescription: DS.attr('string'),
+
+  // photos
+  photo1: DS.attr('string'),
+  photo2: DS.attr('string'),
+  photo3: DS.attr('string'),
+  photo4: DS.attr('string'),
 
   // relationship
   relationship: DS.attr('string'),

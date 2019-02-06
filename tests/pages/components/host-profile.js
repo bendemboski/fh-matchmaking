@@ -1,6 +1,14 @@
-import { text } from 'ember-cli-page-object';
+import {
+  attribute,
+  collection,
+  text
+} from 'ember-cli-page-object';
 
 export default {
+  photos: collection('[data-test-photo]', {
+    src: attribute('src')
+  }),
+  profilePic: attribute('src', '[data-test-profile-pic]'),
   name: text('[data-test-name]'),
   gender: text('[data-test-gender]'),
   age: text('[data-test-age]'),
