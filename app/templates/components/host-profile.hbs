@@ -3,15 +3,26 @@
     <div class="col-12 carousel-section">
       {{#carousel-container transitionInterval=400 as |ui controls|}}
         <div class="carousel-body">
-          {{#ui.item}}
-            <img class="carousel-image" src="/assets/images/bky-sample1.jpg" alt="sample">
-          {{/ui.item}}
-          {{#ui.item}}
-            <img class="carousel-image" src="/assets/images/bky-sample3.jpg" alt="sample">
-          {{/ui.item}}
-          {{#ui.item}}
-            <img class="carousel-image" src="/assets/images/bky-sample4.jpg" alt="sample">
-          {{/ui.item}}
+          {{#if @profile.photo1}}
+            {{#ui.item}}
+              <img class="carousel-image" src={{@profile.photo1}} alt="sample" data-test-photo>
+            {{/ui.item}}
+          {{/if}}
+          {{#if @profile.photo2}}
+            {{#ui.item}}
+              <img class="carousel-image" src={{@profile.photo2}} alt="sample" data-test-photo>
+            {{/ui.item}}
+          {{/if}}
+          {{#if @profile.photo3}}
+            {{#ui.item}}
+              <img class="carousel-image" src={{@profile.photo3}} alt="sample" data-test-photo>
+            {{/ui.item}}
+          {{/if}}
+          {{#if @profile.photo4}}
+            {{#ui.item}}
+              <img class="carousel-image" src={{@profile.photo4}} alt="sample" data-test-photo>
+            {{/ui.item}}
+          {{/if}}
         </div>
         <div role="button" class="arrow left" onclick={{controls.previous}}></div>
         <div role="button" class="arrow right" onclick={{controls.next}}></div>

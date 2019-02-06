@@ -38,6 +38,12 @@ export default DS.Model.extend({
   backyardActivities: DS.attr('string'),
   backyardDescription: DS.attr('string'),
 
+  // photos
+  photo1: DS.attr('string'),
+  photo2: DS.attr('string'),
+  photo3: DS.attr('string'),
+  photo4: DS.attr('string'),
+
   // relationship
   relationship: DS.attr('string'),
   interaction: DS.attr('number'),

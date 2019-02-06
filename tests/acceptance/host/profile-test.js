@@ -31,6 +31,14 @@ module('Acceptance | host/profile', function(hooks) {
       familyName: 'Bluth',
       birthdate: moment().subtract(32, 'years').toISOString()
     });
+
+    let index = 0;
+    this.server.post('/mediaUpload', () => {
+      return {
+        uploadUrl: 'http://s3.amazon.com/upload',
+        downloadUrl: `http://s3.amazon.com/download${index++}`
+      };
+    });
   });
 
   test('build profile', async function(assert) {
@@ -44,7 +52,7 @@ module('Acceptance | host/profile', function(hooks) {
     await greetingPage.footer.next();
 
     mirageUser.reload();
-    assert.equal(mirageUser.profile.profilePic, 'http://s3.amazon.com/download');
+    assert.equal(mirageUser.profile.profilePic, 'http://s3.amazon.com/download0');
     assert.equal(mirageUser.profile.greeting, 'Hey brother!');
 
     // Bio
@@ -123,7 +131,10 @@ module('Acceptance | host/profile', function(hooks) {
 
     // Photos
     assert.equal(currentRouteName(), 'auth.host.photos');
-    // TODO: photos!
+    await photosPage.photos.objectAt(0).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
+    await photosPage.photos.objectAt(1).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
+    await photosPage.photos.objectAt(2).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
+    await photosPage.photos.objectAt(3).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
     await photosPage.footer.next();
 
     mirageUser.reload();
@@ -156,7 +167,11 @@ module('Acceptance | host/profile', function(hooks) {
 
     // Profile
     assert.equal(currentRouteName(), 'auth.host.profile');
-    assert.equal(profilePage.profilePic, 'http://s3.amazon.com/download');
+    assert.equal(profilePage.photos.objectAt(0).src, 'http://s3.amazon.com/download1');
+    assert.equal(profilePage.photos.objectAt(1).src, 'http://s3.amazon.com/download2');
+    assert.equal(profilePage.photos.objectAt(2).src, 'http://s3.amazon.com/download3');
+    assert.equal(profilePage.photos.objectAt(3).src, 'http://s3.amazon.com/download4');
+    assert.equal(profilePage.profilePic, 'http://s3.amazon.com/download0');
     assert.equal(profilePage.name, 'Buster Bluth');
     assert.equal(profilePage.gender, 'Male');
     assert.equal(profilePage.age, '32');
