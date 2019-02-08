@@ -41,15 +41,15 @@
       >
     </div>
     <div class="col-8 info">
-      <h5 data-test-name>{{@user.fullName}}</h5>
-      <h6>
+      <h4 data-test-name>{{@user.fullName}}</h4>
+      <p>
         <span data-test-gender>{{gender-display @profile.gender}}</span>
         {{#if @user.yearsOld}}
           • <span data-test-age>{{@user.yearsOld}}</span> years old
         {{/if}}
         • <span data-test-occupation>{{@profile.occupation}}</span>
-      </h6>
-      <h6 class="highlight">
+      </p>
+      <p class="highlight">
         <span data-test-neighborhood>{{@profile.neighborhoodDisplay}}</span>
         • Adults <span data-test-adult-count>{{@profile.adultCount}}</span>
         {{#if @profile.kidCount}}
@@ -58,7 +58,7 @@
         {{#if @profile.petCount}}
           • Pets <span data-test-pet-count>{{@profile.petCount}}</span>
         {{/if}}
-      </h6>
+      </p>
     </div>
   </div>
 

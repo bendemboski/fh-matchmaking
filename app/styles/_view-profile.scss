@@ -85,7 +85,7 @@
   font-size: 80%;
 
   .summary {
-    margin-top: 20px;
+    margin-top: 50px;
 
     .profile-pic {
       border-radius: 50%;
@@ -94,14 +94,14 @@
 
     .info {
       color: #1a1a1a;
+      margin-top: 32px;
 
-      h5 {
+      h4 {
         font-weight: 600;
-        font-size: 1em;
       }
 
-      h6 {
-        font-size: 0.9em;
+      p {
+        margin: 10px 0;
 
         .highlight {
           .user-type-host & {
