@@ -1,14 +1,14 @@
 const configs = {
   development: {
-    s3Bucket: 'meet-dev.the-block-project.org',
+    s3Bucket: 'matchmaking-dev.the-block-project.org',
     awsConfig: 'dev'
   },
   staging: {
-    s3Bucket: 'meet-stage.the-block-project.org',
+    s3Bucket: 'matchmaking-stage.the-block-project.org',
     awsConfig: 'stage'
   },
   production: {
-    s3Bucket: 'meet.the-block-project.org',
+    s3Bucket: 'matchmaking.the-block-project.org',
     awsConfig: 'prod'
   },
 };
