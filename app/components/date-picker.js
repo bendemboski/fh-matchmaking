@@ -18,6 +18,9 @@ const months = [
 ];
 
 export default Component.extend({
+  // Add class name
+  classNames: ['date-picker'],
+
   // Full date
   date: null,
 

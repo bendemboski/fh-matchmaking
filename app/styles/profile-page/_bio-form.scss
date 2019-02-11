@@ -5,19 +5,10 @@
     margin: 10px 0 0;
   }
 
-  .date-picker{
-    display: inline-block !important;
-
-    &.day {
-      width: 25%;
-    }
-
-    &.month {
-      width: 42%;
-    }
-
-    &.year {
-      width: 28%;
+  .date-picker {
+    .ember-basic-dropdown {
+      display:inline-block;
+      width:31.8%;
     }
   }
 
