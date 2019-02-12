@@ -6,18 +6,9 @@
   }
 
   .date-picker {
-    display: inline-block;
-
-    &.day {
-      width: 25%;
-    }
-
-    &.month {
-      width: 42%;
-    }
-
-    &.year {
-      width: 28%;
+    .ember-basic-dropdown {
+      display:inline-block;
+      width:31.8%;
     }
   }
 
