@@ -1,1 +1,6 @@
-{{admin-list people=residents}}
+{{#admin/person-list}}
+  {{residents-table
+    residents=this.residents
+    onRowClick=(action "viewProfile")
+  }}
+{{/admin/person-list}}

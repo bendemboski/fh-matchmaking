@@ -14,6 +14,11 @@ Router.map(function () {
     this.route('admin', function() {
       this.route('host-list');
       this.route('resident-list');
+
+      this.route('host', { path: '/host/:host_id' });
+      this.route('caseworker', { path: '/caseworker/:caseworker_id' }, function() {
+        this.route('resident', { path: '/:resident_profile_id' });
+      });
     });
 
     // host-only pages
