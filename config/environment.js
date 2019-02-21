@@ -3,34 +3,34 @@
 const awsConfigs = {
   dev: {
     api: {
-      host: 'https://0gdb6u1f1m.execute-api.us-west-2.amazonaws.com',
+      host: 'https://3i9oo4hmt9.execute-api.us-west-2.amazonaws.com',
       namespace: 'dev'
     },
     cognito: {
-      poolId: 'us-west-2_ySNN3uOb9',
-      clientId: '7sceo078sm4a3jebp6cra3d6hs',
+      poolId: 'us-west-2_KSUZywCNz',
+      clientId: '3mio6bv92f2eqcq3clo7tmkk3h',
       autoRefreshSession: true
     }
   },
   stage: {
     api: {
-      host: 'https://htvq3k5hl5.execute-api.us-west-2.amazonaws.com',
+      host: 'https://5uxwhomy5h.execute-api.us-west-2.amazonaws.com',
       namespace: 'stage'
     },
     cognito: {
-      poolId: 'us-west-2_6jA15quMY',
-      clientId: '1r3hhfja6nemosiv7p4uik9djc',
+      poolId: 'us-west-2_xGl0Fq9UM',
+      clientId: '2kiqk02tr8p4d2sfdvknvf993n',
       autoRefreshSession: true
     }
   },
   prod: {
     api: {
-      host: 'https://ekeu21ypxh.execute-api.us-west-2.amazonaws.com',
+      host: 'https://y0hw2l3am1.execute-api.us-west-2.amazonaws.com',
       namespace: 'prod'
     },
     cognito: {
-      poolId: 'us-west-2_LRHMlIol4',
-      clientId: '78s0sk4r5iorq2lqcj77vanlrg',
+      poolId: 'us-west-2_aFTJdIMQl',
+      clientId: '6a9db9f39p7phei8bh2fbt85ob',
       autoRefreshSession: true
     }
   },
