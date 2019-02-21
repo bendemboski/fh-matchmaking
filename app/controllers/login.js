@@ -74,7 +74,7 @@ export default Controller.extend(ModalContainerMixin, {
 
     this.closeModal();
 
-    this.notification.success('Password changed!');
+    this.notifications.success('Password changed!');
 
     try {
       yield this.session.authenticate('authenticator:cognito', { username: email, password });
