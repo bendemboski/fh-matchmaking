@@ -1,1 +1,5 @@
-{{admin-list people=hosts}}
+{{admin/person-list-page
+  columns=this.columns
+  people=this.hosts
+  onRowClick=(action "viewProfile")
+}}

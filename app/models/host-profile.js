@@ -1,12 +1,14 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
 import { getNeighborhoodDisplay } from '../utils/profile';
+import { or, raw } from 'ember-awesome-macros';
 
 export default DS.Model.extend({
   host: DS.belongsTo('host'),
 
   // greeting
   profilePic: DS.attr('string'),
+  profilePicSrc: or('profilePic', raw('/assets/images/icon_photoPreview.png')),
   greeting: DS.attr('string'),
 
   // bio

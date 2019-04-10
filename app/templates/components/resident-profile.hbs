@@ -1,9 +1,9 @@
-<div class="container view-profile">
+<div class="container profile-page view-profile">
   <div class="row summary">
     <div class="col-2">
       <img
         class="profile-pic"
-        src={{or @profile.profilePic "/assets/images/icon_photoPreview.png"}}
+        src={{@profile.profilePicSrc}}
         width="125px"
         alt=""
         data-test-profile-pic
@@ -107,8 +107,4 @@
   </div>
 </div>
 
-{{profile-page/footer
-  backRoute="auth.caseworker.resident.question"
-  nextRoute="auth.caseworker.index"
-  nextLabel="Submit"
-}}
+{{yield}}

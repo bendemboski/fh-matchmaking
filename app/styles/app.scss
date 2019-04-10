@@ -10,14 +10,15 @@ $form-control-height: 35px;
 @import './general';
 
 // Components
-@import './admin-list';
 @import './image-page';
 @import './interaction-level-picker';
 @import './nav';
 @import './number-input';
+@import './person-lists';
 @import './picture-uploader';
 @import './profile-page';
 @import './substance-picker';
+@import './tables';
 
 @import './account';
 @import './admin-home';

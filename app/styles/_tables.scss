@@ -1,0 +1,39 @@
+$profile-pic-size: 45px;
+$cell-padding: 12px;
+
+.table-profile-pic {
+  width: $profile-pic-size;
+  height: $profile-pic-size;
+  border-radius: 50%;
+}
+
+.ember-light-table {
+  table {
+    border: 1px solid #ddd;
+    background-color: #F9F8F8;
+    font-size: 14px;
+  }
+
+  thead {
+    font-weight: 600;
+    color: #000;
+    background-color: white;
+  }
+
+  tbody {
+    font-weight: 400;
+    color: #656565;
+
+    tr {
+      max-height: $profile-pic-size + 2 * $cell-padding;
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid #eee;
+  }
+
+  th, td {
+    padding: $cell-padding;
+  }  
+}

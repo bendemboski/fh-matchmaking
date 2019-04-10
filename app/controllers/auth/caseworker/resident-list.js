@@ -24,10 +24,6 @@ export default Controller.extend(ModalContainerMixin, {
       valuePath: 'occupation'
     },
     {
-      label: 'Caseworker',
-      valuePath: 'caseworker.fullName'
-    },
-    {
       label: 'Actions',
       width: '100px',
       sortable: false,
@@ -42,8 +38,12 @@ export default Controller.extend(ModalContainerMixin, {
   }),
 
   actions: {
-    viewProfile(column) {
-      this.router.transitionTo('auth.admin.caseworker.resident', column.content.caseworker, column.content);
+    viewResident(column) {
+      this.router.transitionTo('auth.caseworker.resident.view', column.content);
+    },
+
+    editResident(row) {
+      this.router.transitionTo('auth.caseworker.resident.index', row.content);
     },
 
     promptDeleteResident(row, table) {

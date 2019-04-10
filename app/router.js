@@ -14,6 +14,11 @@ Router.map(function () {
     this.route('admin', function() {
       this.route('host-list');
       this.route('resident-list');
+
+      this.route('host', { path: '/host/:host_id' });
+      this.route('caseworker', { path: '/caseworker/:caseworker_id' }, function() {
+        this.route('resident', { path: '/:resident_profile_id' });
+      });
     });
 
     // host-only pages
@@ -36,6 +41,9 @@ Router.map(function () {
 
     // caseworker-only pages
     this.route('caseworker', function() {
+      this.route('resident-list');
+      this.route('host-list');
+
       this.route('new-resident');
 
       // build profile pages
@@ -47,6 +55,8 @@ Router.map(function () {
         this.route('relationship');
         this.route('question');
         this.route('profile');
+
+        this.route('view');
       });
 
       this.route('match', function() {

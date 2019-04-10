@@ -1,0 +1,59 @@
+@mixin person-list-button {
+  display: inline-block;
+  font-size: .8em;
+  border: 1px solid #666;
+  background-color: white;
+  color: #666;
+  text-align: center;
+  padding: 0 16px;
+  text-decoration: none;
+  height: 30px;
+  line-height: 30px;
+  width: 125px;
+  margin-right: 5px;
+
+  &.active,
+  &:hover,
+  &:focus {
+    background-color: #666;
+    color: white;
+  }
+}
+
+.person-list-nav {
+  list-style-type: none;
+  margin:100px 0 0 0;
+  padding: 0;
+  height:30px;
+  line-height: 30px;
+  margin-bottom: 20px;
+
+  > li {
+    float: left;
+
+    > a {
+      @include person-list-button;
+      border-radius: 5px;
+    }
+  }
+}
+
+.person-list-add {
+  @include person-list-button;
+  float: right;
+}
+
+.person-list-empty-hint {
+  margin-top: 60px;
+  text-align: center;
+
+  .empty-heading {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .add-button {
+    @include person-list-button;
+    margin-top: 30px;
+  }
+}

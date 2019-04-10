@@ -1,0 +1,14 @@
+{{#if @tableActions.edit}}
+  <button
+    class="ui-people-table-actions btn btn-sm btn-default fa fa-edit"
+    onclick={{stop-propagation (action @tableActions.edit @row @table)}}
+  >
+  </button>
+{{/if}}
+{{#if @tableActions.delete}}
+  <button
+    class="btn btn-sm btn-danger fa fa-trash"
+    onclick={{stop-propagation (action @tableActions.delete @row @table)}}
+  >
+  </button>
+{{/if}}

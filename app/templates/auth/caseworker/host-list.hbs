@@ -1,0 +1,22 @@
+<div class="container">
+  <ul class="person-list-nav">
+    <li>{{#link-to "auth.caseworker.resident-list"}}Residents{{/link-to}}</li>
+    <li>{{#link-to "auth.caseworker.host-list"}}Hosts{{/link-to}}</li>
+  </ul>
+
+  {{#if this.hosts}}
+    {{people-table
+      columns=this.columns
+      people=this.hosts
+      onRowClick=(action "viewProfile")
+    }}
+  {{else}}
+    <div class="person-list-empty-hint">
+      <div class="empty-heading">Welcome to The Block Project matchmaking platform!</div>
+      <p>
+        We are grateful to have you as a part our community.<br>
+        There are currently no hosts to view.
+      </p>
+    </div>
+  {{/if}}
+</div>

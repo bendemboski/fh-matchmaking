@@ -34,7 +34,7 @@ export default Controller.extend({
 
   actions: {
     viewProfile(column) {
-      this.router.transitionTo('auth.admin.host', column.content);
+      this.router.transitionTo('auth.caseworker.match.host.index', column.content);
     }
   }
 });

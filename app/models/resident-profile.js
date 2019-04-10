@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
 import moment from 'moment';
-import { raw } from 'ember-awesome-macros';
+import { or, raw } from 'ember-awesome-macros';
 import { join, map } from 'ember-awesome-macros/array';
 import { getNeighborhoodDisplay } from '../utils/profile';
 
@@ -10,6 +10,7 @@ export default DS.Model.extend({
 
   // index
   profilePic: DS.attr('string'),
+  profilePicSrc: or('profilePic', raw('/assets/images/icon_photoPreview.png')),
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
   email: DS.attr('string'),
@@ -48,7 +49,7 @@ export default DS.Model.extend({
   question: DS.attr('string'),
 
   fullName: computed('firstName', 'lastName', function() {
-    return `${this.firstName} ${this.lastName}`.trim();
+    return `${this.firstName || ''} ${this.lastName || ''}`.trim();
   }),
 
   yearsOld: computed('birthdate', function() {
