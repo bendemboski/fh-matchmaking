@@ -1,14 +1,11 @@
-import Component from '@ember/component';
+import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
+import { readOnly } from '@ember/object/computed';
 
-//
-// This implements an ember-light-table for displaying a list of hosts. It must
-// be passed a `hosts` property with an array of hosts to display, and
-// optionally an `onRowClick` action to handle clicking on rows.
-//
-export default Component.extend({
+export default Controller.extend({
   router: service(),
 
+  hosts: readOnly('model'),
   columns: Object.freeze([
     {
       valuePath: 'profile.profilePicSrc',
@@ -33,5 +30,11 @@ export default Component.extend({
       valuePath: 'profile.greeting',
       sortable: false
     },
-  ])
+  ]),
+
+  actions: {
+    viewProfile(column) {
+      this.router.transitionTo('auth.caseworker.match.host.index', column.content);
+    }
+  }
 });

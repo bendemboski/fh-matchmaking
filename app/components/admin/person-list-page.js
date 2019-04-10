@@ -1,9 +1,9 @@
-import Controller from '@ember/controller';
-import ModalContainerMixin from '../../../mixins/modal-container';
+import Component from '@ember/component';
+import ModalContainerMixin from '../../mixins/modal-container';
 import { inject as service } from '@ember/service';
 import { task } from 'ember-concurrency';
 
-export default Controller.extend(ModalContainerMixin, {
+export default Component.extend(ModalContainerMixin, {
   store: service(),
   notifications: service(),
 

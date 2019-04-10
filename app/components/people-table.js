@@ -2,10 +2,11 @@ import Component from '@ember/component';
 import Table from 'ember-light-table';
 
 //
-// ember-light-table wrapper that implements our local sorting behavior. Must
-// be passed a `columns` property that is the columns to pass to the
-// `light-table`, a `people` property that is an array of models to display,
-// and optionally an `onRowClick` action to handle clicks on rows.
+// ember-light-table wrapper that implements our local sorting behavior. Must be
+// passed a `columns` property that is the columns to pass to the `light-table`,
+// a `people` property that is an array of models to display, optionally a
+// `tableActions` property to be passed to the table, and optionally an
+// `onRowClick` action to handle clicks on rows.
 //
 export default Component.extend({
   tagName: '',

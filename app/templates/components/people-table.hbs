@@ -1,4 +1,4 @@
-{{#light-table this.table as |t|}}
+{{#light-table this.table tableActions=@tableActions as |t|}}
   {{t.head
     onColumnClick=(action "onColumnClick")
     iconSortable="fa fa-sort"

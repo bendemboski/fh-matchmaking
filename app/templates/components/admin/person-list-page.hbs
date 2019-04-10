@@ -1,0 +1,82 @@
+<div class="container">
+  <ul class="person-list-nav">
+    <li>{{#link-to "auth.admin.resident-list"}}Residents{{/link-to}}</li>
+    <li>{{#link-to "auth.admin.host-list"}}Hosts{{/link-to}}</li>
+    {{#if @people}}
+      <li class="float-right">
+        <div
+          role="button"
+          class="person-list-add"
+          onclick={{action openModal "inviteUser" (hash type="host")}}
+        >
+          Invite new user
+        </div>
+      </li>
+    {{/if}}
+  </ul>
+
+  {{#if @people}}
+    {{people-table
+      columns=@columns
+      people=@people
+      onRowClick=@onRowClick
+      tableActions=@tableActions
+    }}
+  {{else}}
+    <div class="person-list-empty-hint">
+      <div class="empty-heading">Welcome to The Block Project matchmaking platform!</div>
+      <button class="add-button" onclick={{action openModal "inviteUser" (hash type="host")}}>
+        Invite new user
+      </button>
+    </div>
+  {{/if}}
+</div>
+
+{{#if (eq modalName "inviteUser")}}
+  {{#modal-dialog
+    onClose=closeModal
+    translucentOverlay=true
+  }}
+    <h2>Invite User</h2>
+    <form onsubmit={{prevent-default (perform this.inviteUser)}}>
+      <div>
+        <label>First name</label>
+        <input
+          type="text"
+          required
+          oninput={{action (mut modalContext.givenName) value="target.value"}}>
+      </div>
+      <div>
+        <label>Last name</label>
+        <input
+          type="text"
+          required
+          oninput={{action (mut modalContext.familyName) value="target.value"}}>
+      </div>
+      <div>
+        <label>Email address</label>
+        <input
+          type="email"
+          required
+          oninput={{action (mut modalContext.email) value="target.value"}}>
+      </div>
+      <div>
+        <label>Type</label>
+        <select onchange={{action (mut modalContext.type) value="target.value"}}>
+          <option value="host" selected={{eq modalContext.type "host"}}>host</option>
+          <option value="caseworker" selected={{eq modalContext.type "caseworker"}}>caseworker</option>
+          <option value="admin" selected={{eq modalContext.type "admin"}}>admin</option>
+        </select>
+      </div>
+      <input
+        type="button"
+        value="Cancel"
+        onclick={{closeModal}}
+        disabled={{this.inviteUser.isRunning}}>
+      <input
+        type="submit"
+        value={{if this.inviteUser.isRunning "Inviting..." "Invite"}}
+        disabled={{this.inviteUser.isRunning}}>
+    </form>
+  {{/modal-dialog}}
+{{/if}}

@@ -4,6 +4,8 @@
     position: relative;
     transition: all 0.4s ease-in-out;
     text-align: center;
+    height: 500px;
+    line-height: 500px;
 
     &.left,
     &.right {
@@ -42,7 +44,7 @@
 
     .carousel-image {
       max-width: 100%;
-      max-height: 500px;
+      max-height: 100%;
     }
   }
 

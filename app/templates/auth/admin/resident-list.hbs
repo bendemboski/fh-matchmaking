@@ -1,6 +1,38 @@
-{{#admin/person-list}}
-  {{residents-table
-    residents=this.residents
-    onRowClick=(action "viewProfile")
+{{admin/person-list-page
+  columns=this.columns
+  people=this.residents
+  onRowClick=(action "viewProfile")
+  tableActions=(hash
+    delete=(action "promptDeleteResident")
+  )
+}}
+
+{{#if (eq modalName "deleteResident")}}
+  {{#modal-dialog
+    onClose=closeModal
+    translucentOverlay=true
+    onClickOverlay=(action "doNothing")
   }}
-{{/admin/person-list}}
+    <h2>Delete {{this.modalContext.row.fullName}}?</h2>
+
+    <div>
+      Are you sure you want to delete {{this.modalContext.row.fullName}}'s
+      resident profile? This cannot be undone.
+    </div>
+
+    <button
+      class="btn btn-default"
+      onclick={{action this.closeModal}}
+      disabled={{this.deleteProfile.isRunning}}
+    >
+      cancel
+    </button>
+    <button
+      class="btn btn-danger"
+      onclick={{perform this.deleteProfile this.modalContext}}
+      disabled={{this.deleteProfile.isRunning}}
+    >
+      yes, delete
+    </button>
+  {{/modal-dialog}}
+{{/if}}

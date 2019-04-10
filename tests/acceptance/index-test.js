@@ -16,7 +16,7 @@ module('Acceptance | index', function(hooks) {
   test('it redirects admins', async function(assert) {
     await loginUser('admin');
     await visit('/');
-    assert.equal(currentURL(), '/admin');
+    assert.equal(currentURL(), '/admin/resident-list');
   });
 
   test('it redirects hosts', async function(assert) {
@@ -28,6 +28,6 @@ module('Acceptance | index', function(hooks) {
   test('it redirects caseworkers', async function(assert) {
     await loginUser('caseworker');
     await visit('/');
-    assert.equal(currentURL(), '/caseworker');
+    assert.equal(currentURL(), '/caseworker/resident-list');
   });
 });
