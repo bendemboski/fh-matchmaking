@@ -6,7 +6,7 @@
       <li class="float-right">
         <div
           role="button"
-          class="person-list-add"
+          class="btn person-list-add"
           onclick={{action openModal "inviteUser" (hash type="host")}}
         >
           Invite new user
@@ -71,11 +71,13 @@
       <input
         type="button"
         value="Cancel"
+        class="btn"
         onclick={{closeModal}}
         disabled={{this.inviteUser.isRunning}}>
       <input
         type="submit"
         value={{if this.inviteUser.isRunning "Inviting..." "Invite"}}
+        class="btn"
         disabled={{this.inviteUser.isRunning}}>
     </form>
   {{/modal-dialog}}
