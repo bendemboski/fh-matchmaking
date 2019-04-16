@@ -1,9 +1,7 @@
 @mixin person-list-button {
   display: inline-block;
   font-size: .8em;
-  border: 1px solid #666;
-  background-color: white;
-  color: #666;
+  color: #999;
   text-align: center;
   padding: 0 16px;
   text-decoration: none;
@@ -15,8 +13,7 @@
   &.active,
   &:hover,
   &:focus {
-    background-color: #666;
-    color: white;
+    color: #666;
   }
 }
 
@@ -33,14 +30,29 @@
 
     > a {
       @include person-list-button;
-      border-radius: 5px;
+
+      &.active,
+      &:hover,
+      &:focus {
+        border-bottom: 2px solid #666;
+      }
     }
   }
 }
 
 .person-list-add {
   @include person-list-button;
+  color: #666;
+  border: 1px solid #666;
+  display: table;
   float: right;
+
+  &.active,
+  &:hover,
+  &:focus {
+    background-color:#666;
+    color: white;
+  }
 }
 
 .person-list-empty-hint {
@@ -54,6 +66,7 @@
 
   .add-button {
     @include person-list-button;
+
     margin-top: 30px;
   }
 }

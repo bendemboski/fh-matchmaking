@@ -83,6 +83,13 @@ section {
 
 .btn {
   border-radius: 22.5px;
+  cursor: pointer;
+
+  &.fa{
+    background-color: transparent;
+    color: #656565;
+    padding: 5px 5px;
+  }
 }
 
 .btn-primary {
