@@ -22,6 +22,16 @@ as |page|
           data-test-question=true
         }}
       {{/form.group}}
+      {{#form.group
+        label="Anything to add?"
+      as |group|
+      }}
+        {{group.textarea
+          placeholder="Leave additional note here as we care what you think..."
+          value=this.changeset.additionNote
+          data-test-addition-note=true
+        }}
+      {{/form.group}}
     {{/page.profile-form}}
   {{/page.left-column}}
   {{#page.right-column}}

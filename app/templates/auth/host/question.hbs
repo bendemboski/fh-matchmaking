@@ -7,7 +7,7 @@ as |page|
   {{#page.left-column}}
     {{#page.profile-form as |form|}}
       <legend>
-        STEP 3: Set Expectation &amp; Contribution!
+        Set Expectation: Last Two Questions
       </legend>
 
       {{!-- template-lint-disable attribute-indentation --}}
@@ -22,6 +22,16 @@ as |page|
           data-test-question=true
         }}
       {{/form.group}}
+      {{#form.group
+        label="Additional Note"
+      as |group|
+      }}
+        {{group.textarea
+          placeholder="Leave any thoughts or concerns you have here as we do care what you think..."
+          value=this.changeset.additionNote
+          data-test-addition-note=true
+        }}
+      {{/form.group}}
     {{/page.profile-form}}
   {{/page.left-column}}
   {{#page.right-column}}
@@ -34,6 +44,13 @@ as |page|
         <li>What’s your favorite football team?</li>
         <li>What is your favorite animal?</li>
       </ul>
+    {{/page.notebox}}
+
+    {{#page.notebox
+      icon="shield"
+      heading="Who are going to see this note?"
+    }}
+    Only the Facing Homelessness team will view the note.
     {{/page.notebox}}
   {{/page.right-column}}
 

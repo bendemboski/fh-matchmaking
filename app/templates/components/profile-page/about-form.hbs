@@ -4,7 +4,7 @@
 as |form|
 }}
   <legend>
-    STEP 1: Say HI, and introduce yourself!
+    Start with a hello - Lifestyle
   </legend>
 
   {{#form.group label="What do you do in your free time?" as |group|}}
@@ -42,12 +42,35 @@ as |form|
     {{/power-select}}
   {{/form.group}}
 
+  {{#if @isHost}}
+    {{#form.group
+      class="substances"
+      label="What substances do you use currently?"
+      data-test-substance-picker="my"
+    }}
+      {{substance-picker
+        substances=this.changeset.mySubstances
+        onchange=(action (mut this.changeset.mySubstances))
+      }}
+    {{/form.group}}
+  {{/if}}
+
   {{#if (not @isHost)}}
     {{#form.group label="Some fun facts about you!" as |group|}}
-      {{group.input
+      {{group.textarea
         placeholder="Tell us more about you…"
         value=@changeset.funFact
         data-test-fun-fact=true
+      }}
+    {{/form.group}}
+    {{#form.group
+      class="substances"
+      label="What substances would you be comfortable with your host using?"
+    }}
+      {{substance-picker
+        substances=this.changeset.hostSubstances
+        onchange=(action (mut this.changeset.hostSubstances))
+        data-test-substance-picker="host"
       }}
     {{/form.group}}
   {{/if}}
