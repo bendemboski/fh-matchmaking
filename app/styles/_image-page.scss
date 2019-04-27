@@ -1,20 +1,14 @@
-.image-page {
+.image-page-community,
+.image-page-thankyou,
+.image-page-faq {
   height: 100vh;
   padding: 200px 300px;
-  background-image: url("../../assets/images/community_heroimg.jpg");
   background-size: cover;
   color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  // div.bigImage{
-  //   height: 100vh;
-  //   padding: 200px 300px;
-  //   background-image: url("../../assets/images/community_heroimg.jpg");
-  //   background-size: cover;
-  // }
 
   h1 {
     font-size: 5em;
@@ -32,7 +26,7 @@
   .action {
     width: 20%;
     line-height: 26px;
-    margin-top: 20px;
+    margin: 20px auto;
     border: 1px solid #fff;
     background-color: transparent;
     color: #fff;
@@ -46,5 +40,19 @@
     &, &:hover {
       text-decoration: none;
     }
+  }
+}
+
+.image-page {
+  &-community {
+    background-image: url("../../assets/images/community_heroimg.jpg");
+  }
+
+  &-thankyou {
+    background-image: url("../../assets/images/thankyou_heroimg.png");
+  }
+
+  &-faq {
+    background-image: url("../../assets/images/faq_heroimg.png");
   }
 }

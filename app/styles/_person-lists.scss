@@ -42,16 +42,16 @@
 
 .person-list-add {
   @include person-list-button;
-  color: #666;
   border: 1px solid #666;
   display: table;
   float: right;
 
-  &.active,
-  &:hover,
-  &:focus {
-    background-color:#666;
-    color: white;
+    &.active,
+    &:hover,
+    &:focus {
+      background-color:#666;
+      color: white !important;
+
   }
 }
 
