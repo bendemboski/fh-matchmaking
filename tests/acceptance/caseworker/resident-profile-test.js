@@ -118,11 +118,13 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     // question
     assert.equal(currentRouteName(), 'auth.caseworker.resident.question');
     await questionPage.question.fillIn('But where did the lighter fluid come from?');
+    await questionPage.additionalNote.fillIn('You\'re gonna get some hop-ons');
     await questionPage.footer.next();
 
     mirageUser.reload();
     mirageResident = mirageUser.residents.models[0];
     assert.equal(mirageResident.question, 'But where did the lighter fluid come from?');
+    assert.equal(mirageResident.additionalNote, 'You\'re gonna get some hop-ons');
 
     // profile
     assert.equal(currentRouteName(), 'auth.caseworker.resident.profile');

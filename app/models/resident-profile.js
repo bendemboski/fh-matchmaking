@@ -46,6 +46,7 @@ export default DS.Model.extend({
 
   // question
   question: DS.attr('string'),
+  additionalNote: DS.attr('string'),
 
   fullName: computed('firstName', 'lastName', function() {
     return `${this.firstName || ''} ${this.lastName || ''}`.trim();

@@ -51,6 +51,7 @@ export default DS.Model.extend({
 
   // question
   question: DS.attr('string'),
+  additionalNote: DS.attr('string'),
 
   neighborhoodDisplay: computed('neighborhood', function() {
     return getNeighborhoodDisplay(this.neighborhood);
