@@ -9,6 +9,7 @@ export default DS.Model.extend({
   // greeting
   profilePic: DS.attr('string'),
   profilePicSrc: or('profilePic', raw('/assets/images/icon_photoPreview.png')),
+  profileName: DS.attr('string'),
   greeting: DS.attr('string'),
 
   // bio

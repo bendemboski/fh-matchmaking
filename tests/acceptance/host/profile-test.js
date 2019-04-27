@@ -47,11 +47,13 @@ module('Acceptance | host/profile', function(hooks) {
     // Greeting
     assert.equal(currentRouteName(), 'auth.host.greeting');
     await greetingPage.profilePic.setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
+    await greetingPage.profileName.fillIn('The Bluth family');
     await greetingPage.greeting.fillIn('Hey brother!');
     await greetingPage.footer.next();
 
     mirageUser.reload();
     assert.equal(mirageUser.profile.profilePic, 'http://s3.amazon.com/download0');
+    assert.equal(mirageUser.profile.profileName, 'The Bluth family');
     assert.equal(mirageUser.profile.greeting, 'Hey brother!');
 
     // Bio
