@@ -4,6 +4,7 @@ import EmberObject from '@ember/object';
 
 export default Component.extend({
   classNames: [ 'substance-picker' ],
+  'data-test-substance-picker': true,
 
   // array of selected substances
   substances: null,
