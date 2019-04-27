@@ -27,7 +27,6 @@ export default DS.Model.extend({
 
   // substances
   mySubstances: DS.attr(), // array of strings
-  residentSubstances: DS.attr(), // array of strings
 
   // location
   neighborhood: DS.attr('string'),

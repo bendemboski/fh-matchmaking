@@ -32,7 +32,6 @@ export default DS.Model.extend({
   funFact: DS.attr('string'),
 
   // substances
-  mySubstances: DS.attr(), // array of strings
   hostSubstances: DS.attr(), // array of strings
 
   // location

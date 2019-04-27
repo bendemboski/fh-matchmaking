@@ -22,13 +22,15 @@ module('Acceptance | host/profile/about', function(hooks) {
     assert.notOk(page.favoriteFood.value);
     assert.notOk(page.movieGenre.value);
     assert.notOk(page.funFact.isVisible);
+    assert.deepEqual(page.substancePicker.substances.filterBy('isChecked').mapBy('name'), []);
   });
 
   test('it renders populated', async function(assert) {
     mirageUser.createProfile({
       freeTime: 'Clapping like a chicken',
       favoriteFood: 'Ice cream sandwiches',
-      movieGenre: 'comedy'
+      movieGenre: 'comedy',
+      mySubstances: [ 'alcohol' ],
     });
     await page.visit();
 
@@ -37,5 +39,8 @@ module('Acceptance | host/profile/about', function(hooks) {
     assert.equal(page.favoriteFood.value, 'Ice cream sandwiches');
     assert.equal(page.movieGenre.value, 'Comedy');
     assert.notOk(page.funFact.isVisible);
+    assert.deepEqual(page.substancePicker.substances.filterBy('isChecked').mapBy('name').sort(), [
+      'Alcohol'
+    ].sort());
   });
 });

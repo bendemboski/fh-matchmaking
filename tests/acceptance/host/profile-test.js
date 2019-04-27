@@ -7,7 +7,6 @@ import moment from 'moment';
 import greetingPage from '../../pages/host/greeting';
 import bioPage from '../../pages/host/bio';
 import aboutPage from '../../pages/host/about';
-import substancesPage from '../../pages/host/substances';
 import review1Page from '../../pages/host/review1';
 import locationPage from '../../pages/host/location';
 import activitiesPage from '../../pages/host/activities';
@@ -84,22 +83,14 @@ module('Acceptance | host/profile', function(hooks) {
     await aboutPage.freeTime.fillIn('Clapping like a chicken');
     await aboutPage.favoriteFood.fillIn('Ice cream sandwiches');
     await aboutPage.movieGenre.fillIn('Comedy');
+    await aboutPage.substancePicker.chooseSubstances([ 'Alcohol' ]);
     await aboutPage.footer.next();
 
     mirageUser.reload();
     assert.equal(mirageUser.profile.freeTime, 'Clapping like a chicken');
     assert.equal(mirageUser.profile.favoriteFood, 'Ice cream sandwiches');
     assert.equal(mirageUser.profile.movieGenre, 'comedy');
-
-    // Substances
-    assert.equal(currentRouteName(), 'auth.host.substances');
-    await substancesPage.mySubstances.chooseSubstances([ 'Alcohol' ]);
-    await substancesPage.residentSubstances.chooseSubstances([ 'Marijuana', 'Tobacco' ]);
-    await substancesPage.footer.next();
-
-    mirageUser.reload();
     assert.deepEqual(mirageUser.profile.mySubstances.sort(), [ 'alcohol' ].sort());
-    assert.deepEqual(mirageUser.profile.residentSubstances.sort(), [ 'marijuana', 'tobacco' ].sort());
 
     // Review1
     assert.equal(currentRouteName(), 'auth.host.review1');
@@ -187,10 +178,6 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(profilePage.favoriteFood, 'Ice cream sandwiches');
     assert.equal(profilePage.movieGenre, 'Comedy');
     assert.equal(profilePage.usedSubstances, 'Alcohol');
-    assert.deepEqual(profilePage.acceptableSubstances.split(/,\s+/).sort(), [
-      'Marijuana',
-      'Tobacco'
-    ]);
     assert.equal(profilePage.question, 'But where did the lighter fluid come from?');
     await profilePage.footer.next();
 
@@ -217,8 +204,6 @@ module('Acceptance | host/profile', function(hooks) {
     await locationPage.footer.back();
     assert.equal(currentRouteName(), 'auth.host.review1');
     await review1Page.footer.back();
-    assert.equal(currentRouteName(), 'auth.host.substances');
-    await substancesPage.footer.back();
     assert.equal(currentRouteName(), 'auth.host.about');
     await aboutPage.footer.back();
     assert.equal(currentRouteName(), 'auth.host.bio');
