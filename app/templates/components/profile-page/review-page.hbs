@@ -11,7 +11,6 @@
     {{#section.checklist-item route="auth.host.greeting"}}Greeting{{/section.checklist-item}}
     {{#section.checklist-item route="auth.host.bio"}}Basics{{/section.checklist-item}}
     {{#section.checklist-item route="auth.host.about"}}Lifestyle{{/section.checklist-item}}
-    {{#section.checklist-item route="auth.host.substances"}}Health{{/section.checklist-item}}
   {{/profile-page/review-page/section}}
 
   {{#profile-page/review-page/section
@@ -22,18 +21,18 @@
   as |section|
   }}
     {{#section.checklist-item route="auth.host.location"}}Location{{/section.checklist-item}}
-    {{#section.checklist-item route="auth.host.activities"}}Backyard scene{{/section.checklist-item}}
+    {{#section.checklist-item route="auth.host.activities"}}Activities{{/section.checklist-item}}
     {{#section.checklist-item route="auth.host.photos"}}Photos{{/section.checklist-item}}
   {{/profile-page/review-page/section}}
 
   {{#profile-page/review-page/section
     headingImage=(if @isSection3Complete "/assets/images/icon_commitment.png" "/assets/images/icon_commitment_grey.png")
-    headingText="Set Expectation & Contribution"
+    headingText="Set Expectation"
     editRoute="auth.host.relationship"
     isComplete=@isSection3Complete
   as |section|
   }}
-    {{#section.checklist-item route="auth.host.relationship"}}Expectation{{/section.checklist-item}}
-    {{#section.checklist-item route="auth.host.question"}}Customized questions{{/section.checklist-item}}
+    {{#section.checklist-item route="auth.host.relationship"}}Relationship{{/section.checklist-item}}
+    {{#section.checklist-item route="auth.host.question"}}Last Two Questions{{/section.checklist-item}}
   {{/profile-page/review-page/section}}
 </div>
