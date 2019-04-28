@@ -1,7 +1,8 @@
-.testimonial-pic {
+.testimonial-pic-kim-and-dan,
+.testimonial-pic-lex-and-marjon,
+.testimonial-pic-najja {
   position: relative;
   height: 550px;
-  background-image: url("../../assets/images/testimonial_kim_dan_robert.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,4 +22,17 @@
     font-style: italic;
     margin-bottom: 0;
   }
+}
+
+.testimonial-pic {
+  &-kim-and-dan {
+    background-image: url("../../assets/images/testimonial_kim_dan_robert.jpg");
+  }
+
+  &-lex-and-marjon{
+    background-image: url("../../assets/images/testimonial_marjon_lex_jenny2.png");
+ }
+ &-najja {
+   background-image: url("../../assets/images/testimonial_najja.jpg");
+ }
 }

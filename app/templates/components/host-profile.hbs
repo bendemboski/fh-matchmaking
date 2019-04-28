@@ -41,7 +41,7 @@
       >
     </div>
     <div class="col-8 info">
-      <h4 data-test-name>{{@user.fullName}}</h4>
+      <h4 data-test-name>{{@profile.profileName}}</h4>
       <p>
         <span data-test-gender>{{gender-display @profile.gender}}</span>
         {{#if @user.yearsOld}}
@@ -92,15 +92,26 @@
 
       <h6>Favorite Food</h6>
       <p data-test-favorite-food>{{@profile.favoriteFood}}</p>
+    </div>
 
+    <div class="preview-section col-md-6">
       <h6>Movie Type</h6>
       <p data-test-movie-genre>{{movie-genre-display @profile.movieGenre}}</p>
-    </div>
-    <div class="preview-section col-md-6">
+
       <h6>Use Illicit Substance/Drug</h6>
       <p data-test-used-substances>{{substances-display @profile.mySubstances}}</p>
     </div>
   </div>
+
+  <!-- To add backyard activities preview-section -->
+  {{!-- <div class="row divider-above">
+    <div class="preview-section col-12">
+      <h6>Backyard Activities</h6>
+      <p data-test-backyard-activities>{{backyard-activities-display @profile.backyardActivities}}</p>
+      <h6>Backyard Description</h6>
+      <p data-test-backyard-description>{{backyard-description-display @profile.backyardDescription}}</p>
+    </div>
+  </div> --}}
 
   <div class="row divider-above">
     <div class="preview-section col-12">
@@ -123,6 +134,12 @@
     <div class="preview-section question col-12">
       <h6>Question</h6>
       <p data-test-question>{{@profile.question}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="preview-section additional-note col-12">
+      <h6>Additional Note</h6>
+      <p data-test-additional-note>{{@profile.additionalNote}}</p>
     </div>
   </div>
 </div>
