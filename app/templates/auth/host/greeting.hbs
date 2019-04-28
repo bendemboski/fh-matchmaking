@@ -22,8 +22,8 @@ as |page|
       {{#form.group label="Profile Name" as |group|}}
         {{group.input
           placeholder="Give your profile a name like Steve & Emma or The Wilson Residence..."
-          value=@changeset.profileName
-          data-test-profilename=true
+          value=this.changeset.profileName
+          data-test-profile-name=true
         }}
       {{/form.group}}
       {{#form.group label="Greet Your New Neighbors" as |group|}}

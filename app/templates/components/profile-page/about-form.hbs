@@ -53,9 +53,7 @@ as |form|
         onchange=(action (mut this.changeset.mySubstances))
       }}
     {{/form.group}}
-  {{/if}}
-
-  {{#if (not @isHost)}}
+  {{else}}
     {{#form.group label="Some fun facts about you!" as |group|}}
       {{group.textarea
         placeholder="Tell us more about you…"

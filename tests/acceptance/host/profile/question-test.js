@@ -19,12 +19,17 @@ module('Acceptance | host/profile/question', function(hooks) {
     await page.visit();
     assert.equal(currentRouteName(), 'auth.host.question');
     assert.notOk(page.question.value);
+    assert.notOk(page.additionalNote.value);
   });
 
   test('it renders populated', async function(assert) {
-    mirageUser.createProfile({ question: 'What is your favorite color?' });
+    mirageUser.createProfile({
+      question: 'What is your favorite color?',
+      additionalNote: 'You\'re gonna get some hop-ons'
+    });
     await page.visit();
     assert.equal(currentRouteName(), 'auth.host.question');
     assert.equal(page.question.value, 'What is your favorite color?');
+    assert.equal(page.additionalNote.value, 'You\'re gonna get some hop-ons');
   });
 });

@@ -21,17 +21,20 @@ module('Acceptance | host/profile/greeting', function(hooks) {
     await page.visit();
     assert.equal(currentRouteName(), 'auth.host.greeting');
     assert.equal(page.profilePic.src, profilePicPlaceholder);
+    assert.notOk(page.profileName.value);
     assert.notOk(page.greeting.value);
   });
 
   test('it renders populated', async function(assert) {
     mirageUser.createProfile({
       profilePic: 'http://s3.amazon.com/pic',
+      profileName: 'The Bluth family',
       greeting: 'Hey Brother'
     });
     await page.visit();
     assert.equal(currentRouteName(), 'auth.host.greeting');
     assert.equal(page.profilePic.src, 'http://s3.amazon.com/pic');
+    assert.equal(page.profileName.value, 'The Bluth family');
     assert.equal(page.greeting.value, 'Hey Brother');
   });
 });
