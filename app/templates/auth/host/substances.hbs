@@ -1,0 +1,44 @@
+{{#profile-page
+  changeset=this.changeset
+  backRoute="auth.host.about"
+  nextRoute="auth.host.review1"
+as |page|
+}}
+  {{#page.left-column}}
+    {{#page.profile-form as |form|}}
+      <legend>
+        STEP 1: Say HI, and introduce yourself!
+      </legend>
+
+      {{#form.group
+        class="substances"
+        label="What substances do you use currently?"
+        data-test-substance-picker="my"
+      }}
+        {{substance-picker
+          substances=this.changeset.mySubstances
+          onchange=(action (mut this.changeset.mySubstances))
+        }}
+      {{/form.group}}
+
+      {{#form.group
+        class="substances"
+        label="What substances would you be comfortable with your resident using?"
+      }}
+        {{substance-picker
+          substances=this.changeset.residentSubstances
+          onchange=(action (mut this.changeset.residentSubstances))
+          data-test-substance-picker="resident"
+        }}
+      {{/form.group}}
+
+    {{/page.profile-form}}
+  {{/page.left-column}}
+  {{#page.right-column}}
+    {{#page.notebox icon="pencil" heading="Note:"}}
+      Being honest and sincere is to find a best match!
+    {{/page.notebox}}
+  {{/page.right-column}}
+
+  {{page.footer percent=40}}
+{{/profile-page}}

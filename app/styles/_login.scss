@@ -237,24 +237,21 @@
 
   form input {
     margin: 10px 0;
-    border-radius: 5px;
 
     &[type=submit],
     &[type=button] {
       margin-top: 10px;
-      border-radius: 22.5px;
     }
 
     &[type=submit] {
-      border: 1px solid black;
       &:focus, &:hover {
         background-color: black;
-        color: white;
       }
     }
 
     &[type=button] {
       border: none;
+      text-decoration: underline;
     }
   }
 }

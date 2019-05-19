@@ -4,7 +4,7 @@
     <li>{{#link-to "auth.caseworker.host-list"}}Hosts{{/link-to}}</li>
     {{#if this.residents}}
       <li class="float-right">
-        {{#link-to "auth.caseworker.new-resident" class="btn person-list-add"}}
+        {{#link-to "auth.caseworker.new-resident" class="person-list-add"}}
           Add resident
         {{/link-to}}
       </li>
@@ -42,24 +42,25 @@
     onClickOverlay=(action "doNothing")
   }}
     <h2>Delete {{this.modalContext.row.fullName}}?</h2>
-    <p>
+
+    <div>
       Are you sure you want to delete {{this.modalContext.row.fullName}}'s
       resident profile? This cannot be undone.
-    </p>
+    </div>
 
     <button
       class="btn btn-default"
       onclick={{action this.closeModal}}
       disabled={{this.deleteProfile.isRunning}}
     >
-      Cancel
+      cancel
     </button>
     <button
       class="btn btn-danger"
       onclick={{perform this.deleteProfile this.modalContext}}
       disabled={{this.deleteProfile.isRunning}}
     >
-      Yes, delete
+      yes, delete
     </button>
   {{/modal-dialog}}
 {{/if}}

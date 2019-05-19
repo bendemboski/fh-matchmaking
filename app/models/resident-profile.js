@@ -32,6 +32,7 @@ export default DS.Model.extend({
   funFact: DS.attr('string'),
 
   // substances
+  mySubstances: DS.attr(), // array of strings
   hostSubstances: DS.attr(), // array of strings
 
   // location
@@ -46,7 +47,6 @@ export default DS.Model.extend({
 
   // question
   question: DS.attr('string'),
-  additionalNote: DS.attr('string'),
 
   fullName: computed('firstName', 'lastName', function() {
     return `${this.firstName || ''} ${this.lastName || ''}`.trim();

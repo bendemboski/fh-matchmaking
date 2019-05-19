@@ -7,7 +7,7 @@ as |page|
   {{#page.left-column}}
     {{#page.profile-form as |form|}}
       <legend>
-        Set Expectation: Last Two Questions
+        STEP 3: Set Expectation &amp; Contribution!
       </legend>
 
       {{!-- template-lint-disable attribute-indentation --}}
@@ -20,16 +20,6 @@ as |page|
           placeholder="Type the question here..."
           value=this.changeset.question
           data-test-question=true
-        }}
-      {{/form.group}}
-      {{#form.group
-        label="Additional Note"
-      as |group|
-      }}
-        {{group.textarea
-          placeholder="Leave any thoughts or concerns you have here as we do care what you think..."
-          value=this.changeset.additionalNote
-          data-test-additional-note=true
         }}
       {{/form.group}}
     {{/page.profile-form}}

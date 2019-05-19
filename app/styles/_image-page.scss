@@ -1,8 +1,7 @@
-.image-page-community,
-.image-page-thankyou,
-.image-page-faq {
+.image-page {
   height: 100vh;
-  padding: 200px 300px;
+  padding: 200px;
+  background-image: url("../../assets/images/community_heroimg.jpg");
   background-size: cover;
   color: white;
   text-align: center;
@@ -16,17 +15,16 @@
     letter-spacing: 0.05em;
   }
 
-  h5 {
-    font-size: 1.2em;
+  h4 {
+    font-size: 1.4em;
     font-weight: 300;
     letter-spacing: 0.05em;
-    line-height: 1.4em;
   }
 
   .action {
     width: 20%;
     line-height: 26px;
-    margin: 20px auto;
+    margin-top: 20px;
     border: 1px solid #fff;
     background-color: transparent;
     color: #fff;
@@ -40,19 +38,5 @@
     &, &:hover {
       text-decoration: none;
     }
-  }
-}
-
-.image-page {
-  &-community {
-    background-image: url("../../assets/images/community_heroimg.jpg");
-  }
-
-  &-thankyou {
-    background-image: url("../../assets/images/thankyou_heroimg.png");
-  }
-
-  &-faq {
-    background-image: url("../../assets/images/faq_heroimg.png");
   }
 }

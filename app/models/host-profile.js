@@ -9,7 +9,6 @@ export default DS.Model.extend({
   // greeting
   profilePic: DS.attr('string'),
   profilePicSrc: or('profilePic', raw('/assets/images/icon_photoPreview.png')),
-  profileName: DS.attr('string'),
   greeting: DS.attr('string'),
 
   // bio
@@ -28,6 +27,7 @@ export default DS.Model.extend({
 
   // substances
   mySubstances: DS.attr(), // array of strings
+  residentSubstances: DS.attr(), // array of strings
 
   // location
   neighborhood: DS.attr('string'),
@@ -52,7 +52,6 @@ export default DS.Model.extend({
 
   // question
   question: DS.attr('string'),
-  additionalNote: DS.attr('string'),
 
   neighborhoodDisplay: computed('neighborhood', function() {
     return getNeighborhoodDisplay(this.neighborhood);

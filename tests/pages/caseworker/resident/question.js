@@ -8,6 +8,5 @@ export default create({
   visit: visitable('/caseworker/resident/:resident_profile_id/question'),
   footer: Footer,
 
-  question: { scope: '[data-test-question]' },
-  additionalNote: { scope: '[data-test-additional-note]' }
+  question: { scope: '[data-test-question]' }
 });

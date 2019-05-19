@@ -12,6 +12,5 @@ export default create({
   profilePic: Object.assign({
     scope: '[data-test-profile-pic]'
   }, PictureUploader),
-  profileName: { scope: '[data-test-profile-name]' },
   greeting: { scope: '[data-test-greeting]' }
 });

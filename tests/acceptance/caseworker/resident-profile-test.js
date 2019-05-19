@@ -8,6 +8,7 @@ import newResidentPage from '../../pages/caseworker/new-resident';
 import indexPage from '../../pages/caseworker/resident/index';
 import bioPage from '../../pages/caseworker/resident/bio';
 import aboutPage from '../../pages/caseworker/resident/about';
+import substancesPage from '../../pages/caseworker/resident/substances';
 import locationPage from '../../pages/caseworker/resident/location';
 import relationshipPage from '../../pages/caseworker/resident/relationship';
 import questionPage from '../../pages/caseworker/resident/question';
@@ -74,7 +75,6 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     await aboutPage.favoriteFood.fillIn('Ice cream sandwiches');
     await aboutPage.movieGenre.fillIn('Comedy');
     await aboutPage.funFact.fillIn('I am Gene Parmesan');
-    await aboutPage.substancePicker.chooseSubstances([ 'Marijuana', 'Tobacco' ]);
     await aboutPage.footer.next();
 
     mirageUser.reload();
@@ -83,6 +83,16 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(mirageResident.favoriteFood, 'Ice cream sandwiches');
     assert.equal(mirageResident.movieGenre, 'comedy');
     assert.equal(mirageResident.funFact, 'I am Gene Parmesan');
+
+    // substances
+    assert.equal(currentRouteName(), 'auth.caseworker.resident.substances');
+    await substancesPage.mySubstances.chooseSubstances([ 'Alcohol' ]);
+    await substancesPage.hostSubstances.chooseSubstances([ 'Marijuana', 'Tobacco' ]);
+    await substancesPage.footer.next();
+
+    mirageUser.reload();
+    mirageResident = mirageUser.residents.models[0];
+    assert.deepEqual(mirageResident.mySubstances.sort(), [ 'alcohol' ].sort());
     assert.deepEqual(mirageResident.hostSubstances.sort(), [ 'marijuana', 'tobacco' ].sort());
 
     // location
@@ -118,13 +128,11 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     // question
     assert.equal(currentRouteName(), 'auth.caseworker.resident.question');
     await questionPage.question.fillIn('But where did the lighter fluid come from?');
-    await questionPage.additionalNote.fillIn('You\'re gonna get some hop-ons');
     await questionPage.footer.next();
 
     mirageUser.reload();
     mirageResident = mirageUser.residents.models[0];
     assert.equal(mirageResident.question, 'But where did the lighter fluid come from?');
-    assert.equal(mirageResident.additionalNote, 'You\'re gonna get some hop-ons');
 
     // profile
     assert.equal(currentRouteName(), 'auth.caseworker.resident.profile');
@@ -144,6 +152,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');
     assert.equal(profilePage.favoriteFood, 'Ice cream sandwiches');
     assert.equal(profilePage.movieGenre, 'Comedy');
+    assert.equal(profilePage.usedSubstances, 'Alcohol');
     assert.deepEqual(profilePage.acceptableSubstances.split(/,\s+/).sort(), [
       'Marijuana',
       'Tobacco'
@@ -164,6 +173,8 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     await relationshipPage.footer.back();
     assert.equal(currentRouteName(), 'auth.caseworker.resident.location');
     await locationPage.footer.back();
+    assert.equal(currentRouteName(), 'auth.caseworker.resident.substances');
+    await substancesPage.footer.back();
     assert.equal(currentRouteName(), 'auth.caseworker.resident.about');
     await aboutPage.footer.back();
     assert.equal(currentRouteName(), 'auth.caseworker.resident.bio');
