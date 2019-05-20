@@ -43,24 +43,24 @@
   }}
     <h2>Delete {{this.modalContext.row.fullName}}?</h2>
 
-    <div>
+    <p>
       Are you sure you want to delete {{this.modalContext.row.fullName}}'s
       resident profile? This cannot be undone.
-    </div>
+    </p>
 
     <button
       class="btn btn-default"
       onclick={{action this.closeModal}}
       disabled={{this.deleteProfile.isRunning}}
     >
-      cancel
+      Cancel
     </button>
     <button
       class="btn btn-danger"
       onclick={{perform this.deleteProfile this.modalContext}}
       disabled={{this.deleteProfile.isRunning}}
     >
-      yes, delete
+      Yes, delete
     </button>
   {{/modal-dialog}}
 {{/if}}
