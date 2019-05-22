@@ -8,13 +8,9 @@ as |page|
     {{page.about-form changeset=this.changeset isHost=false}}
   {{/page.left-column}}
   {{#page.right-column}}
-    <div class="testimonial-pic-lex-and-marjon">
-      <div class="quote-box">
-        <div class="quote">
-          “Every bit that we can do about Homelessness, we are excited about! We are wanted to participate because it is the right thing to do.” -- Lex and Marjon, third BLOCK Hosts
-        </div>
-      </div>
-    </div>
+    {{#profile-page/testimonial-pic class="lex-and-marjon"}}
+      “Every bit that we can do about Homelessness, we are excited about! We are wanted to participate because it is the right thing to do.” -- Lex and Marjon, third BLOCK Hosts
+    {{/profile-page/testimonial-pic}}
   {{/page.right-column}}
 
   {{page.footer percent=37}}
