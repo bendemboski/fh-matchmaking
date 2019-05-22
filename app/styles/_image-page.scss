@@ -1,6 +1,4 @@
-.image-page-community,
-.image-page-thankyou,
-.image-page-faq {
+.image-page {
   height: 100vh;
   padding: 200px 300px;
   background-size: cover;
@@ -44,15 +42,15 @@
 }
 
 .image-page {
-  &-community {
+  &.community {
     background-image: url("../../assets/images/community_heroimg.jpg");
   }
 
-  &-thankyou {
+  &.thankyou {
     background-image: url("../../assets/images/thankyou_heroimg.png");
   }
 
-  &-faq {
+  &.faq {
     background-image: url("../../assets/images/faq_heroimg.png");
   }
 }
