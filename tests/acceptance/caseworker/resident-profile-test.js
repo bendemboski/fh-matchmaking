@@ -144,7 +144,6 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');
     assert.equal(profilePage.favoriteFood, 'Ice cream sandwiches');
     assert.equal(profilePage.movieGenre, 'Comedy');
-    assert.equal(profilePage.usedSubstances, 'Alcohol');
     assert.deepEqual(profilePage.acceptableSubstances.split(/,\s+/).sort(), [
       'Marijuana',
       'Tobacco'

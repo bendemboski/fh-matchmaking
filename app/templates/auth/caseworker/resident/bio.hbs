@@ -8,13 +8,9 @@ as |page|
     {{page.bio-form changeset=this.changeset isHost=false}}
   {{/page.left-column}}
   {{#page.right-column}}
-    <div class="testimonial-pic-kim-and-dan">
-      <div class="quote-box">
-        <div class="quote">
-          "As introverts, we appreciate Robert's gregariousness, and love his sense of humor. We found shared interests in music and gardening.” -- Kim and Dan, first BLOCK Hosts
-        </div>
-      </div>
-    </div>
+    {{#profile-page/testimonial-pic class="kim-and-dan"}}
+      "As introverts, we appreciate Robert's gregariousness, and love his sense of humor. We found shared interests in music and gardening.” -- Kim and Dan, first BLOCK Hosts
+    {{/profile-page/testimonial-pic}}
   {{/page.right-column}}
 
   {{page.footer percent=25}}

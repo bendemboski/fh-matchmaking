@@ -4,8 +4,6 @@ module.exports = {
   extends: 'recommended',
 
   rules: {
-    'attribute-indentation': {
-      'open-invocation-max-length': 160
-    }    
+    'attribute-indentation': false
   }
 };

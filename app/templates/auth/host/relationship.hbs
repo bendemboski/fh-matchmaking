@@ -8,13 +8,9 @@ as |page|
     {{page.relationship-form changeset=this.changeset}}
   {{/page.left-column}}
   {{#page.right-column}}
-    <div class="testimonial-pic-najja">
-      <div class="quote-box">
-        <div class="quote">
-          “I am concerned with the increasing rate of Seattle's homeless population, and I want to become a part of the solution. I have a large property lot -- so why not put it to good use?” Najja, third BLOCK Host
-        </div>
-      </div>
-    </div>
+    {{#profile-page/testimonial-pic class="najja"}}
+      “I am concerned with the increasing rate of Seattle's homeless population, and I want to become a part of the solution. I have a large property lot -- so why not put it to good use?” Najja, third BLOCK Host
+    {{/profile-page/testimonial-pic}}
   {{/page.right-column}}
 
   {{page.footer percent=80}}

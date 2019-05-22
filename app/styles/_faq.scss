@@ -105,3 +105,10 @@
     margin-top: 30px;
   }
 }
+
+.faq-email-link {
+  &, &:hover, &:active {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
