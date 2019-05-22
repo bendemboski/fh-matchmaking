@@ -165,7 +165,7 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(profilePage.photos.objectAt(2).src, 'http://s3.amazon.com/download3');
     assert.equal(profilePage.photos.objectAt(3).src, 'http://s3.amazon.com/download4');
     assert.equal(profilePage.profilePic, 'http://s3.amazon.com/download0');
-    assert.equal(profilePage.name, 'Buster Bluth');
+    assert.equal(profilePage.name, 'The Bluth family');
     assert.equal(profilePage.gender, 'Male');
     assert.equal(profilePage.age, '32');
     assert.equal(profilePage.occupation, 'Banana Stand Manager');
