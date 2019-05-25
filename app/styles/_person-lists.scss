@@ -7,7 +7,6 @@
   text-decoration: none;
   height: 30px;
   line-height: 30px;
-  width: 125px;
   margin-right: 5px;
 
   &.active,
@@ -47,11 +46,11 @@
   display: table;
   float: right;
 
-  &.active,
-  &:hover,
-  &:focus {
-    background-color:#666;
-    color: white;
+    &.active,
+    &:hover,
+    &:focus {
+      background-color:#666;
+      color: white !important;
   }
 }
 

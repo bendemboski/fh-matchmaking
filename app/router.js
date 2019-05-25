@@ -26,7 +26,6 @@ Router.map(function () {
       this.route('greeting');
       this.route('bio');
       this.route('about');
-      this.route('substances');
       this.route('review1');
       this.route('location');
       this.route('activities');
@@ -50,7 +49,6 @@ Router.map(function () {
       this.route('resident', { path: '/resident/:resident_profile_id' }, function() {
         this.route('bio');
         this.route('about');
-        this.route('substances');
         this.route('location');
         this.route('relationship');
         this.route('question');

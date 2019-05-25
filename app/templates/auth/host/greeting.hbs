@@ -7,9 +7,7 @@ as |page|
 }}
   {{#page.left-column}}
     {{#page.profile-form as |form|}}
-      <legend>
-        STEP 1: Say HI, and introduce yourself!
-      </legend>
+      <legend>Start with a hello  - Greeting</legend>
       {{#form.group label="Upload Your Profile Photo"}}
         {{picture-uploader
           class="profile-pic-uploader"
@@ -19,8 +17,14 @@ as |page|
           data-test-profile-pic=true
         }}
       {{/form.group}}
-
-      {{#form.group label="Greet Your New Neighbors" as |group|}}
+      {{#form.group label="Profile Name" as |group|}}
+        {{group.input
+          placeholder="Give your profile a name like Steve & Emma or The Wilson Residence..."
+          value=this.changeset.profileName
+          data-test-profile-name=true
+        }}
+      {{/form.group}}
+      {{#form.group label="Greet Your New Neighbor" as |group|}}
         {{group.textarea
           placeholder="Write a sentence to welcome your future neighbors..."
           value=this.changeset.greeting
