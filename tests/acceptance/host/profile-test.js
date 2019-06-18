@@ -172,6 +172,7 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(profilePage.kidCount, 1);
     assert.equal(profilePage.petCount, 3);
     assert.equal(profilePage.greeting, 'Hey brother!');
+    assert.equal(profilePage.transportation.hasLink, true);
     assert.equal(profilePage.environment, 'Urban village');
     assert.equal(profilePage.languages, 'English, Klingon');
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');

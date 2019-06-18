@@ -5,6 +5,7 @@ import {
   visitable,
 } from 'ember-cli-page-object';
 import Footer from '../../components/footer';
+import { TransportationDisplay } from '../../components/transportation-display';
 
 export default create({
   visit: visitable('/caseworker/resident/:resident_profile_id/profile'),
@@ -21,6 +22,7 @@ export default create({
   petCount: text('[data-test-pet-count]'),
   petBreed: text('[data-test-pet-breed]'),
   neighborhoods: text('[data-test-neighborhoods]'),
+  transportation: TransportationDisplay,
   environment: text('[data-test-environment]'),
   languages: text('[data-test-languages]'),
   freeTime: text('[data-test-free-time]'),

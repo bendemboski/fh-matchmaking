@@ -137,6 +137,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(profilePage.petCount, 2);
     assert.equal(profilePage.petBreed, 'Beagle');
     assert.equal(profilePage.neighborhoods, 'U District, Alki, Mount Baker');
+    assert.equal(profilePage.transportation.hasLink, true);
     assert.equal(profilePage.environment, 'Urban village');
     assert.equal(profilePage.languages, 'English, Klingon');
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');

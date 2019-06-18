@@ -3,6 +3,7 @@ import {
   collection,
   text
 } from 'ember-cli-page-object';
+import { TransportationDisplay } from './transportation-display';
 
 export default {
   photos: collection('[data-test-photo]', {
@@ -18,6 +19,7 @@ export default {
   kidCount: text('[data-test-kid-count]'),
   petCount: text('[data-test-pet-count]'),
   greeting: text('[data-test-greeting]'),
+  transportation: TransportationDisplay,
   environment: text('[data-test-environment]'),
   languages: text('[data-test-languages]'),
   freeTime: text('[data-test-free-time]'),

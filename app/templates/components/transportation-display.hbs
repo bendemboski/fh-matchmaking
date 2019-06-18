@@ -1,0 +1,11 @@
+<ul data-test-transportation>
+  {{#if @profile.link}}
+    <li data-test-link>Link</li>
+  {{/if}}
+  {{#if @profile.busses}}
+    <li data-test-busses>Busses: {{@profile.busses}}</li>
+  {{/if}}
+  {{#if (not (or @profile.link @profile.busses))}}
+    <li data-test-none>(none)</li>
+  {{/if}}
+</ul>
