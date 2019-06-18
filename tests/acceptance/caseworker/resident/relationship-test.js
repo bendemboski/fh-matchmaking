@@ -20,19 +20,16 @@ module('Acceptance | caseworker/resident/relationship', function(hooks) {
   test('it renders empty', async function(assert) {
     await page.visit({ 'resident_profile_id': mirageResident.id });
     assert.equal(currentRouteName(), 'auth.caseworker.resident.relationship');
-    assert.notOk(page.relationship.value);
     assert.equal(page.interactionLevel.value, 3);
   });
 
   test('it renders populated', async function(assert) {
     mirageResident.update({
-      relationship: 'Suspicious cousins',
       interaction: 4
     });
     await page.visit({ 'resident_profile_id': mirageResident.id });
 
     assert.equal(currentRouteName(), 'auth.caseworker.resident.relationship');
-    assert.equal(page.relationship.value, 'Suspicious cousins');
     assert.equal(page.interactionLevel.value, '4');
   });
 });

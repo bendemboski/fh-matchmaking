@@ -18,18 +18,15 @@ module('Acceptance | host/profile/relationship', function(hooks) {
   test('it renders empty', async function(assert) {
     await page.visit();
     assert.equal(currentRouteName(), 'auth.host.relationship');
-    assert.notOk(page.relationship.value);
     assert.equal(page.interactionLevel.value, 3);
   });
 
   test('it renders populated', async function(assert) {
     mirageUser.createProfile({
-      relationship: 'Suspicious cousins',
       interaction: 4
     });
     await page.visit();
     assert.equal(currentRouteName(), 'auth.host.relationship');
-    assert.equal(page.relationship.value, 'Suspicious cousins');
     assert.equal(page.interactionLevel.value, '4');
   });
 });

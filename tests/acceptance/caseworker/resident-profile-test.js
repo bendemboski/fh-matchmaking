@@ -106,13 +106,11 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
 
     // relationship
     assert.equal(currentRouteName(), 'auth.caseworker.resident.relationship');
-    await relationshipPage.relationship.fillIn('Neighborly friends or friendly neighbors');
     await relationshipPage.interactionLevel.fillIn('1');
     await relationshipPage.footer.next();
 
     mirageUser.reload();
     mirageResident = mirageUser.residents.models[0];
-    assert.equal(mirageResident.relationship, 'Neighborly friends or friendly neighbors');
     assert.equal(mirageResident.interaction, 1);
 
     // question
