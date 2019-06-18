@@ -1,5 +1,5 @@
 import PowerSelect from './power-select';
-import SubstancePicker from './substance-picker';
+import { SubstancePicker } from './substance-picker';
 
 export default {
   freeTime: { scope: '[data-test-free-time]' },

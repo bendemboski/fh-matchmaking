@@ -41,7 +41,6 @@ export default DS.Model.extend({
   neighborhoodFeatures: DS.attr('string'),
 
   // relationship
-  relationship: DS.attr('string'),
   interaction: DS.attr('number'),
 
   // question

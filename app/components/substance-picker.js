@@ -22,10 +22,19 @@ export default Component.extend({
     }));
   },
 
-  actions: {
-    toggle(option) {
-      option.toggleProperty('selected');
-      this.onchange(this.options.filterBy('selected').mapBy('value'));
+  toggleOption(option) {
+    option.toggleProperty('selected');
+    this.notifyOnChange();
+  },
+
+  setNone() {
+    for (let option of this.options) {
+      option.set('selected', false);
     }
+    this.notifyOnChange();
+  },
+
+  notifyOnChange() {
+    this.onchange(this.options.filterBy('selected').mapBy('value'));
   }
 });

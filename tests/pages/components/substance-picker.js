@@ -1,9 +1,10 @@
 import {
   collection,
+  create
 } from 'ember-cli-page-object';
 import CheckBox from './check-box';
 
-export default {
+export let SubstancePicker = {
   substances: collection('[data-test-check-box]', CheckBox),
 
   async chooseSubstances(substances) {
@@ -12,3 +13,5 @@ export default {
     }
   }
 };
+
+export default create(SubstancePicker);

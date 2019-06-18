@@ -11,17 +11,6 @@ as |form|
   {{! seem to be a bug in ember-template-lint flagging indentation}}
 
   {{#form.group
-    label="Name one relationship that you imagine you and your neighbor would be like?"
-  as |group|
-  }}
-    {{group.input
-      placeholder="Friends, family members..."
-      value=@changeset.relationship
-      data-test-relationship=true
-    }}
-  {{/form.group}}
-
-  {{#form.group
     label="How much would you like to interaction with your future neighbors?"
   }}
     {{interaction-level-picker

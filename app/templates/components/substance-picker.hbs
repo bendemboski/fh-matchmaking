@@ -1,8 +1,13 @@
 {{#each options as |option|}}
   {{profile-page/check-box
-    value=option.value
     label=option.label
     checked=option.selected
-    onchange=(action "toggle" option)
+    onchange=(action this.toggleOption option)
   }}
 {{/each}}
+{{profile-page/check-box
+  label="None"
+  checked=(eq this.substances.length 0)
+  disabled=(eq this.substances.length 0)
+  onchange=(action this.setNone)
+}}
