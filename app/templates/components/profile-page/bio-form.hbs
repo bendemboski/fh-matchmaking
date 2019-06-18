@@ -34,13 +34,24 @@ as |form|
       {{/form.group}}
     </div>
   </div>
-  {{#form.group label="Occupation" as |group|}}
-    {{group.input
-      placeholder="Musician, Engineer, Social Caseworker, Dentist..."
-      value=@changeset.occupation
-      data-test-occupation=true
-    }}
-  {{/form.group}}
+  {{#if @isHost}}
+    {{#form.group label="Occupation" as |group|}}
+      {{group.input
+        placeholder="Musician, Engineer, Social Caseworker, Dentist..."
+        value=@changeset.occupation
+        data-test-occupation=true
+      }}
+    {{/form.group}}
+  {{/if}}
+  {{#if (not @isHost)}}
+    {{#form.group label="Future Aspiration" as |group|}}
+      {{group.input
+        placeholder="Inspirational artist, Guitarist-to-be, Gardener..."
+        value=@changeset.occupation
+        data-test-occupation=true
+      }}
+    {{/form.group}}
+  {{/if}}
   {{#form.group label="Languages Spoken" as |group|}}
     {{group.input
       placeholder="English, Spanish, Sign Language..."
