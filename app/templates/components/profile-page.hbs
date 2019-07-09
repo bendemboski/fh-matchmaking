@@ -15,9 +15,6 @@
         about-form=(component "profile-page/about-form"
                     profile-form=profile-form
                     onsubmit=(perform this.submit))
-        relationship-form=(component "profile-page/relationship-form"
-                           profile-form=profile-form
-                           onsubmit=(perform this.submit))
         footer=(component "profile-page/footer"
                 backRoute=@backRoute
                 nextAction=(action "onClickNext"))

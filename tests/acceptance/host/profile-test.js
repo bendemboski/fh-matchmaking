@@ -12,7 +12,6 @@ import locationPage from '../../pages/host/location';
 import activitiesPage from '../../pages/host/activities';
 import photosPage from '../../pages/host/photos';
 import review2Page from '../../pages/host/review2';
-import relationshipPage from '../../pages/host/relationship';
 import questionPage from '../../pages/host/question';
 import review3Page from '../../pages/host/review3';
 import profilePage from '../../pages/host/profile';
@@ -136,14 +135,6 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.review2');
     await review2Page.footer.next();
 
-    // Relationship
-    assert.equal(currentRouteName(), 'auth.host.relationship');
-    await relationshipPage.interactionLevel.fillIn('1');
-    await relationshipPage.footer.next();
-
-    mirageUser.reload();
-    assert.equal(mirageUser.profile.interaction, 1);
-
     // Question
     assert.equal(currentRouteName(), 'auth.host.question');
     await questionPage.question.fillIn('But where did the lighter fluid come from?');
@@ -193,8 +184,6 @@ module('Acceptance | host/profile', function(hooks) {
     await review3Page.footer.back();
     assert.equal(currentRouteName(), 'auth.host.question');
     await questionPage.footer.back();
-    assert.equal(currentRouteName(), 'auth.host.relationship');
-    await relationshipPage.footer.back();
     assert.equal(currentRouteName(), 'auth.host.review2');
     await review2Page.footer.back();
     assert.equal(currentRouteName(), 'auth.host.photos');
