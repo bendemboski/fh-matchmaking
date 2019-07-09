@@ -46,9 +46,6 @@ export default DS.Model.extend({
   photo3: DS.attr('string'),
   photo4: DS.attr('string'),
 
-  // relationshipS.attr('string'),
-  interaction: DS.attr('number'),
-
   // question
   question: DS.attr('string'),
   additionalNote: DS.attr('string'),

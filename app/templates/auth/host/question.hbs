@@ -1,6 +1,6 @@
 {{#profile-page
   changeset=this.changeset
-  backRoute="auth.host.relationship"
+  backRoute="auth.host.review2"
   nextRoute="auth.host.review3"
 as |page|
 }}
@@ -26,7 +26,7 @@ as |page|
       as |group|
       }}
         {{group.textarea
-          placeholder="Leave any thoughts or concerns you have here as we do care what you think..."
+          placeholder="We do care what you think! Leave any thoughts or concerns you have and share how you envision your relationship with your future neighbors..."
           value=this.changeset.additionalNote
           data-test-additional-note=true
         }}

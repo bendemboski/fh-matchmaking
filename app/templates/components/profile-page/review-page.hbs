@@ -28,11 +28,10 @@
   {{#profile-page/review-page/section
     headingImage=(if @isSection3Complete "/assets/images/icon_commitment.png" "/assets/images/icon_commitment_grey.png")
     headingText="Set Expectation & Contribution"
-    editRoute="auth.host.relationship"
+    editRoute="auth.host.question"
     isComplete=@isSection3Complete
   as |section|
   }}
-    {{#section.checklist-item route="auth.host.relationship"}}Relationship{{/section.checklist-item}}
     {{#section.checklist-item route="auth.host.question"}}Questions{{/section.checklist-item}}
   {{/profile-page/review-page/section}}
 </div>

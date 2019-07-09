@@ -31,7 +31,6 @@ Router.map(function () {
       this.route('activities');
       this.route('photos');
       this.route('review2');
-      this.route('relationship');
       this.route('question');
       this.route('review3');
       this.route('profile');
@@ -50,7 +49,6 @@ Router.map(function () {
         this.route('bio');
         this.route('about');
         this.route('location');
-        this.route('relationship');
         this.route('question');
         this.route('profile');
 

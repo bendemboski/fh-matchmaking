@@ -9,7 +9,6 @@ import indexPage from '../../pages/caseworker/resident/index';
 import bioPage from '../../pages/caseworker/resident/bio';
 import aboutPage from '../../pages/caseworker/resident/about';
 import locationPage from '../../pages/caseworker/resident/location';
-import relationshipPage from '../../pages/caseworker/resident/relationship';
 import questionPage from '../../pages/caseworker/resident/question';
 import profilePage from '../../pages/caseworker/resident/profile';
 import imageBlob from '../../helpers/image-blob';
@@ -104,15 +103,6 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(mirageResident.link, true);
     assert.equal(mirageResident.neighborhoodFeatures, 'Urban village');
 
-    // relationship
-    assert.equal(currentRouteName(), 'auth.caseworker.resident.relationship');
-    await relationshipPage.interactionLevel.fillIn('1');
-    await relationshipPage.footer.next();
-
-    mirageUser.reload();
-    mirageResident = mirageUser.residents.models[0];
-    assert.equal(mirageResident.interaction, 1);
-
     // question
     assert.equal(currentRouteName(), 'auth.caseworker.resident.question');
     await questionPage.question.fillIn('But where did the lighter fluid come from?');
@@ -159,8 +149,6 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     await profilePage.footer.back();
     assert.equal(currentRouteName(), 'auth.caseworker.resident.question');
     await questionPage.footer.back();
-    assert.equal(currentRouteName(), 'auth.caseworker.resident.relationship');
-    await relationshipPage.footer.back();
     assert.equal(currentRouteName(), 'auth.caseworker.resident.location');
     await locationPage.footer.back();
     assert.equal(currentRouteName(), 'auth.caseworker.resident.about');

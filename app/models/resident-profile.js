@@ -40,9 +40,6 @@ export default DS.Model.extend({
   busses: DS.attr('string'),
   neighborhoodFeatures: DS.attr('string'),
 
-  // relationship
-  interaction: DS.attr('number'),
-
   // question
   question: DS.attr('string'),
   additionalNote: DS.attr('string'),

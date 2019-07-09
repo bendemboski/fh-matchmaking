@@ -1,7 +1,7 @@
 {{#profile-page
   changeset=this.changeset
   backRoute="auth.caseworker.resident.about"
-  nextRoute="auth.caseworker.resident.relationship"
+  nextRoute="auth.caseworker.resident.question"
 as |page|
 }}
   {{#page.left-column}}
@@ -40,7 +40,7 @@ as |page|
         {{profile-page/transit changeset=this.changeset}}
       {{/form.group}}
 
-      {{#form.group label="Neighborhood Environment" as |group|}}
+      {{#form.group label="What amenities/stores do you need nearby?" as |group|}}
         {{group.input
           placeholder="e.g. supermarket, park, library, church"
           value=this.changeset.neighborhoodFeatures
