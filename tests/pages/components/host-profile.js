@@ -25,7 +25,6 @@ export default {
   languages: text('[data-test-languages]'),
   freeTime: text('[data-test-free-time]'),
   favoriteFood: text('[data-test-favorite-food]'),
-  movieGenre: text('[data-test-movie-genre]'),
   usedSubstances: text('[data-test-used-substances]'),
   question: text('[data-test-question]')
 };

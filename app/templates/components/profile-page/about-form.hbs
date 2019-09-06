@@ -23,25 +23,6 @@ as |form|
     }}
   {{/form.group}}
 
-  {{#form.group
-    label="What is your favorite movie genre?"
-    data-test-movie-genre=true
-  }}
-    {{!-- template-lint-disable attribute-indentation --}}
-    {{! seem to be a bug in ember-template-lint flagging indentation}}
-    {{#power-select
-      placeholder="Genres"
-      options=this.movieGenres
-      selected=this.selectedMovieGenre
-      searchEnabled=false
-      renderInPlace=true
-      onchange=(action (mut @changeset.movieGenre) value="value")
-    as |genre|
-    }}
-      {{genre.label}}
-    {{/power-select}}
-  {{/form.group}}
-
   {{#if @isHost}}
     {{#form.group
       class="substances"

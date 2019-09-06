@@ -25,7 +25,6 @@ export default DS.Model.extend({
   // about
   freeTime: DS.attr('string'),
   favoriteFood: DS.attr('string'),
-  movieGenre: DS.attr('string'),
 
   // substances
   mySubstances: DS.attr(), // array of strings

@@ -14,29 +14,6 @@ export function getGenderDisplay(gender) {
   }
 }
 
-export function getMovieGenres() {
-  return [
-    { value: 'action', label: 'Action' },
-    { value: 'adventure', label: 'Adventure' },
-    { value: 'comedy', label: 'Comedy' },
-    { value: 'gangster', label: 'Gangster' },
-    { value: 'drama', label: 'Drama' },
-    { value: 'historical', label: 'Epic/Historical' },
-    { value: 'horror', label: 'Horror' },
-    { value: 'musical', label: 'Musical' },
-    { value: 'scifi', label: 'Sci-fi' },
-    { value: 'war', label: 'War/Anti-war' },
-    { value: 'western', label: 'Western' }
-  ];
-}
-
-export function getMovieGenreDisplay(movieGenre) {
-  let obj = getMovieGenres().find(({ value }) => value === movieGenre);
-  if (obj) {
-    return obj.label;
-  }
-}
-
 export function getNeighborhoods() {
   return [
     {

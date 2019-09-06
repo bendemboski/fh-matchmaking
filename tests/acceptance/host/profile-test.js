@@ -85,14 +85,12 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.about');
     await aboutPage.freeTime.fillIn('Clapping like a chicken');
     await aboutPage.favoriteFood.fillIn('Ice cream sandwiches');
-    await aboutPage.movieGenre.fillIn('Comedy');
     await aboutPage.substancePicker.chooseSubstances([ 'Alcohol' ]);
     await aboutPage.footer.next();
 
     mirageUser.reload();
     assert.equal(mirageUser.profile.freeTime, 'Clapping like a chicken');
     assert.equal(mirageUser.profile.favoriteFood, 'Ice cream sandwiches');
-    assert.equal(mirageUser.profile.movieGenre, 'comedy');
     assert.deepEqual(mirageUser.profile.mySubstances.sort(), [ 'alcohol' ].sort());
 
     // Review1
@@ -171,7 +169,6 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(profilePage.languages, 'English, Klingon');
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');
     assert.equal(profilePage.favoriteFood, 'Ice cream sandwiches');
-    assert.equal(profilePage.movieGenre, 'Comedy');
     assert.equal(profilePage.usedSubstances, 'Alcohol');
     assert.equal(profilePage.question, 'But where did the lighter fluid come from?');
     await profilePage.footer.next();
