@@ -20,6 +20,7 @@ export default DS.Model.extend({
   adultCount: DS.attr('number'),
   kidCount: DS.attr('number'),
   petCount: DS.attr('number'),
+  petBreed: DS.attr('string'),
 
   // about
   freeTime: DS.attr('string'),

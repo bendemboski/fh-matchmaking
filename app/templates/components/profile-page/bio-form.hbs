@@ -87,13 +87,11 @@ as |form|
       data-test-pet-count=true
     }}
 
-    {{#if (not @isHost)}}
-      {{input
-        class="pet-breed"
-        placeholder="Pet breed"
-        value=@changeset.petBreed
-        data-test-pet-breed=true
-      }}
-    {{/if}}
+    {{input
+      class="pet-breed"
+      placeholder="Pet breed(s)"
+      value=@changeset.petBreed
+      data-test-pet-breed=true
+    }}
   </div>
 {{/component}}

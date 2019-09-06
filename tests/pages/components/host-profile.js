@@ -18,6 +18,7 @@ export default {
   adultCount: text('[data-test-adult-count]'),
   kidCount: text('[data-test-kid-count]'),
   petCount: text('[data-test-pet-count]'),
+  petBreed: text('[data-test-pet-breed]'),
   greeting: text('[data-test-greeting]'),
   transportation: TransportationDisplay,
   environment: text('[data-test-environment]'),

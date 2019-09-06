@@ -58,6 +58,9 @@
         {{#if @profile.petCount}}
           • Pets <span data-test-pet-count>{{@profile.petCount}}</span>
         {{/if}}
+        {{#if @profile.petBreed}}
+          • <span data-test-pet-breed>{{@profile.petBreed}}</span>
+        {{/if}}
       </p>
     </div>
   </div>

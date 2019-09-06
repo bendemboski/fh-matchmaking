@@ -25,7 +25,7 @@ module('Acceptance | host/profile/bio', function(hooks) {
     assert.equal(page.adultCount.value, 1);
     assert.equal(page.kidCount.value, 0);
     assert.equal(page.petCount.value, 0);
-    assert.notOk(page.petBreed.isVisible);
+    assert.notOk(page.petBreed.value);
   });
 
   test('it renders populated', async function(assert) {
@@ -36,7 +36,8 @@ module('Acceptance | host/profile/bio', function(hooks) {
       languages: 'English, Klingon',
       adultCount: 2,
       kidCount: 1,
-      petCount: 3
+      petCount: 3,
+      petBreed: 'Ostrich'
     });
     await page.visit();
 
@@ -48,6 +49,6 @@ module('Acceptance | host/profile/bio', function(hooks) {
     assert.equal(page.adultCount.value, 2);
     assert.equal(page.kidCount.value, 1);
     assert.equal(page.petCount.value, 3);
-    assert.notOk(page.petBreed.isVisible);
+    assert.equal(page.petBreed.value, 'Ostrich');
   });
 });

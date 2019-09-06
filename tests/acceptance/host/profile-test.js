@@ -68,6 +68,7 @@ module('Acceptance | host/profile', function(hooks) {
     await bioPage.petCount.increment();
     await bioPage.petCount.increment();
     await bioPage.petCount.increment();
+    await bioPage.petBreed.fillIn('Calico');
     await bioPage.footer.next();
 
     mirageUser.reload();
@@ -78,6 +79,7 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(mirageUser.profile.adultCount, 2);
     assert.equal(mirageUser.profile.kidCount, 1);
     assert.equal(mirageUser.profile.petCount, 3);
+    assert.equal(mirageUser.profile.petBreed, 'Calico');
 
     // About
     assert.equal(currentRouteName(), 'auth.host.about');
@@ -162,6 +164,7 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(profilePage.adultCount, 2);
     assert.equal(profilePage.kidCount, 1);
     assert.equal(profilePage.petCount, 3);
+    assert.equal(profilePage.petBreed, 'Calico');
     assert.equal(profilePage.greeting, 'Hey brother!');
     assert.equal(profilePage.transportation.hasLink, true);
     assert.equal(profilePage.environment, 'Urban village');
