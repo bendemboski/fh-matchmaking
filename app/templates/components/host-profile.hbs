@@ -74,7 +74,20 @@
   <div class="row">
     <div class="preview-section col-md-6">
       <h6>Transportation</h6>
-      {{transportation-display profile=@profile}}
+      <ul data-test-transportation>
+        {{#if @profile.lightRailStation}}
+          <li>
+            Light Rail:
+            <span data-test-light-rail-station>{{light-rail-station-display @profile.lightRailStation}}</span>
+          </li>
+        {{/if}}
+        {{#if @profile.busses}}
+          <li>Busses: <span data-test-busses>{{@profile.busses}}</span></li>
+        {{/if}}
+        {{#if (not (or @profile.lightRailStation @profile.busses))}}
+          <li data-test-none>(none)</li>
+        {{/if}}
+      </ul>
     </div>
     <div class="preview-section col-md-6">
       <h6>Amenities/Stores</h6>

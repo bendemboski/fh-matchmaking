@@ -13,7 +13,7 @@ export default create({
   neighborhood1: Object.assign({ scope: '[data-test-neighborhood1]' }, PowerSelect),
   neighborhood2: Object.assign({ scope: '[data-test-neighborhood2]' }, PowerSelect),
   neighborhood3: Object.assign({ scope: '[data-test-neighborhood3]' }, PowerSelect),
-  link: Object.assign({ scope: '[data-test-check-box]' }, CheckBox),
+  lightRail: Object.assign({ scope: '[data-test-check-box]' }, CheckBox),
   busses: { scope: '[data-test-busses]' },
   environment: { scope: '[data-test-environment]' }
 });

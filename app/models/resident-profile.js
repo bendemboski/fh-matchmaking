@@ -34,7 +34,7 @@ export default DS.Model.extend({
 
   // location
   neighborhoods: DS.attr(), // array of strings
-  link: DS.attr('boolean'),
+  lightRail: DS.attr('boolean'),
   busses: DS.attr('string'),
   neighborhoodFeatures: DS.attr('string'),
 

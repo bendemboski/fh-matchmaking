@@ -1,9 +1,9 @@
 import {
   attribute,
   collection,
+  isVisible,
   text
 } from 'ember-cli-page-object';
-import { TransportationDisplay } from './transportation-display';
 
 export default {
   photos: collection('[data-test-photo]', {
@@ -20,7 +20,13 @@ export default {
   petCount: text('[data-test-pet-count]'),
   petBreed: text('[data-test-pet-breed]'),
   greeting: text('[data-test-greeting]'),
-  transportation: TransportationDisplay,
+
+  hasLightRailStation: isVisible('[data-test-light-rail-station]'),
+  lightRailStation: text('[data-test-light-rail-station]'),
+  hasBusses: isVisible('[data-test-busses]'),
+  busses: text('[data-test-busses]'),
+  hasNoTransit: isVisible('[data-test-none]'),
+
   environment: text('[data-test-environment]'),
   languages: text('[data-test-languages]'),
   freeTime: text('[data-test-free-time]'),

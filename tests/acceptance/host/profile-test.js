@@ -101,14 +101,16 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.location');
     await locationPage.neighborhood.fillIn('U District');
     await locationPage.address.fillIn('5404 12th Ave NE');
-    await locationPage.link.fillIn(true);
+    await locationPage.lightRailStation.fillIn('Pioneer Square');
+    await locationPage.busses.fillIn('74, 76');
     await locationPage.environment.fillIn('Urban village');
     await locationPage.footer.next();
 
     mirageUser.reload();
     assert.equal(mirageUser.profile.neighborhood, 'uDist');
     assert.equal(mirageUser.profile.address, '5404 12th Ave NE');
-    assert.ok(mirageUser.profile.link);
+    assert.equal(mirageUser.profile.lightRailStation, 'pioneerSquare');
+    assert.equal(mirageUser.profile.busses, '74, 76');
     assert.equal(mirageUser.profile.neighborhoodFeatures, 'Urban village');
 
     // Activities
@@ -164,7 +166,8 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(profilePage.petCount, 3);
     assert.equal(profilePage.petBreed, 'Calico');
     assert.equal(profilePage.greeting, 'Hey brother!');
-    assert.equal(profilePage.transportation.hasLink, true);
+    assert.equal(profilePage.lightRailStation, 'Pioneer Square');
+    assert.equal(profilePage.busses, '74, 76');
     assert.equal(profilePage.environment, 'Urban village');
     assert.equal(profilePage.languages, 'English, Klingon');
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');
@@ -201,5 +204,45 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.greeting');
     await greetingPage.footer.back();
     assert.equal(currentRouteName(), 'auth.host.index');
+  });
+
+  test('transportation display', async function(assert) {
+    // No light rail or busses
+    await profilePage.visit();
+    assert.equal(profilePage.hasLightRailStation, false);
+    assert.equal(profilePage.hasBusses, false);
+    assert.equal(profilePage.hasNoTransit, true);
+
+    // Light rail but no busses
+    await locationPage.visit();
+    await locationPage.lightRailStation.fillIn('Pioneer Square');
+    await locationPage.footer.next();
+    await profilePage.visit();
+    assert.equal(profilePage.hasLightRailStation, true);
+    assert.equal(profilePage.lightRailStation, 'Pioneer Square');
+    assert.equal(profilePage.hasBusses, false);
+    assert.equal(profilePage.hasNoTransit, false);
+
+    // Busses but no light rail
+    await locationPage.visit();
+    await locationPage.lightRailStation.fillIn('');
+    await locationPage.busses.fillIn('74, 76');
+    await locationPage.footer.next();
+    await profilePage.visit();
+    assert.equal(profilePage.hasLightRailStation, false);
+    assert.equal(profilePage.hasBusses, true);
+    assert.equal(profilePage.busses, '74, 76');
+    assert.equal(profilePage.hasNoTransit, false);
+
+    // Busses and light rail
+    await locationPage.visit();
+    await locationPage.lightRailStation.fillIn('Pioneer Square');
+    await locationPage.footer.next();
+    await profilePage.visit();
+    assert.equal(profilePage.hasLightRailStation, true);
+    assert.equal(profilePage.lightRailStation, 'Pioneer Square');
+    assert.equal(profilePage.hasBusses, true);
+    assert.equal(profilePage.busses, '74, 76');
+    assert.equal(profilePage.hasNoTransit, false);
   });
 });

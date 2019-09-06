@@ -108,6 +108,34 @@ export function getNeighborhoodDisplay(neighborhood) {
   }
 }
 
+export function getLightRailStations() {
+  return [
+    { value: 'uWash', label: 'University of Washington' },
+    { value: 'capitolHill', label: 'Capitol Hill' },
+    { value: 'westlake', label: 'Westlake' },
+    { value: 'universityStreet', label: 'University Street' },
+    { value: 'pioneerSquare', label: 'Pioneer Square' },
+    { value: 'intlDistrict', label: 'Intl. District / Chinatown' },
+    { value: 'stadium', label: 'Stadium' },
+    { value: 'sodo', label: 'Sodo' },
+    { value: 'beaconHill', label: 'Beacon Hill' },
+    { value: 'mountBaker', label: 'Mount Baker' },
+    { value: 'columbiaCity', label: 'Columbia City' },
+    { value: 'othello', label: 'Othello' },
+    { value: 'rainierBeach', label: 'Rainier Beach' },
+    { value: 'tukwila', label: 'Tukwila Intl. Blvd.' },
+    { value: 'seatac', label: 'SeaTac / Airport' },
+    { value: 'angleLake', label: 'Angle Lake' },
+  ];
+}
+
+export function getLightRailStationDisplay(station) {
+  let obj = getLightRailStations().find(({ value }) => value === station);
+  if (obj) {
+    return obj.label;
+  }
+}
+
 export function getSubstances() {
   return [
     { value: 'alcohol', label: 'Alcohol' },

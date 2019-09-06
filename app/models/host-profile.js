@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
-import { getNeighborhoodDisplay } from '../utils/profile';
+import { getNeighborhoodDisplay, getLightRailStationDisplay } from '../utils/profile';
 import { or, raw } from 'ember-awesome-macros';
 
 export default DS.Model.extend({
@@ -32,7 +32,7 @@ export default DS.Model.extend({
   // location
   neighborhood: DS.attr('string'),
   address: DS.attr('string'),
-  link: DS.attr('boolean'),
+  lightRailStation: DS.attr('string'),
   busses: DS.attr('string'),
   neighborhoodFeatures: DS.attr('string'),
 
@@ -49,6 +49,10 @@ export default DS.Model.extend({
   // question
   question: DS.attr('string'),
   additionalNote: DS.attr('string'),
+
+  lightRailStationDisplay: computed('lightRailStation', function() {
+    return getLightRailStationDisplay(this.lightRailStation);
+  }),
 
   neighborhoodDisplay: computed('neighborhood', function() {
     return getNeighborhoodDisplay(this.neighborhood);
