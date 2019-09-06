@@ -13,10 +13,10 @@
       <h4 data-test-name>{{@profile.fullName}}</h4>
       <p>
         <span data-test-gender>{{gender-display @profile.gender}}</span>
-        {{#if @profile.yearsOld}}
-          • <span data-test-age>{{@profile.yearsOld}}</span> years old
-        {{/if}}
         • <span data-test-occupation>{{@profile.occupation}}</span>
+        {{#if @profile.age}}
+          • <span data-test-age>{{@profile.age}}</span> years old
+        {{/if}}
       </p>
       <p class="highlight">
         {{#if @profile.kidCount}}

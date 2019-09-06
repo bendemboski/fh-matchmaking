@@ -47,7 +47,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.caseworker.resident.bio');
     let m = moment().subtract(32, 'years');
     m.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
-    await bioPage.birthdate.fillIn(m.month() + 1, m.date(), m.year());
+    await bioPage.age.fillIn("28");
     await bioPage.gender.fillIn('Male');
     await bioPage.occupation.fillIn('Banana Stand Manager');
     await bioPage.languages.fillIn('English, Klingon');
@@ -59,7 +59,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
 
     mirageUser.reload();
     mirageResident = mirageUser.residents.models[0];
-    assert.equal(mirageResident.birthdate, m.toISOString());
+    assert.strictEqual(mirageResident.age, 28);
     assert.equal(mirageResident.gender, 'male');
     assert.equal(mirageResident.occupation, 'Banana Stand Manager');
     assert.equal(mirageResident.languages, 'English, Klingon');
@@ -119,7 +119,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(profilePage.profilePic, 'http://s3.amazon.com/download');
     assert.equal(profilePage.name, 'Buster Bluth');
     assert.equal(profilePage.gender, 'Male');
-    assert.equal(profilePage.age, '32');
+    assert.equal(profilePage.age, 28);
     assert.equal(profilePage.occupation, 'Banana Stand Manager');
     assert.equal(profilePage.email, 'buster@bluth.com');
     assert.equal(profilePage.phoneNumber, '5155558682');

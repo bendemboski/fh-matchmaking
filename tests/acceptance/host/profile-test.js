@@ -59,7 +59,7 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.bio');
     let m = moment().subtract(32, 'years');
     m.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
-    await bioPage.birthdate.fillIn(m.month() + 1, m.date(), m.year());
+    await bioPage.age.fillIn(41);
     await bioPage.gender.fillIn('Male');
     await bioPage.occupation.fillIn('Banana Stand Manager');
     await bioPage.languages.fillIn('English, Klingon');
@@ -71,7 +71,7 @@ module('Acceptance | host/profile', function(hooks) {
     await bioPage.footer.next();
 
     mirageUser.reload();
-    assert.equal(mirageUser.profile.birthdate, m.toISOString());
+    assert.strictEqual(mirageUser.profile.age, 41);
     assert.equal(mirageUser.profile.gender, 'male');
     assert.equal(mirageUser.profile.occupation, 'Banana Stand Manager');
     assert.equal(mirageUser.profile.languages, 'English, Klingon');
@@ -156,7 +156,7 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(profilePage.profilePic, 'http://s3.amazon.com/download0');
     assert.equal(profilePage.name, 'The Bluth family');
     assert.equal(profilePage.gender, 'Male');
-    assert.equal(profilePage.age, '32');
+    assert.equal(profilePage.age, 41);
     assert.equal(profilePage.occupation, 'Banana Stand Manager');
     assert.equal(profilePage.neighborhood, 'U District');
     assert.equal(profilePage.adultCount, 2);

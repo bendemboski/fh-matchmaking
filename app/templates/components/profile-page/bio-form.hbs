@@ -8,12 +8,14 @@ as |form|
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-        <label class="control-label" for="dob-day">Birth Date</label>
-        {{date-picker
-          date=@changeset.birthdate
-          onchange=(action (mut @changeset.birthdate))
-          data-test-birthdate=true
-        }}
+        <label class="control-label">Age</label>
+        <input
+          type="number"
+          min="0"
+          value={{@changeset.age}}
+          oninput={{action (mut @changeset.age) value="target.value"}}
+          data-test-age
+        >
       </div>
     </div>
     <div class="col-sm-6" data-test-gender>

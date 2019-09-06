@@ -1,6 +1,5 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
-import moment from 'moment';
 import { or, raw } from 'ember-awesome-macros';
 import { join, map } from 'ember-awesome-macros/array';
 import { getNeighborhoodDisplay } from '../utils/profile';
@@ -17,7 +16,7 @@ export default DS.Model.extend({
   phoneNumber: DS.attr('string'),
 
   // bio
-  birthdate: DS.attr('date'),
+  age: DS.attr('number'),
   gender: DS.attr('string'),
   occupation: DS.attr('string'),
   languages: DS.attr('string'),
@@ -46,14 +45,6 @@ export default DS.Model.extend({
 
   fullName: computed('firstName', 'lastName', function() {
     return `${this.firstName || ''} ${this.lastName || ''}`.trim();
-  }),
-
-  yearsOld: computed('birthdate', function() {
-    if (!this.birthdate) {
-      return null;
-    }
-
-    return moment().diff(moment(this.birthdate), 'years');
   }),
 
   neighborhoodsDisplay: join(

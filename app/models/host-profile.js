@@ -13,7 +13,7 @@ export default DS.Model.extend({
   greeting: DS.attr('string'),
 
   // bio
-  birthdate: DS.attr('date'),
+  age: DS.attr('number'),
   gender: DS.attr('string'),
   occupation: DS.attr('string'),
   languages: DS.attr('string'),

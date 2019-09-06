@@ -1,6 +1,5 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
-import moment from 'moment';
 
 export default DS.Model.extend({
   email: DS.attr('string'),
@@ -11,13 +10,5 @@ export default DS.Model.extend({
 
   fullName: computed('givenName', 'familyName', function() {
     return `${this.givenName} ${this.familyName}`.trim();
-  }),
-
-  yearsOld: computed('birthdate', function() {
-    if (!this.birthdate) {
-      return null;
-    }
-
-    return moment().diff(moment(this.birthdate), 'years');
   })
 });
