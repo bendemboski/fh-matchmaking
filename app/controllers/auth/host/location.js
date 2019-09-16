@@ -16,7 +16,7 @@ export default ProfileBase.extend({
     this._super(...arguments);
 
     this.set('lightRailStations', [
-      { label: '(none)', value: '' },
+      { label: '(No Station Nearby)', value: '' },
       ...getLightRailStations()
     ]);
   }

@@ -39,6 +39,7 @@ as |page|
       {{#form.group label="Public Transportation"}}
         <div class="transit row">
           <div class="col-3">
+            <span class="link-label">Link</span>
             {{profile-page/check-box
               label="Light rail"
               checked=this.changeset.lightRail
@@ -46,6 +47,7 @@ as |page|
             }}
           </div>
           <div class="col-9">
+            <span class="bus-label">Buses</span>
             {{input
               class="busses"
               value=this.changeset.busses

@@ -53,6 +53,13 @@ as |page|
           data-test-phone-number=true
         }}
       {{/form.group}}
+      {{#form.group label="About You" as |group|}}
+        {{group.textarea
+          placeholder="Introduce yourself in a few sentences and greet your future host"
+          value=@changeset.funFact
+          data-test-fun-fact=true
+        }}
+      {{/form.group}}
     {{/page.profile-form}}
   {{/page.left-column}}
   {{#page.right-column}}

@@ -45,12 +45,5 @@ as |form|
         data-test-substance-picker="host"
       }}
     {{/form.group}}
-    {{#form.group label="Some fun facts about you!" as |group|}}
-      {{group.textarea
-        placeholder="Tell us more about you…"
-        value=@changeset.funFact
-        data-test-fun-fact=true
-      }}
-    {{/form.group}}
   {{/if}}
 {{/component}}

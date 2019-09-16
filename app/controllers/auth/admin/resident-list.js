@@ -20,7 +20,7 @@ export default Controller.extend(ModalContainerMixin, {
       valuePath: 'fullName',
     },
     {
-      label: 'Future Aspiration',
+      label: 'Career Interest',
       valuePath: 'occupation'
     },
     {
