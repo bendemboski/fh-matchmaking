@@ -36,28 +36,6 @@ as |page|
         </span>
       {{/form.group}}
 
-      {{#form.group label="Public Transportation"}}
-        <div class="transit row">
-          <div class="col-3">
-            <span class="link-label">Link</span>
-            {{profile-page/check-box
-              label="Light rail"
-              checked=this.changeset.lightRail
-              onchange=(action (mut this.changeset.lightRail) (not this.changeset.lightRail))
-            }}
-          </div>
-          <div class="col-9">
-            <span class="bus-label">Buses</span>
-            {{input
-              class="busses"
-              value=this.changeset.busses
-              placeholder="List bus numbers (e.g. 70, 11)"
-              data-test-busses=true
-            }}
-          </div>
-        </div>
-      {{/form.group}}
-
       {{#form.group label="What amenities/stores do you need nearby?" as |group|}}
         {{group.input
           placeholder="e.g. supermarket, park, library, church"

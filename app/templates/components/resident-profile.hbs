@@ -39,26 +39,9 @@
   </div>
 
   <div class="row">
-    <div class="preview-section col-12">
+    <div class="preview-section col-md-6">
       <h6>Neighborhood List</h6>
       <p data-test-neighborhoods>{{@profile.neighborhoodsDisplay}}</p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="preview-section col-md-6">
-      <h6>Transportation</h6>
-      <ul data-test-transportation>
-        {{#if @profile.lightRail}}
-          <li data-test-light-rail>Light Rail</li>
-        {{/if}}
-        {{#if @profile.busses}}
-          <li>Busses: <span data-test-busses>{{@profile.busses}}</span></li>
-        {{/if}}
-        {{#if (not (or @profile.lightRail @profile.busses))}}
-          <li data-test-none>(none)</li>
-        {{/if}}
-      </ul>
     </div>
     <div class="preview-section col-md-6">
       <h6>Amenities/Stores</h6>
