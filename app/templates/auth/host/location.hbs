@@ -30,7 +30,8 @@ as |page|
       {{#form.group label="Public Transportation"}}
         <div class="transit row">
           <div class="col-6" data-test-light-rail-station>
-            <span class="link-label">Link</span>{{#power-select
+            <span class="link-label">Link</span>
+            {{#power-select
               placeholder="Choose accessible light rail station"
               options=this.lightRailStations
               selected=this.selectedLightRailStation
@@ -43,7 +44,8 @@ as |page|
             {{/power-select}}
           </div>
           <div class="col-6">
-            <span class="bus-label">Buses</span>{{input
+            <span class="bus-label">Buses</span>
+            {{input
               class="busses"
               value=this.changeset.busses
               placeholder="List accessible bus numbers (e.g. 70, 11)"
