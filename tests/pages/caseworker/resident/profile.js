@@ -15,8 +15,6 @@ export default create({
   gender: text('[data-test-gender]'),
   age: text('[data-test-age]'),
   occupation: text('[data-test-occupation]'),
-  email: text('[data-test-email]'),
-  phoneNumber: text('[data-test-phone]'),
   kidCount: text('[data-test-kid-count]'),
   petCount: text('[data-test-pet-count]'),
   petBreed: text('[data-test-pet-breed]'),
