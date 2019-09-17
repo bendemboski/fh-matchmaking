@@ -47,7 +47,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.caseworker.resident.bio');
     let m = moment().subtract(32, 'years');
     m.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
-    await bioPage.birthdate.fillIn(m.month() + 1, m.date(), m.year());
+    await bioPage.age.fillIn("28");
     await bioPage.gender.fillIn('Male');
     await bioPage.occupation.fillIn('Banana Stand Manager');
     await bioPage.languages.fillIn('English, Klingon');
@@ -59,7 +59,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
 
     mirageUser.reload();
     mirageResident = mirageUser.residents.models[0];
-    assert.equal(mirageResident.birthdate, m.toISOString());
+    assert.strictEqual(mirageResident.age, 28);
     assert.equal(mirageResident.gender, 'male');
     assert.equal(mirageResident.occupation, 'Banana Stand Manager');
     assert.equal(mirageResident.languages, 'English, Klingon');
@@ -71,7 +71,6 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.caseworker.resident.about');
     await aboutPage.freeTime.fillIn('Clapping like a chicken');
     await aboutPage.favoriteFood.fillIn('Ice cream sandwiches');
-    await aboutPage.movieGenre.fillIn('Comedy');
     await aboutPage.funFact.fillIn('I am Gene Parmesan');
     await aboutPage.substancePicker.chooseSubstances([ 'Marijuana', 'Tobacco' ]);
     await aboutPage.footer.next();
@@ -80,7 +79,6 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     mirageResident = mirageUser.residents.models[0];
     assert.equal(mirageResident.freeTime, 'Clapping like a chicken');
     assert.equal(mirageResident.favoriteFood, 'Ice cream sandwiches');
-    assert.equal(mirageResident.movieGenre, 'comedy');
     assert.equal(mirageResident.funFact, 'I am Gene Parmesan');
     assert.deepEqual(mirageResident.hostSubstances.sort(), [ 'marijuana', 'tobacco' ].sort());
 
@@ -89,7 +87,8 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     await locationPage.neighborhood1.fillIn('U District');
     await locationPage.neighborhood2.fillIn('Alki');
     await locationPage.neighborhood3.fillIn('Mount Baker');
-    await locationPage.link.fillIn(true);
+    await locationPage.lightRail.fillIn(true);
+    await locationPage.busses.fillIn('71, 76');
     await locationPage.environment.fillIn('Urban village');
     await locationPage.footer.next();
 
@@ -100,7 +99,8 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
       'alki',
       'mountBaker'
     ].sort());
-    assert.equal(mirageResident.link, true);
+    assert.equal(mirageResident.lightRail, true);
+    assert.equal(mirageResident.busses, '71, 76');
     assert.equal(mirageResident.neighborhoodFeatures, 'Urban village');
 
     // question
@@ -119,7 +119,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(profilePage.profilePic, 'http://s3.amazon.com/download');
     assert.equal(profilePage.name, 'Buster Bluth');
     assert.equal(profilePage.gender, 'Male');
-    assert.equal(profilePage.age, '32');
+    assert.equal(profilePage.age, 28);
     assert.equal(profilePage.occupation, 'Banana Stand Manager');
     assert.equal(profilePage.email, 'buster@bluth.com');
     assert.equal(profilePage.phoneNumber, '5155558682');
@@ -127,12 +127,12 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(profilePage.petCount, 2);
     assert.equal(profilePage.petBreed, 'Beagle');
     assert.equal(profilePage.neighborhoods, 'U District, Alki, Mount Baker');
-    assert.equal(profilePage.transportation.hasLink, true);
+    assert.equal(profilePage.hasLightRail, true);
+    assert.equal(profilePage.busses, '71, 76');
     assert.equal(profilePage.environment, 'Urban village');
     assert.equal(profilePage.languages, 'English, Klingon');
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');
     assert.equal(profilePage.favoriteFood, 'Ice cream sandwiches');
-    assert.equal(profilePage.movieGenre, 'Comedy');
     assert.deepEqual(profilePage.acceptableSubstances.split(/,\s+/).sort(), [
       'Marijuana',
       'Tobacco'
@@ -184,5 +184,45 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(mirageResident.lastName, 'Parmesan');
     assert.equal(mirageResident.email, 'geneparmesan@aol.com');
     assert.equal(mirageResident.phoneNumber, '5552223344');
+  });
+
+  test('transportation display', async function(assert) {
+    let mirageResident = mirageUser.createResident();
+
+    // No light rail or busses
+    await profilePage.visit({ 'resident_profile_id': mirageResident.id });
+    assert.equal(profilePage.hasLightRail, false);
+    assert.equal(profilePage.hasBusses, false);
+    assert.equal(profilePage.hasNoTransit, true);
+
+    // Light rail but no busses
+    await locationPage.visit({ 'resident_profile_id': mirageResident.id });
+    await locationPage.lightRail.fillIn(true);
+    await locationPage.footer.next();
+    await profilePage.visit({ 'resident_profile_id': mirageResident.id });
+    assert.equal(profilePage.hasLightRail, true);
+    assert.equal(profilePage.hasBusses, false);
+    assert.equal(profilePage.hasNoTransit, false);
+
+    // Busses but no light rail
+    await locationPage.visit({ 'resident_profile_id': mirageResident.id });
+    await locationPage.lightRail.fillIn(false);
+    await locationPage.busses.fillIn('74, 76');
+    await locationPage.footer.next();
+    await profilePage.visit({ 'resident_profile_id': mirageResident.id });
+    assert.equal(profilePage.hasLightRail, false);
+    assert.equal(profilePage.hasBusses, true);
+    assert.equal(profilePage.busses, '74, 76');
+    assert.equal(profilePage.hasNoTransit, false);
+
+    // Busses and light rail
+    await locationPage.visit({ 'resident_profile_id': mirageResident.id });
+    await locationPage.lightRail.fillIn(true);
+    await locationPage.footer.next();
+    await profilePage.visit({ 'resident_profile_id': mirageResident.id });
+    assert.equal(profilePage.hasLightRail, true);
+    assert.equal(profilePage.hasBusses, true);
+    assert.equal(profilePage.busses, '74, 76');
+    assert.equal(profilePage.hasNoTransit, false);
   });
 });

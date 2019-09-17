@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
-import { getNeighborhoodDisplay } from '../utils/profile';
+import { getNeighborhoodDisplay, getLightRailStationDisplay } from '../utils/profile';
 import { or, raw } from 'ember-awesome-macros';
 
 export default DS.Model.extend({
@@ -13,18 +13,18 @@ export default DS.Model.extend({
   greeting: DS.attr('string'),
 
   // bio
-  birthdate: DS.attr('date'),
+  age: DS.attr('number'),
   gender: DS.attr('string'),
   occupation: DS.attr('string'),
   languages: DS.attr('string'),
   adultCount: DS.attr('number'),
   kidCount: DS.attr('number'),
   petCount: DS.attr('number'),
+  petBreed: DS.attr('string'),
 
   // about
   freeTime: DS.attr('string'),
   favoriteFood: DS.attr('string'),
-  movieGenre: DS.attr('string'),
 
   // substances
   mySubstances: DS.attr(), // array of strings
@@ -32,7 +32,7 @@ export default DS.Model.extend({
   // location
   neighborhood: DS.attr('string'),
   address: DS.attr('string'),
-  link: DS.attr('boolean'),
+  lightRailStation: DS.attr('string'),
   busses: DS.attr('string'),
   neighborhoodFeatures: DS.attr('string'),
 
@@ -49,6 +49,10 @@ export default DS.Model.extend({
   // question
   question: DS.attr('string'),
   additionalNote: DS.attr('string'),
+
+  lightRailStationDisplay: computed('lightRailStation', function() {
+    return getLightRailStationDisplay(this.lightRailStation);
+  }),
 
   neighborhoodDisplay: computed('neighborhood', function() {
     return getNeighborhoodDisplay(this.neighborhood);

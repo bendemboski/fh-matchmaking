@@ -59,7 +59,7 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.bio');
     let m = moment().subtract(32, 'years');
     m.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
-    await bioPage.birthdate.fillIn(m.month() + 1, m.date(), m.year());
+    await bioPage.age.fillIn(41);
     await bioPage.gender.fillIn('Male');
     await bioPage.occupation.fillIn('Banana Stand Manager');
     await bioPage.languages.fillIn('English, Klingon');
@@ -68,29 +68,29 @@ module('Acceptance | host/profile', function(hooks) {
     await bioPage.petCount.increment();
     await bioPage.petCount.increment();
     await bioPage.petCount.increment();
+    await bioPage.petBreed.fillIn('Calico');
     await bioPage.footer.next();
 
     mirageUser.reload();
-    assert.equal(mirageUser.profile.birthdate, m.toISOString());
+    assert.strictEqual(mirageUser.profile.age, 41);
     assert.equal(mirageUser.profile.gender, 'male');
     assert.equal(mirageUser.profile.occupation, 'Banana Stand Manager');
     assert.equal(mirageUser.profile.languages, 'English, Klingon');
     assert.equal(mirageUser.profile.adultCount, 2);
     assert.equal(mirageUser.profile.kidCount, 1);
     assert.equal(mirageUser.profile.petCount, 3);
+    assert.equal(mirageUser.profile.petBreed, 'Calico');
 
     // About
     assert.equal(currentRouteName(), 'auth.host.about');
     await aboutPage.freeTime.fillIn('Clapping like a chicken');
     await aboutPage.favoriteFood.fillIn('Ice cream sandwiches');
-    await aboutPage.movieGenre.fillIn('Comedy');
     await aboutPage.substancePicker.chooseSubstances([ 'Alcohol' ]);
     await aboutPage.footer.next();
 
     mirageUser.reload();
     assert.equal(mirageUser.profile.freeTime, 'Clapping like a chicken');
     assert.equal(mirageUser.profile.favoriteFood, 'Ice cream sandwiches');
-    assert.equal(mirageUser.profile.movieGenre, 'comedy');
     assert.deepEqual(mirageUser.profile.mySubstances.sort(), [ 'alcohol' ].sort());
 
     // Review1
@@ -101,14 +101,16 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.location');
     await locationPage.neighborhood.fillIn('U District');
     await locationPage.address.fillIn('5404 12th Ave NE');
-    await locationPage.link.fillIn(true);
+    await locationPage.lightRailStation.fillIn('Pioneer Square');
+    await locationPage.busses.fillIn('74, 76');
     await locationPage.environment.fillIn('Urban village');
     await locationPage.footer.next();
 
     mirageUser.reload();
     assert.equal(mirageUser.profile.neighborhood, 'uDist');
     assert.equal(mirageUser.profile.address, '5404 12th Ave NE');
-    assert.ok(mirageUser.profile.link);
+    assert.equal(mirageUser.profile.lightRailStation, 'pioneerSquare');
+    assert.equal(mirageUser.profile.busses, '74, 76');
     assert.equal(mirageUser.profile.neighborhoodFeatures, 'Urban village');
 
     // Activities
@@ -156,19 +158,20 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(profilePage.profilePic, 'http://s3.amazon.com/download0');
     assert.equal(profilePage.name, 'The Bluth family');
     assert.equal(profilePage.gender, 'Male');
-    assert.equal(profilePage.age, '32');
+    assert.equal(profilePage.age, 41);
     assert.equal(profilePage.occupation, 'Banana Stand Manager');
     assert.equal(profilePage.neighborhood, 'U District');
     assert.equal(profilePage.adultCount, 2);
     assert.equal(profilePage.kidCount, 1);
     assert.equal(profilePage.petCount, 3);
+    assert.equal(profilePage.petBreed, 'Calico');
     assert.equal(profilePage.greeting, 'Hey brother!');
-    assert.equal(profilePage.transportation.hasLink, true);
+    assert.equal(profilePage.lightRailStation, 'Pioneer Square');
+    assert.equal(profilePage.busses, '74, 76');
     assert.equal(profilePage.environment, 'Urban village');
     assert.equal(profilePage.languages, 'English, Klingon');
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');
     assert.equal(profilePage.favoriteFood, 'Ice cream sandwiches');
-    assert.equal(profilePage.movieGenre, 'Comedy');
     assert.equal(profilePage.usedSubstances, 'Alcohol');
     assert.equal(profilePage.question, 'But where did the lighter fluid come from?');
     await profilePage.footer.next();
@@ -201,5 +204,45 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.greeting');
     await greetingPage.footer.back();
     assert.equal(currentRouteName(), 'auth.host.index');
+  });
+
+  test('transportation display', async function(assert) {
+    // No light rail or busses
+    await profilePage.visit();
+    assert.equal(profilePage.hasLightRailStation, false);
+    assert.equal(profilePage.hasBusses, false);
+    assert.equal(profilePage.hasNoTransit, true);
+
+    // Light rail but no busses
+    await locationPage.visit();
+    await locationPage.lightRailStation.fillIn('Pioneer Square');
+    await locationPage.footer.next();
+    await profilePage.visit();
+    assert.equal(profilePage.hasLightRailStation, true);
+    assert.equal(profilePage.lightRailStation, 'Pioneer Square');
+    assert.equal(profilePage.hasBusses, false);
+    assert.equal(profilePage.hasNoTransit, false);
+
+    // Busses but no light rail
+    await locationPage.visit();
+    await locationPage.lightRailStation.fillIn('');
+    await locationPage.busses.fillIn('74, 76');
+    await locationPage.footer.next();
+    await profilePage.visit();
+    assert.equal(profilePage.hasLightRailStation, false);
+    assert.equal(profilePage.hasBusses, true);
+    assert.equal(profilePage.busses, '74, 76');
+    assert.equal(profilePage.hasNoTransit, false);
+
+    // Busses and light rail
+    await locationPage.visit();
+    await locationPage.lightRailStation.fillIn('Pioneer Square');
+    await locationPage.footer.next();
+    await profilePage.visit();
+    assert.equal(profilePage.hasLightRailStation, true);
+    assert.equal(profilePage.lightRailStation, 'Pioneer Square');
+    assert.equal(profilePage.hasBusses, true);
+    assert.equal(profilePage.busses, '74, 76');
+    assert.equal(profilePage.hasNoTransit, false);
   });
 });

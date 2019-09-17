@@ -1,9 +1,8 @@
-import DatePicker from '../components/date-picker';
 import PowerSelect from '../components/power-select';
 import NumberInput from '../components/number-input';
 
 export default {
-  birthdate: Object.assign({ scope: '[data-test-birthdate]'}, DatePicker),
+  age: { scope: '[data-test-age]' },
   gender: Object.assign({ scope: '[data-test-gender]'}, PowerSelect),
 
   occupation: { scope: '[data-test-occupation]' },

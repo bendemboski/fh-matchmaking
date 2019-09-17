@@ -20,7 +20,7 @@ module('Acceptance | host/profile/location', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.location');
     assert.notOk(page.neighborhood.value);
     assert.notOk(page.address.value);
-    assert.notOk(page.link.isChecked);
+    assert.notOk(page.lightRailStation.value);
     assert.notOk(page.busses.value);
     assert.notOk(page.environment.value);
   });
@@ -29,7 +29,7 @@ module('Acceptance | host/profile/location', function(hooks) {
     mirageUser.createProfile({
       neighborhood: 'belltown',
       address: '205 Vine',
-      link: true,
+      lightRailStation: 'pioneerSquare',
       busses: '41, 2',
       neighborhoodFeatures: 'Edge of downtown'
     });
@@ -37,7 +37,7 @@ module('Acceptance | host/profile/location', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.location');
     assert.equal(page.neighborhood.value, 'Belltown');
     assert.equal(page.address.value, '205 Vine');
-    assert.ok(page.link.isChecked);
+    assert.equal(page.lightRailStation.value, 'Pioneer Square');
     assert.equal(page.busses.value, '41, 2');
     assert.equal(page.environment.value, 'Edge of downtown');
   });

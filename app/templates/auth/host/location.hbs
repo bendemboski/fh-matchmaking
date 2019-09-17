@@ -11,10 +11,12 @@ as |page|
       </legend>
 
       {{#form.group label="Neighborhood"}}
-        {{select-neighborhood
-          neighborhood=this.changeset.neighborhood
-          onchange=(action (mut this.changeset.neighborhood))
-        }}
+        <span data-test-neighborhood>
+          {{select-neighborhood
+            neighborhood=this.changeset.neighborhood
+            onchange=(action (mut this.changeset.neighborhood))
+          }}
+        </span>
       {{/form.group}}
 
       {{#form.group label="Street Address" as |group|}}
@@ -26,7 +28,29 @@ as |page|
       {{/form.group}}
 
       {{#form.group label="Public Transportation"}}
-        {{profile-page/transit changeset=this.changeset}}
+        <div class="transit row">
+          <div class="col-6" data-test-light-rail-station>
+            {{#power-select
+              placeholder="Choose accessible light rail station"
+              options=this.lightRailStations
+              selected=this.selectedLightRailStation
+              searchEnabled=false
+              renderInPlace=true
+              onchange=(action (mut this.changeset.lightRailStation) value="value")
+            as |station|
+            }}
+              {{station.label}}
+            {{/power-select}}
+          </div>
+          <div class="col-6">
+            {{input
+              class="busses"
+              value=this.changeset.busses
+              placeholder="List accessible bus numbers (e.g. 70, 11)"
+              data-test-busses=true
+            }}
+          </div>
+        </div>
       {{/form.group}}
 
       {{#form.group label="What amenities/stores are nearby?" as |group|}}

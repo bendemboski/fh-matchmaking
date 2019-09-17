@@ -13,10 +13,10 @@
       <h4 data-test-name>{{@profile.fullName}}</h4>
       <p>
         <span data-test-gender>{{gender-display @profile.gender}}</span>
-        {{#if @profile.yearsOld}}
-          • <span data-test-age>{{@profile.yearsOld}}</span> years old
-        {{/if}}
         • <span data-test-occupation>{{@profile.occupation}}</span>
+        {{#if @profile.age}}
+          • <span data-test-age>{{@profile.age}}</span> years old
+        {{/if}}
       </p>
       <p class="highlight">
         {{#if @profile.kidCount}}
@@ -54,7 +54,17 @@
   <div class="row">
     <div class="preview-section col-md-6">
       <h6>Transportation</h6>
-      {{transportation-display profile=@profile}}
+      <ul data-test-transportation>
+        {{#if @profile.lightRail}}
+          <li data-test-light-rail>Light Rail</li>
+        {{/if}}
+        {{#if @profile.busses}}
+          <li>Busses: <span data-test-busses>{{@profile.busses}}</span></li>
+        {{/if}}
+        {{#if (not (or @profile.lightRail @profile.busses))}}
+          <li data-test-none>(none)</li>
+        {{/if}}
+      </ul>
     </div>
     <div class="preview-section col-md-6">
       <h6>Amenities/Stores</h6>
@@ -74,9 +84,6 @@
       <p data-test-favorite-food>{{@profile.favoriteFood}}</p>
     </div>
     <div class="preview-section col-md-6">
-      <h6>Movie Type</h6>
-      <p data-test-movie-genre>{{movie-genre-display @profile.movieGenre}}</p>
-
       <h6>Accept Illicit Substance/Drug </h6>
       <p data-test-acceptable-substances>{{substances-display @profile.hostSubstances}}</p>
     </div>
