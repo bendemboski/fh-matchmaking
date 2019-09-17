@@ -20,7 +20,6 @@ module('Acceptance | host/profile/about', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.about');
     assert.notOk(page.freeTime.value);
     assert.notOk(page.favoriteFood.value);
-    assert.notOk(page.funFact.isVisible);
   });
 
   test('it renders populated', async function(assert) {
@@ -33,6 +32,5 @@ module('Acceptance | host/profile/about', function(hooks) {
     assert.equal(currentRouteName(), 'auth.host.about');
     assert.equal(page.freeTime.value, 'Clapping like a chicken');
     assert.equal(page.favoriteFood.value, 'Ice cream sandwiches');
-    assert.notOk(page.funFact.isVisible);
   });
 });

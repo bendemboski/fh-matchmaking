@@ -18,6 +18,7 @@ export default create({
   kidCount: text('[data-test-kid-count]'),
   petCount: text('[data-test-pet-count]'),
   petBreed: text('[data-test-pet-breed]'),
+  funFact: text('[data-test-fun-fact]'),
   neighborhoods: text('[data-test-neighborhoods]'),
 
   environment: text('[data-test-environment]'),

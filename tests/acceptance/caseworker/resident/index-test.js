@@ -27,6 +27,7 @@ module('Acceptance | caseworker/resident/index', function(hooks) {
     assert.notOk(page.lastName.value);
     assert.notOk(page.email.value);
     assert.notOk(page.phoneNumber.value);
+    assert.notOk(page.funFact.value);
   });
 
   test('it renders populated', async function(assert) {
@@ -35,7 +36,8 @@ module('Acceptance | caseworker/resident/index', function(hooks) {
       firstName: 'Buster',
       lastName: 'Bluth',
       email: 'buster@bluth.com',
-      phoneNumber: '5155558682'
+      phoneNumber: '5155558682',
+      funFact: 'I am Gene Parmesan'
     });
     await page.visit({ 'resident_profile_id': mirageResident.id });
 
@@ -45,5 +47,6 @@ module('Acceptance | caseworker/resident/index', function(hooks) {
     assert.equal(page.lastName.value, 'Bluth');
     assert.equal(page.email.value, 'buster@bluth.com');
     assert.equal(page.phoneNumber.value, '5155558682');
+    assert.equal(page.funFact.value, 'I am Gene Parmesan');
   });
 });

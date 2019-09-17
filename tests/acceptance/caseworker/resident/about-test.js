@@ -22,20 +22,17 @@ module('Acceptance | caseworker/resident/about', function(hooks) {
     assert.equal(currentRouteName(), 'auth.caseworker.resident.about');
     assert.notOk(page.freeTime.value);
     assert.notOk(page.favoriteFood.value);
-    assert.notOk(page.funFact.value);
   });
 
   test('it renders populated', async function(assert) {
     mirageResident.update({
       freeTime: 'Clapping like a chicken',
-      favoriteFood: 'Ice cream sandwiches',
-      funFact: 'I am Gene Parmesan'
+      favoriteFood: 'Ice cream sandwiches'
     });
     await page.visit({ 'resident_profile_id': mirageResident.id });
 
     assert.equal(currentRouteName(), 'auth.caseworker.resident.about');
     assert.equal(page.freeTime.value, 'Clapping like a chicken');
     assert.equal(page.favoriteFood.value, 'Ice cream sandwiches');
-    assert.equal(page.funFact.value, 'I am Gene Parmesan');
   });
 });
