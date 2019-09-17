@@ -169,6 +169,8 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(profilePage.lightRailStation, 'Pioneer Square');
     assert.equal(profilePage.busses, '74, 76');
     assert.equal(profilePage.environment, 'Urban village');
+    assert.equal(profilePage.backyardActivities, 'Rainbathing');
+    assert.equal(profilePage.backyardDescription, 'A small but comfy space');
     assert.equal(profilePage.languages, 'English, Klingon');
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');
     assert.equal(profilePage.favoriteFood, 'Ice cream sandwiches');

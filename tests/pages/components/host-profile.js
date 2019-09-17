@@ -28,6 +28,8 @@ export default {
   hasNoTransit: isVisible('[data-test-none]'),
 
   environment: text('[data-test-environment]'),
+  backyardActivities: text('[data-test-backyard-activities]'),
+  backyardDescription: text('[data-test-backyard-description]'),
   languages: text('[data-test-languages]'),
   freeTime: text('[data-test-free-time]'),
   favoriteFood: text('[data-test-favorite-food]'),
