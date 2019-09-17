@@ -29,8 +29,6 @@ module('Acceptance | caseworker/resident/location', function(hooks) {
     assert.notOk(page.neighborhood3.value);
     assert.ok(page.neighborhood3.isDisabled);
 
-    assert.notOk(page.lightRail.isChecked);
-    assert.notOk(page.busses.value);
     assert.notOk(page.environment.value);
   });
 
@@ -41,8 +39,6 @@ module('Acceptance | caseworker/resident/location', function(hooks) {
         'uDist',
         'mountBaker'
       ],
-      lightRail: true,
-      busses: '41, 2',
       neighborhoodFeatures: 'Somewhere chill'
     });
     await page.visit({ 'resident_profile_id': mirageResident.id });
@@ -58,8 +54,6 @@ module('Acceptance | caseworker/resident/location', function(hooks) {
     assert.equal(page.neighborhood3.value, 'Mount Baker');
     assert.notOk(page.neighborhood3.isDisabled);
 
-    assert.ok(page.lightRail.isChecked);
-    assert.equal(page.busses.value, '41, 2');
     assert.equal(page.environment.value, 'Somewhere chill');
   });
 

@@ -87,8 +87,6 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     await locationPage.neighborhood1.fillIn('U District');
     await locationPage.neighborhood2.fillIn('Alki');
     await locationPage.neighborhood3.fillIn('Mount Baker');
-    await locationPage.lightRail.fillIn(true);
-    await locationPage.busses.fillIn('71, 76');
     await locationPage.environment.fillIn('Urban village');
     await locationPage.footer.next();
 
@@ -99,8 +97,6 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
       'alki',
       'mountBaker'
     ].sort());
-    assert.equal(mirageResident.lightRail, true);
-    assert.equal(mirageResident.busses, '71, 76');
     assert.equal(mirageResident.neighborhoodFeatures, 'Urban village');
 
     // question
@@ -127,8 +123,6 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(profilePage.petCount, 2);
     assert.equal(profilePage.petBreed, 'Beagle');
     assert.equal(profilePage.neighborhoods, 'U District, Alki, Mount Baker');
-    assert.equal(profilePage.hasLightRail, true);
-    assert.equal(profilePage.busses, '71, 76');
     assert.equal(profilePage.environment, 'Urban village');
     assert.equal(profilePage.languages, 'English, Klingon');
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');
@@ -184,45 +178,5 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(mirageResident.lastName, 'Parmesan');
     assert.equal(mirageResident.email, 'geneparmesan@aol.com');
     assert.equal(mirageResident.phoneNumber, '5552223344');
-  });
-
-  test('transportation display', async function(assert) {
-    let mirageResident = mirageUser.createResident();
-
-    // No light rail or busses
-    await profilePage.visit({ 'resident_profile_id': mirageResident.id });
-    assert.equal(profilePage.hasLightRail, false);
-    assert.equal(profilePage.hasBusses, false);
-    assert.equal(profilePage.hasNoTransit, true);
-
-    // Light rail but no busses
-    await locationPage.visit({ 'resident_profile_id': mirageResident.id });
-    await locationPage.lightRail.fillIn(true);
-    await locationPage.footer.next();
-    await profilePage.visit({ 'resident_profile_id': mirageResident.id });
-    assert.equal(profilePage.hasLightRail, true);
-    assert.equal(profilePage.hasBusses, false);
-    assert.equal(profilePage.hasNoTransit, false);
-
-    // Busses but no light rail
-    await locationPage.visit({ 'resident_profile_id': mirageResident.id });
-    await locationPage.lightRail.fillIn(false);
-    await locationPage.busses.fillIn('74, 76');
-    await locationPage.footer.next();
-    await profilePage.visit({ 'resident_profile_id': mirageResident.id });
-    assert.equal(profilePage.hasLightRail, false);
-    assert.equal(profilePage.hasBusses, true);
-    assert.equal(profilePage.busses, '74, 76');
-    assert.equal(profilePage.hasNoTransit, false);
-
-    // Busses and light rail
-    await locationPage.visit({ 'resident_profile_id': mirageResident.id });
-    await locationPage.lightRail.fillIn(true);
-    await locationPage.footer.next();
-    await profilePage.visit({ 'resident_profile_id': mirageResident.id });
-    assert.equal(profilePage.hasLightRail, true);
-    assert.equal(profilePage.hasBusses, true);
-    assert.equal(profilePage.busses, '74, 76');
-    assert.equal(profilePage.hasNoTransit, false);
   });
 });

@@ -1,7 +1,6 @@
 import {
   attribute,
   create,
-  isVisible,
   text,
   visitable,
 } from 'ember-cli-page-object';
@@ -22,11 +21,6 @@ export default create({
   petCount: text('[data-test-pet-count]'),
   petBreed: text('[data-test-pet-breed]'),
   neighborhoods: text('[data-test-neighborhoods]'),
-
-  hasLightRail: isVisible('[data-test-light-rail]'),
-  hasBusses: isVisible('[data-test-busses]'),
-  busses: text('[data-test-busses]'),
-  hasNoTransit: isVisible('[data-test-none]'),
 
   environment: text('[data-test-environment]'),
   languages: text('[data-test-languages]'),
