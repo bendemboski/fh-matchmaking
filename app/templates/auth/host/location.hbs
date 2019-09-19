@@ -62,6 +62,12 @@ as |page|
           data-test-environment=true
         }}
       {{/form.group}}
+      {{#form.group label="One sentence to describe your neighborhood." as |group|}}
+        {{group.textarea
+          value=this.changeset.neighborhoodDescription
+          data-test-description=true
+        }}
+      {{/form.group}}
     {{/page.profile-form}}
   {{/page.left-column}}
   {{#page.right-column}}
