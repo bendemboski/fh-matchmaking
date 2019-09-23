@@ -22,7 +22,7 @@ module('Acceptance | host/profile/location', function(hooks) {
     assert.notOk(page.address.value);
     assert.notOk(page.lightRailStation.value);
     assert.notOk(page.busses.value);
-    assert.notOk(page.environment.value);
+    assert.notOk(page.features.value);
   });
 
   test('it renders populated', async function(assert) {
@@ -31,7 +31,8 @@ module('Acceptance | host/profile/location', function(hooks) {
       address: '205 Vine',
       lightRailStation: 'pioneerSquare',
       busses: '41, 2',
-      neighborhoodFeatures: 'Edge of downtown'
+      neighborhoodFeatures: 'Edge of downtown',
+      neighborhoodDescription: 'Lots of restaurants'
     });
     await page.visit();
     assert.equal(currentRouteName(), 'auth.host.location');
@@ -39,6 +40,7 @@ module('Acceptance | host/profile/location', function(hooks) {
     assert.equal(page.address.value, '205 Vine');
     assert.equal(page.lightRailStation.value, 'Pioneer Square');
     assert.equal(page.busses.value, '41, 2');
-    assert.equal(page.environment.value, 'Edge of downtown');
+    assert.equal(page.features.value, 'Edge of downtown');
+    assert.equal(page.description.value, 'Lots of restaurants');
   });
 });

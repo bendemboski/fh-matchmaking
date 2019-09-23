@@ -21,7 +21,7 @@ export default create({
   funFact: text('[data-test-fun-fact]'),
   neighborhoods: text('[data-test-neighborhoods]'),
 
-  environment: text('[data-test-environment]'),
+  neighborhoodFeatures: text('[data-test-neighborhood-features]'),
   languages: text('[data-test-languages]'),
   freeTime: text('[data-test-free-time]'),
   favoriteFood: text('[data-test-favorite-food]'),

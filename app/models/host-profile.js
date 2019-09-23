@@ -35,6 +35,7 @@ export default DS.Model.extend({
   lightRailStation: DS.attr('string'),
   busses: DS.attr('string'),
   neighborhoodFeatures: DS.attr('string'),
+  neighborhoodDescription: DS.attr('string'),
 
   // activities
   backyardActivities: DS.attr('string'),

@@ -13,5 +13,6 @@ export default create({
   address: { scope: '[data-test-street-address]' },
   lightRailStation: Object.assign({ scope: '[data-test-light-rail-station]' }, PowerSelect),
   busses: { scope: '[data-test-busses]' },
-  environment: { scope: '[data-test-environment]' }
+  features: { scope: '[data-test-features]' },
+  description: { scope: '[data-test-description]' }
 });
