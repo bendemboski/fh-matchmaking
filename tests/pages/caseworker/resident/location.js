@@ -12,5 +12,5 @@ export default create({
   neighborhood1: Object.assign({ scope: '[data-test-neighborhood1]' }, PowerSelect),
   neighborhood2: Object.assign({ scope: '[data-test-neighborhood2]' }, PowerSelect),
   neighborhood3: Object.assign({ scope: '[data-test-neighborhood3]' }, PowerSelect),
-  environment: { scope: '[data-test-environment]' }
+  features: { scope: '[data-test-features]' }
 });

@@ -103,7 +103,8 @@ module('Acceptance | host/profile', function(hooks) {
     await locationPage.address.fillIn('5404 12th Ave NE');
     await locationPage.lightRailStation.fillIn('Pioneer Square');
     await locationPage.busses.fillIn('74, 76');
-    await locationPage.environment.fillIn('Urban village');
+    await locationPage.features.fillIn('Urban village');
+    await locationPage.description.fillIn('A fun neighborhood near transit');
     await locationPage.footer.next();
 
     mirageUser.reload();
@@ -112,6 +113,7 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(mirageUser.profile.lightRailStation, 'pioneerSquare');
     assert.equal(mirageUser.profile.busses, '74, 76');
     assert.equal(mirageUser.profile.neighborhoodFeatures, 'Urban village');
+    assert.equal(mirageUser.profile.neighborhoodDescription, 'A fun neighborhood near transit')
 
     // Activities
     assert.equal(currentRouteName(), 'auth.host.activities');
@@ -168,7 +170,7 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(profilePage.greeting, 'Hey brother!');
     assert.equal(profilePage.lightRailStation, 'Pioneer Square');
     assert.equal(profilePage.busses, '74, 76');
-    assert.equal(profilePage.environment, 'Urban village');
+    assert.equal(profilePage.neighborhoodFeatures, 'Urban village');
     assert.equal(profilePage.backyardActivities, 'Rainbathing');
     assert.equal(profilePage.backyardDescription, 'A small but comfy space');
     assert.equal(profilePage.languages, 'English, Klingon');

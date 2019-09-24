@@ -87,7 +87,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     await locationPage.neighborhood1.fillIn('U District');
     await locationPage.neighborhood2.fillIn('Alki');
     await locationPage.neighborhood3.fillIn('Mount Baker');
-    await locationPage.environment.fillIn('Urban village');
+    await locationPage.features.fillIn('Urban village');
     await locationPage.footer.next();
 
     mirageUser.reload();
@@ -122,7 +122,7 @@ module('Acceptance | caseworker/resident profile', function(hooks) {
     assert.equal(profilePage.petBreed, 'Beagle');
     assert.equal(profilePage.funFact, 'I am Gene Parmesan');
     assert.equal(profilePage.neighborhoods, 'U District, Alki, Mount Baker');
-    assert.equal(profilePage.environment, 'Urban village');
+    assert.equal(profilePage.neighborhoodFeatures, 'Urban village');
     assert.equal(profilePage.languages, 'English, Klingon');
     assert.equal(profilePage.freeTime, 'Clapping like a chicken');
     assert.equal(profilePage.favoriteFood, 'Ice cream sandwiches');

@@ -29,7 +29,7 @@ module('Acceptance | caseworker/resident/location', function(hooks) {
     assert.notOk(page.neighborhood3.value);
     assert.ok(page.neighborhood3.isDisabled);
 
-    assert.notOk(page.environment.value);
+    assert.notOk(page.features.value);
   });
 
   test('it renders populated', async function(assert) {
@@ -54,7 +54,7 @@ module('Acceptance | caseworker/resident/location', function(hooks) {
     assert.equal(page.neighborhood3.value, 'Mount Baker');
     assert.notOk(page.neighborhood3.isDisabled);
 
-    assert.equal(page.environment.value, 'Somewhere chill');
+    assert.equal(page.features.value, 'Somewhere chill');
   });
 
   test('it enables neighborhood selects and disables options as they are chosen', async function(assert) {

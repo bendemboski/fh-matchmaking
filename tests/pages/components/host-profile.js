@@ -27,7 +27,8 @@ export default {
   busses: text('[data-test-busses]'),
   hasNoTransit: isVisible('[data-test-none]'),
 
-  environment: text('[data-test-environment]'),
+  neighborhoodFeatures: text('[data-test-neighborhood-features]'),
+  neighborhoodDescription: text('[data-test-neighborhood-description]'),
   backyardActivities: text('[data-test-backyard-activities]'),
   backyardDescription: text('[data-test-backyard-description]'),
   languages: text('[data-test-languages]'),
