@@ -141,7 +141,6 @@ export function getSubstances() {
     { value: 'alcohol', label: 'Alcohol' },
     { value: 'tobacco', label: 'Tobacco' },
     { value: 'marijuana', label: 'Marijuana' },
-    { value: 'illicit', label: 'Illict Substances' },
   ];
 }
 

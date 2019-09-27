@@ -30,6 +30,7 @@ as |page|
       {{#form.group label="Public Transportation"}}
         <div class="transit row">
           <div class="col-6" data-test-light-rail-station>
+            <span class="link-label">Link</span>
             {{#power-select
               placeholder="Choose accessible light rail station"
               options=this.lightRailStations
@@ -43,6 +44,7 @@ as |page|
             {{/power-select}}
           </div>
           <div class="col-6">
+            <span class="bus-label">Buses</span>
             {{input
               class="busses"
               value=this.changeset.busses
@@ -57,7 +59,13 @@ as |page|
         {{group.input
           placeholder="e.g. supermarket, park, library, church"
           value=this.changeset.neighborhoodFeatures
-          data-test-environment=true
+          data-test-features=true
+        }}
+      {{/form.group}}
+      {{#form.group label="One sentence to describe your neighborhood." as |group|}}
+        {{group.textarea
+          value=this.changeset.neighborhoodDescription
+          data-test-description=true
         }}
       {{/form.group}}
     {{/page.profile-form}}
