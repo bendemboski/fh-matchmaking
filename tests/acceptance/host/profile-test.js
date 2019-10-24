@@ -10,7 +10,7 @@ import aboutPage from '../../pages/host/about';
 import review1Page from '../../pages/host/review1';
 import locationPage from '../../pages/host/location';
 import activitiesPage from '../../pages/host/activities';
-import photosPage from '../../pages/host/photos';
+// import photosPage from '../../pages/host/photos';
 import review2Page from '../../pages/host/review2';
 import questionPage from '../../pages/host/question';
 import review3Page from '../../pages/host/review3';
@@ -126,14 +126,14 @@ module('Acceptance | host/profile', function(hooks) {
     assert.equal(mirageUser.profile.backyardDescription, 'A small but comfy space');
 
     // Photos
-    assert.equal(currentRouteName(), 'auth.host.photos');
-    await photosPage.photos.objectAt(0).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
-    await photosPage.photos.objectAt(1).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
-    await photosPage.photos.objectAt(2).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
-    await photosPage.photos.objectAt(3).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
-    await photosPage.footer.next();
+    // assert.equal(currentRouteName(), 'auth.host.photos');
+    // await photosPage.photos.objectAt(0).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
+    // await photosPage.photos.objectAt(1).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
+    // await photosPage.photos.objectAt(2).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
+    // await photosPage.photos.objectAt(3).setImage(new File([ imageBlob ], 'foo.jpg', { type: 'image/jpeg' }));
+    // await photosPage.footer.next();
 
-    mirageUser.reload();
+    // mirageUser.reload();
 
     // Review2
     assert.equal(currentRouteName(), 'auth.host.review2');
@@ -153,10 +153,10 @@ module('Acceptance | host/profile', function(hooks) {
 
     // Profile
     assert.equal(currentRouteName(), 'auth.host.profile');
-    assert.equal(profilePage.photos.objectAt(0).src, 'http://s3.amazon.com/download1');
-    assert.equal(profilePage.photos.objectAt(1).src, 'http://s3.amazon.com/download2');
-    assert.equal(profilePage.photos.objectAt(2).src, 'http://s3.amazon.com/download3');
-    assert.equal(profilePage.photos.objectAt(3).src, 'http://s3.amazon.com/download4');
+    // assert.equal(profilePage.photos.objectAt(0).src, 'http://s3.amazon.com/download1');
+    // assert.equal(profilePage.photos.objectAt(1).src, 'http://s3.amazon.com/download2');
+    // assert.equal(profilePage.photos.objectAt(2).src, 'http://s3.amazon.com/download3');
+    // assert.equal(profilePage.photos.objectAt(3).src, 'http://s3.amazon.com/download4');
     assert.equal(profilePage.profilePic, 'http://s3.amazon.com/download0');
     assert.equal(profilePage.name, 'The Bluth family');
     assert.equal(profilePage.gender, 'Male');
@@ -193,8 +193,8 @@ module('Acceptance | host/profile', function(hooks) {
     await questionPage.footer.back();
     assert.equal(currentRouteName(), 'auth.host.review2');
     await review2Page.footer.back();
-    assert.equal(currentRouteName(), 'auth.host.photos');
-    await photosPage.footer.back();
+    // assert.equal(currentRouteName(), 'auth.host.photos');
+    // await photosPage.footer.back();
     assert.equal(currentRouteName(), 'auth.host.activities');
     await activitiesPage.footer.back();
     assert.equal(currentRouteName(), 'auth.host.location');
