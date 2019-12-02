@@ -6,7 +6,7 @@ export default DS.Model.extend({
   givenName: DS.attr('string'),
   familyName: DS.attr('string'),
   phoneNumber: DS.attr('string'),
-  birthdate: DS.attr('date'),
+  birthdate: DS.attr('string'),
 
   fullName: computed('givenName', 'familyName', function() {
     return `${this.givenName} ${this.familyName}`.trim();
