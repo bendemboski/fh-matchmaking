@@ -16,9 +16,31 @@
   }
 }
 
+.banner {
+  margin-top: 66px;
+  font-size: 14px;
+
+  p {
+    display: inline;
+    // color: #00AEB2;
+  }
+
+  img {
+    width: 24px;
+    margin-right: 6px;
+    display: inline;
+  }
+
+  a {
+    // color: #00AEB2;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+
 .person-list-nav {
   list-style-type: none;
-  margin:100px 0 0 0;
+  margin: 40px 0 0 0;
   padding: 0;
   height:30px;
   line-height: 30px;
