@@ -1,7 +1,9 @@
 <div class="container">
   <div class="banner">
-    <img src="/assets/images/icon-information.png" alt="information-icon">
-    <p>You are viewing in the Testing Mode. To invite hosts or caseworkers, please change to the  <a href="http://matchmaking.the-block-project.org/login">Production Mode</a>. </p>
+    {{#if (not this.isProd)}}
+      <img src="/assets/images/icon-information.png" alt="information-icon">
+      <p>You are currently on the testing site. To invite real hosts or caseworkers, please go to the <a href="http://matchmaking.the-block-project.org">production site</a>. </p>
+    {{/if}}
   </div>
   <ul class="person-list-nav">
     <li>{{#link-to "auth.admin.resident-list"}}Residents{{/link-to}}</li>

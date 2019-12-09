@@ -7,6 +7,11 @@ export default Component.extend(ModalContainerMixin, {
   store: service(),
   notifications: service(),
 
+  init() {
+    this._super(...arguments);
+    this.isProd = window.location.host.startsWith('matchmaking.');
+  },
+
   inviteUser: task(function*() {
     let { type, email, givenName, familyName } = this.modalContext;
     let user = this.store.createRecord(type, {
